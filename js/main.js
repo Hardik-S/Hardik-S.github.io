@@ -7,7 +7,6 @@ $(document).ready(function() {
   //  //SMOOTH SCROLL
   // ========================================================================= //
 
-
   $(document).on("scroll", onScroll);
 
   $('a[href^="#"]').on('click', function(e) {
@@ -50,7 +49,6 @@ $(document).ready(function() {
   //  //NAVBAR SHOW - HIDE
   // ========================================================================= //
 
-
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
     if (scroll > 200 ) {
@@ -79,7 +77,7 @@ $(document).ready(function() {
 
   $(function() {
     typed.typed({
-      strings: ["Hardik Shrestha.", "an empowered student.", "a problem-Solver!", "a learning enthusiast!", "a chess player."],
+      strings: ["Hardik Shrestha.", "a software developer.", "a sustainability advocate.", "an HBA & CS student.", "a chess enthusiast."],
       typeSpeed: 50,
       loop: true,
     });
@@ -89,7 +87,6 @@ $(document).ready(function() {
   // ========================================================================= //
   //  Skill Carousel
   // ========================================================================= //
-
 
   $('.services-carousel').owlCarousel({
       autoplay: true,
@@ -115,11 +112,8 @@ $(document).ready(function() {
       },
       zoom: {
         enabled: true, 
-
         duration: 300, 
-        easing: 'ease-in-out', // CSS transition easing function
-
-        
+        easing: 'ease-in-out',
         opener: function(openerElement) {
           return openerElement.is('img') ? openerElement : openerElement.find('img');
         }
@@ -127,14 +121,13 @@ $(document).ready(function() {
     });
   };
 
-
   // Call the functions
   magnifPopup();
 
 });
 
 // ========================================================================= //
-//  Porfolio isotope and filter
+//  Portfolio isotope and filter
 // ========================================================================= //
 $(window).load(function(){
 
