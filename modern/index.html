@@ -115,6 +115,21 @@
       </div>
       <p id="copyStatus" class="assistive-hint" role="status" aria-live="polite"></p>
     </section>
+
+    <section id="snapshot" class="section card">
+      <h2>Portfolio snapshot</h2>
+      <p class="section-note">
+        Preserve the current UI context (theme, filters, and visibility) as a copyable JSON
+        snapshot, and store it locally for quick resurfacing on revisit.
+      </p>
+      <div class="cta-row snapshot-actions">
+        <button class="primary-btn" id="copySnapshot" type="button">Copy snapshot JSON</button>
+        <button class="ghost-btn" id="saveSnapshot" type="button">Save snapshot locally</button>
+        <button class="ghost-btn" id="clearSnapshot" type="button">Clear local snapshot</button>
+      </div>
+      <p id="snapshotStatus" class="assistive-hint" role="status" aria-live="polite"></p>
+      <pre id="snapshotOutput" class="snapshot-output" aria-label="Current snapshot JSON"></pre>
+    </section>
   </main>
 
   <footer class="site-footer">

@@ -104,8 +104,17 @@ const contactCopyTargets = [
   { id: "copyPhone", value: "+12896544428", label: "Phone copied." },
 ];
 
+const STORAGE_KEYS = {
+  preferences: "legacy-hs-modern-preferences-v1",
+  snapshot: "legacy-hs-modern-snapshot-v1",
+};
+
 const state = {
   projectFilter: "all",
+  projectQuery: "",
+  skillQuery: "",
+  isLightMode: false,
+  visibleProjects: projectCards.length,
 };
 
 function safeText(value) {
@@ -123,6 +132,105 @@ function formatList(items) {
   return items
     .map((entry) => `<li>${safeText(entry)}</li>`)
     .join("");
+}
+
+function readPreferences() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEYS.preferences);
+    if (!raw) {
+      return null;
+    }
+
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") {
+      return null;
+    }
+
+  return {
+    projectFilter: typeof parsed.projectFilter === "string" ? parsed.projectFilter : state.projectFilter,
+    projectQuery: typeof parsed.projectQuery === "string" ? parsed.projectQuery : "",
+    skillQuery: typeof parsed.skillQuery === "string" ? parsed.skillQuery : "",
+    isLightMode: parsed.isLightMode === true,
+  };
+  } catch (error) {
+    return null;
+  }
+}
+
+function persistPreferences() {
+  try {
+    const payload = {
+      projectFilter: state.projectFilter,
+      projectQuery: state.projectQuery,
+      skillQuery: state.skillQuery,
+      isLightMode: state.isLightMode,
+      capturedAt: new Date().toISOString(),
+    };
+    window.localStorage.setItem(STORAGE_KEYS.preferences, JSON.stringify(payload));
+  } catch (error) {
+    // LocalStorage is intentionally optional for static hosting compatibility.
+  }
+}
+
+function applyTheme(lightMode) {
+  const variables = lightMode
+    ? {
+        "--bg": "#f6f8ff",
+        "--surface": "#eef1ff",
+        "--surface-2": "#dde4ff",
+        "--text": "#0f1831",
+        "--muted": "#324065",
+        "--line": "#b0bddf",
+      }
+    : {
+        "--bg": "#070a14",
+        "--surface": "#10182b",
+        "--surface-2": "#162041",
+        "--text": "#eff2ff",
+        "--muted": "#9aa4c7",
+        "--line": "#2b3459",
+      };
+
+  Object.entries(variables).forEach(([key, value]) => {
+    document.documentElement.style.setProperty(key, value);
+  });
+}
+
+function getVisibleProjects() {
+  const query = state.projectQuery.toLowerCase().trim();
+  return projectCards.filter((project) => {
+    const matchesCategory =
+      state.projectFilter === "all" || project.tags.includes(state.projectFilter);
+    const searchMatch =
+      query === "" ||
+      `${project.title} ${project.description} ${project.tags.join(" ")}`.toLowerCase().includes(query);
+    return matchesCategory && searchMatch;
+  });
+}
+
+function hydrateSnapshotText(projects) {
+  const output = document.getElementById("snapshotOutput");
+  if (!output) {
+    return;
+  }
+
+  const snapshot = {
+    generatedAt: new Date().toISOString(),
+    selectedTheme: state.isLightMode ? "light" : "dark",
+    filters: {
+      projectFilter: state.projectFilter,
+      projectQuery: state.projectQuery,
+      skillFilter: state.skillQuery,
+    },
+    counters: {
+      totalProjects: projectCards.length,
+      visibleProjects: projects.length,
+      totalExperience: experienceEntries.length,
+      totalSkills: skillGroups.reduce((acc, group) => acc + group.value.length, 0),
+    },
+  };
+
+  output.textContent = JSON.stringify(snapshot, null, 2);
 }
 
 function hydrateHero() {
@@ -169,14 +277,8 @@ function hydrateSkills() {
 }
 
 function renderProjects() {
-  const query = (document.getElementById("projectQuery").value || "").trim().toLowerCase();
-  const selectedTags = projectCards.filter((project) => {
-    const matchesCategory = state.projectFilter === "all" || project.tags.includes(state.projectFilter);
-    const searchMatch =
-      query === "" ||
-      `${project.title} ${project.description} ${project.tags.join(" ")}`.toLowerCase().includes(query);
-    return matchesCategory && searchMatch;
-  });
+  const selectedTags = getVisibleProjects();
+  state.visibleProjects = selectedTags.length;
 
   const grid = document.getElementById("projectGrid");
   const empty = document.getElementById("projectEmpty");
@@ -199,11 +301,19 @@ function renderProjects() {
     `,
     )
     .join("");
+
+  hydrateSnapshotText(selectedTags);
 }
 
 function hydrateProjectFilters() {
   const segmentRoot = document.getElementById("projectFilter");
   const buttons = segmentRoot.querySelectorAll("[data-filter]");
+  buttons.forEach((button) => {
+    const isSelected = button.dataset.filter === state.projectFilter;
+    button.classList.toggle("is-active", isSelected);
+    button.setAttribute("aria-pressed", isSelected ? "true" : "false");
+  });
+
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       buttons.forEach((it) => {
@@ -214,9 +324,19 @@ function hydrateProjectFilters() {
       button.setAttribute("aria-pressed", "true");
       state.projectFilter = button.dataset.filter;
       renderProjects();
+      persistPreferences();
     });
   });
-  document.getElementById("projectQuery").addEventListener("input", () => renderProjects());
+  const projectQuery = document.getElementById("projectQuery");
+  if (state.projectQuery) {
+    projectQuery.value = state.projectQuery;
+  }
+
+  projectQuery.addEventListener("input", (event) => {
+    state.projectQuery = event.target.value;
+    persistPreferences();
+    renderProjects();
+  });
 }
 
 function hydrateSustainability() {
@@ -230,10 +350,18 @@ function hydrateSkillFilter() {
   const items = Array.from(document.querySelectorAll(".skill-item"));
   clearSkillFilter.addEventListener("click", () => {
     skillFilter.value = "";
+    state.skillQuery = "";
+    persistPreferences();
     filterSkills("");
   });
+  if (state.skillQuery) {
+    skillFilter.value = state.skillQuery;
+  }
+
   skillFilter.addEventListener("input", (event) => {
+    state.skillQuery = event.target.value;
     filterSkills(event.target.value);
+    persistPreferences();
   });
   filterSkills("");
 
@@ -262,32 +390,119 @@ function hydrateContactCopy() {
 
 function hydrateThemeToggle() {
   const button = document.getElementById("themeButton");
-  let lightMode = false;
+  state.isLightMode = Boolean(state.isLightMode);
+  applyTheme(state.isLightMode);
+  button.textContent = state.isLightMode ? "Dark mode" : "Light mode";
+  button.setAttribute("aria-pressed", state.isLightMode ? "true" : "false");
+
   button.addEventListener("click", () => {
-    lightMode = !lightMode;
-    if (lightMode) {
-      document.documentElement.style.setProperty("--bg", "#f6f8ff");
-      document.documentElement.style.setProperty("--surface", "#eef1ff");
-      document.documentElement.style.setProperty("--surface-2", "#dde4ff");
-      document.documentElement.style.setProperty("--text", "#0f1831");
-      document.documentElement.style.setProperty("--muted", "#324065");
-      document.documentElement.style.setProperty("--line", "#b0bddf");
-      button.textContent = "Dark mode";
-      button.setAttribute("aria-pressed", "true");
-    } else {
-      document.documentElement.style.setProperty("--bg", "#070a14");
-      document.documentElement.style.setProperty("--surface", "#10182b");
-      document.documentElement.style.setProperty("--surface-2", "#162041");
-      document.documentElement.style.setProperty("--text", "#eff2ff");
-      document.documentElement.style.setProperty("--muted", "#9aa4c7");
-      document.documentElement.style.setProperty("--line", "#2b3459");
-      button.textContent = "Light mode";
-      button.setAttribute("aria-pressed", "false");
+    state.isLightMode = !state.isLightMode;
+    applyTheme(state.isLightMode);
+    button.textContent = state.isLightMode ? "Dark mode" : "Light mode";
+    button.setAttribute("aria-pressed", state.isLightMode ? "true" : "false");
+    persistPreferences();
+    renderSnapshotButtonState();
+  });
+}
+
+function renderSnapshotButtonState() {
+  const status = document.getElementById("snapshotStatus");
+  if (!status) {
+    return;
+  }
+
+  try {
+    const prefs = window.localStorage.getItem(STORAGE_KEYS.preferences);
+    status.textContent = prefs
+      ? "Preferences loaded from localStorage. Use snapshot actions to save and share context."
+      : "";
+  } catch (error) {
+    status.textContent = "";
+  }
+}
+
+function hydrateSnapshot() {
+  const copyButton = document.getElementById("copySnapshot");
+  const saveButton = document.getElementById("saveSnapshot");
+  const clearButton = document.getElementById("clearSnapshot");
+  const status = document.getElementById("snapshotStatus");
+  const snapshotData = () => {
+    const visibleProjects = getVisibleProjects();
+    state.visibleProjects = visibleProjects.length;
+    return {
+      generatedAt: new Date().toISOString(),
+      selectedTheme: state.isLightMode ? "light" : "dark",
+      filters: {
+        projectFilter: state.projectFilter,
+        projectQuery: state.projectQuery,
+        skillFilter: state.skillQuery,
+      },
+      counters: {
+        totalProjects: projectCards.length,
+        visibleProjects: visibleProjects.length,
+        totalExperience: experienceEntries.length,
+        totalSkills: skillGroups.reduce((acc, group) => acc + group.value.length, 0),
+      },
+    };
+  };
+
+  const renderSnapshotOutput = () => {
+    hydrateSnapshotText(getVisibleProjects());
+  };
+
+  const writeStatus = (message) => {
+    if (status) {
+      status.textContent = message;
+    }
+  };
+
+  renderSnapshotOutput();
+
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(snapshotData(), null, 2));
+      writeStatus("Snapshot copied to clipboard.");
+    } catch (error) {
+      writeStatus("Clipboard blocked. Use save/load or manual select/copy from JSON block.");
+    }
+  });
+
+  saveButton.addEventListener("click", () => {
+    try {
+      window.localStorage.setItem(STORAGE_KEYS.snapshot, JSON.stringify(snapshotData(), null, 2));
+      writeStatus("Snapshot saved locally.");
+    } catch (error) {
+      writeStatus("Local snapshot storage unavailable in this browser context.");
+    }
+  });
+
+  clearButton.addEventListener("click", () => {
+    try {
+      window.localStorage.removeItem(STORAGE_KEYS.snapshot);
+      writeStatus("Local snapshot cleared.");
+    } catch (error) {
+      writeStatus("Unable to clear local snapshot.");
     }
   });
 }
 
+function hydrateStoredPreferences() {
+  const saved = readPreferences();
+  if (!saved) {
+    return;
+  }
+
+  const allowedFilters = ["all", "education", "product", "sustainability"];
+  if (allowedFilters.includes(saved.projectFilter)) {
+    state.projectFilter = saved.projectFilter;
+  }
+  state.projectQuery = saved.projectQuery || "";
+  state.skillQuery = saved.skillQuery || "";
+  state.isLightMode = saved.isLightMode === true;
+}
+
 function init() {
+  hydrateStoredPreferences();
   hydrateHero();
   hydrateExperience();
   hydrateSkills();
@@ -296,7 +511,10 @@ function init() {
   hydrateSkillFilter();
   hydrateContactCopy();
   hydrateThemeToggle();
+  hydrateSnapshot();
   renderProjects();
+  persistPreferences();
+  renderSnapshotButtonState();
 }
 
 init();

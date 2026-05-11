@@ -36,6 +36,9 @@ This surface is a separate modernized interface; legacy files (`index.html`, `cs
 - Theme toggle (dark/light) with accessible state labels.
 - Compact derived metrics in hero block (projects, roles, skills count).
 - Graceful no-results messaging for empty project filters.
+- Local preference persistence for theme + filters via localStorage.
+- New portfolio snapshot controls to copy/share JSON context (theme + filter state + counters).
+- Snapshot local save/clear workflow for quick repeatable handoff states.
 
 ## Stack choices
 
@@ -53,6 +56,8 @@ This surface is a separate modernized interface; legacy files (`index.html`, `cs
 - `node --check modern/app.js` passed.
 - `git diff --check` passed for changed files.
 - Manual content parity check vs original README and top-level sections done: About, Experience, Skills, Projects, Sustainability, Contact retained.
+- Snapshot block renders with deterministic JSON when JavaScript hydrates.
+- Local theme/filter preferences persist/reload via browser localStorage in manual spot-check.
 
 ## Deploy
 

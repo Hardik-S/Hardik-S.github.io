@@ -364,6 +364,26 @@ button.ghost:hover,
   color: var(--muted);
 }
 
+.snapshot-actions {
+  align-items: center;
+}
+
+.snapshot-output {
+  margin: 0;
+  max-width: 100%;
+  overflow: auto;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0d1430;
+  min-height: 170px;
+  white-space: pre-wrap;
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px;
