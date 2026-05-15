@@ -391,3 +391,17 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel ACL not re-tested`; Preflight result `auth-ok`; Dirty paths `none before edits`; Attempts used `preflight 1, Vercel deploy 0 this run due retry cap`; Next safe action `push source, let GitHub Pages update, and only retry Vercel after quota reset`.
 - Dirty paths: none before edits; expected dirty path is this log until committed.
 - Next safe action: proceed to Turn 31 flagship case-study depth, or run a quota-reset Vercel deploy check first if enough time has passed.
+
+## Run 2026-05-15T17:35:29-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 31 - Flagship Case Study Depth.
+- Selected task: add compact role, artifact, proof, and review guidance to the four verified flagship cards without changing project selection, adding metrics, or touching legacy routing.
+- Changed files in target repo: `content/site-content.json`, `js/v2-content.js`, `css/v2.css`, `README.md`, `docs/evidence-inventory.md`; this log entry in `state/worker-log.md`.
+- Site/docs commit SHA: `f02154ec1d1071a96941bd66101ee2966f024570`.
+- Verification: start preflight `auth-ok`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; case-study field guard confirmed every selected-work item has `role`, `artifactType`, `proof`, and `reviewFor`; local route checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/js/v2-content.js`, and `/js/v2-interactions.js`; flagship URLs returned HTTP 200; Playwright CLI screenshots inspected for selected-work mobile, selected-work desktop, homepage mobile, and selected-work mobile full page after animation wait; changed-file redaction scans passed.
+- Deploy URL/status: no manual Vercel deploy attempted because the prior `api-deployments-free-per-day` retry cap remains active. GitHub source commit will be pushed this run; GitHub Pages is the safe review surface until Vercel quota reset.
+- Preflight result: `auth-ok`.
+- Blocker state: no implementation blocker. Vercel production deploy remains `blocked-cleanly` from prior quota cap only.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel ACL not re-tested`; Preflight result `auth-ok`; Dirty paths `none at start`; Attempts used `preflight 1, Vercel deploy 0 this run due retry cap`; Next safe action `push source and use GitHub Pages until quota reset`.
+- Dirty paths: none at start; expected dirty path is this log until committed.
+- Next safe action: proceed to Turn 32 accessibility/performance/SEO release polish, or run a Vercel deploy only after the quota window plausibly resets.
