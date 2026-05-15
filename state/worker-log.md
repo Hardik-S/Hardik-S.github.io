@@ -77,3 +77,14 @@
   - alias returned 200 for `/` and `/legacy/`
 - Blocker state: none blocking this increment
 - Next safe action: keep legacy preservation untouched and continue the next evidence-depth increment with verifiable new proof points.
+## Run 2026-05-15T12:54:52-04:00
+- Mission scope: Worker Wally - Personal Website v2
+- Director task: Turn 12 - Current Project Proof Upgrade
+- Selected task: promote verified current project proof anchors while preserving Legacy route/button.
+- Changed files: `content/site-content.json`, `docs/evidence-inventory.md`, `README.md`
+- Verification: `git status --short`; `git diff --check` clean; JSON parse check passed; local route checks `http://127.0.0.1:4173/`, `/legacy/`, `/content/site-content.json` returned 200; URL checks for Cloud/Pmo/BioScript Agent/Ops links returned 200; redaction scan raised known legacy email flag in legacy route.
+- Commit SHA: 2f12b16
+- Deploy: `npx vercel@latest --prod --yes --name hardik-s-github-io` -> production `https://hardik-s-github-70pju6a17-batb4016-9101s-projects.vercel.app`, alias `https://hardik-s-github-io.vercel.app`.
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 at run start)
+- Blocker state: none blocking this increment.
+- Next safe action: continue Director Turn 13 (selected-work narrative layer) or finish Turn 12 docs consistency sweep if new evidence candidates appear.
