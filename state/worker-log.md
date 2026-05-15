@@ -477,3 +477,10 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for Turn 35 assets`; Preflight result `auth-ok`; Dirty paths `none before this log append`; Attempts used `preflight 2, Vercel CLI deploy 0 this run due prior quota cap`; Next safe action `use fresh GitHub Pages for review and retry/manual-check Vercel only after quota reset or integration catches up`.
 - Dirty paths: none after source push and QA cleanup; expected dirty path is this log until committed.
 - Next safe action: commit and push this log entry, then continue with Turn 37 release QA and review freeze unless new verified public-safe screenshot sources are documented.
+
+## Run 2026-05-15T18:27:02-04:00 follow-up
+- Push status: source commit `4fcec473f8614f1af03194c9b72a93caca090eab` and log commit `d30fe987c50d86c9e055f5055e69bd402e4e2b6c` pushed to `origin/master`; remote `HEAD` matched `d30fe987c50d86c9e055f5055e69bd402e4e2b6c`.
+- Public freshness: GitHub Pages and Vercel alias cache-busted `js/v2-content.js` returned 200 with `structured-work-visual`; cache-busted `css/v2.css` returned 200 with `work-visual-flow` on both surfaces.
+- Deploy status: Vercel alias caught up through the existing integration, so no manual Vercel CLI deploy was needed.
+- Dirty paths: none before this follow-up log append.
+- Next safe action: proceed to Turn 37 release QA and review freeze unless new verified public-safe screenshot sources are documented.
