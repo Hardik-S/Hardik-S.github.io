@@ -3,6 +3,7 @@
 (function () {
   const focusText = document.getElementById("hero-focus-text");
   const cycleButton = document.querySelector(".focus-cycle-button");
+  const journeyButton = document.querySelector(".proof-journey-button");
 
   if (!focusText || !cycleButton) {
     return;
@@ -25,13 +26,33 @@
       "aria-label",
       `Show next proof focus. Current focus: ${proofFocuses[currentIndex]}`
     );
+    if (journeyButton) {
+      journeyButton.setAttribute(
+        "aria-label",
+        `Trace this proof focus through the flagship work section. Current focus: ${proofFocuses[currentIndex]}`
+      );
+    }
   };
 
   const cycleFocus = () => {
     updateFocus(currentIndex + 1);
   };
 
+  const startProofJourney = () => {
+    const selectedWork = document.getElementById("selected-work");
+    const scrollBehavior = reduceMotionQuery.matches ? "auto" : "smooth";
+
+    document.dispatchEvent(new CustomEvent("v2:proof-journey-requested", {
+      detail: {
+        index: currentIndex,
+        focus: proofFocuses[currentIndex]
+      }
+    }));
+    selectedWork?.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+  };
+
   cycleButton.addEventListener("click", cycleFocus);
+  journeyButton?.addEventListener("click", startProofJourney);
   updateFocus(currentIndex);
 
   // Auto-rotation is disabled for reduced-motion users; the button remains available.
@@ -55,6 +76,7 @@
   let previousButton;
   let nextButton;
   let initialized = false;
+  let journeyResetTimer;
 
   const clampIndex = (index) => {
     if (cards.length === 0) {
@@ -88,6 +110,15 @@
     if (options.focusCard) {
       cards[currentIndex].focus({ preventScroll: true });
     }
+  };
+
+  const setJourneyMode = (nextIndex) => {
+    updateSpotlight(nextIndex, { focusCard: true });
+    section.classList.add("is-proof-journey");
+    window.clearTimeout(journeyResetTimer);
+    journeyResetTimer = window.setTimeout(() => {
+      section.classList.remove("is-proof-journey");
+    }, 4200);
   };
 
   const createControl = () => {
@@ -170,6 +201,13 @@
   };
 
   document.addEventListener("v2:selected-work-rendered", initializeWhenReady, { once: true });
+  document.addEventListener("v2:proof-journey-requested", (event) => {
+    initializeWhenReady();
+    if (cards.length === 0) {
+      return;
+    }
+    setJourneyMode(event.detail?.index || 0);
+  });
   initializeWhenReady();
 })();
 

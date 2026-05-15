@@ -38,11 +38,13 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 ## Interaction behavior
 
 - The hero proof-focus text cycles through source-backed positioning lines and exposes a manual `Next focus` button.
+- The hero also exposes a `Trace proof` action that scrolls to flagship work and asks the existing project spotlight controller to emphasize the matching card.
 - Auto-rotation is disabled for users who prefer reduced motion.
 - The flagship work section renders a native project spotlight controller after the JSON payload loads.
 - Flagship cards are keyboard focusable and support arrow-key spotlight changes.
 - The section rail updates as reviewers move through the page, while hash navigation remains usable if observer support is unavailable.
 - These interactions are progressive enhancements; the core content remains readable without them.
+- Turn 45 deliberately reused custom events, `scrollIntoView`, and the existing spotlight state instead of adding a tour overlay, carousel package, or animation library.
 
 ## Evidence policy
 
