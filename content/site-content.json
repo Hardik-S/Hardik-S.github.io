@@ -93,6 +93,18 @@
       }
     },
     {
+      "title": "Invoice Dispute Packet Builder",
+      "url": "https://github.com/Hardik-S/invoice-dispute-packet-builder",
+      "description": "Public decision-support repo for structured invoice dispute packet assembly with reproducible evidence paths.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/invoice-dispute-packet-builder",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified as a public repository in this environment and aligned with the operations evidence portfolio."
+      }
+    },
+    {
       "title": "Personal site source",
       "url": "https://github.com/Hardik-S/hardik-s.github.io",
       "description": "Public source repository for this portfolio site, including v2 implementation and evidence payload.",

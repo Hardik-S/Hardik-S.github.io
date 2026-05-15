@@ -28,6 +28,10 @@ All items below are currently rendered as public proof anchors:
   - URL: https://github.com/Hardik-S/ops-follow-up-radar
   - Verification date: 2026-05-15
   - Notes: public repo confirmed.
+- Invoice Dispute Packet Builder
+  - URL: https://github.com/Hardik-S/invoice-dispute-packet-builder
+  - Verification date: 2026-05-15
+  - Notes: public repo confirmed and added as operations evidence.
 - Personal site source
   - URL: https://github.com/Hardik-S/hardik-s.github.io
   - Verification date: 2026-05-15
