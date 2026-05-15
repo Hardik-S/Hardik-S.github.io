@@ -1,4 +1,4 @@
-﻿# Worker Wally - Personal Website v2 Run Log
+# Worker Wally - Personal Website v2 Run Log
 
 ## 2026-05-15 (bootstrap continuation)
 
@@ -134,7 +134,7 @@ px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias ro
 - Director task: Turn 13B selected-work narrative tightening
 - Selected task: add two additional public-ready projects to the selected-work stream and tighten selected-work intro copy while preserving Legacy reachability.
 - Changed files: `index.html`, `content/site-content.json`, `README.md`.
-- Preflight result: `auth-ok,dirty-worktree` (attempts used: 1) from `powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\hshre\.codex\scripts\github-deploy-preflight.ps1 -TargetProject Hardik-S/hardik-s.github.io -OrgTeamProject Hardik-S -DeployConfigPath .vercel/project.json -AttemptsUsed 1`.
+- Preflight result: `auth-ok,dirty-worktree` (attempts used: 1) from `powershell -NoProfile -ExecutionPolicy Bypass -File <CODEX_HOME>\\scripts\\github-deploy-preflight.ps1 -TargetProject Hardik-S/hardik-s.github.io -OrgTeamProject Hardik-S -DeployConfigPath .vercel/project.json -AttemptsUsed 1`.
 - Verification:
   - `git status --short` before edits showed existing `?? .gitignore` only.
   - `git status --short` after edit showed `?? .gitignore` plus intended edits.
@@ -144,7 +144,7 @@ px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias ro
   - Proof link checks: `https://github.com/Hardik-S/agent-permission-review-console` and `https://github.com/Hardik-S/invoice-dispute-packet-builder` returned 200.
   - `git diff --check` clean.
   - Scoped redaction scan passed for `index.html`, `css/v2.css`, `js/v2-content.js`, `content/site-content.json`, and `README.md`.
-  - Full redaction scan against repo still reports existing legacy `hshrestha.hba2026@ivey.ca` in `legacy/index.html` only.
+  - Full redaction scan against repo still reports existing legacy direct-contact string in `legacy/index.html` only.
   - `npx --yes vercel@latest --prod --yes --name hardik-s-github-io` succeeded.
   - Alias URL checks: `https://hardik-s-github-io.vercel.app/`, `/legacy/`, `/content/site-content.json` all 200; production deployment URL returned 401 in this environment.
 - Commit SHA: `ee24c3c`.

@@ -19,3 +19,8 @@
 
 - If and when a direct email path is added in v2, route it intentionally through a visible policy decision in this file first.
 - Any future direct contact address should use a documented allowlist/scope and include a preflight-level privacy review.
+
+## Publication safety policy
+
+- Public-facing state logs and docs should avoid raw local filesystem paths and direct contact literals unless the item is an explicit legacy-only exception.
+- Legacy contact literals in `legacy/index.html` remain allowed only as documented historical content and must stay confined to the legacy route.

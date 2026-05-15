@@ -37,6 +37,7 @@ This repository is the current home for Hardik’s personal website (v2) with le
   - Hero `Contact` jumps to `#contact`.
   - Contact section exposes GitHub, public resume, and LinkedIn actions.
 - Legacy contact detail patterns and any historical exposure remain documented in `docs/public-safety.md`.
+- Public-facing logs and docs should avoid raw local paths and direct contact literals; legacy-only contact text is acceptable only with a documented exception in `docs/public-safety.md`.
 
 ## Verification
 
