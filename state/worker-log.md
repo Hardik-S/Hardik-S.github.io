@@ -533,3 +533,12 @@
 - Blocker state: none.
 - Dirty paths: none after the site/docs commit; expected dirty path is this log until committed.
 - Next safe action: commit and push this worker-log entry, then confirm GitHub Pages and Vercel alias freshness for the active-rail source.
+
+## Run 2026-05-15T18:59:59-04:00 follow-up
+- Push status: site/docs commit `30f247005b2a630f927d3d37fcb77744e958f7cf` and log commit `2f4ae24f327b9a7f446303510adf0a0293e77f1a` pushed to `origin/master`; `git ls-remote origin HEAD` matched `2f4ae24f327b9a7f446303510adf0a0293e77f1a`.
+- Public freshness: GitHub Pages returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, and cache-busted Turn 40 JS/CSS with the active-rail markers present.
+- Deploy status: manual Vercel production deploy succeeded after the alias was initially stale. Deployment `dpl_DrqPAAv7MT4vEDcyoFXuBzM7EdXD` is ready at `https://hardik-s-github-cm60jwbjr-batb4016-9101s-projects.vercel.app` and aliased to `https://hardik-s-github-io.vercel.app`.
+- Vercel freshness: alias returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, and cache-busted Turn 40 JS/CSS; `docs/handoff.md` also contained the active section rail note.
+- Blocker state: none.
+- Dirty paths: none before this follow-up log append.
+- Next safe action: keep the site frozen for user review; only make future changes for concrete feedback, public freshness drift, or newly verified evidence.
