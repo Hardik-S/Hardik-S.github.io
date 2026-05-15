@@ -142,6 +142,10 @@
 
     const article = document.createElement("article");
     article.className = "card flagship-card";
+    article.tabIndex = 0;
+    article.dataset.workTitle = title;
+    article.dataset.workFocus = focus || "Flagship proof";
+    article.dataset.workSummary = summary;
 
     const visual = document.createElement("div");
     visual.className = "work-visual";
@@ -245,6 +249,12 @@
     } else {
       selectedWorkContainer.closest("section")?.removeAttribute("data-empty-work");
     }
+
+    document.dispatchEvent(new CustomEvent("v2:selected-work-rendered", {
+      detail: {
+        count: selectedItems.length
+      }
+    }));
   };
 
   const render = (items, meta) => {
