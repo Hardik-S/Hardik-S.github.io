@@ -160,3 +160,10 @@ vercel --version
 - Each card now shows `source type`, `verified` timestamp, and a direct source link when present.
 - Kept all evidence claims tied to existing fields already tracked in `meta` and `proofPoints`; no new claims were introduced.
 - Kept `Legacy` button behavior and `/legacy/` route unchanged.
+
+## Turn 13 selected-work narrative layer
+
+- Added a dedicated `Selected-work narrative` section to surface three strongest current, public projects as evidence-backed narrative cards.
+- Introduced `selectedWork` payload in `content/site-content.json` to keep narrative copy and links source-driven.
+- Wired `js/v2-content.js` to render narrative cards with focus labels and safe metadata fallback if payload entries are missing.
+- Kept all prior accessibility and legacy-preservation behavior unchanged.

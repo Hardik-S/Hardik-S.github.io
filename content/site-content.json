@@ -129,6 +129,47 @@
       }
     }
   ],
+  "selectedWork": [
+    {
+      "title": "Cloud Cost Decision Notebook",
+      "url": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
+      "focus": "Decision model",
+      "summary": "A public repo that keeps decision logic and assumptions visible alongside implementation context.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
+        "verifiedAt": "2026-05-15",
+        "notes": "Public repository with local/route verification during evidence checks."
+      }
+    },
+    {
+      "title": "PMO Decision Brief Builder",
+      "url": "https://pmo-decision-brief-builder.vercel.app",
+      "focus": "Product workflow",
+      "summary": "A compact public decision-builder surface that demonstrates practical workflow-driven build quality.",
+      "publicReady": true,
+      "source": {
+        "type": "deployment",
+        "url": "https://pmo-decision-brief-builder.vercel.app",
+        "verifiedAt": "2026-05-15",
+        "notes": "Deployment remains reachable and is currently used as public product evidence."
+      }
+    },
+    {
+      "title": "BioScript Housing Decision",
+      "url": "https://bioscript-housing-decision.vercel.app",
+      "focus": "Decision support",
+      "summary": "An actively reachable BioScript-facing prototype route for housing-related decision support.",
+      "publicReady": true,
+      "source": {
+        "type": "deployment",
+        "url": "https://bioscript-housing-decision.vercel.app",
+        "verifiedAt": "2026-05-15",
+        "notes": "Public deployment endpoint verified during evidence pass."
+      }
+    }
+  ],
   "researchNeeds": [
     {
       "title": "BioScript active product demos",

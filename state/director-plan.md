@@ -11,14 +11,13 @@ Target repository: `Hardik-S/hardik-s.github.io`
 - Keep GitHub writes scoped to `Hardik-S` repo(s) only.
 - Preserve unowned dirty paths (for example tool-generated artifacts) unless explicitly part of this turn.
 
-## Turn 7 queue
+## Turn 13 queue
 
-- Turn 7A: evidence provenance visibility
-  - Add a visible, trusted metadata line from `content/site-content.json` indicating when evidence anchors were last verified.
-  - Validate failure-safe behavior if the payload is unavailable.
-  - Keep all existing v2 content, layout, and Legacy preservation unchanged.
-- Turn 7B: route and accessibility hardening
-  - Add additional semantic anchors for the main evidence block and verify keyboard flow to critical controls.
+- Turn 13A: selected-work narrative layer
+  - Render a separate selected-work section from `content/site-content.json` using only public-ready entries.
+  - Keep the Legacy button and `/legacy/` behavior unchanged.
+- Turn 13B: narrative polish pass
+  - Refine selected-work visual hierarchy after card-level feedback.
 
 ## Escalation notes
 
