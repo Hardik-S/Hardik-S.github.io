@@ -24,9 +24,10 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 14% 18%, rgba(154, 203, 120, 0.2), transparent 26%),
-    radial-gradient(circle at 80% 16%, rgba(217, 137, 143, 0.17), transparent 24%),
-    linear-gradient(150deg, #061010, #111725 42%, #172018 100%);
+    linear-gradient(90deg, rgba(154, 203, 120, 0.08) 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(135deg, rgba(238, 243, 239, 0.035) 0 1px, transparent 1px 18px),
+    linear-gradient(150deg, #061010, #111725 44%, #172018 100%);
+  background-size: 92px 100%, auto, auto;
 }
 
 a {
@@ -43,6 +44,7 @@ a {
 }
 
 .hero,
+.section-rail,
 .card-section,
 .footer-note {
   width: min(1020px, 92vw);
@@ -66,9 +68,8 @@ a {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 42% 48%, rgba(107, 220, 255, 0.18), transparent 66%),
-    radial-gradient(circle at 62% 42%, rgba(244, 184, 106, 0.12), transparent 62%);
-  filter: blur(2px);
+    linear-gradient(110deg, transparent 0 22%, rgba(107, 220, 255, 0.1) 22% 23%, transparent 23% 45%, rgba(244, 184, 106, 0.08) 45% 46%, transparent 46% 100%),
+    linear-gradient(180deg, rgba(238, 243, 239, 0.06), transparent);
 }
 
 .site-shell::after {
@@ -83,7 +84,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: min(620px, calc(100svh - 12rem));
+  min-height: min(560px, calc(100svh - 13rem));
   padding: 2.1rem 0 2.4rem;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
@@ -123,6 +124,19 @@ a {
   display: grid;
   align-content: center;
   gap: 1rem;
+}
+
+.hero-copy h1 {
+  position: relative;
+}
+
+.hero-copy h1::after {
+  content: "";
+  display: block;
+  width: min(8.5rem, 42vw);
+  height: 0.24rem;
+  margin-top: 0.72rem;
+  background: linear-gradient(90deg, var(--accent-warm), var(--accent-leaf), transparent);
 }
 
 .hero-actions-panel {
@@ -212,7 +226,7 @@ a {
 h1 {
   margin: 0;
   line-height: 0.95;
-  font-size: clamp(3.1rem, 7.35vw, 6.15rem);
+  font-size: clamp(3rem, 5.8vw, 5.15rem);
   letter-spacing: 0;
   text-wrap: balance;
 }
@@ -237,11 +251,25 @@ h1 {
 
 .hero-portrait {
   grid-area: portrait;
+  position: relative;
   justify-self: end;
   width: min(360px, 100%);
   margin: 0;
   display: grid;
   gap: 0.75rem;
+}
+
+.hero-portrait::before {
+  content: "";
+  position: absolute;
+  inset: -1.2rem -1rem 4.2rem 2.4rem;
+  z-index: -1;
+  border: 1px solid rgba(154, 203, 120, 0.22);
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(135deg, rgba(154, 203, 120, 0.14), rgba(244, 184, 106, 0.1)),
+    repeating-linear-gradient(120deg, rgba(238, 243, 239, 0.11) 0 1px, transparent 1px 12px);
+  transform: rotate(2deg);
 }
 
 .hero-portrait img {
@@ -306,6 +334,44 @@ h1 {
 .hero-links a.secondary:hover,
 .hero-links a.secondary:focus-visible {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.section-rail {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.78rem 0 0.95rem;
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: thin;
+}
+
+.section-rail a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.68rem;
+  border: 1px solid rgba(238, 243, 239, 0.14);
+  border-radius: 0.45rem;
+  color: rgba(238, 243, 239, 0.88);
+  background: rgba(238, 243, 239, 0.055);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.section-rail a span {
+  color: var(--accent-warm);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+}
+
+.section-rail a:hover,
+.section-rail a:focus-visible {
+  border-color: var(--accent);
+  background: rgba(107, 220, 255, 0.12);
+  transform: translateY(-1px);
 }
 .quick-nav {
   display: flex;
@@ -444,6 +510,22 @@ h1 {
 .selected-work-section .card {
   background: rgba(8, 19, 30, 0.82);
   border-color: rgba(154, 203, 120, 0.34);
+}
+
+#highlights .card {
+  background:
+    linear-gradient(180deg, rgba(154, 203, 120, 0.12), rgba(8, 19, 30, 0.64)),
+    var(--surface-elevated);
+}
+
+#evidence-section .card {
+  background:
+    linear-gradient(180deg, rgba(244, 184, 106, 0.1), rgba(8, 19, 30, 0.62)),
+    var(--surface-elevated);
+}
+
+#contact .contact-actions a {
+  background: rgba(7, 16, 15, 0.78);
 }
 
 .selected-work-section .card p {
@@ -828,7 +910,8 @@ button:focus-visible,
   }
 
   h1 {
-    font-size: clamp(2.78rem, 14vw, 4.15rem);
+    font-size: clamp(2.35rem, 10.4vw, 3.15rem);
+    line-height: 1;
   }
 
   .hero-lede {
@@ -875,6 +958,7 @@ button:focus-visible,
 
   .card-section,
   .hero,
+  .section-rail,
   .footer-note {
     width: min(1020px, 94vw);
   }
