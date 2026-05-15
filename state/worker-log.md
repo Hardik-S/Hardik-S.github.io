@@ -221,3 +221,22 @@
 - Blocker state: none blocking this increment; `.gitignore` remains intentionally untracked Vercel artifact
 - Dirty paths at run start: `?? .gitignore`
 - Next safe action: continue selected-work polish if additional verified focus-area evidence surfaces; otherwise move queue to next director task.
+
+## 2026-05-15T15:19:57-04:00
+- Director task: Turn 21 - Encoding And Renderer Polish.
+- Selected task: normalize rendered source separators, remove duplicate proof-point validation, and repair public worker-log encoding artifacts without changing evidence claims.
+- Changed files: `js/v2-content.js`, `README.md`, `state/worker-log.md`.
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 at start, AttemptsUsed 1 after deploy); dirty path was the pre-existing untracked `.gitignore`.
+- Verification:
+  - `node --check js/v2-content.js`.
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json`.
+  - `git diff --check`.
+  - ASCII/placeholder scan passed for `js/v2-content.js`, `README.md`, and `state/worker-log.md`.
+  - Duplicate proof-point guard count is 1.
+  - Local route checks for `/`, `/legacy/`, and `/content/site-content.json` returned 200.
+  - Full redaction scan now only reports the documented legacy-only email in `legacy/index.html`.
+  - Vercel alias checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`; direct production deployment URL returned 401 in this environment.
+- Commit SHA: `a03ee4d`.
+- Deploy URL/status: production `https://hardik-s-github-ijpcq0pww-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` (active, 200).
+- Blocker state: none blocking this increment.
+- Next safe action: continue Turn 22 first-screen positioning and contact-friction pass, or refresh the Director plan if it still points at completed Turn 20.
