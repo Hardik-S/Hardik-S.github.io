@@ -130,3 +130,24 @@ px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias ro
 - Blocker state: none (no new blockers; legacy scan hit unchanged legacy contact email in legacy/index.html)
 - Next safe action: Turn 14 candidate follow-up with next strongest proof item or route text polish, keeping Legacy button / /legacy/ unchanged.
 
+## 2026-05-15T14:19:12-04:00
+- Director task: Turn 13B selected-work narrative tightening
+- Selected task: add two additional public-ready projects to the selected-work stream and tighten selected-work intro copy while preserving Legacy reachability.
+- Changed files: `index.html`, `content/site-content.json`, `README.md`.
+- Preflight result: `auth-ok,dirty-worktree` (attempts used: 1) from `powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\hshre\.codex\scripts\github-deploy-preflight.ps1 -TargetProject Hardik-S/hardik-s.github.io -OrgTeamProject Hardik-S -DeployConfigPath .vercel/project.json -AttemptsUsed 1`.
+- Verification:
+  - `git status --short` before edits showed existing `?? .gitignore` only.
+  - `git status --short` after edit showed `?? .gitignore` plus intended edits.
+  - `node --check js/v2-content.js`.
+  - `JSON parse` for `content/site-content.json`.
+  - Local route checks: `/`, `/legacy/`, `/content/site-content.json` all 200 from `http://127.0.0.1:4173/`.
+  - Proof link checks: `https://github.com/Hardik-S/agent-permission-review-console` and `https://github.com/Hardik-S/invoice-dispute-packet-builder` returned 200.
+  - `git diff --check` clean.
+  - Scoped redaction scan passed for `index.html`, `css/v2.css`, `js/v2-content.js`, `content/site-content.json`, and `README.md`.
+  - Full redaction scan against repo still reports existing legacy `hshrestha.hba2026@ivey.ca` in `legacy/index.html` only.
+  - `npx --yes vercel@latest --prod --yes --name hardik-s-github-io` succeeded.
+  - Alias URL checks: `https://hardik-s-github-io.vercel.app/`, `/legacy/`, `/content/site-content.json` all 200; production deployment URL returned 401 in this environment.
+- Commit SHA: `ee24c3c`.
+- Deploy URL/status: production `https://hardik-s-github-blxsjpczg-batb4016-9101s-projects.vercel.app` (alias `https://hardik-s-github-io.vercel.app`, deployed and reachable on alias).
+- Blocker state: none blocking this increment.
+- Next safe action: keep selected-work evidence scope and move next director increment to additional narrative polish only if validated new links arrive.
