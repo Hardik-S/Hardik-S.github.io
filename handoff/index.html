@@ -55,14 +55,27 @@
         <li>Confirm `/`, `/legacy/`, `/handoff/`, and `/content/site-content.json` return HTTP 200 locally and publicly.</li>
         <li>Run `node --check` for both v2 scripts and parse `content/site-content.json` before publishing.</li>
         <li>Keep full-site redaction findings limited to the documented legacy-only contact exception.</li>
-        <li>Redeploy the current pushed commit to Vercel after the daily quota window resets.</li>
+        <li>Use GitHub Pages or the Vercel alias for review after confirming cache-busted v2 CSS and JS include the latest markers.</li>
       </ol>
+    </section>
+
+    <section class="card-section" aria-labelledby="handoff-freeze-title">
+      <h2 id="handoff-freeze-title">Freeze status</h2>
+      <p class="section-note">
+        Turn 37 checked the current source commit `5ec9f657fc68770e3425512a8208e9fd4bfe025b` on 2026-05-15 at 18:32 -04:00.
+      </p>
+      <p class="section-note">
+        GitHub Pages and the Vercel alias returned HTTP 200 for the root, legacy, handoff, and evidence payload routes, and both public surfaces served the current v2 CSS and JS markers.
+      </p>
+      <p class="section-note">
+        Recommendation: freeze for user review unless a new verified public-safe project asset or claim is supplied.
+      </p>
     </section>
 
     <section class="card-section" aria-labelledby="handoff-caveats-title">
       <h2 id="handoff-caveats-title">Current caveats</h2>
       <p class="section-note">
-        Vercel deployment was quota-blocked in the last release runs, so GitHub Pages is the freshest public surface until a production Vercel deploy succeeds.
+        Manual Vercel CLI deploys previously hit the daily quota cap, but the Vercel alias is currently fresh through the existing integration.
       </p>
       <p class="section-note">
         Future public claims should stay tied to reachable repositories, deployment routes, or documented source notes.

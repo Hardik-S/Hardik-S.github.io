@@ -95,4 +95,5 @@ For release-candidate QA, use `docs/handoff.md` as the durable checklist and dep
 
 - GitHub Pages and Vercel keep the same v2 root and `/legacy/` reachability for this checkout.
 - `/handoff/` is the public release-review route; `docs/handoff.md` remains the source handoff note.
+- Turn 37 release QA confirmed both `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/` served the current v2 assets after the Turn 35 visual-map update. The recommended next step is user review, not another design/content increment, unless new verified proof appears.
 - Do not edit legacy contact details or legacy route behavior in site-behavior-focused turns unless explicitly requested.

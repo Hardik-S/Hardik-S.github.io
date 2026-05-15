@@ -76,7 +76,18 @@ The v2 contact path is profile-first:
 - GitHub Pages is expected to serve the repository root.
 - Vercel deploys use the `hardik-s-github-io` project and the alias `https://hardik-s-github-io.vercel.app`.
 - `.vercel/` is local deploy identity and is intentionally ignored by the committed `.gitignore`.
-- The last automation runs hit Vercel's daily deployment quota, so source may be ahead of the Vercel alias until the quota resets and a production deploy succeeds.
+- Earlier automation runs hit Vercel's daily deployment quota, so manual CLI deploys should still respect the retry cap. The 2026-05-15 Turn 37 freeze check confirmed the Vercel alias had caught up through the existing integration without a manual deploy.
+
+## Release freeze status
+
+- Freeze check timestamp: 2026-05-15T18:32:34-04:00.
+- Verified source commit before this handoff update: `5ec9f657fc68770e3425512a8208e9fd4bfe025b`.
+- GitHub Pages review URL: `https://hardik-s.github.io/`.
+- Vercel alias review URL: `https://hardik-s-github-io.vercel.app/`.
+- Public route checks returned HTTP 200 for `/`, `/legacy/`, `/handoff/`, and `/content/site-content.json` on both GitHub Pages and the Vercel alias.
+- Cache-busted public checks confirmed the Turn 35 structured visual markers in `js/v2-content.js` and `css/v2.css` on both public surfaces.
+- Rendered screenshots were inspected at `390x844`, `768x1024`, `1440x900`, `/#selected-work`, and `/#contact`; the Legacy button remained visible and no first-viewport or flagship-work overlap was observed.
+- Recommendation: freeze for user review on either public URL unless new verified public-safe screenshots or project claims are supplied.
 
 ## Verification checklist
 
@@ -107,6 +118,6 @@ Expected redaction result: the full-repo scan may still report the documented le
 
 ## Current caveats
 
-- Vercel production deploy is quota-blocked until the free deployment window resets.
-- GitHub Pages may lag immediately after push; recheck `/` and `/legacy/` before external review.
+- Manual Vercel CLI deploys should not be retried inside the prior quota window without a fresh preflight, but the alias is currently fresh through the existing integration.
+- GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
