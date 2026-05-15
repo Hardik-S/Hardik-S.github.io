@@ -14,6 +14,7 @@
   - No form endpoint, new raw email address, or private scheduling link is introduced.
   - This keeps the public page useful for hiring review while avoiding a new direct-contact exposure decision.
 - No new direct email recipient was added to v2 contact links in this increment.
+- Turn 32 metadata uses only public positioning already visible on the homepage: product-minded software builder, AI-enabled workflow tools, decision-support demos, and public source proof. It does not add employers, metrics, private project status, or new contact channels.
 
 ## Legacy continuity
 
@@ -29,3 +30,4 @@
 
 - Public-facing state logs and docs should avoid raw local filesystem paths and direct contact literals unless the item is an explicit legacy-only exception.
 - Legacy contact literals in `legacy/index.html` remain allowed only as documented historical content and must stay confined to the legacy route.
+- Open Graph and Twitter image metadata should continue to point only at committed public assets or verified public URLs.

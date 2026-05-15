@@ -35,6 +35,9 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - The flagship work section adds a native project spotlight controller after the evidence payload renders. Cards are keyboard-focusable, arrow-key scrubbable, and source their spotlight labels from the verified selected-work JSON instead of duplicate copy.
 - Section-level color bands are implemented in CSS rather than as wrapper cards. This makes the hero, featured areas, flagship work, evidence anchors, and contact sections feel intentionally distinct while preserving the static HTML structure and avoiding a nested-card redesign.
 - The final visual-personality pass uses editorial rails, a portrait-adjacent texture frame, and section-specific card tints instead of decorative orb backgrounds. The tradeoff is still restrained and static: no template assets, no new project claims, and no heavier runtime dependency.
+- The release-polish pass adds public-safe title, description, canonical, Open Graph, and Twitter metadata that restate the already-visible v2 positioning without adding new claims. The existing `images/website-preview.png` asset is reused as the social preview because it is already committed and public.
+- The hero portrait declares intrinsic dimensions and is preloaded as the first-viewport image. This is a static performance and layout-stability safeguard, not a new visual asset or dependency.
+- Skip-link vertical positions use explicit classes instead of anchor-order selectors so future additions near the top of the body do not silently break keyboard focus placement.
 - `.gitignore` intentionally ignores `.vercel/` so local deployment identity stays out of the public source while the documented Vercel project name and alias remain in handoff notes.
 - `/handoff/` mirrors the durable release-handoff checklist in browser-friendly form because GitHub Pages does not reliably serve the Markdown handoff as a navigable site route.
 
@@ -68,6 +71,9 @@ From repo root:
 ```powershell
 git status --short
 git diff --check
+node --check js\v2-content.js
+node --check js\v2-interactions.js
+Get-Content content\site-content.json -Raw | ConvertFrom-Json
 
 python -m http.server 4173
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/
@@ -76,6 +82,7 @@ Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/handoff/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\\scripts\\github-deploy-preflight.ps1" -TargetProject Hardik-S/hardik-s.github.io -AttemptsUsed 0
+powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\\scripts\\codex-public-redaction-scan.ps1" -Path .
 ```
 
 For release-candidate QA, use `docs/handoff.md` as the durable checklist and deployment caveat record.

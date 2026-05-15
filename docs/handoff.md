@@ -16,6 +16,7 @@ This handoff covers the static v2 personal website in this repository. The relea
 - `content/site-content.json` is the source of truth for displayed proof claims.
 - `docs/evidence-inventory.md` records why proof items are included, demoted, or held for research.
 - `docs/public-safety.md` records the contact and publication-safety decisions.
+- The root document includes canonical, Open Graph, Twitter, theme-color, and description metadata. These tags intentionally restate existing public positioning instead of introducing new metrics, employers, or project-status claims.
 
 ## Design direction
 
@@ -26,6 +27,8 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 - Four flagship proof cards first, with broader evidence anchors below.
 - Section-level color bands instead of nested card stacks.
 - Recruiter-readable contact section that points to public profile surfaces.
+- Intrinsic hero-image dimensions and first-viewport preload are present to protect LCP and layout stability without adding a build step.
+- Skip links remain hidden until focus and use explicit placement classes so keyboard users can move directly to highlights, flagship work, evidence, or contact.
 
 The design borrows portfolio patterns such as a personal first viewport, curated project hierarchy, and visible contact action, but it does not copy template code or unverified assets.
 
@@ -53,6 +56,12 @@ The v2 contact path is profile-first:
 - Contact section links to GitHub, public resume, and LinkedIn.
 - No new raw email address, form endpoint, or scheduling link is exposed in v2.
 - Any future direct-contact change should first update `docs/public-safety.md` with a clear policy decision.
+
+## Accessibility and metadata polish
+
+- Page language, title, description, canonical URL, social-preview tags, landmarks, section labels, portrait alt text, and external-link `rel="noopener noreferrer"` attributes were reviewed in the release-polish pass.
+- `prefers-reduced-motion` keeps native interactions available while suppressing transitions and animations for reduced-motion users.
+- The social preview points to the committed `images/website-preview.png`; replace it only after a separately verified public-safe preview asset exists.
 
 ## Routes to preserve
 
@@ -86,6 +95,10 @@ Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/handoff/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/docs/handoff.md
+
+npx --yes playwright screenshot --viewport-size=390,844 http://127.0.0.1:4173/ state/qa/turn32-mobile.png
+npx --yes playwright screenshot --viewport-size=768,1024 http://127.0.0.1:4173/ state/qa/turn32-tablet.png
+npx --yes playwright screenshot --viewport-size=1440,900 http://127.0.0.1:4173/ state/qa/turn32-desktop.png
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\scripts\codex-public-redaction-scan.ps1" -Path .
 ```

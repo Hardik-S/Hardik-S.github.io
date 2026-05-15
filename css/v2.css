@@ -274,6 +274,7 @@ h1 {
 
 .hero-portrait img {
   width: 100%;
+  height: clamp(22rem, 48vw, 28.5rem);
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 50% 42%;
@@ -423,15 +424,15 @@ h1 {
   top: 2.4rem;
 }
 
-.skip-link:nth-of-type(3):focus {
+.skip-link-selected:focus {
   top: 3.7rem;
 }
 
-.skip-link:nth-of-type(4):focus {
+.skip-link-evidence:focus {
   top: 5rem;
 }
 
-.skip-link:nth-of-type(5):focus {
+.skip-link-contact:focus {
   top: 6.2rem;
 }
 
@@ -965,6 +966,7 @@ button:focus-visible,
   }
 
   .hero-portrait img {
+    height: clamp(10.5rem, 44vw, 13rem);
     aspect-ratio: 16 / 7.4;
     object-position: 50% 42%;
     box-shadow:
@@ -1036,11 +1038,19 @@ button:focus-visible,
   .work-spotlight-actions button {
     flex: 1 1 0;
   }
+
+  .case-study-details {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none;
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
