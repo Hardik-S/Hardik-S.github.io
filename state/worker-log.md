@@ -16,13 +16,13 @@
 - Director task: Turn 7B route and accessibility hardening
 - Selected task: add additional semantic anchors for evidence block and in-page keyboard shortcuts for critical controls
 - Scope: `index.html`, `css/v2.css`
-- Commit: pending
-- Preflight result: auth-ok,dirty-worktree (attempts used 0)
+- Commit: cd60dc2
+- Preflight result: auth-ok,dirty-worktree (attempts used 2)
 - Dirty paths at run start: `?? .gitignore`
-- Verification: keyboard anchors and skip links added; pending route checks and `git diff --check`
-- Deploy: pending
+- Verification: route checks for `/`, `/legacy/`, `/content/site-content.json` returned 200; keyboard anchors present for highlights/evidence/contact; `git diff --check` clean; redaction scan flagged existing legacy email in `legacy/index.html` (legacy-only).
+- Deploy: https://hardik-s-github-4tgvjt94u-batb4016-9101s-projects.vercel.app (alias https://hardik-s-github-io.vercel.app)
 - Blocker state: none blocking this turn
-- Next safe action: push commit after passing local checks and append final log + automation memory entry
+- Next safe action: update run memory file and continue Turn 7C when available.
 
 ## Run 2026-05-15T11:28:42-04:00
 - Director task: Turn 7A evidence provenance visibility
