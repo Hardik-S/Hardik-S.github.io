@@ -167,3 +167,19 @@ ode --check js/v2-content.js
 - Dirty paths at start: ?? .gitignore
 - Blocker state: none for this increment.
 - Next safe action: Continue Turn 13 narrative polish if a new evidence source arrives; otherwise keep selected-work metadata behavior and move to next director increment in queue.
+
+## 2026-05-15T14:40:40-04:00
+- Director task: Turn 13B selected-work narrative polish continuation
+- Scope: add compact source-type metadata chips to evidence and selected-work cards.
+- Changed files: `js/v2-content.js`, `css/v2.css`, `README.md`
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0, repo path target)
+- Dirty paths at start: `?? .gitignore`
+- Verification:
+  - `node --check js/v2-content.js`
+  - local route checks for `/`, `/legacy/`, `/content/site-content.json`
+  - `git diff --check`
+  - scoped `codex-public-redaction-scan.ps1` pass pending post-commit and scoped to changed files
+- Deploy: pending run-time deploy command `npx vercel@latest --prod --yes --name hardik-s-github-io`
+- Commit SHA: pending
+- Blocker state: none
+- Next safe action: preserve .gitignore isolation, verify deployed alias route, then continue next narrative polish.

@@ -43,28 +43,34 @@
       return;
     }
 
+    // Render evidence provenance as a compact visual cue, then attach verified details.
     const sourceType = safeText(source.type);
     const sourceUrl = safeText(source.url);
     const verifiedAt = safeText(source.verifiedAt);
     const notes = safeText(source.notes);
 
     const compactParts = [];
-    if (sourceType) {
-      compactParts.push(`source: ${sourceType}`);
-    }
     if (verifiedAt) {
       compactParts.push(`verified ${verifiedAt}`);
     }
-    if (compactParts.length === 0 && !sourceUrl && !notes) {
+    if (!sourceType && compactParts.length === 0 && !sourceUrl && !notes) {
       return;
     }
 
     const metaLine = document.createElement("p");
     metaLine.className = "section-note source-meta";
+
+    const sourceTypeBadge = document.createElement("span");
+    sourceTypeBadge.className = "source-meta-badge";
+    sourceTypeBadge.textContent = `source: ${sourceType || "recorded"}`;
+    metaLine.append(sourceTypeBadge);
+
     if (compactParts.length > 0) {
-      metaLine.textContent = compactParts.join(" \u00b7 ");
-    } else {
-      metaLine.textContent = "Source: recorded";
+      const compactText = document.createElement("span");
+      compactText.className = "source-meta-text";
+      compactText.textContent = compactParts.join(" \u00b7 ");
+      metaLine.append(document.createTextNode(" "));
+      metaLine.append(compactText);
     }
 
     if (sourceUrl) {
