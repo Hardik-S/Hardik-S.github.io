@@ -12,7 +12,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - `js/v2-content.js` renders evidence cards from JSON payloads.
 - `js/v2-interactions.js` adds the small native hero interaction layer.
 - `content/site-content.json` is the single source for evidence and selected-work links.
-- `docs/evidence-inventory.md` and `docs/public-safety.md` track proof policy and contact safety decisions.
+- `docs/evidence-inventory.md`, `docs/public-safety.md`, and `docs/handoff.md` track proof policy, contact safety decisions, and release-candidate handoff notes.
 - `state/director-plan.md` is the director surface for the next increment.
 - `state/worker-log.md` records run-by-run implementation and verification evidence.
 
@@ -32,6 +32,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - The flagship cards use structured text visuals (`visual.label` and `visual.cue`) instead of screenshots because no current project screenshot assets have been verified for public reuse in this repo.
 - The flagship work section adds a native project spotlight controller after the evidence payload renders. Cards are keyboard-focusable, arrow-key scrubbable, and source their spotlight labels from the verified selected-work JSON instead of duplicate copy.
 - Section-level color bands are implemented in CSS rather than as wrapper cards. This makes the hero, featured areas, flagship work, evidence anchors, and contact sections feel intentionally distinct while preserving the static HTML structure and avoiding a nested-card redesign.
+- `.gitignore` intentionally ignores `.vercel/` so local deployment identity stays out of the public source while the documented Vercel project name and alias remain in handoff notes.
 
 ## Evidence model
 
@@ -70,6 +71,8 @@ Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.js
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\\scripts\\github-deploy-preflight.ps1" -TargetProject Hardik-S/hardik-s.github.io -AttemptsUsed 0
 ```
+
+For release-candidate QA, use `docs/handoff.md` as the durable checklist and deployment caveat record.
 
 ## Route behavior notes
 
