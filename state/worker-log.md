@@ -98,3 +98,23 @@
 - Preflight result: auth-ok,dirty-worktree (AttemptsUsed 1)
 - Blocker state: redaction scan flagged known legacy email in legacy/index.html; production deployment path returned 401 in this environment (alias route returned 200).
 - Next safe action: continue Turn 13B narrative polish or next Director task; keep .gitignore untracked until user confirms cleanup.
+
+## Run 2026-05-15T13:41:41.790-04:00
+- Director task: Turn 15 Browser QA And Visual Refinement
+- Scope: run real viewport QA for `/` at 390x844, 768x1024, 1440x900 and verify route behavior for `/`, `/legacy/`, `/content/site-content.json`, and docs pages.
+- Changed files: `state/worker-log.md` (run evidence append), `state/qa/qa-390x844.png`, `state/qa/qa-768x1024.png`, `state/qa/qa-1440x900.png` were generated during checks and then removed before commit; final tracked change remains this log entry only.
+- Preflight at run start (from target checkout): `auth-ok,dirty-worktree` (AttemptsUsed 0), remote `origin=https://github.com/Hardik-S/hardik-s.github.io.git`, known pre-existing dirty `?? .gitignore`.
+- Verification:
+  - Local route checks using `Invoke-WebRequest` returned 200 for:
+    - `http://127.0.0.1:4173/`
+    - `http://127.0.0.1:4173/legacy/`
+    - `http://127.0.0.1:4173/content/site-content.json`
+    - `http://127.0.0.1:4173/docs/evidence-inventory.md`
+    - `http://127.0.0.1:4173/docs/public-safety.md`
+  - Playwright screenshot capture via `npx --yes playwright screenshot` succeeded for:
+    - `state/qa/qa-390x844.png`
+    - `state/qa/qa-768x1024.png`
+    - `state/qa-1440x900.png`
+- `git diff --check` run clean after removing temporary QA artifacts.
+- Blocker state: none at this increment.
+- Next safe action: proceed to Turn 16 documentation encoding cleanup with keyboard/focus behavior unchanged and legacy button retained top-right/translucent.
