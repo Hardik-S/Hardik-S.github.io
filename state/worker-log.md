@@ -278,3 +278,24 @@
 - Deploy URL/status: production `https://hardik-s-github-jaqb3hacc-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` returned 200 for `/`, `/legacy/`, and `/content/site-content.json`.
 - Blocker state: none blocking this increment; Browser plugin tools did not surface through tool discovery, so rendered QA used Playwright CLI fallback.
 - Next safe action: proceed to Turn 23 motion and interaction layer while keeping the portrait-led hero and Legacy route stable.
+
+## 2026-05-15T15:59:08-04:00
+- Director task: Turn 23 - Motion And Interaction Layer.
+- Selected task: add a small native hero proof-focus switcher so the v2 first viewport has visible interaction without adding a build step, heavy dependency, or new evidence claims.
+- Changed files: `index.html`, `css/v2.css`, `js/v2-interactions.js`, `README.md`, `state/worker-log.md`.
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 before work, AttemptsUsed 1 before deploy and after deploy); dirty path remains the pre-existing untracked Vercel `.gitignore`.
+- Verification:
+  - `node --check js/v2-content.js`.
+  - `node --check js/v2-interactions.js`.
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json`.
+  - `git diff --check`.
+  - Local route checks returned 200 for `/`, `/legacy/`, `/content/site-content.json`, and `/js/v2-interactions.js`.
+  - Playwright CLI screenshots captured mobile `390x844` and desktop `1440x900` first viewports.
+  - Chrome DevTools Protocol interaction check confirmed the `Next focus` button changed `#hero-focus-text`, kept `.legacy-pill` linked to `/legacy/`, and produced no console warnings or errors.
+  - Full redaction scan only reported the documented legacy-only email in `legacy/index.html`.
+  - Browser plugin tools did not surface through tool discovery; Playwright CLI plus Chrome DevTools Protocol were used as fallback. Playwright Test runner was not used because `@playwright/test` was unavailable through the transient CLI package.
+  - Vercel alias checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`; the direct production deployment URL returned 401 in this environment.
+- Commit SHA: `421997e` for the site/docs change; this log append is a follow-up commit.
+- Deploy URL/status: production `https://hardik-s-github-bp0vnbh5i-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` returned 200.
+- Blocker state: none blocking this increment; package-surface test-runner fallback was capped and switched to Chrome DevTools Protocol instead of repeated retries.
+- Next safe action: proceed to Turn 24 portfolio narrative and project visuals while preserving the hero switcher, portrait-led opening, and Legacy route.
