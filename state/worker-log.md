@@ -183,3 +183,23 @@ ode --check js/v2-content.js
 - Commit SHA: pending
 - Blocker state: none
 - Next safe action: preserve .gitignore isolation, verify deployed alias route, then continue next narrative polish.
+
+## 2026-05-15T14:42:53-04:00
+- Director task: Turn 13B selected-work narrative polish continuation
+- Scope: compact source metadata chip polish for evidence and selected-work cards.
+- Changed files: `js/v2-content.js`, `css/v2.css`, `README.md`
+- Commit SHA: `bf5666c`
+- Preflight result at run start: `auth-ok,dirty-worktree` (AttemptsUsed 0)
+- Dirty paths at run start: `?? .gitignore` (preserved)
+- Verification:
+  - `node --check js/v2-content.js`
+  - local route checks: `http://127.0.0.1:4173/`, `/legacy/`, `/content/site-content.json` all returned 200
+  - `git diff --check` clean
+  - `codex-public-redaction-scan.ps1` passed on `js/v2-content.js`, `css/v2.css`, `README.md`
+  - Vercel deploy alias checks:
+    - `https://hardik-s-github-io.vercel.app/` -> 200
+    - `https://hardik-s-github-io.vercel.app/legacy/` -> 200
+    - `https://hardik-s-github-io.vercel.app/content/site-content.json` -> 200
+- Deploy: `https://hardik-s-github-ql6ef0umo-batb4016-9101s-projects.vercel.app` (alias: `https://hardik-s-github-io.vercel.app`)
+- Blocker state: none blocking this increment; pre-existing legacy email redaction note remains unchanged in `legacy/index.html`.
+- Next safe action: continue next Director narrative-increment and preserve Legacy pill route.
