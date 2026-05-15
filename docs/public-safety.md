@@ -9,6 +9,10 @@
     - GitHub profile
     - Public resume artifact
     - LinkedIn profile
+- Turn 27 keeps the final contact path profile-first:
+  - The copy asks reviewers to reference a relevant flagship proof item.
+  - No form endpoint, new raw email address, or private scheduling link is introduced.
+  - This keeps the public page useful for hiring review while avoiding a new direct-contact exposure decision.
 - No new direct email recipient was added to v2 contact links in this increment.
 
 ## Legacy continuity
