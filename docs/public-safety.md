@@ -4,6 +4,7 @@
 
 - Turn 14 leaves v2 contact in a deliberately explicit, non-placeholder route:
   - `Contact` in the hero links to the in-page `#contact` section.
+  - Featured contact cards also route to `#contact` instead of using an empty-recipient `mailto:` link.
   - The contact section exposes public, recruiter-safe pathways:
     - GitHub profile
     - Public resume artifact

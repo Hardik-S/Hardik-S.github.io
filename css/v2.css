@@ -232,7 +232,6 @@ h1 {
 }
 /* Keyboard-only anchors in the header for faster route discovery. */
 .skip-link-secondary {
-  left: 1rem;
   top: 0.9rem;
 }
 

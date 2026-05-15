@@ -21,6 +21,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - Legacy remains reachable through `/legacy/` while v2 surfaces current, evidence-backed proof.
 - v2 content is static and source-driven; no build step exists in this repository.
 - `selected-work` is rendered as a focus-grouped narrative to separate decision, product, support, and ops tracks while keeping evidence provenance tied to verified links.
+- Skip links are intentionally hidden until keyboard focus so accessibility shortcuts remain available without creating a visible first-load overlay.
 
 ## Evidence model
 
@@ -37,6 +38,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 
 - Contact actions in v2 are deterministic and recruiter-safe:
   - Hero `Contact` jumps to `#contact`.
+  - Featured contact cards jump to the same in-page contact action list instead of opening an empty-recipient email compose window.
   - Contact section exposes GitHub, public resume, and LinkedIn actions.
 - Legacy contact detail patterns and any historical exposure remain documented in `docs/public-safety.md`.
 - Public-facing logs and docs should avoid raw local paths and direct contact literals; legacy-only contact text is acceptable only with a documented exception in `docs/public-safety.md`.
