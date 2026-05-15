@@ -30,6 +30,7 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 - Intrinsic hero-image dimensions and first-viewport preload are present to protect LCP and layout stability without adding a build step.
 - Skip links remain hidden until focus and use explicit placement classes so keyboard users can move directly to highlights, flagship work, evidence, or contact.
 - The section rail now highlights the active homepage section with native observer state and `aria-current`; this is intentionally a small progressive enhancement rather than a scroll-animation dependency.
+- Turn 43 tightened the art direction without changing claims or routes: the homepage now uses a stronger editorial masthead, a slim accent rail, visible desktop positioning chips, warmer section bands, and more deliberate card depth. This borrows the review-friendly hierarchy of strong portfolio templates while keeping the static v2 source model.
 
 The design borrows portfolio patterns such as a personal first viewport, curated project hierarchy, and visible contact action, but it does not copy template code or unverified assets.
 

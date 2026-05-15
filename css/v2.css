@@ -1,9 +1,9 @@
 :root {
-  --bg: #07100f;
-  --surface: #101724;
-  --surface-elevated: rgba(19, 28, 40, 0.74);
-  --surface-olive: rgba(37, 50, 37, 0.64);
-  --surface-warm: rgba(54, 42, 29, 0.54);
+  --bg: #070a12;
+  --surface: #111826;
+  --surface-elevated: rgba(18, 25, 38, 0.78);
+  --surface-olive: rgba(37, 50, 37, 0.58);
+  --surface-warm: rgba(58, 43, 31, 0.56);
   --text: #eef3ef;
   --muted: #bac5c0;
   --line: rgba(238, 243, 239, 0.16);
@@ -12,6 +12,9 @@
   --accent-leaf: #9acb78;
   --accent-rose: #d9898f;
   --accent-soft: rgba(107, 220, 255, 0.2);
+  --ink-blue: #151d34;
+  --ink-plum: #21182d;
+  --paper-warm: rgba(248, 235, 208, 0.08);
 }
 
 * {
@@ -24,9 +27,9 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background:
-    linear-gradient(90deg, rgba(154, 203, 120, 0.08) 0 1px, transparent 1px 100%),
-    repeating-linear-gradient(135deg, rgba(238, 243, 239, 0.035) 0 1px, transparent 1px 18px),
-    linear-gradient(150deg, #061010, #111725 44%, #172018 100%);
+    linear-gradient(90deg, rgba(107, 220, 255, 0.07) 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(135deg, rgba(238, 243, 239, 0.026) 0 1px, transparent 1px 18px),
+    linear-gradient(150deg, #070a12 0%, #111827 34%, #22182b 66%, #1f2519 100%);
   background-size: 92px 100%, auto, auto;
 }
 
@@ -55,9 +58,9 @@ a {
   /* Keep all decorative depth behind content while preserving clickability on fixed controls. */
   isolation: isolate;
   position: relative;
-  padding: 3.35rem 0 3.5rem;
+  padding: 3.1rem 0 3.5rem;
   display: grid;
-  gap: 1.6rem;
+  gap: 1.75rem;
 }
 
 .site-shell::before {
@@ -84,8 +87,8 @@ a {
 
 .hero {
   position: relative;
-  min-height: min(560px, calc(100svh - 13rem));
-  padding: 2.1rem 0 2.4rem;
+  min-height: min(540px, calc(100svh - 15rem));
+  padding: clamp(1.7rem, 3.8vw, 2.7rem) 0 clamp(1.7rem, 3vw, 2.3rem);
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
   grid-template-areas:
@@ -94,6 +97,16 @@ a {
   align-items: center;
   gap: clamp(1.4rem, 4vw, 3.2rem);
   border-bottom: 1px solid var(--line);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 1rem auto 1.2rem -1.8rem;
+  width: 0.26rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent-warm), var(--accent), var(--accent-rose));
+  box-shadow: 0 0 0 1px rgba(238, 243, 239, 0.08);
 }
 
 .legacy-pill {
@@ -123,7 +136,7 @@ a {
   grid-area: copy;
   display: grid;
   align-content: center;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .hero-copy h1 {
@@ -133,17 +146,17 @@ a {
 .hero-copy h1::after {
   content: "";
   display: block;
-  width: min(8.5rem, 42vw);
+  width: min(12rem, 52vw);
   height: 0.24rem;
   margin-top: 0.72rem;
-  background: linear-gradient(90deg, var(--accent-warm), var(--accent-leaf), transparent);
+  background: linear-gradient(90deg, var(--accent-warm), var(--accent), transparent);
 }
 
 .hero-actions-panel {
   grid-area: actions;
   display: grid;
   align-content: start;
-  gap: 1rem;
+  gap: 0.82rem;
 }
 
 .hero .hero-links a,
@@ -155,8 +168,8 @@ a {
 }
 
 .hero-proof-strip {
-  margin-top: 0.35rem;
-  display: none;
+  margin-top: 0.08rem;
+  display: flex;
 }
 
 .hero-focus-panel {
@@ -165,11 +178,15 @@ a {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.55rem 0.85rem;
-  padding: 0.82rem;
-  border: 1px solid rgba(231, 237, 249, 0.18);
+  padding: 0.78rem;
+  border: 1px solid rgba(231, 237, 249, 0.22);
   border-radius: 0.5rem;
-  background: rgba(238, 243, 239, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  background:
+    linear-gradient(135deg, rgba(107, 220, 255, 0.08), rgba(244, 184, 106, 0.06)),
+    rgba(238, 243, 239, 0.065);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 48px rgba(0, 0, 0, 0.18);
 }
 
 .hero-focus-panel .eyebrow {
@@ -203,13 +220,13 @@ a {
 }
 
 .hero-proof-strip span {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text);
   border: 1px solid var(--line);
   border-radius: 0.45rem;
-  padding: 0.38rem 0.64rem;
+  padding: 0.3rem 0.5rem;
   background: rgba(255, 255, 255, 0.085);
   white-space: nowrap;
 }
@@ -226,7 +243,7 @@ a {
 h1 {
   margin: 0;
   line-height: 0.95;
-  font-size: clamp(3rem, 5.8vw, 5.15rem);
+  font-size: clamp(3.15rem, 5.6vw, 4.85rem);
   letter-spacing: 0;
   text-wrap: balance;
 }
@@ -239,9 +256,9 @@ h1 {
 }
 
 .hero-lede {
-  font-size: clamp(1.2rem, 2.2vw, 1.72rem);
+  font-size: clamp(1.22rem, 2vw, 1.55rem);
   color: rgba(231, 237, 249, 0.94);
-  line-height: 1.35;
+  line-height: 1.32;
   max-width: 42ch;
 }
 
@@ -264,10 +281,10 @@ h1 {
   position: absolute;
   inset: -1.2rem -1rem 4.2rem 2.4rem;
   z-index: -1;
-  border: 1px solid rgba(154, 203, 120, 0.22);
+  border: 1px solid rgba(107, 220, 255, 0.2);
   border-radius: 0.85rem;
   background:
-    linear-gradient(135deg, rgba(154, 203, 120, 0.14), rgba(244, 184, 106, 0.1)),
+    linear-gradient(135deg, rgba(107, 220, 255, 0.12), rgba(244, 184, 106, 0.12)),
     repeating-linear-gradient(120deg, rgba(238, 243, 239, 0.11) 0 1px, transparent 1px 12px);
   transform: rotate(2deg);
 }
@@ -306,7 +323,7 @@ h1 {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-  margin-top: 0.35rem;
+  margin-top: 0.12rem;
 }
 
 .hero-links a {
@@ -341,7 +358,7 @@ h1 {
   display: flex;
   gap: 0.4rem;
   overflow-x: auto;
-  padding: 0.78rem 0 0.95rem;
+  padding: 0.7rem 0 1.05rem;
   border-bottom: 1px solid var(--line);
   scrollbar-width: thin;
 }
@@ -352,11 +369,11 @@ h1 {
   align-items: center;
   gap: 0.42rem;
   min-height: 2.35rem;
-  padding: 0.45rem 0.68rem;
+  padding: 0.48rem 0.72rem;
   border: 1px solid rgba(238, 243, 239, 0.14);
   border-radius: 0.45rem;
   color: rgba(238, 243, 239, 0.88);
-  background: rgba(238, 243, 239, 0.055);
+  background: rgba(8, 13, 23, 0.54);
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 700;
@@ -449,10 +466,27 @@ h1 {
 
 .card-section {
   position: relative;
-  padding: 2.9rem 0;
+  padding: 3.35rem 0;
   display: grid;
   gap: 0.95rem;
   scroll-margin-top: 4rem;
+}
+
+.card-section h2 {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(100%, 48rem);
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.card-section h2::after {
+  content: "";
+  height: 1px;
+  min-width: 4rem;
+  background: linear-gradient(90deg, rgba(238, 243, 239, 0.34), transparent);
 }
 
 .card-section:focus {
@@ -475,26 +509,26 @@ h1 {
 }
 
 #highlights {
-  background: linear-gradient(90deg, rgba(154, 203, 120, 0.08), rgba(107, 220, 255, 0.04));
-  box-shadow: 0 0 0 100vmax rgba(154, 203, 120, 0.08);
+  background: linear-gradient(90deg, rgba(20, 29, 52, 0.5), rgba(107, 220, 255, 0.04));
+  box-shadow: 0 0 0 100vmax rgba(20, 29, 52, 0.5);
 }
 
 #selected-work {
   background:
-    linear-gradient(135deg, rgba(18, 36, 37, 0.76), rgba(28, 25, 43, 0.54));
-  box-shadow: 0 0 0 100vmax rgba(18, 36, 37, 0.76);
+    linear-gradient(135deg, rgba(20, 18, 34, 0.82), rgba(40, 31, 22, 0.52));
+  box-shadow: 0 0 0 100vmax rgba(20, 18, 34, 0.82);
 }
 
 #evidence-section {
   background:
-    linear-gradient(135deg, rgba(24, 29, 38, 0.68), rgba(47, 42, 31, 0.4));
-  box-shadow: 0 0 0 100vmax rgba(24, 29, 38, 0.68);
+    linear-gradient(135deg, rgba(16, 26, 31, 0.72), rgba(47, 42, 31, 0.42));
+  box-shadow: 0 0 0 100vmax rgba(16, 26, 31, 0.72);
 }
 
 #contact {
   background:
-    linear-gradient(135deg, rgba(54, 42, 29, 0.62), rgba(39, 56, 43, 0.52));
-  box-shadow: 0 0 0 100vmax rgba(54, 42, 29, 0.62);
+    linear-gradient(135deg, rgba(58, 43, 31, 0.64), rgba(24, 31, 52, 0.52));
+  box-shadow: 0 0 0 100vmax rgba(58, 43, 31, 0.64);
 }
 
 .cards {
@@ -507,10 +541,12 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 0.5rem;
   background: var(--surface-elevated);
-  padding: 1rem;
+  padding: 1.05rem;
   display: grid;
   gap: 0.5rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 14px 34px rgba(0, 0, 0, 0.16);
   animation: card-pop 0.4s ease both;
 }
 
@@ -526,7 +562,7 @@ h1 {
 
 #highlights .card {
   background:
-    linear-gradient(180deg, rgba(154, 203, 120, 0.12), rgba(8, 19, 30, 0.64)),
+    linear-gradient(180deg, rgba(107, 220, 255, 0.12), rgba(8, 19, 30, 0.64)),
     var(--surface-elevated);
 }
 
@@ -546,7 +582,7 @@ h1 {
 
 .selected-work-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.08rem;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
 }
 
@@ -620,9 +656,9 @@ h1 {
 
 .flagship-card-featured {
   grid-row: span 3;
-  padding: 1.16rem;
+  padding: 1.22rem;
   background:
-    linear-gradient(145deg, rgba(107, 220, 255, 0.14), rgba(154, 203, 120, 0.08)),
+    linear-gradient(145deg, rgba(107, 220, 255, 0.15), rgba(244, 184, 106, 0.08)),
     rgba(8, 19, 30, 0.9);
   border-color: rgba(107, 220, 255, 0.42);
 }
@@ -1180,6 +1216,10 @@ button:focus-visible,
   .hero-proof-strip span {
     white-space: normal;
     font-size: 0.72rem;
+  }
+
+  .hero-proof-strip {
+    display: none;
   }
 
   .section-rail {
