@@ -68,6 +68,9 @@
         Turn 42 release-health reconciliation deployed `4b1161562e318d1fed61087ec5372b536ab4a1af` to Vercel as `dpl_5zfX5deqYPAhmKsaJ5yRxjm7gGvT` after the alias handoff route lagged behind the final share packet.
       </p>
       <p class="section-note">
+        A later log-only deploy attempt for `96d656f6a298ca88603d281d3a7e9395557815b1` hit the Vercel daily quota cap, so GitHub Pages is the freshest handoff documentation surface until quota reset or integration catch-up.
+      </p>
+      <p class="section-note">
         GitHub Pages and the Vercel alias returned HTTP 200 for the root, legacy, handoff, and evidence payload routes, and both public surfaces served the Turn 40 active-section rail CSS and JS markers.
       </p>
       <p class="section-note">
@@ -78,7 +81,7 @@
     <section class="card-section" aria-labelledby="handoff-caveats-title">
       <h2 id="handoff-caveats-title">Current caveats</h2>
       <p class="section-note">
-        Manual Vercel CLI deploys previously hit the daily quota cap, but the current Vercel alias has been refreshed by the Turn 42 production deploy.
+        Manual Vercel CLI deploys previously hit the daily quota cap. The Vercel alias is refreshed for the final share-packet site baseline, while GitHub Pages is fresher for this Turn 42 documentation note.
       </p>
       <p class="section-note">
         Future public claims should stay tied to reachable repositories, deployment routes, or documented source notes.

@@ -574,3 +574,9 @@
 - Verification before commit: `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; JSON parse; local route checks for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/docs/handoff.md`, and `/docs/review-backlog.md`; changed-file redaction scans passed.
 - Full redaction scan: failed only on the documented legacy-only email in `legacy\index.html`.
 - Next safe action: push this follow-up log entry, deploy the final source state to Vercel, confirm public freshness, then keep the site frozen for user review.
+
+## Run 2026-05-15T19:27:33-04:00 follow-up
+- Follow-up log commit `96d656f6a298ca88603d281d3a7e9395557815b1` (`Record Vercel freshness follow-up`) was pushed and matched `origin/HEAD`.
+- Final Vercel deploy attempt for the log-only source state failed with `api-deployments-free-per-day`.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias refreshed for final share-packet site baseline but stale for latest Turn 42 documentation`; Preflight result `auth-ok`; Dirty paths `none before final doc correction`; Attempts used `Vercel CLI deploy 1 successful repair plus 1 quota failure for final log-only source state`; Next safe action `use GitHub Pages for freshest handoff docs and retry Vercel only after quota reset or automatic integration catch-up`.
+- Blocker state: `blocked-cleanly` for Vercel freshness of the final Turn 42 documentation commit only; homepage, legacy route, and final share-packet site baseline remain reviewable.

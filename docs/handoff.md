@@ -78,7 +78,7 @@ The v2 contact path is profile-first:
 - GitHub Pages is expected to serve the repository root.
 - Vercel deploys use the `hardik-s-github-io` project and the alias `https://hardik-s-github-io.vercel.app`.
 - `.vercel/` is local deploy identity and is intentionally ignored by the committed `.gitignore`.
-- Earlier automation runs hit Vercel's daily deployment quota, so manual CLI deploys should still respect the retry cap. The 2026-05-15 Turn 42 release-health check completed manual production deployment `dpl_5zfX5deqYPAhmKsaJ5yRxjm7gGvT`, and the alias `https://hardik-s-github-io.vercel.app` served the final share-packet handoff plus current v2 assets afterward.
+- Earlier automation runs hit Vercel's daily deployment quota, so manual CLI deploys should still respect the retry cap. The 2026-05-15 Turn 42 release-health check completed manual production deployment `dpl_5zfX5deqYPAhmKsaJ5yRxjm7gGvT`, and the alias `https://hardik-s-github-io.vercel.app` served the final share-packet handoff plus current v2 assets afterward. A later log-only deploy attempt for commit `96d656f6a298ca88603d281d3a7e9395557815b1` hit `api-deployments-free-per-day`, so GitHub Pages is the freshest documentation surface until quota reset or integration catch-up.
 
 ## Release freeze status
 
@@ -90,7 +90,7 @@ The v2 contact path is profile-first:
 - Vercel alias review URL: `https://hardik-s-github-io.vercel.app/`.
 - Public route checks returned HTTP 200 for `/`, `/legacy/`, `/handoff/`, and `/content/site-content.json` on both GitHub Pages and the Vercel alias.
 - Cache-busted public checks confirmed the Turn 40 active-section rail markers in `js/v2-interactions.js` and `css/v2.css` on both public surfaces.
-- The Turn 42 deploy repaired the stale Vercel `/handoff/` route observed after the final share packet; no active deploy blocker remains.
+- The Turn 42 deploy repaired the stale Vercel `/handoff/` route observed after the final share packet. The final log-only source commit is not manually redeployed to Vercel because the daily quota cap returned; this does not change homepage or legacy behavior.
 - Rendered screenshots have been inspected at mobile, tablet, desktop, selected-work, contact, and handoff routes across the release-freeze and Turn 40 passes; the Legacy button remained visible and no first-viewport or flagship-work overlap was observed.
 - Recommendation: share the current public URL for review. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
@@ -134,7 +134,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 
 ## Current caveats
 
-- Manual Vercel CLI deploys are no longer blocked for the current release-health state; use a fresh preflight and stop after two equivalent quota, ACL, or transport failures if a future deploy is needed.
+- Manual Vercel CLI deploys are quota-blocked for the final log-only Turn 42 source state after one post-repair retry. Use GitHub Pages for freshest docs and retry Vercel only after quota reset or integration catch-up, with the two-equivalent-failures cap still in force.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 
