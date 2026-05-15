@@ -15,6 +15,14 @@ This repository is the active home for Hardik's personal website.
 - No new unverified claims, metrics, or status statements were added in this turn.
 - Remaining deeper content work (resume refresh, BioScript-specific case studies, and portfolio narrative depth) is intentionally deferred to later turns.
 
+## Turn 14 contact and public-safety decision
+
+- Contact behavior is now deterministic in v2:
+  - The hero `Contact` control jumps to the in-page `Get in touch` section.
+  - Contact actions now surface `GitHub`, `Resume (public)`, and `LinkedIn`.
+- I intentionally avoid adding a direct `mailto:` recipient in v2 to keep the new interface stable while preserving the legacy route for continuity.
+- Legacy-specific contact details are intentionally preserved where they already exist in the historical page and are not newly introduced in v2 claims.
+
 ## Implementation summary
 
 - Created `legacy/index.html` by moving the prior experience surface into a dedicated legacy route.
