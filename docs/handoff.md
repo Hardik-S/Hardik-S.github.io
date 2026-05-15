@@ -29,6 +29,7 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 - Recruiter-readable contact section that points to public profile surfaces.
 - Intrinsic hero-image dimensions and first-viewport preload are present to protect LCP and layout stability without adding a build step.
 - Skip links remain hidden until focus and use explicit placement classes so keyboard users can move directly to highlights, flagship work, evidence, or contact.
+- The section rail now highlights the active homepage section with native observer state and `aria-current`; this is intentionally a small progressive enhancement rather than a scroll-animation dependency.
 
 The design borrows portfolio patterns such as a personal first viewport, curated project hierarchy, and visible contact action, but it does not copy template code or unverified assets.
 
@@ -38,6 +39,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - Auto-rotation is disabled for users who prefer reduced motion.
 - The flagship work section renders a native project spotlight controller after the JSON payload loads.
 - Flagship cards are keyboard focusable and support arrow-key spotlight changes.
+- The section rail updates as reviewers move through the page, while hash navigation remains usable if observer support is unavailable.
 - These interactions are progressive enhancements; the core content remains readable without them.
 
 ## Evidence policy

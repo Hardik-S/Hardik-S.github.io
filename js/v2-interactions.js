@@ -172,3 +172,68 @@
   document.addEventListener("v2:selected-work-rendered", initializeWhenReady, { once: true });
   initializeWhenReady();
 })();
+
+(function () {
+  const railLinks = Array.from(document.querySelectorAll(".section-rail a[href^='#']"));
+  const sections = railLinks
+    .map((link) => {
+      const section = document.querySelector(link.getAttribute("href"));
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (sections.length === 0) {
+    return;
+  }
+
+  const setActiveLink = (activeLink) => {
+    sections.forEach(({ link }) => {
+      const isActive = link === activeLink;
+      link.classList.toggle("is-current", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const setActiveFromHash = () => {
+    const hashMatch = sections.find(({ link }) => link.getAttribute("href") === window.location.hash);
+    setActiveLink(hashMatch ? hashMatch.link : sections[0].link);
+  };
+
+  railLinks.forEach((link) => {
+    link.addEventListener("click", () => setActiveLink(link));
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    setActiveFromHash();
+    window.addEventListener("hashchange", setActiveFromHash);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visibleEntry) {
+        return;
+      }
+
+      const match = sections.find(({ section }) => section === visibleEntry.target);
+      if (match) {
+        setActiveLink(match.link);
+      }
+    },
+    {
+      rootMargin: "-24% 0px -58% 0px",
+      threshold: [0.12, 0.28, 0.48]
+    }
+  );
+
+  sections.forEach(({ section }) => observer.observe(section));
+  setActiveFromHash();
+})();

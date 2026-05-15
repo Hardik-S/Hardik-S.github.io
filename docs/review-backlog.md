@@ -23,7 +23,7 @@ Decision rationale:
 
 - Create a new public-safe social preview image if the user wants stronger link-unfurl presentation. Reuse only committed, owned, or generated assets with documented dimensions and source.
 - Replace or augment structured proof maps with real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented.
-- Add one restrained native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access.
+- Add one restrained native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access. The active section rail now covers this category; future interaction work should wait for reviewer feedback.
 - Refresh resume/profile links after the user confirms a newer public artifact.
 
 ## Needs new verified evidence
@@ -52,4 +52,3 @@ Do not continue open-ended polish unless one of these is true:
 - A new public-safe project artifact is verified and materially improves the selected-work section.
 - The user asks for a specific design direction after reviewing the current public URLs.
 - Vercel or GitHub Pages freshness becomes stale and needs a release-health repair.
-
