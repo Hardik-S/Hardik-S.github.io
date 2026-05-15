@@ -132,3 +132,10 @@ vercel --version
 - `Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/`
 - `Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json`
 - `Select-String -Path content/site-content.json,js/v2-content.js,README.md -Pattern 'source|researchNeeds|publicReady|BioScript'`
+
+## Turn 9 evidence rendering safety
+
+- Switched v2 evidence rendering to a strict `publicReady === true` filter so only auditable links appear.
+- Added a visible evidence summary line that reports rendered count and whether non-public-ready items were withheld.
+- Kept Legacy button and legacy route unchanged.
+- Updated v2 renderer fail-safe behavior to show explicit fallback text when no public-ready proof points are available.

@@ -3,6 +3,7 @@
 (function () {
   const container = document.getElementById("evidence-grid");
   const evidenceMetaEl = document.getElementById("evidence-meta");
+  const evidenceSummaryEl = document.getElementById("evidence-summary");
 
   if (!container) {
     return;
@@ -53,8 +54,13 @@
       : "Evidence metadata missing from content payload.";
   };
 
+  const isPublicReady = (item) => item?.publicReady === true;
+
   const render = (items, meta) => {
-    items.forEach((item) => {
+    const publicReadyItems = items.filter((item) => isPublicReady(item));
+    const hiddenItems = items.filter((item) => !isPublicReady(item));
+
+    publicReadyItems.forEach((item) => {
       const title = safeText(item?.title);
       const url = safeText(item?.url);
       const description = safeText(item?.description);
@@ -79,6 +85,17 @@
 
     if (container.children.length === 0) {
       failSafe("No valid evidence items");
+      return;
+    }
+
+    if (evidenceSummaryEl) {
+      const shown = publicReadyItems.length;
+      const hidden = hiddenItems.length;
+      const summaryParts = [`Evidence anchors: ${shown}`];
+      if (hidden > 0) {
+        summaryParts.push(`${hidden} not public-ready`);
+      }
+      evidenceSummaryEl.textContent = summaryParts.join(" · ");
     }
 
     renderMeta(meta || {});
@@ -106,6 +123,9 @@
       }
       if (loadingEl) {
         loadingEl.remove();
+      }
+      if (!Array.isArray(data.proofPoints) || data.proofPoints.length === 0) {
+        throw new Error("No proof points configured");
       }
       render(data.proofPoints, data.meta || {});
     })
