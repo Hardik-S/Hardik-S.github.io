@@ -1,34 +1,107 @@
-﻿{
+{
   "meta": {
     "verifiedOn": "2026-05-15",
     "verifiedBy": "Worker Wally",
-    "source": "content/site-content.json"
+    "source": "content/site-content.json",
+    "verifiedScope": "Publicly reachable links and current website artifacts only",
+    "ownerShorthand": "qhsh",
+    "evidencePolicy": {
+      "requirePubliclyAccessible": true,
+      "allowPlaceholders": false,
+      "requiredFields": [
+        "title",
+        "url",
+        "description",
+        "source",
+        "source.type",
+        "source.url",
+        "source.verifiedAt"
+      ]
+    }
   },
   "proofPoints": [
     {
       "title": "Hardik-S GitHub",
       "url": "https://github.com/Hardik-S",
-      "description": "Public repository index for software, AI, and product side work."
+      "description": "Public repository index for software, AI, and product side work.",
+      "publicReady": true,
+      "source": {
+        "type": "direct-visit",
+        "url": "https://github.com/Hardik-S",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified as public and actively maintained profile index in environment checks."
+      }
     },
     {
       "title": "Duck Duck Mallard",
       "url": "https://github.com/Hardik-S/DuckDuckGo",
-      "description": "Public repository for computer-vision experimentation and ML tooling."
+      "description": "Public repository for computer-vision experimentation and ML tooling.",
+      "publicReady": true,
+      "source": {
+        "type": "direct-visit",
+        "url": "https://github.com/Hardik-S/DuckDuckGo",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified from GitHub repo landing page and reachable public artifacts."
+      }
     },
     {
       "title": "Picture This",
       "url": "https://github.com/Hardik-S/picturethisv2",
-      "description": "Public educational card game project with release history in the repository."
+      "description": "Public educational card game project with repository history and release activity.",
+      "publicReady": true,
+      "source": {
+        "type": "direct-visit",
+        "url": "https://github.com/Hardik-S/picturethisv2",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified as public GitHub repository with a public README and commit history."
+      }
     },
     {
       "title": "Resume (public)",
       "url": "https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing",
-      "description": "Public resume artifact currently used for portfolio and recruiting review."
+      "description": "Public resume artifact currently used for portfolio and recruiting review.",
+      "publicReady": true,
+      "source": {
+        "type": "direct-visit",
+        "url": "https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified for public accessibility and link quality from local checks."
+      }
     },
     {
       "title": "Legacy profile",
       "url": "/legacy/",
-      "description": "The earlier portfolio and experience page, preserved for continuity."
+      "description": "The earlier portfolio and experience page, preserved for continuity.",
+      "publicReady": true,
+      "source": {
+        "type": "site-route",
+        "url": "/legacy/",
+        "verifiedAt": "2026-05-15",
+        "notes": "Legacy route returns 200 in local checks and remains intentionally preserved."
+      }
+    }
+  ],
+  "researchNeeds": [
+    {
+      "title": "BioScript active product demos",
+      "status": "not-yet-verified",
+      "sourceHint": "local or published BioScript artifacts",
+      "reason": "No direct source was verified in this turn for current BioScript artifacts.",
+      "nextAction": "Add confirmed public link and evidence artifacts before homepage publication."
+    },
+    {
+      "title": "Portfolio post-2026-05-15 project updates",
+      "status": "needs-verification",
+      "sourceHint": "GitHub profile, issue notes, and live demo endpoints",
+      "reason": "Current run did not verify new projects beyond existing references.",
+      "nextAction": "Populate `publicReady` items only after a verified source appears."
+    },
+    {
+      "title": "Current demo readiness scorecards",
+      "status": "needs-verification",
+      "sourceHint": "local docs or public deployment links",
+      "reason": "No local or link-verifiable demo scorecards were found in this turn.",
+      "nextAction": "Add only if verifiable and route-accessible artifacts are available."
     }
   ],
   "source": "Evidence-first increment for Worker Wally Turn 2"

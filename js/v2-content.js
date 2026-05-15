@@ -3,6 +3,7 @@
 (function () {
   const container = document.getElementById("evidence-grid");
   const evidenceMetaEl = document.getElementById("evidence-meta");
+  const researchNeedsEl = document.getElementById("research-needs-list");
 
   if (!container) {
     return;
@@ -84,6 +85,56 @@
     renderMeta(meta || {});
   };
 
+  const renderResearchNeeds = (items) => {
+    if (!researchNeedsEl) {
+      return;
+    }
+
+    if (!Array.isArray(items) || items.length === 0) {
+      researchNeedsEl.innerHTML = "<li class=\"section-note\">No open research needs are currently tracked.</li>";
+      return;
+    }
+
+    researchNeedsEl.innerHTML = "";
+
+    items.forEach((item) => {
+      const li = document.createElement("li");
+      const title = safeText(item?.title);
+      const status = safeText(item?.status);
+      const reason = safeText(item?.reason);
+      const nextAction = safeText(item?.nextAction);
+
+      if (!title) {
+        return;
+      }
+
+      const heading = document.createElement("strong");
+      heading.textContent = `${title}${status ? ` (${status})` : ""}`;
+
+      const reasonP = document.createElement("p");
+      reasonP.className = "section-note";
+      reasonP.textContent = reason || "No reason provided.";
+
+      li.appendChild(heading);
+      if (nextAction) {
+        const action = document.createElement("p");
+        action.className = "section-note";
+        action.textContent = nextAction;
+        li.appendChild(action);
+      } else if (reason) {
+        li.appendChild(reasonP);
+      } else {
+        li.appendChild(reasonP);
+      }
+
+      if (reason && nextAction) {
+        li.appendChild(reasonP);
+      }
+
+      researchNeedsEl.appendChild(li);
+    });
+  };
+
   // Fallback so the page remains usable even if JSON delivery fails.
   const failSafe = (message) => {
     const fallback =
@@ -108,6 +159,7 @@
         loadingEl.remove();
       }
       render(data.proofPoints, data.meta || {});
+      renderResearchNeeds(data.researchNeeds);
     })
     .catch((error) => {
       failSafe(error);

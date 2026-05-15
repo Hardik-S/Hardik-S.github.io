@@ -112,3 +112,23 @@ vercel --version
 - Made evidence and contact sections explicitly tabbable targets (`tabindex="-1"`) for robust anchor focus behavior.
 - Kept the Legacy button and legacy route behavior unchanged.
 
+## Turn 7 - Verified current evidence research
+
+- Added explicit evidence model fields in `content/site-content.json` so each public proof item is auditable:
+  - `meta.evidencePolicy` and `meta.verifiedScope`
+  - each proof item includes `publicReady` and `source` `{type,url,verifiedAt,notes}`
+- Added `researchNeeds` in `content/site-content.json` for unverified candidate items and tracked each with `status`, `reason`, and `nextAction`.
+- Added a `Research backlog` section in `index.html` and rendered its entries from the same payload in `js/v2-content.js`; backlog items are explicitly non-claiming and marked as needing verification.
+- Added `docs/evidence-inventory.md` to track current proof scope and what remains to verify.
+- Kept the translucent top-right `Legacy` control unchanged and ensured `/legacy/` remains preserved.
+- This turn does not add public claims that are not currently verifiable in this environment.
+
+### Turn 7 verification evidence
+
+- `git status --short`
+- `git diff --check`
+- `python -m http.server 4173`
+- `Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/`
+- `Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/`
+- `Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json`
+- `Select-String -Path content/site-content.json,js/v2-content.js,README.md -Pattern 'source|researchNeeds|publicReady|BioScript'`
