@@ -180,6 +180,19 @@
         "verifiedAt": "2026-05-15",
         "notes": "Public deployment endpoint verified during evidence pass."
       }
+    },
+    {
+      "title": "Ops Follow-Up Radar",
+      "url": "https://github.com/Hardik-S/ops-follow-up-radar",
+      "focus": "Operational reliability",
+      "summary": "A public operations workflow focused on auditability and follow-up traceability.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/ops-follow-up-radar",
+        "verifiedAt": "2026-05-15",
+        "notes": "Public repository with route checks and maintained workflow outputs."
+      }
     }
   ],
   "researchNeeds": [

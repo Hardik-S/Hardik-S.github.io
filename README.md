@@ -26,6 +26,7 @@ This repository is the current home for Hardik’s personal website (v2) with le
 - Only `publicReady` payload entries are shown on the site.
 - Each displayed item includes source metadata (`source.type`, `source.url`, `source.verifiedAt`).
 - Unverified candidates are kept in `researchNeeds` until a verifiable source exists.
+- `selectedWork` entries are also filtered by `publicReady`, so copy like section counts is intentionally copy-safe and should avoid hardcoded totals.
 
 ## Contact and safety boundaries
 
