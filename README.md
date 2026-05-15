@@ -27,6 +27,7 @@ This repository is the current home for Hardik’s personal website (v2) with le
 - Each displayed item includes source metadata (`source.type`, `source.url`, `source.verifiedAt`).
 - Unverified candidates are kept in `researchNeeds` until a verifiable source exists.
 - `selectedWork` entries are also filtered by `publicReady`, so copy like section counts is intentionally copy-safe and should avoid hardcoded totals.
+- Selected-work summary and evidence meta lines are generated from `meta` (`verifiedOn`, `verifiedBy`, `verifiedScope`) to keep the narrative in sync with this file.
 - Current selected-work items are intentionally narrowed to high-signal public repositories and deployments that reinforce the v2 positioning, rather than a full archive list.
 
 ## Contact and safety boundaries

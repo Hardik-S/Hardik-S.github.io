@@ -94,6 +94,8 @@
     const verifiedOn = safeText(meta?.verifiedOn);
     const source = safeText(meta?.source);
     const verifiedBy = safeText(meta?.verifiedBy);
+    // Keep selected-work and evidence headers aligned to one reusable verification policy payload.
+    const verifiedScope = safeText(meta?.verifiedScope);
 
     const pieces = [];
     if (verifiedOn) {
@@ -104,6 +106,9 @@
     }
     if (source) {
       pieces.push(`Source: ${source}`);
+      if (verifiedScope) {
+        pieces.push(`Scope: ${verifiedScope}`);
+      }
     }
 
     evidenceMetaEl.textContent = pieces.length > 0
@@ -165,14 +170,17 @@
     if (selectedWorkMetaEl) {
       const selectedShown = selectedItems.length;
       const selectedSkipped = Math.max(0, Array.isArray(items) ? items.length - selectedShown : 0);
-      const selectedSummary = [`Selected work cards: ${selectedShown}`];
+      const selectedSummary = [`Selected-work cards: ${selectedShown}`];
       if (selectedSkipped > 0) {
         selectedSummary.push(`${selectedSkipped} not public-ready`);
       }
       if (safeText(meta?.verifiedOn)) {
-        selectedSummary.push(`Verified: ${meta.verifiedOn}`);
+        selectedSummary.push(`Verified: ${safeText(meta.verifiedOn)}`);
       }
-      selectedWorkMetaEl.textContent = selectedSummary.join(" · ");
+      if (safeText(meta?.verifiedScope)) {
+        selectedSummary.push(`Scope: ${safeText(meta.verifiedScope)}`);
+      }
+      selectedWorkMetaEl.textContent = selectedSummary.join(" | ");
     }
 
     // Preserve a single narrative section even if this data shape is missing.
@@ -221,7 +229,7 @@
       if (hidden > 0) {
         summaryParts.push(`${hidden} not public-ready`);
       }
-      evidenceSummaryEl.textContent = summaryParts.join(" · ");
+      evidenceSummaryEl.textContent = summaryParts.join(" | ");
     }
 
     renderMeta(meta || {});
