@@ -2,6 +2,7 @@
 
 Last updated: 2026-05-15
 Baseline source commit before this backlog note: `7c3d324fa8f7b4644adde39664602a067844498a`
+Current final-share baseline: `23fce34a56aec3261c0eae3b0376b4a737a9262b`
 
 ## Recommendation
 
