@@ -1,10 +1,12 @@
 :root {
   --bg: #070f20;
   --surface: #0f1a34;
+  --surface-elevated: rgba(15, 26, 52, 0.7);
   --text: #e7edf9;
   --muted: #aeb8cf;
   --line: rgba(231, 237, 249, 0.16);
   --accent: #6bdcff;
+  --accent-soft: rgba(107, 220, 255, 0.2);
 }
 
 * {
@@ -26,18 +28,59 @@ a {
   color: var(--accent);
 }
 
+*,
+*::before,
+*::after {
+  transition:
+    transform 0.24s ease,
+    background-color 0.24s ease,
+    border-color 0.24s ease;
+}
+
 .hero,
 .card-section,
 .footer-note {
-  width: min(960px, 92vw);
+  width: min(1020px, 92vw);
   margin: 0 auto;
 }
 
 .site-shell {
+  /* Keep all decorative depth behind content while preserving clickability on fixed controls. */
+  isolation: isolate;
   position: relative;
   padding: 5.25rem 0 3.5rem;
   display: grid;
   gap: 1.6rem;
+}
+
+.site-shell::before {
+  content: "";
+  position: absolute;
+  inset: -160px -18vw auto;
+  height: 280px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(107, 220, 255, 0.26), transparent 68%);
+  filter: blur(2px);
+}
+
+.site-shell::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0;
+  height: 28vh;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(7, 15, 32, 0.75), transparent);
+}
+
+.hero {
+  position: relative;
+  padding: 2rem 0 1.8rem;
+  display: grid;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .legacy-pill {
@@ -54,19 +97,42 @@ a {
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .legacy-pill:hover,
 .legacy-pill:focus-visible {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--accent-soft);
   transform: translateY(-1px);
 }
 
-.hero {
-  margin-top: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--line);
+.hero .hero-links a,
+.hero-signals {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hero h1 {
+  position: relative;
+  text-wrap: balance;
+}
+
+.hero-signals {
+  margin-top: 0.9rem;
+}
+
+.hero-signals span {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.64rem;
+  background: rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
 }
 
 .eyebrow {
@@ -104,10 +170,24 @@ h1 {
   background: var(--surface);
   border: 1px solid var(--line);
   text-decoration: none;
+  color: var(--text);
+  width: max-content;
+}
+
+.hero-links a:hover,
+.hero-links a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .hero-links a.secondary {
   background: transparent;
+}
+
+.hero-links a.secondary:hover,
+.hero-links a.secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .card-section {
@@ -118,17 +198,37 @@ h1 {
 
 .cards {
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .card {
   border: 1px solid var(--line);
   border-radius: 0.75rem;
-  background: rgba(15, 26, 52, 0.65);
+  background: var(--surface-elevated);
   padding: 1rem;
   display: grid;
   gap: 0.5rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  animation: card-pop 0.4s ease both;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  line-height: 1.25;
 }
 
 .section-note {
@@ -182,6 +282,37 @@ h1 {
   font-size: 0.95rem;
 }
 
+a:focus-visible,
+button:focus-visible,
+.legacy-pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes card-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 700px) {
   .site-shell {
     padding-top: 4.2rem;
@@ -191,5 +322,37 @@ h1 {
   .legacy-pill {
     top: 0.65rem;
     right: 0.65rem;
+  }
+
+  .hero-signals {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 9vw, 2.4rem);
+  }
+
+  .card-section,
+  .hero,
+  .footer-note {
+    width: min(1020px, 94vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+    animation: none;
   }
 }
