@@ -13,6 +13,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - `js/v2-interactions.js` adds the small native hero interaction layer.
 - `content/site-content.json` is the single source for evidence and selected-work links.
 - `docs/evidence-inventory.md`, `docs/public-safety.md`, and `docs/handoff.md` track proof policy, contact safety decisions, and release-candidate handoff notes.
+- `docs/review-backlog.md` keeps post-freeze review work separated into must-fix, nice-polish, and needs-new-evidence buckets so future turns do not restart broad redesign by default.
 - `handoff/index.html` exposes the release handoff as a static public route for GitHub Pages and Vercel review.
 - `state/director-plan.md` is the director surface for the next increment.
 - `state/worker-log.md` records run-by-run implementation and verification evidence.
@@ -95,5 +96,6 @@ For release-candidate QA, use `docs/handoff.md` as the durable checklist and dep
 
 - GitHub Pages and Vercel keep the same v2 root and `/legacy/` reachability for this checkout.
 - `/handoff/` is the public release-review route; `docs/handoff.md` remains the source handoff note.
+- `docs/review-backlog.md` is the review filter for any post-freeze change; use it before adding new visual polish or proof claims.
 - Turn 37 release QA confirmed both `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/` served the current v2 assets after the Turn 35 visual-map update. The recommended next step is user review, not another design/content increment, unless new verified proof appears.
 - Do not edit legacy contact details or legacy route behavior in site-behavior-focused turns unless explicitly requested.

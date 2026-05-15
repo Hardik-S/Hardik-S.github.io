@@ -89,6 +89,17 @@ The v2 contact path is profile-first:
 - Rendered screenshots were inspected at `390x844`, `768x1024`, `1440x900`, `/#selected-work`, and `/#contact`; the Legacy button remained visible and no first-viewport or flagship-work overlap was observed.
 - Recommendation: freeze for user review on either public URL unless new verified public-safe screenshots or project claims are supplied.
 
+## External review backlog
+
+The active review backlog is intentionally short and lives in `docs/review-backlog.md`. It separates remaining work into `must fix before sharing`, `nice polish`, and `needs new verified evidence` so future turns do not restart broad redesign by default.
+
+Current recommendation:
+
+- Must fix before sharing: none identified from the current release-candidate evidence.
+- Nice polish: custom social preview, verified real project screenshots, or one restrained native interaction only after review value is clear.
+- Needs new verified evidence: BioScript artifacts, project screenshots, metrics, employer/customer status, and any new project claims must remain excluded until public-safe proof is documented.
+- Default next action: share the current public URL for review, then act only on concrete feedback or newly verified evidence.
+
 ## Verification checklist
 
 Run this from the repository root before treating the site as release-ready:
