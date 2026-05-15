@@ -536,7 +536,7 @@ h1 {
 .selected-work-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
 }
 
 .work-spotlight {
@@ -607,6 +607,35 @@ h1 {
   gap: 0.7rem;
 }
 
+.flagship-card-featured {
+  grid-row: span 3;
+  padding: 1.16rem;
+  background:
+    linear-gradient(145deg, rgba(107, 220, 255, 0.14), rgba(154, 203, 120, 0.08)),
+    rgba(8, 19, 30, 0.9);
+  border-color: rgba(107, 220, 255, 0.42);
+}
+
+.flagship-card-featured .work-visual {
+  min-height: 9.4rem;
+}
+
+.flagship-card-supporting {
+  gap: 0.56rem;
+}
+
+.flagship-card-supporting .work-visual {
+  min-height: 4.6rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: end;
+}
+
+.flagship-card-supporting .work-visual-cue {
+  justify-self: end;
+  text-align: right;
+  font-size: 0.78rem;
+}
+
 .flagship-card[tabindex="0"] {
   cursor: pointer;
 }
@@ -657,10 +686,25 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  margin: 0;
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: rgba(231, 237, 249, 0.7);
+}
+
+.selected-work-rank {
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.2rem 0.52rem;
+  border-radius: 0.42rem;
+  border: 1px solid rgba(244, 184, 106, 0.34);
+  color: var(--accent-warm);
+  background: rgba(244, 184, 106, 0.08);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
 }
 
 .work-details {
@@ -691,6 +735,43 @@ h1 {
   border: 1px solid rgba(231, 237, 249, 0.13);
   border-radius: 0.5rem;
   background: rgba(238, 243, 239, 0.055);
+}
+
+.work-proof-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.work-proof-chips span {
+  min-width: 0;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid rgba(231, 237, 249, 0.16);
+  border-radius: 0.42rem;
+  color: rgba(238, 243, 239, 0.82);
+  background: rgba(238, 243, 239, 0.06);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.work-review-link {
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.2rem;
+  padding: 0.52rem 0.72rem;
+  border: 1px solid rgba(107, 220, 255, 0.34);
+  border-radius: 0.5rem;
+  color: var(--text);
+  background: rgba(107, 220, 255, 0.12);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.work-review-link:hover,
+.work-review-link:focus-visible {
+  border-color: var(--accent);
+  background: rgba(107, 220, 255, 0.18);
+  transform: translateY(-1px);
 }
 
 .case-study-details dt {
@@ -1073,6 +1154,14 @@ button:focus-visible,
 
   .selected-work-grid {
     grid-template-columns: 1fr;
+  }
+
+  .flagship-card-featured {
+    grid-row: auto;
+  }
+
+  .flagship-card-featured .work-visual {
+    min-height: 6rem;
   }
 
   .work-spotlight {

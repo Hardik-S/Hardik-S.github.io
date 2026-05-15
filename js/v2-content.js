@@ -125,7 +125,7 @@
   const isPublicReady = (item) => item?.publicReady === true;
 
   // Keep selected-work as a tight flagship layer; broader proof remains below.
-  const createSelectedWorkCard = (item) => {
+  const createSelectedWorkCard = (item, index) => {
     const title = safeText(item?.title);
     const url = safeText(item?.url);
     const summary = safeText(item?.summary);
@@ -143,6 +143,7 @@
 
     const article = document.createElement("article");
     article.className = "card flagship-card";
+    article.classList.add(index === 0 ? "flagship-card-featured" : "flagship-card-supporting");
     article.tabIndex = 0;
     article.dataset.workTitle = title;
     article.dataset.workFocus = focus || "Flagship proof";
@@ -161,6 +162,10 @@
     visualCueEl.textContent = visualCue;
     visual.append(visualMark, visualCueEl);
 
+    const rankLabel = document.createElement("p");
+    rankLabel.className = "selected-work-rank";
+    rankLabel.textContent = index === 0 ? "Lead proof" : `Supporting proof ${index}`;
+
     const focusLabel = document.createElement("p");
     focusLabel.className = "selected-work-label";
     focusLabel.textContent = focus || "Flagship proof";
@@ -171,7 +176,10 @@
     const paragraph = document.createElement("p");
     paragraph.textContent = summary;
 
-    article.append(visual, focusLabel, heading, paragraph);
+    const reviewLink = makeLink(url, "Review public artifact");
+    reviewLink.className = "work-review-link";
+
+    article.append(visual, rankLabel, focusLabel, heading, paragraph);
 
     const details = [
       ["Problem", problem],
@@ -200,6 +208,17 @@
     ].map(([label, value]) => [label, safeText(value)]).filter(([, value]) => value);
 
     if (caseDetails.length > 0) {
+      const proofChips = document.createElement("div");
+      proofChips.className = "work-proof-chips";
+      caseDetails
+        .filter(([label]) => ["Role", "Artifact", "Proof"].includes(label))
+        .forEach(([label, value]) => {
+          const chip = document.createElement("span");
+          chip.textContent = `${label}: ${value}`;
+          proofChips.append(chip);
+        });
+      article.append(proofChips);
+
       const caseList = document.createElement("dl");
       caseList.className = "case-study-details";
       caseDetails.forEach(([label, value]) => {
@@ -212,6 +231,7 @@
       article.append(caseList);
     }
 
+    article.append(reviewLink);
     renderSourceMeta(item.source, article);
     return article;
   };
@@ -241,8 +261,8 @@
       return;
     }
 
-    selectedItems.forEach((item) => {
-      const card = createSelectedWorkCard(item);
+    selectedItems.forEach((item, index) => {
+      const card = createSelectedWorkCard(item, index);
       if (card) {
         selectedWorkContainer.append(card);
       }
