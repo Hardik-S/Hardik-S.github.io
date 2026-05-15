@@ -161,6 +161,18 @@
         "label": "Brief",
         "cue": "Priority -> context -> action"
       },
+      "media": {
+        "type": "screenshot",
+        "src": "images/work-pmo-decision-brief-builder.png",
+        "alt": "Screenshot of the PMO Decision Brief Builder public fixture page showing a decision question, fixture notes, and a recommendation panel.",
+        "caption": "Public fixture screenshot, captured from the live demo route.",
+        "sourceUrl": "https://pmo-decision-brief-builder.vercel.app",
+        "capturedAt": "2026-05-15",
+        "width": 1280,
+        "height": 720,
+        "sizeBytes": 84870,
+        "safetyRationale": "The visible page is a public demo with fixture-only PMO notes and no private records, credentials, email addresses, or customer data."
+      },
       "publicReady": true,
       "source": {
         "type": "deployment",

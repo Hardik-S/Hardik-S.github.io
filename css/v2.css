@@ -831,6 +831,36 @@ h1 {
   font-size: 0.62rem;
 }
 
+.work-media-visual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0;
+  background: rgba(7, 16, 15, 0.68);
+}
+
+.work-media-visual::before,
+.work-media-visual::after {
+  display: none;
+}
+
+.work-media-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: 0 0;
+}
+
+.work-media-visual figcaption {
+  padding: 0.48rem 0.62rem;
+  color: rgba(238, 243, 239, 0.76);
+  background: rgba(7, 16, 15, 0.78);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
 .selected-work-label {
   display: inline-flex;
   align-items: center;

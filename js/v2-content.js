@@ -163,6 +163,41 @@
     return visual;
   };
 
+  const createMediaVisual = (media) => {
+    const src = safeText(media?.src);
+    const alt = safeText(media?.alt);
+    const caption = safeText(media?.caption);
+
+    if (!src || !alt) {
+      return null;
+    }
+
+    const figure = document.createElement("figure");
+    figure.className = "work-visual work-media-visual";
+
+    const image = document.createElement("img");
+    image.src = src;
+    image.alt = alt;
+    image.loading = "lazy";
+    image.decoding = "async";
+    if (media.width) {
+      image.width = media.width;
+    }
+    if (media.height) {
+      image.height = media.height;
+    }
+
+    if (caption) {
+      const figcaption = document.createElement("figcaption");
+      figcaption.textContent = caption;
+      figure.append(image, figcaption);
+    } else {
+      figure.append(image);
+    }
+
+    return figure;
+  };
+
   // Keep selected-work as a tight flagship layer; broader proof remains below.
   const createSelectedWorkCard = (item, index) => {
     const title = safeText(item?.title);
@@ -175,6 +210,7 @@
     const caseStudy = item?.caseStudy && typeof item.caseStudy === "object" ? item.caseStudy : {};
     const visualLabel = safeText(item?.visual?.label) || focus || "Proof";
     const visualCue = safeText(item?.visual?.cue) || "Problem -> build -> proof";
+    const media = item?.media && item.media.type === "screenshot" ? item.media : null;
 
     if (!title || !url || !summary) {
       return null;
@@ -188,7 +224,7 @@
     article.dataset.workFocus = focus || "Flagship proof";
     article.dataset.workSummary = summary;
 
-    const visual = createStructuredVisual({
+    const visual = createMediaVisual(media) || createStructuredVisual({
       label: visualLabel,
       cue: visualCue,
       source: item.source,

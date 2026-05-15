@@ -31,6 +31,7 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 - Skip links remain hidden until focus and use explicit placement classes so keyboard users can move directly to highlights, flagship work, evidence, or contact.
 - The section rail now highlights the active homepage section with native observer state and `aria-current`; this is intentionally a small progressive enhancement rather than a scroll-animation dependency.
 - Turn 43 tightened the art direction without changing claims or routes: the homepage now uses a stronger editorial masthead, a slim accent rail, visible desktop positioning chips, warmer section bands, and more deliberate card depth. This borrows the review-friendly hierarchy of strong portfolio templates while keeping the static v2 source model.
+- Turn 44 adds a single public-safe media upgrade: the PMO Decision Brief Builder lead card now uses a committed fixture-only screenshot, while BioScript and source-repo flagship items stay on generated proof maps with documented no-screenshot decisions.
 
 The design borrows portfolio patterns such as a personal first viewport, curated project hierarchy, and visible contact action, but it does not copy template code or unverified assets.
 
@@ -49,7 +50,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - Each displayed proof item must include source type, source URL, and verified date.
 - Unknown, stale, or private candidates stay in `researchNeeds`.
 - Public copy must not invent metrics, employers, production status, collaborators, or private project details.
-- Screenshot-like project visuals are intentionally structured text cues until reusable public assets are verified.
+- Screenshot-like project visuals are intentionally structured text cues unless reusable public assets are verified. The current verified exception is the PMO Decision Brief Builder screenshot, captured from the public fixture demo and documented with source, size, dimensions, alt text, and safety rationale.
 
 ## Contact policy
 
