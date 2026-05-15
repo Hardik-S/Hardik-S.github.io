@@ -318,3 +318,22 @@
 - Blocker state: `blocked-cleanly` for Vercel deploy quota; GitHub commit/push remains unblocked.
 - Attempts used: preflight 1, Vercel deploy 1. No second Vercel retry because the returned quota message says to try again in 24 hours.
 - Next safe action: push the commits now; after Vercel quota resets, redeploy the same commit or continue Turn 25 final QA and deploy handoff.
+
+## 2026-05-15T16:27:00-04:00
+- Director task: Turn 25 - Template-Grade Visual System Pass.
+- Selected task: improve section rhythm, palette variety, and mobile portrait framing without changing public evidence claims or legacy routing.
+- Changed files in target repo: `index.html`, `css/v2.css`, `README.md`, `state/worker-log.md`.
+- Preflight result: `auth-ok,dirty-worktree` at run start and after push; dirty path remains the pre-existing untracked Vercel `.gitignore`.
+- Verification:
+  - `git diff --check`.
+  - `node --check js/v2-content.js` and `node --check js/v2-interactions.js`.
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json`.
+  - Local route checks returned 200 for `/`, `/legacy/`, `/content/site-content.json`, and `/js/v2-interactions.js`.
+  - Playwright CLI screenshots captured `390x844`, `768x1024`, `1440x900`, and selected-work views; mobile now shows the portrait before the control stack and desktop shows the next section cue.
+  - Scoped public redaction scans passed for `index.html`, `css/v2.css`, and `README.md`.
+  - GitHub Pages and existing Vercel alias route checks returned 200 for `/` and `/legacy/`.
+- Commit SHA: `836be62` for the visual-system change; this log append is a follow-up commit.
+- Deploy URL/status: Vercel production deploy attempt failed again with `api-deployments-free-per-day`; no new Vercel URL was created. Existing alias `https://hardik-s-github-io.vercel.app` remains reachable but may not include this commit until quota resets.
+- Blocker state: `blocked-cleanly` for Vercel deploy quota after the second equivalent quota failure across recent runs; GitHub push is complete.
+- Attempts used: preflight 2, Vercel deploy 1 in this run, ad hoc Playwright package import 2 then capped.
+- Next safe action: after Vercel quota resets, redeploy commit `836be62`; otherwise continue Turn 26 interaction polish from the pushed GitHub state.
