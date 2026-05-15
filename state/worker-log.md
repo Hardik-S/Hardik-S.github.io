@@ -358,3 +358,22 @@
 - Dirty paths: none expected after committing `.gitignore` and this log entry.
 - Attempts used: preflight 1 at run start; Vercel deploy 0 this run due active retry cap.
 - Next safe action: push the log commit, verify `origin/master`, then redeploy the final pushed commit after the Vercel quota reset.
+
+## 2026-05-15T17:09:12-04:00
+- Director task: Turn 29A - Public Handoff Route.
+- Selected task: add a browser-readable `/handoff/` route from the existing release-candidate handoff so public review does not depend on Markdown serving behavior.
+- Changed files in target repo: `handoff/index.html`, `index.html`, `css/v2.css`, `README.md`, `docs/handoff.md`, `state/director-plan.md`, `state/worker-log.md`.
+- Site/docs commit SHA: `f199514`.
+- Preflight result: `auth-ok` at run start and after push; dirty paths were `none`.
+- Verification:
+  - `git diff --check`.
+  - `node --check js\v2-content.js` and `node --check js\v2-interactions.js`.
+  - `Get-Content content\site-content.json -Raw | ConvertFrom-Json`.
+  - Local route checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/docs/handoff.md`, and `/js/v2-interactions.js`.
+  - Scoped redaction scans passed for every changed public file and `state/director-plan.md`.
+  - Playwright CLI screenshots verified `/handoff/` at `390x844` and `1440x900`; temporary QA screenshots were removed before commit.
+  - `origin/master` matched `f199514` after push.
+  - Public route checks returned 200 for GitHub Pages `/`, `/legacy/`, and `/handoff/` after one propagation retry; Vercel alias returned 200 for `/`, `/legacy/`, and `/handoff/`.
+- Deploy URL/status: no manual Vercel CLI deploy attempted because the prior daily quota retry cap remains active; existing alias `https://hardik-s-github-io.vercel.app/handoff/` serves the new handoff route with the expected marker.
+- Blocker state: none blocking this increment; prior manual Vercel quota cap remains a deploy-surface caution only.
+- Next safe action: continue release polish only if new QA evidence appears; otherwise treat `/handoff/` as the current public review route.
