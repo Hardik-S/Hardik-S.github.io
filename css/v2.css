@@ -1,0 +1,180 @@
+:root {
+  --bg: #070f20;
+  --surface: #0f1a34;
+  --text: #e7edf9;
+  --muted: #aeb8cf;
+  --line: rgba(231, 237, 249, 0.16);
+  --accent: #6bdcff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 14%, rgba(107, 220, 255, 0.14), transparent 30%),
+    radial-gradient(circle at 90% 82%, rgba(107, 220, 255, 0.1), transparent 35%),
+    linear-gradient(160deg, #040b19, #08122a 35%, #070f20);
+}
+
+a {
+  color: var(--accent);
+}
+
+.hero,
+.card-section,
+.footer-note {
+  width: min(960px, 92vw);
+  margin: 0 auto;
+}
+
+.site-shell {
+  position: relative;
+  padding: 5.25rem 0 3.5rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.legacy-pill {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(8px);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.legacy-pill:hover,
+.legacy-pill:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.hero {
+  margin-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  color: var(--accent);
+  font-size: 0.84rem;
+}
+
+h1 {
+  margin: 0.5rem 0 0;
+  line-height: 1.2;
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+}
+
+.hero p {
+  max-width: 60ch;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.hero-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+}
+
+.hero-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.65rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.hero-links a.secondary {
+  background: transparent;
+}
+
+.card-section {
+  padding: 1rem 0;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.cards {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: rgba(15, 26, 52, 0.65);
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.card h3,
+.card-section h2,
+.footer-note {
+  margin: 0;
+}
+
+.card-section p,
+.footer-note p,
+.work-list p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.work-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.work-list li p {
+  margin-top: 0.3rem;
+}
+
+.work-list li {
+  max-width: 70ch;
+}
+
+.footer-note {
+  border-top: 1px solid var(--line);
+  padding-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .site-shell {
+    padding-top: 4.2rem;
+    gap: 1.2rem;
+  }
+
+  .legacy-pill {
+    top: 0.65rem;
+    right: 0.65rem;
+  }
+}
