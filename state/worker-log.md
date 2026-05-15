@@ -460,3 +460,20 @@
 - Dirty paths: none after source push and before this log append; generated `state/qa/` screenshots/logs from rendered QA were removed before commit because they were not durable source.
 - Blocker state: none.
 - Next safe action: proceed to Turn 35 public-safe project visuals only if screenshot sources can be verified; otherwise use Turn 37 release QA and review freeze.
+
+## Run 2026-05-15T18:22:19-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 35 - Public Safe Project Visuals.
+- Selected task: improve visual variety in the flagship work section by generating structured proof maps from existing verified JSON cues instead of committing unverified screenshots.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `js/v2-content.js`, `css/v2.css`, `README.md`, `docs/evidence-inventory.md`, `docs/public-safety.md`, and this log entry in `state/worker-log.md`.
+- Implementation notes: no new screenshots, project claims, contact details, routes, or evidence candidates were added. The generated visual maps use `visual.label`, `visual.cue`, and `source.type`; the rejected approach was committing live screenshots before capture source, privacy review, image size, and reuse rationale were documented.
+- Verification: start and end preflight `auth-ok`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`; Playwright CLI screenshots captured and inspected for selected work at `390x844` and `1440x900`, plus mobile root at `390x844`; four flagship URLs returned HTTP 200; changed-file redaction scans passed. A separate Playwright console-inspection one-liner was not usable because `npx -p playwright@latest node -e` could not resolve the `playwright` module in this shell, while the screenshot CLI path worked.
+- Site/docs commit SHA: `4fcec473f8614f1af03194c9b72a93caca090eab` (`Add public-safe project visual maps`), pushed to `origin/master`; `git ls-remote origin HEAD` matched the same SHA before this log append.
+- Public status: GitHub Pages `/` and `/legacy/` returned 200, and cache-busted `/js/v2-content.js?turn35b=4fcec47` plus `/css/v2.css?turn35b=4fcec47` returned 200 with the Turn 35 markers after one propagation wait. Vercel alias `/` and `/legacy/` returned 200, but cache-busted JS/CSS did not contain the Turn 35 markers, so the alias remained stale at check time.
+- Deploy status: no manual Vercel CLI deploy attempted because the prior `api-deployments-free-per-day` manual deploy cap remains the guardrail for this same quota window. GitHub Pages is fresh and is the safe review surface for this increment.
+- Preflight result: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy config points to Vercel project `hardik-s-github-io`.
+- Blocker state: no implementation blocker; Vercel freshness is `blocked-cleanly` under the prior manual deploy quota cap.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for Turn 35 assets`; Preflight result `auth-ok`; Dirty paths `none before this log append`; Attempts used `preflight 2, Vercel CLI deploy 0 this run due prior quota cap`; Next safe action `use fresh GitHub Pages for review and retry/manual-check Vercel only after quota reset or integration catches up`.
+- Dirty paths: none after source push and QA cleanup; expected dirty path is this log until committed.
+- Next safe action: commit and push this log entry, then continue with Turn 37 release QA and review freeze unless new verified public-safe screenshot sources are documented.
