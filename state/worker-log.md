@@ -426,3 +426,9 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git` accepted push and noted canonical casing `Hardik-S/Hardik-S.github.io`; Public/private/ACL state `public GitHub repo, Vercel alias reachable`; Preflight result `auth-ok`; Dirty paths `none at start`; Attempts used `preflight 2, Vercel CLI deploy 0 this run due retry cap`; Next safe action `use GitHub Pages or the refreshed Vercel alias for review; retry manual Vercel deploy only after quota reset if needed`.
 - Dirty paths: none at start; expected dirty path is this log until committed.
 - Next safe action: proceed to Turn 33 external review packet and freeze check, or pause for human review of the current v2.
+
+## Run 2026-05-15T17:55:10-04:00 follow-up
+- Push status: site/docs commit `68ffd742ab96efa20dbb3923a89e54e8c0d0f1e8` and log commit `2e362da2db95e3e08c74d625e1958e4b5d414d48` pushed to `origin/master`; remote `HEAD` matched `2e362da2db95e3e08c74d625e1958e4b5d414d48`.
+- Public freshness: GitHub Pages `/` and Vercel alias `/` returned 200 with the new title metadata and `og:image`; both `/legacy/` routes returned 200.
+- Dirty paths: `?? state/qa/` appeared after push with `turn33-*` QA artifacts and active server logs from another surface; preserved uncommitted as unrelated work.
+- Next safe action: reconcile or intentionally keep the `state/qa/` Turn 33 artifacts before any future publish run that requires a clean target checkout.
