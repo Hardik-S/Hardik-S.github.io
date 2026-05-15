@@ -193,6 +193,32 @@
         "verifiedAt": "2026-05-15",
         "notes": "Public repository with route checks and maintained workflow outputs."
       }
+    },
+    {
+      "title": "Agent Permission Review Console",
+      "url": "https://github.com/Hardik-S/agent-permission-review-console",
+      "focus": "Governance tooling",
+      "summary": "A practical permission-review workflow for reducing authorization risk through explicit approval traces.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/agent-permission-review-console",
+        "verifiedAt": "2026-05-15",
+        "notes": "Public repository included as public-ready selected work after verification in this increment."
+      }
+    },
+    {
+      "title": "Invoice Dispute Packet Builder",
+      "url": "https://github.com/Hardik-S/invoice-dispute-packet-builder",
+      "focus": "Support productivity",
+      "summary": "A decision-support repository showing structured packet generation for operations-facing outcomes.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/invoice-dispute-packet-builder",
+        "verifiedAt": "2026-05-15",
+        "notes": "Public repository validated for route checks and retained as a selected work artifact."
+      }
     }
   ],
   "researchNeeds": [
