@@ -1,4 +1,9 @@
 ﻿{
+  "meta": {
+    "verifiedOn": "2026-05-15",
+    "verifiedBy": "Worker Wally",
+    "source": "content/site-content.json"
+  },
   "proofPoints": [
     {
       "title": "Hardik-S GitHub",

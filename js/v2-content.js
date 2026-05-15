@@ -2,6 +2,8 @@
 // keep homepage proof anchors tied to auditable links and avoid HTML injection.
 (function () {
   const container = document.getElementById("evidence-grid");
+  const evidenceMetaEl = document.getElementById("evidence-meta");
+
   if (!container) {
     return;
   }
@@ -26,7 +28,32 @@
     return link;
   };
 
-  const render = (items) => {
+  const renderMeta = (meta) => {
+    if (!evidenceMetaEl) {
+      return;
+    }
+
+    const verifiedOn = safeText(meta?.verifiedOn);
+    const source = safeText(meta?.source);
+    const verifiedBy = safeText(meta?.verifiedBy);
+
+    const pieces = [];
+    if (verifiedOn) {
+      pieces.push(`Evidence verified: ${verifiedOn}`);
+    }
+    if (verifiedBy) {
+      pieces.push(`Owner: ${verifiedBy}`);
+    }
+    if (source) {
+      pieces.push(`Source: ${source}`);
+    }
+
+    evidenceMetaEl.textContent = pieces.length > 0
+      ? pieces.join(" · ")
+      : "Evidence metadata missing from content payload.";
+  };
+
+  const render = (items, meta) => {
     items.forEach((item) => {
       const title = safeText(item?.title);
       const url = safeText(item?.url);
@@ -53,6 +80,8 @@
     if (container.children.length === 0) {
       failSafe("No valid evidence items");
     }
+
+    renderMeta(meta || {});
   };
 
   // Fallback so the page remains usable even if JSON delivery fails.
@@ -78,7 +107,7 @@
       if (loadingEl) {
         loadingEl.remove();
       }
-      render(data.proofPoints);
+      render(data.proofPoints, data.meta || {});
     })
     .catch((error) => {
       failSafe(error);

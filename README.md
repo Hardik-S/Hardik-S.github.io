@@ -99,3 +99,10 @@ vercel --version
 - Left v2 mailto links as compose-window placeholders on this increment to keep public contact behavior unchanged until explicit direction arrives.
 
 
+
+## Turn 7A evidence provenance layer
+- Added meta metadata fields to content/site-content.json (erifiedOn, erifiedBy, source) to make v2 proof anchors auditable.
+- Added #evidence-meta in index.html and rendered trusted verification metadata from the payload in js/v2-content.js.
+- Kept the Legacy control and /legacy/ route unchanged.
+- Added state/director-plan.md and state/worker-log.md for continued unbundled director-task execution.
+
