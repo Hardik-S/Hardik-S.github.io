@@ -427,6 +427,20 @@
 - Dirty paths: none at start; expected dirty path is this log until committed.
 - Next safe action: proceed to Turn 33 external review packet and freeze check, or pause for human review of the current v2.
 
+## Run 2026-05-15T17:59:42-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 33 - First Viewport Composition Repair.
+- Selected task: compact the mobile proof-focus controls and wrap the section rail into stable rows after screenshot QA showed the current portrait-led identity was sound but the first viewport still had dense controls and a clipped horizontal rail.
+- Changed files in target repo: `css/v2.css`, `README.md`; this log entry in `state/worker-log.md`.
+- Site/docs commit SHA: `ad3423f`.
+- Verification: start preflight `auth-ok`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local route checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, and `/js/v2-interactions.js`; Playwright CLI screenshots inspected at `390x844`, `768x1024`, and `1440x900`, including a delayed tablet capture to confirm the portrait image loaded; changed-file redaction scans passed; full scan still reports only the documented legacy-only email in `legacy\index.html`.
+- Deploy URL/status: no manual Vercel CLI deploy attempted because the prior daily quota retry cap remains the manual deploy surface guardrail. GitHub source commit will be pushed this run and GitHub Pages is the safe review surface.
+- Preflight result: `auth-ok`; deploy config points to Vercel project `hardik-s-github-io`.
+- Blocker state: no implementation blocker; manual Vercel production deploy remains `blocked-cleanly` from the prior quota cap.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias previously reachable`; Preflight result `auth-ok`; Dirty paths `none at start`; Attempts used `preflight 1, Vercel deploy 0 this run due retry cap`; Next safe action `push source and use GitHub Pages until quota reset`.
+- Dirty paths: none at start; expected dirty path is this log until committed.
+- Next safe action: push the log commit, confirm `origin/master`, then proceed to external review/freeze or final public freshness checks.
+
 ## Run 2026-05-15T17:55:10-04:00 follow-up
 - Push status: site/docs commit `68ffd742ab96efa20dbb3923a89e54e8c0d0f1e8` and log commit `2e362da2db95e3e08c74d625e1958e4b5d414d48` pushed to `origin/master`; remote `HEAD` matched `2e362da2db95e3e08c74d625e1958e4b5d414d48`.
 - Public freshness: GitHub Pages `/` and Vercel alias `/` returned 200 with the new title metadata and `og:image`; both `/legacy/` routes returned 200.
