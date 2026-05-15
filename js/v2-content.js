@@ -68,7 +68,7 @@
     if (compactParts.length > 0) {
       const compactText = document.createElement("span");
       compactText.className = "source-meta-text";
-      compactText.textContent = compactParts.join(" \u00b7 ");
+      compactText.textContent = compactParts.join(" | ");
       metaLine.append(document.createTextNode(" "));
       metaLine.append(compactText);
     }
@@ -337,9 +337,6 @@
       }
       if (loadingEl) {
         loadingEl.remove();
-      }
-      if (!Array.isArray(data.proofPoints) || data.proofPoints.length === 0) {
-        throw new Error("No proof points configured");
       }
       render(data.proofPoints, data.meta || {});
       renderSelectedWork(data.selectedWork, data.meta || {});

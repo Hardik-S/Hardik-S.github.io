@@ -2,7 +2,7 @@
 
 # Hardik-S.github.io
 
-This repository is the current home for Hardik’s personal website (v2) with legacy continuity preserved.
+This repository is the current home for Hardik's personal website (v2) with legacy continuity preserved.
 
 ## Current architecture
 
@@ -29,6 +29,7 @@ This repository is the current home for Hardik’s personal website (v2) with le
 - Unverified candidates are kept in `researchNeeds` until a verifiable source exists.
 - `selectedWork` entries are also filtered by `publicReady`, so copy like section counts is intentionally copy-safe and should avoid hardcoded totals.
 - Card-level source metadata now renders as a compact badge (`source:`) plus verified date for both evidence and selected-work entries.
+- Renderer metadata uses plain ASCII separators so browser output and public logs stay stable across terminals and automation runs.
 - Selected-work summary and evidence meta lines are generated from `meta` (`verifiedOn`, `verifiedBy`, `verifiedScope`) to keep the narrative in sync with this file.
 - Current selected-work items are intentionally narrowed to high-signal public repositories and deployments that reinforce the v2 positioning, rather than a full archive list.
 

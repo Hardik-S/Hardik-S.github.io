@@ -36,7 +36,7 @@
 - Next safe action: push commit and continue with Turn 7B director task.
 
 
-## Run 2026-05-15T$(Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz')
+## Run d730897 evidence rendering safety (timestamp marker repaired)
 - Director task: Evidence rendering safety + audit clarity
 - Scope: index.html, js/v2-content.js, README.md (unified publicReady evidence filtering + summary)
 - Preflight: auth-ok,dirty-worktree (AttemptsUsed 1)
@@ -121,12 +121,10 @@
 ## Run 2026-05-15T14:06:06-04:00
 - Director task: Turn 13B narrative polish continuation (selected-work evidence refresh)
 - Changed files: index.html, content/site-content.json, README.md
-- Verification: 
-ode --check js/v2-content.js; git diff --check; local Invoke-WebRequest checks for http://127.0.0.1:4173/, /legacy/, /content/site-content.json; 
-px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias root + /legacy/ checks 200, production deployment returned 401 in this environment
+- Verification: node --check js/v2-content.js; git diff --check; local Invoke-WebRequest checks for http://127.0.0.1:4173/, /legacy/, /content/site-content.json; npx --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias root + /legacy/ checks 200, production deployment returned 401 in this environment
 - Commit SHA: e82b80c
 - Deploy URL: https://hardik-s-github-hu9uqk5w1-batb4016-9101s-projects.vercel.app (production), alias: https://hardik-s-github-io.vercel.app
-- Preflight result: uth-ok,dirty-worktree
+- Preflight result: auth-ok,dirty-worktree
 - Blocker state: none (no new blockers; legacy scan hit unchanged legacy contact email in legacy/index.html)
 - Next safe action: Turn 14 candidate follow-up with next strongest proof item or route text polish, keeping Legacy button / /legacy/ unchanged.
 
@@ -154,11 +152,10 @@ px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias ro
 ## 2026-05-15T14:31:00-04:00
 - Director task: Turn 13B narrative polish pass - metadata alignment for selected-work and evidence sections
 - Changed files: js/v2-content.js, README.md
-- Commit SHA: 686470
-- Preflight result: uth-ok,dirty-worktree (target check at start and post-edit verification, attempts used: 1)
+- Commit SHA: 686470
+- Preflight result: auth-ok,dirty-worktree (target check at start and post-edit verification, attempts used: 1)
 - Verification performed:
-  - 
-ode --check js/v2-content.js
+  - node --check js/v2-content.js
   - git diff --check
   - local route checks at http://127.0.0.1:4173/, /legacy/, /content/site-content.json returned HTTP 200
   - deploy checks: https://hardik-s-github-io.vercel.app/ 200, https://hardik-s-github-3l1et1bhd-batb4016-9101s-projects.vercel.app/ 401 (environment-protected), /legacy/ 200
