@@ -1,4 +1,5 @@
-﻿(function () {
+﻿// v2 evidence model: keep homepage proof anchors tied to auditable public links.
+(function () {
   const container = document.getElementById("evidence-grid");
   if (!container) {
     return;
@@ -18,6 +19,7 @@
     container.innerHTML = nodes;
   };
 
+  // Fail safe so the page remains usable even if JSON delivery fails.
   const failSafe = (message) => {
     const fallback =
       '  <p class="section-note">Could not load evidence anchors. ' +
