@@ -22,6 +22,9 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - v2 content is static and source-driven; no build step exists in this repository.
 - `selected-work` is rendered as a focus-grouped narrative to separate decision, product, support, and ops tracks while keeping evidence provenance tied to verified links.
 - Skip links are intentionally hidden until keyboard focus so accessibility shortcuts remain available without creating a visible first-load overlay.
+- The v2 hero uses the existing legacy portrait asset (`images/me3.jpg`) instead of a generated or stock visual. This keeps the first viewport personal, evidence-safe, and consistent with the legacy site while avoiding new unverified claims or assets.
+- The hero H1 is the person name, with current product/AI positioning in supporting copy. This keeps the first viewport recruiter-readable and avoids turning the page into an internal evidence dashboard.
+- The hero keeps only three high-value actions: selected work, public resume, and contact. Deeper route shortcuts remain available through section structure and skip links instead of crowding the first viewport.
 
 ## Evidence model
 
