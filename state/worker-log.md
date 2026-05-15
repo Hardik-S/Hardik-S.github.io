@@ -412,3 +412,17 @@
 - Vercel alias status: root and `/legacy/` returned 200, but `/content/site-content.json` was stale for the new case-study payload because no manual deploy was attempted under the active quota retry cap.
 - Full public redaction scan status: unchanged legacy-only contact exception in `legacy\index.html`; changed-file scans passed.
 - Next safe action: use GitHub Pages for current Turn 31 review; retry Vercel deployment only after quota reset.
+
+## Run 2026-05-15T17:47:59-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 32 - Accessibility Performance SEO Release Polish.
+- Selected task: add public-safe metadata, intrinsic hero-image safeguards, reduced-motion/focus polish, and release documentation without changing evidence claims or legacy routing.
+- Changed files in target repo: `index.html`, `css/v2.css`, `README.md`, `docs/handoff.md`, `docs/public-safety.md`; this log entry in `state/worker-log.md`.
+- Site/docs commit SHA: `68ffd742ab96efa20dbb3923a89e54e8c0d0f1e8`, pushed to `origin/master`.
+- Verification: start preflight `auth-ok`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local route checks on port 4292 returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/docs/handoff.md`, `/js/v2-content.js`, and `/js/v2-interactions.js`; in-app browser QA confirmed the new title, nonblank homepage, no console warnings/errors, hero focus button state change, and `Legacy` href `/legacy/`; Playwright CLI screenshots inspected at `390x844`, `768x1024`, and `1440x900` after correcting the intrinsic-image crop regression; changed-file redaction scans passed; full scan still reports only the documented legacy-only email in `legacy\index.html`.
+- Deploy/public status: no manual Vercel CLI deploy attempted because the previous quota retry cap remains the manual deploy surface guardrail. Vercel alias root and `/legacy/` returned 200 and the alias root already served the new metadata. GitHub Pages root initially lagged after push, then returned 200 with `Product-Minded Software Builder`, `og:image`, and `legacy-pill`; GitHub Pages `/legacy/` and `/handoff/` returned 200.
+- Preflight result: `auth-ok`; deploy config points to Vercel project `hardik-s-github-io`.
+- Blocker state: no implementation blocker; manual Vercel production deploy remains `blocked-cleanly` from the prior quota cap, but the Vercel alias refreshed through the existing integration.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git` accepted push and noted canonical casing `Hardik-S/Hardik-S.github.io`; Public/private/ACL state `public GitHub repo, Vercel alias reachable`; Preflight result `auth-ok`; Dirty paths `none at start`; Attempts used `preflight 2, Vercel CLI deploy 0 this run due retry cap`; Next safe action `use GitHub Pages or the refreshed Vercel alias for review; retry manual Vercel deploy only after quota reset if needed`.
+- Dirty paths: none at start; expected dirty path is this log until committed.
+- Next safe action: proceed to Turn 33 external review packet and freeze check, or pause for human review of the current v2.
