@@ -36,3 +36,13 @@
 - Next safe action: push commit and continue with Turn 7B director task.
 
 
+## Run 2026-05-15T$(Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz')
+- Director task: Evidence rendering safety + audit clarity
+- Scope: index.html, js/v2-content.js, README.md (unified publicReady evidence filtering + summary)
+- Preflight: auth-ok,dirty-worktree (AttemptsUsed 1)
+- Commit SHA: d730897
+- Verification: git diff --check; local route checks for /, /legacy/, /content/site-content.json, /#evidence-section; scoped redaction scan passed on index.html, js/v2-content.js, css/v2.css, content/site-content.json
+- Deploy: https://hardik-s-github-i7a7zixku-batb4016-9101s-projects.vercel.app (alias https://hardik-s-github-io.vercel.app)
+- Blocker state: none blocking this increment
+- Dirty paths: ?? .gitignore
+- Next safe action: continue with next evidence-priority increment and keep legacy button path unchanged.
