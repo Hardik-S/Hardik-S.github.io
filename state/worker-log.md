@@ -517,3 +517,19 @@
 - Blocker state: none.
 - Dirty paths: none after source push; expected dirty path is this log until committed.
 - Next safe action: keep the site frozen for user review; only proceed to final share packet or specific fixes if review feedback, public freshness drift, or new verified public-safe evidence appears.
+
+## Run 2026-05-15T18:56:40-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 40 - Native Interaction Polish.
+- Selected task: add a restrained active-state affordance to the existing section rail so reviewers can tell which homepage section they are reading without adding content claims, routing changes, or dependencies.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `js/v2-interactions.js`, `css/v2.css`, `README.md`, `docs/handoff.md`, `docs/review-backlog.md`, and this log entry in `state/worker-log.md`.
+- Implementation notes: the rail now uses native `IntersectionObserver` state plus `aria-current`, with hash navigation as the fallback. The rejected approach was adding a scroll animation or observer library, which would be unnecessary for this static no-build site.
+- Verification: start preflight `auth-ok`; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-interactions.js`; `node --check js\v2-content.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks on a confirmed repo server returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, and `/js/v2-interactions.js`; root HTML contained `Hardik Shrestha` and `legacy-pill`; a Node VM fallback test verified hash/click active-state behavior; Playwright CLI screenshots were captured and inspected for the mobile root and desktop `/#selected-work`; changed-file redaction scans passed.
+- Full redaction scan: failed only on the documented legacy-only email in `legacy\index.html`.
+- Site/docs commit SHA: `30f247005b2a630f927d3d37fcb77744e958f7cf` (`Add active section rail polish`), pending push before this log append.
+- Deploy status: no manual Vercel CLI deploy attempted before push. The established Vercel integration will be checked after push; manual deploy remains unnecessary unless public freshness drifts.
+- Preflight result: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy config points to Vercel project `hardik-s-github-io`.
+- Blocker state: none.
+- Dirty paths: none after the site/docs commit; expected dirty path is this log until committed.
+- Next safe action: commit and push this worker-log entry, then confirm GitHub Pages and Vercel alias freshness for the active-rail source.
