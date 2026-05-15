@@ -3,12 +3,13 @@
 Last updated: 2026-05-15
 Baseline source commit before this backlog note: `7c3d324fa8f7b4644adde39664602a067844498a`
 Current final-share baseline: `23fce34a56aec3261c0eae3b0376b4a737a9262b`
+Final share-packet baseline repaired by Turn 42 release-health reconciliation: `4b1161562e318d1fed61087ec5372b536ab4a1af`
 
 ## Recommendation
 
 Freeze the site for user review. The current v2 already has the main public-review requirements: a personal first viewport, visible `Legacy` continuity, four verified flagship proof items, profile-first contact actions, public release handoff notes, and static delivery on GitHub Pages plus the Vercel alias.
 
-This backlog is intentionally a review filter, not a new redesign plan. Future work should only proceed if it fixes a verified release issue, adds public-safe proof, or responds to user feedback.
+This backlog is intentionally a review filter, not a new redesign plan. Future work should only proceed if it fixes a verified release issue, adds public-safe proof, responds to user feedback, or repairs confirmed public freshness drift.
 
 ## Must fix before sharing
 

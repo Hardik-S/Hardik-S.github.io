@@ -78,16 +78,19 @@ The v2 contact path is profile-first:
 - GitHub Pages is expected to serve the repository root.
 - Vercel deploys use the `hardik-s-github-io` project and the alias `https://hardik-s-github-io.vercel.app`.
 - `.vercel/` is local deploy identity and is intentionally ignored by the committed `.gitignore`.
-- Earlier automation runs hit Vercel's daily deployment quota, so manual CLI deploys should still respect the retry cap. The 2026-05-15 Turn 40 follow-up completed a manual production deploy after the alias lagged, and both public surfaces served the active-section rail assets afterward.
+- Earlier automation runs hit Vercel's daily deployment quota, so manual CLI deploys should still respect the retry cap. The 2026-05-15 Turn 42 release-health check completed manual production deployment `dpl_5zfX5deqYPAhmKsaJ5yRxjm7gGvT`, and the alias `https://hardik-s-github-io.vercel.app` served the final share-packet handoff plus current v2 assets afterward.
 
 ## Release freeze status
 
 - Final share packet timestamp: 2026-05-15T19:04:01-04:00.
 - Verified source baseline before this handoff refresh: `23fce34a56aec3261c0eae3b0376b4a737a9262b`.
+- Release-health reconciliation timestamp: 2026-05-15T19:16:54-04:00.
+- Final share-packet baseline repaired by reconciliation: `4b1161562e318d1fed61087ec5372b536ab4a1af`.
 - GitHub Pages review URL: `https://hardik-s.github.io/`.
 - Vercel alias review URL: `https://hardik-s-github-io.vercel.app/`.
 - Public route checks returned HTTP 200 for `/`, `/legacy/`, `/handoff/`, and `/content/site-content.json` on both GitHub Pages and the Vercel alias.
 - Cache-busted public checks confirmed the Turn 40 active-section rail markers in `js/v2-interactions.js` and `css/v2.css` on both public surfaces.
+- The Turn 42 deploy repaired the stale Vercel `/handoff/` route observed after the final share packet; no active deploy blocker remains.
 - Rendered screenshots have been inspected at mobile, tablet, desktop, selected-work, contact, and handoff routes across the release-freeze and Turn 40 passes; the Legacy button remained visible and no first-viewport or flagship-work overlap was observed.
 - Recommendation: share the current public URL for review. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
@@ -131,7 +134,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 
 ## Current caveats
 
-- Manual Vercel CLI deploys should not be retried inside the prior quota window without a fresh preflight, but the alias is currently fresh through the existing integration.
+- Manual Vercel CLI deploys are no longer blocked for the current release-health state; use a fresh preflight and stop after two equivalent quota, ACL, or transport failures if a future deploy is needed.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 
