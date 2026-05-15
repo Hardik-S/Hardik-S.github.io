@@ -294,6 +294,20 @@ h1 {
   color: var(--muted);
 }
 
+.source-meta {
+  font-size: 0.84rem;
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  flex-wrap: wrap;
+}
+
+.source-meta-link {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
 .evidence-meta {
   color: rgba(231, 237, 249, 0.74);
 }

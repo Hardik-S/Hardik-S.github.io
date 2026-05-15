@@ -140,3 +140,10 @@ vercel --version
 - Added a visible evidence summary line that reports rendered count and whether non-public-ready items were withheld.
 - Kept Legacy button and legacy route unchanged.
 - Updated v2 renderer fail-safe behavior to show explicit fallback text when no public-ready proof points are available.
+
+## Turn 11 evidence card source annotations
+
+- Added source metadata rendering to each evidence card from `content/site-content.json`.
+- Each card now shows `source type`, `verified` timestamp, and a direct source link when present.
+- Kept all evidence claims tied to existing fields already tracked in `meta` and `proofPoints`; no new claims were introduced.
+- Kept `Legacy` button behavior and `/legacy/` route unchanged.

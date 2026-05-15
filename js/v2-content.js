@@ -29,6 +29,54 @@
     return link;
   };
 
+  const renderSourceMeta = (source, target) => {
+    if (!source || typeof source !== "object") {
+      return;
+    }
+
+    const sourceType = safeText(source.type);
+    const sourceUrl = safeText(source.url);
+    const verifiedAt = safeText(source.verifiedAt);
+    const notes = safeText(source.notes);
+
+    const compactParts = [];
+    if (sourceType) {
+      compactParts.push(`source: ${sourceType}`);
+    }
+    if (verifiedAt) {
+      compactParts.push(`verified ${verifiedAt}`);
+    }
+    if (compactParts.length === 0 && !sourceUrl && !notes) {
+      return;
+    }
+
+    const metaLine = document.createElement("p");
+    metaLine.className = "section-note source-meta";
+    if (compactParts.length > 0) {
+      metaLine.textContent = compactParts.join(" \u00b7 ");
+    } else {
+      metaLine.textContent = "Source: recorded";
+    }
+
+    if (sourceUrl) {
+      const linkText = sourceType ? `${sourceType} source` : "source record";
+      const sourceLink = makeLink(sourceUrl, linkText);
+      sourceLink.className = "source-meta-link";
+      metaLine.append(document.createTextNode(" "));
+      metaLine.append(sourceLink);
+    }
+
+    if (notes) {
+      metaLine.title = notes;
+      const screenReaderNote = document.createElement("span");
+      screenReaderNote.className = "sr-only";
+      screenReaderNote.textContent = ` ${notes}`;
+      metaLine.append(screenReaderNote);
+    }
+
+    target.appendChild(metaLine);
+  };
+
   const renderMeta = (meta) => {
     if (!evidenceMetaEl) {
       return;
@@ -80,6 +128,7 @@
 
       article.appendChild(heading);
       article.appendChild(paragraph);
+      renderSourceMeta(item.source, article);
       container.appendChild(article);
     });
 
