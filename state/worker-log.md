@@ -568,3 +568,9 @@
 - Deploy URL/status: manual Vercel production deploy succeeded as `dpl_5zfX5deqYPAhmKsaJ5yRxjm7gGvT`; production URL `https://hardik-s-github-papowncl1-batb4016-9101s-projects.vercel.app`; alias `https://hardik-s-github-io.vercel.app`.
 - Blocker state: none after the successful deploy.
 - Next safe action: verify docs and public freshness, then push this scoped release-health log update. After that, keep the site frozen for user review unless concrete feedback, public freshness drift, or newly verified evidence appears.
+
+## Run 2026-05-15T19:22:10-04:00 follow-up
+- Commit/push status: release-health docs and log commit `97498ca21a68aa2bee363c0cbad29128b782a604` (`Record Vercel handoff freshness repair`) was pushed to `origin/master`.
+- Verification before commit: `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; JSON parse; local route checks for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/docs/handoff.md`, and `/docs/review-backlog.md`; changed-file redaction scans passed.
+- Full redaction scan: failed only on the documented legacy-only email in `legacy\index.html`.
+- Next safe action: push this follow-up log entry, deploy the final source state to Vercel, confirm public freshness, then keep the site frozen for user review.
