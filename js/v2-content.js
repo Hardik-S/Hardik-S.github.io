@@ -124,35 +124,41 @@
 
   const isPublicReady = (item) => item?.publicReady === true;
 
-  // Render selected-work as a narrative layer grouped by focus area to preserve readability
-  // when multiple evidence-ready cards compete for attention in one row.
-  const focusOrder = [
-    "Decision model",
-    "Product workflow",
-    "Decision support",
-    "Operational reliability",
-    "Governance tooling",
-    "Support productivity"
-  ];
-
-  const focusPriority = focusOrder.reduce((acc, label, index) => {
-    acc[label.toLowerCase()] = index;
-    return acc;
-  }, {});
-
-  const normalizeFocus = (value) => safeText(value).toLowerCase();
-
+  // Keep selected-work as a tight flagship layer; broader proof remains below.
   const createSelectedWorkCard = (item) => {
     const title = safeText(item?.title);
     const url = safeText(item?.url);
     const summary = safeText(item?.summary);
+    const focus = safeText(item?.focus);
+    const problem = safeText(item?.problem);
+    const contribution = safeText(item?.contribution);
+    const whyItMatters = safeText(item?.whyItMatters);
+    const visualLabel = safeText(item?.visual?.label) || focus || "Proof";
+    const visualCue = safeText(item?.visual?.cue) || "Problem -> build -> proof";
 
     if (!title || !url || !summary) {
       return null;
     }
 
     const article = document.createElement("article");
-    article.className = "card";
+    article.className = "card flagship-card";
+
+    const visual = document.createElement("div");
+    visual.className = "work-visual";
+    visual.setAttribute("aria-hidden", "true");
+
+    const visualMark = document.createElement("span");
+    visualMark.className = "work-visual-mark";
+    visualMark.textContent = visualLabel;
+
+    const visualCueEl = document.createElement("span");
+    visualCueEl.className = "work-visual-cue";
+    visualCueEl.textContent = visualCue;
+    visual.append(visualMark, visualCueEl);
+
+    const focusLabel = document.createElement("p");
+    focusLabel.className = "selected-work-label";
+    focusLabel.textContent = focus || "Flagship proof";
 
     const heading = document.createElement("h3");
     heading.appendChild(makeLink(url, title));
@@ -160,19 +166,29 @@
     const paragraph = document.createElement("p");
     paragraph.textContent = summary;
 
-    article.appendChild(heading);
-    article.appendChild(paragraph);
+    article.append(visual, focusLabel, heading, paragraph);
+
+    const details = [
+      ["Problem", problem],
+      ["Built", contribution],
+      ["Why it matters", whyItMatters]
+    ].filter(([, value]) => value);
+
+    if (details.length > 0) {
+      const detailList = document.createElement("dl");
+      detailList.className = "work-details";
+      details.forEach(([label, value]) => {
+        const term = document.createElement("dt");
+        term.textContent = label;
+        const description = document.createElement("dd");
+        description.textContent = value;
+        detailList.append(term, description);
+      });
+      article.append(detailList);
+    }
+
     renderSourceMeta(item.source, article);
     return article;
-  };
-
-  const orderGroups = (lhs, rhs) => {
-    const lhsPriority = focusPriority[lhs] ?? Number.MAX_SAFE_INTEGER;
-    const rhsPriority = focusPriority[rhs] ?? Number.MAX_SAFE_INTEGER;
-    if (lhsPriority !== rhsPriority) {
-      return lhsPriority - rhsPriority;
-    }
-    return lhs.localeCompare(rhs, "en", { sensitivity: "base" });
   };
 
   const renderSelectedWork = (items, meta) => {
@@ -181,7 +197,6 @@
     }
 
     const selectedItems = Array.isArray(items) ? items.filter((item) => isPublicReady(item)) : [];
-    const groupedItems = {};
 
     if (selectedWorkLoadingEl) {
       selectedWorkLoadingEl.remove();
@@ -196,56 +211,22 @@
       selectedWorkContainer.append(fallback);
       selectedWorkContainer.closest("section")?.setAttribute("data-empty-work", "true");
       if (selectedWorkMetaEl) {
-        selectedWorkMetaEl.textContent = "Selected-work cards: 0";
+        selectedWorkMetaEl.textContent = "Flagship proofs: 0";
       }
       return;
     }
 
     selectedItems.forEach((item) => {
-      const focus = safeText(item?.focus) || "Core evidence";
-      if (!groupedItems[focus]) {
-        groupedItems[focus] = [];
+      const card = createSelectedWorkCard(item);
+      if (card) {
+        selectedWorkContainer.append(card);
       }
-      groupedItems[focus].push(item);
-    });
-
-    Object.entries(groupedItems).forEach(([focus, works]) => {
-      works.sort((a, b) => safeText(a?.title).localeCompare(safeText(b?.title), "en", { sensitivity: "base" }));
-    });
-
-    const orderedFocuses = Object.keys(groupedItems).sort(orderGroups);
-
-    orderedFocuses.forEach((focus) => {
-      const group = document.createElement("section");
-      group.className = "work-group";
-      group.setAttribute("aria-label", `${focus} selected-work`);
-
-      const groupHeading = document.createElement("h3");
-      groupHeading.className = "work-group-title";
-      groupHeading.textContent = focus;
-
-      const groupMeta = document.createElement("p");
-      groupMeta.className = "work-group-meta";
-      groupMeta.textContent = `${groupedItems[focus].length} selected-work item${groupedItems[focus].length === 1 ? "" : "s"}`;
-
-      const workGrid = document.createElement("div");
-      workGrid.className = "cards work-group-list";
-
-      groupedItems[focus].forEach((item) => {
-        const card = createSelectedWorkCard(item);
-        if (card) {
-          workGrid.append(card);
-        }
-      });
-
-      group.append(groupHeading, groupMeta, workGrid);
-      selectedWorkContainer.append(group);
     });
 
     if (selectedWorkMetaEl) {
       const selectedShown = selectedItems.length;
       const selectedSkipped = Math.max(0, Array.isArray(items) ? items.length - selectedShown : 0);
-      const selectedSummary = [`Selected-work cards: ${selectedShown}`, `Focus tracks: ${orderedFocuses.length}`];
+      const selectedSummary = [`Flagship proofs: ${selectedShown}`];
       if (selectedSkipped > 0) {
         selectedSummary.push(`${selectedSkipped} not public-ready`);
       }

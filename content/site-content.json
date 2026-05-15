@@ -143,23 +143,18 @@
   ],
   "selectedWork": [
     {
-      "title": "Cloud Cost Decision Notebook",
-      "url": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
-      "focus": "Decision model",
-      "summary": "A public repo that keeps decision logic and assumptions visible alongside implementation context.",
-      "publicReady": true,
-      "source": {
-        "type": "repo",
-        "url": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
-        "verifiedAt": "2026-05-15",
-        "notes": "Public repository with local/route verification during evidence checks."
-      }
-    },
-    {
       "title": "PMO Decision Brief Builder",
       "url": "https://pmo-decision-brief-builder.vercel.app",
       "focus": "Product workflow",
-      "summary": "A compact public decision-builder surface that demonstrates practical workflow-driven build quality.",
+      "summary": "A compact public decision-builder surface that turns PMO prioritization into a clear reviewer-ready brief.",
+      "problem": "Busy teams need a faster way to turn scattered operational context into a decision brief that can be reviewed.",
+      "contribution": "Built the public workflow surface and shaped the brief around prioritization, context, and action clarity.",
+      "whyItMatters": "Shows product judgment, workflow design, and front-end implementation in a live artifact.",
+      "visual": {
+        "type": "structured-signal",
+        "label": "Brief",
+        "cue": "Priority -> context -> action"
+      },
       "publicReady": true,
       "source": {
         "type": "deployment",
@@ -172,7 +167,15 @@
       "title": "BioScript Housing Decision",
       "url": "https://bioscript-housing-decision.vercel.app",
       "focus": "Decision support",
-      "summary": "An actively reachable BioScript-facing prototype route for housing-related decision support.",
+      "summary": "An actively reachable BioScript-facing prototype route for making a constrained housing decision easier to review.",
+      "problem": "A regulated support context needs intake and review surfaces that reduce ambiguity without overstating automation.",
+      "contribution": "Framed the demo around decision support, handoff clarity, and public-safe evidence rather than hidden internal data.",
+      "whyItMatters": "Connects current BioScript-facing work to the portfolio without fabricating private workflow details.",
+      "visual": {
+        "type": "structured-signal",
+        "label": "Review",
+        "cue": "Criteria -> tradeoff -> handoff"
+      },
       "publicReady": true,
       "source": {
         "type": "deployment",
@@ -182,23 +185,18 @@
       }
     },
     {
-      "title": "Ops Follow-Up Radar",
-      "url": "https://github.com/Hardik-S/ops-follow-up-radar",
-      "focus": "Operational reliability",
-      "summary": "A public operations workflow focused on auditability and follow-up traceability.",
-      "publicReady": true,
-      "source": {
-        "type": "repo",
-        "url": "https://github.com/Hardik-S/ops-follow-up-radar",
-        "verifiedAt": "2026-05-15",
-        "notes": "Public repository with route checks and maintained workflow outputs."
-      }
-    },
-    {
       "title": "Agent Permission Review Console",
       "url": "https://github.com/Hardik-S/agent-permission-review-console",
       "focus": "Governance tooling",
-      "summary": "A practical permission-review workflow for reducing authorization risk through explicit approval traces.",
+      "summary": "A practical permission-review workflow for making agent access decisions explicit, reviewable, and less fragile.",
+      "problem": "Agent-heavy workflows create authorization risk when permissions are approved without a visible review trail.",
+      "contribution": "Built a synthetic console that models least-privilege review and approval-state traceability.",
+      "whyItMatters": "Signals AI governance instincts alongside implementation skill, which is stronger than a generic app demo.",
+      "visual": {
+        "type": "structured-signal",
+        "label": "Access",
+        "cue": "Request -> scope -> approval"
+      },
       "publicReady": true,
       "source": {
         "type": "repo",
@@ -211,7 +209,15 @@
       "title": "Invoice Dispute Packet Builder",
       "url": "https://github.com/Hardik-S/invoice-dispute-packet-builder",
       "focus": "Support productivity",
-      "summary": "A decision-support repository showing structured packet generation for operations-facing outcomes.",
+      "summary": "A decision-support repository showing structured packet generation for operations-facing support outcomes.",
+      "problem": "Support work can lose time when dispute context, evidence, and next actions are not packaged consistently.",
+      "contribution": "Modeled a packet-building flow that keeps supporting evidence and response structure auditable.",
+      "whyItMatters": "Demonstrates practical automation that improves review quality without claiming unverified production impact.",
+      "visual": {
+        "type": "structured-signal",
+        "label": "Packet",
+        "cue": "Facts -> evidence -> response"
+      },
       "publicReady": true,
       "source": {
         "type": "repo",
@@ -242,6 +248,20 @@
       "sourceHint": "https://github.com/Hardik-S/DuckDuckGo",
       "reason": "Kept for archive reference, but not top-priority proof for current positioning.",
       "nextAction": "Promote again only if it remains one of the four strongest public projects."
+    },
+    {
+      "title": "Cloud Cost Decision Notebook",
+      "status": "demoted",
+      "sourceHint": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
+      "reason": "Retained as a proof anchor, but the flagship section now favors live product surfaces and current AI/workflow governance proof.",
+      "nextAction": "Promote again only if cloud-decision work becomes a stronger public narrative than the four current flagships."
+    },
+    {
+      "title": "Ops Follow-Up Radar",
+      "status": "demoted",
+      "sourceHint": "https://github.com/Hardik-S/ops-follow-up-radar",
+      "reason": "Retained as a proof anchor, but overlaps with invoice and PMO operations narratives in a four-card flagship section.",
+      "nextAction": "Promote again only if it becomes the clearest public operations story."
     },
     {
       "title": "Picture This",

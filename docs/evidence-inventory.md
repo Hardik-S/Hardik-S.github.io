@@ -47,14 +47,41 @@ All items below are currently rendered as public proof anchors:
 
 ## Demoted from homepage proof rotation
 
+- Cloud Cost Decision Notebook
+  - URL: https://github.com/Hardik-S/cloud-cost-decision-notebook
+  - Status: retained as proof anchor, demoted from flagship section
+  - Reason: strong decision-model evidence, but the four-card flagship layer now prioritizes live product surfaces and current AI/workflow governance proof.
 - Duck Duck Mallard
   - URL: https://github.com/Hardik-S/DuckDuckGo
   - Status: demoted
   - Reason: retained for archival context, no longer the strongest signal for current work.
+- Ops Follow-Up Radar
+  - URL: https://github.com/Hardik-S/ops-follow-up-radar
+  - Status: retained as proof anchor, demoted from flagship section
+  - Reason: useful operations proof, but overlaps with invoice and PMO operations narratives in a four-card section.
 - Picture This
   - URL: https://github.com/Hardik-S/picturethisv2
   - Status: demoted
   - Reason: retained for archival context, lower priority than decision-support portfolio evidence.
+
+## Flagship selection rationale
+
+The homepage flagship section is intentionally capped at four items:
+
+- PMO Decision Brief Builder
+  - Inclusion rationale: live product workflow that demonstrates prioritization, brief structure, and public deployment quality.
+  - Visual treatment: structured text cue, not a screenshot, because no verified screenshot asset is checked into the repo.
+- BioScript Housing Decision
+  - Inclusion rationale: strongest public-safe bridge to current BioScript-facing decision-support work without exposing private workflow details.
+  - Visual treatment: structured text cue focused on criteria, tradeoffs, and handoff.
+- Agent Permission Review Console
+  - Inclusion rationale: AI governance and least-privilege review is a stronger current positioning signal than generic project breadth.
+  - Visual treatment: structured text cue focused on request, scope, and approval.
+- Invoice Dispute Packet Builder
+  - Inclusion rationale: operations-facing decision support with clear packet-generation framing and public repository proof.
+  - Visual treatment: structured text cue focused on facts, evidence, and response.
+
+Items not in this four-card layer remain available as proof anchors only when they are public-ready and verified.
 
 ## Source verification and notes
 
@@ -62,6 +89,8 @@ All items below are currently rendered as public proof anchors:
   - `publicReady` remains `true` for all rendered items.
   - `source.type` and `source.verifiedAt` are populated for each anchor.
   - New deployments (PMO and BioScript) are marked as `deployment` source-type with HTTP 200 checks.
+  - `selectedWork` is capped at four flagship records; additional verified links remain in `proofPoints`.
+  - `visual` fields are structured public-safe cues, not claims of screenshot availability.
 
 ## Research backlog (not public claims)
 
