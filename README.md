@@ -62,7 +62,7 @@ From repo root:
 python -m http.server 4173
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/
-Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/data/site-content.json
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
 ```
 
 ## Turn 3 check command references
@@ -91,5 +91,11 @@ vercel --version
 - Kept `trailingSlash: true` and `cleanUrls: false` to avoid unintended conversion of legacy paths.
 - Deployment surface remains static and repository-local; no build step was introduced for this increment.
 - Next step in this run sequence: run focused post-change checks, then push the scoped change set.
+
+## Turn 6 — structural markup and documentation cleanup
+
+- Removed a stray closing `</section>` from `index.html` to keep section hierarchy balanced and markup predictable.
+- Corrected the evidence payload path in local verification commands to `content/site-content.json`.
+- Left v2 mailto links as compose-window placeholders on this increment to keep public contact behavior unchanged until explicit direction arrives.
 
 
