@@ -484,3 +484,20 @@
 - Deploy status: Vercel alias caught up through the existing integration, so no manual Vercel CLI deploy was needed.
 - Dirty paths: none before this follow-up log append.
 - Next safe action: proceed to Turn 37 release QA and review freeze unless new verified public-safe screenshot sources are documented.
+
+## Run 2026-05-15T18:36:55-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 37 - Release QA And Review Freeze.
+- Selected task: verify local/public release routes, capture rendered QA evidence, and update the handoff surfaces to recommend user review instead of more redesign.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `README.md`, `docs/handoff.md`, `handoff/index.html`, `state/worker-log.md`.
+- Verification: start preflight `auth-ok`; `git status --short --branch`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local route checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/docs/handoff.md`, and `/js/v2-interactions.js`; Playwright screenshots were inspected at `390x844`, `768x1024`, `1440x900`, `/#selected-work`, `/#contact`, and `/handoff/`; changed-file redaction scan passed.
+- Full redaction scan: failed only on the documented legacy-only email in `legacy\index.html`.
+- Site/docs commit SHA: `a789a8db166c53af493a169d25c6459fe59164d1` (`Record release QA freeze status`), pushed to `origin/master`; `git ls-remote origin HEAD` matched the same SHA before this log append.
+- Public status: GitHub Pages `/handoff/?turn37=a789a8d` returned 200 with the new `Freeze status` section after one propagation wait. GitHub Pages `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, cache-busted `js\v2-content.js`, and cache-busted `css\v2.css` returned 200 during the freeze check.
+- Deploy status: no manual Vercel CLI deploy attempted because the prior manual deploy quota cap remains a guardrail. Vercel alias `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, cache-busted JS, and cache-busted CSS returned 200 before this commit, but `/handoff/?turn37=a789a8d` was still stale after two checks.
+- Preflight result: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy config points to Vercel project `hardik-s-github-io`.
+- Blocker state: no implementation blocker. Vercel alias freshness for the new handoff route is `blocked-cleanly` under the prior manual deploy quota cap and current integration lag.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for the new Turn 37 handoff text`; Preflight result `auth-ok`; Dirty paths `none before handoff edit`; Attempts used `preflight 1, Vercel CLI deploy 0 this run due prior quota cap, Vercel freshness checks 2`; Next safe action `use fresh GitHub Pages for review and retry/manual-check Vercel only after quota reset or integration catches up`.
+- Dirty paths: none after QA cleanup; expected dirty path is this log until committed.
+- Next safe action: commit and push this worker-log entry, then keep the site frozen for user review unless new verified public-safe project evidence is supplied.
