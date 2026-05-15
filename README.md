@@ -21,7 +21,7 @@ This repository is the active home for Hardik's personal website.
 - Added `css/v2.css` for the v2 visual system.
 - Added decision notes to the coordination worker-log during each automation run.
 - Turn 2 evidence inventory step introduced a structured JSON evidence source plus a small renderer for public proof anchors in `index.html`.
-- Added `data/site-content.json` and `js/v2-content.js` to keep v2 homepage claims tied to auditable links only.
+- Added `content/site-content.json` and `js/v2-content.js` to keep v2 homepage claims tied to auditable links only.
 - Turn 3 visual-system polish refined hierarchy, spacing, and responsive behavior on `/` while preserving `/legacy/`.
 
 ## Evidence model (v2 Turn 2)
@@ -92,7 +92,7 @@ vercel --version
 - Deployment surface remains static and repository-local; no build step was introduced for this increment.
 - Next step in this run sequence: run focused post-change checks, then push the scoped change set.
 
-## Turn 6 — structural markup and documentation cleanup
+## Turn 6 - structural markup and documentation cleanup
 
 - Removed a stray closing `</section>` from `index.html` to keep section hierarchy balanced and markup predictable.
 - Corrected the evidence payload path in local verification commands to `content/site-content.json`.
@@ -118,7 +118,7 @@ vercel --version
   - `meta.evidencePolicy` and `meta.verifiedScope`
   - each proof item includes `publicReady` and `source` `{type,url,verifiedAt,notes}`
 - Added `researchNeeds` in `content/site-content.json` for unverified candidate items and tracked each with `status`, `reason`, and `nextAction`.
-- Added a `Research backlog` section in `index.html` and rendered its entries from the same payload in `js/v2-content.js`; backlog items are explicitly non-claiming and marked as needing verification.
+- Added a backlog-tracking structure for unverified projects in `content/site-content.json` and `docs/evidence-inventory.md`; `Research backlog` is now documentation-only and no longer surfaced as a public section on the homepage.
 - Added `docs/evidence-inventory.md` to track current proof scope and what remains to verify.
 - Kept the translucent top-right `Legacy` control unchanged and ensured `/legacy/` remains preserved.
 - This turn does not add public claims that are not currently verifiable in this environment.
