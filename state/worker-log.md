@@ -337,3 +337,24 @@
 - Blocker state: `blocked-cleanly` for Vercel deploy quota after the second equivalent quota failure across recent runs; GitHub push is complete.
 - Attempts used: preflight 2, Vercel deploy 1 in this run, ad hoc Playwright package import 2 then capped.
 - Next safe action: after Vercel quota resets, redeploy commit `836be62`; otherwise continue Turn 26 interaction polish from the pushed GitHub state.
+
+## 2026-05-15T16:52:14-04:00
+- Director task: Turn 28 - Release QA, Vercel Deploy, And Handoff.
+- Selected task: add durable release-candidate handoff documentation, resolve the persistent Vercel `.gitignore` artifact, and verify the current pushed v2 without changing homepage claims.
+- Changed files in target repo: `.gitignore`, `README.md`, `docs/handoff.md`, `docs/public-safety.md`, `state/worker-log.md`.
+- Verification:
+  - Start preflight returned `auth-ok,dirty-worktree` with only the untracked Vercel `.gitignore` dirty at run start.
+  - `git diff --check` passed after the docs change.
+  - `node --check js/v2-content.js` and `node --check js/v2-interactions.js` passed.
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json` passed.
+  - Local route checks returned 200 for `/`, `/legacy/`, `/content/site-content.json`, `/docs/handoff.md`, and `/js/v2-interactions.js`.
+  - Playwright CLI screenshots captured `390x844`, `768x1024`, and `1440x900`; screenshots were inspected for Legacy button visibility, readable hero layout, and next-section cue, then removed before commit.
+  - Scoped redaction scans passed for `README.md` and `docs`; full redaction scan still reports only the documented legacy-only contact string in `legacy/index.html`.
+  - GitHub Pages and existing Vercel alias returned 200 for `/` and `/legacy/`; both root pages showed `What I bring` and `Best next step`.
+- Commit SHA: `fbd5e07` for the handoff and Vercel ignore hygiene; this log append is a follow-up commit.
+- Deploy URL/status: no Vercel deploy attempted because the prior `api-deployments-free-per-day` quota blocker already reached the two-equivalent-failures cap. Existing alias `https://hardik-s-github-io.vercel.app` returned 200 for `/` and `/legacy/`.
+- Preflight result: `auth-ok,dirty-worktree`.
+- Blocker state: `blocked-cleanly` for Vercel deploy quota only; GitHub source update remains unblocked.
+- Dirty paths: none expected after committing `.gitignore` and this log entry.
+- Attempts used: preflight 1 at run start; Vercel deploy 0 this run due active retry cap.
+- Next safe action: push the log commit, verify `origin/master`, then redeploy the final pushed commit after the Vercel quota reset.
