@@ -10,6 +10,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - `legacy/index.html` preserves the prior site experience.
 - `css/v2.css` provides the static visual system and responsive layout.
 - `js/v2-content.js` renders evidence cards from JSON payloads.
+- `js/v2-interactions.js` adds the small native hero interaction layer.
 - `content/site-content.json` is the single source for evidence and selected-work links.
 - `docs/evidence-inventory.md` and `docs/public-safety.md` track proof policy and contact safety decisions.
 - `state/director-plan.md` is the director surface for the next increment.
@@ -25,6 +26,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - The v2 hero uses the existing legacy portrait asset (`images/me3.jpg`) instead of a generated or stock visual. This keeps the first viewport personal, evidence-safe, and consistent with the legacy site while avoiding new unverified claims or assets.
 - The hero H1 is the person name, with current product/AI positioning in supporting copy. This keeps the first viewport recruiter-readable and avoids turning the page into an internal evidence dashboard.
 - The hero keeps only three high-value actions: selected work, public resume, and contact. Deeper route shortcuts remain available through section structure and skip links instead of crowding the first viewport.
+- The hero proof-focus switcher is native JavaScript, uses verified focus themes already represented in `content/site-content.json`, and disables auto-rotation for `prefers-reduced-motion` users while keeping the manual button available.
 
 ## Evidence model
 

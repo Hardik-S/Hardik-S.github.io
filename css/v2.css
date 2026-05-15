@@ -129,6 +129,49 @@ a {
   margin-top: 0.35rem;
 }
 
+.hero-focus-panel {
+  width: min(100%, 31rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+  padding: 0.82rem;
+  border: 1px solid rgba(231, 237, 249, 0.18);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.hero-focus-panel .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.hero-focus-text {
+  color: rgba(231, 237, 249, 0.92);
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+
+.focus-cycle-button {
+  width: max-content;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  padding: 0.5rem 0.72rem;
+  color: var(--text);
+  background: rgba(7, 15, 32, 0.74);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.focus-cycle-button:hover,
+.focus-cycle-button:focus-visible {
+  border-color: var(--accent);
+  background: rgba(107, 220, 255, 0.14);
+  transform: translateY(-1px);
+}
+
 .hero-proof-strip span {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
@@ -581,6 +624,15 @@ button:focus-visible,
   .hero-support {
     font-size: 0.96rem;
     line-height: 1.55;
+  }
+
+  .hero-focus-panel {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .focus-cycle-button {
+    width: 100%;
   }
 
   .hero-portrait {
