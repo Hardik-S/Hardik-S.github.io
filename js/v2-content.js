@@ -1,4 +1,5 @@
-﻿// v2 evidence model: keep homepage proof anchors tied to auditable public links.
+// v2 evidence model:
+// keep homepage proof anchors tied to auditable links and avoid HTML injection.
 (function () {
   const container = document.getElementById("evidence-grid");
   if (!container) {
@@ -6,24 +7,58 @@
   }
 
   const loadingEl = container.querySelector(".evidence-loading");
-  const render = (items) => {
-    const nodes = items
-      .map((item) => {
-        return `
-          <article class="card">
-            <h3><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
-            <p>${item.description}</p>
-          </article>`;
-      })
-      .join("");
-    container.innerHTML = nodes;
+  const safeText = (value) => (value == null ? "" : String(value).trim());
+
+  const makeLink = (url, text) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.textContent = text;
+
+    // Keep absolute URLs in a new tab; keep relative links in-page for safety.
+    if (url.startsWith("/")) {
+      link.setAttribute("aria-label", text);
+      return link;
+    }
+
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", `${text} (opens in new tab)`);
+    return link;
   };
 
-  // Fail safe so the page remains usable even if JSON delivery fails.
+  const render = (items) => {
+    items.forEach((item) => {
+      const title = safeText(item?.title);
+      const url = safeText(item?.url);
+      const description = safeText(item?.description);
+
+      if (!title || !url || !description) {
+        return;
+      }
+
+      const article = document.createElement("article");
+      article.className = "card";
+
+      const heading = document.createElement("h3");
+      heading.appendChild(makeLink(url, title));
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = description;
+
+      article.appendChild(heading);
+      article.appendChild(paragraph);
+      container.appendChild(article);
+    });
+
+    if (container.children.length === 0) {
+      failSafe("No valid evidence items");
+    }
+  };
+
+  // Fallback so the page remains usable even if JSON delivery fails.
   const failSafe = (message) => {
     const fallback =
-      '  <p class="section-note">Could not load evidence anchors. ' +
-      'The static links below remain valid if JavaScript is unavailable.</p>';
+      '<p class="section-note">Could not load evidence anchors. Static links are not rendered.</p>';
 
     container.innerHTML = fallback;
     console.error("Evidence inventory load failed", message);

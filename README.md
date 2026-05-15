@@ -44,6 +44,16 @@ This repository is the active home for Hardik's personal website.
   - Responsive breakpoints tuned for 700px and 480px layouts.
 - No copy or evidence claims were introduced in this turn; all public statements remain from verified links and previous v2 messaging.
 
+## Turn 4 accessibility and safety pass
+
+- Added `skip-link` and explicit main section labels:
+  - `main` has `id="main-content"`.
+  - `Featured areas`, `Evidence-backed anchors`, and `Get in touch` are explicitly labeled and keyboard-routable.
+- Added non-visual labels for external/contact anchors where context is otherwise ambiguous.
+- Preserved reduced-motion handling and improved focus visibility for primary controls.
+- Hardened evidence rendering by replacing HTML-string assembly with DOM-node construction and skipping invalid data records in `content/site-content.json`.
+- Kept legacy preservation unchanged (`legacy/index.html`) and did not refactor `/legacy/` paths for this increment.
+
 ## How to verify locally
 
 From repo root:
@@ -61,3 +71,11 @@ Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/data/site-content.json
 git diff --check
 Select-String -Path css/v2.css -Pattern '@media|max-width|Legacy|position: fixed|hero-signals'
 ```
+
+### Turn 4 verification
+
+```powershell
+git diff --check
+powershell -NoProfile -ExecutionPolicy Bypass -File "path\\to\\codex-public-redaction-scan.ps1" -Path .
+```
+

@@ -14,9 +14,10 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <a class="legacy-pill" href="/legacy/" aria-label="Open legacy personal site">Legacy</a>
 
-  <main class="site-shell">
+  <main class="site-shell" id="main-content">
     <header class="hero" id="top">
       <p class="eyebrow">Hardik Shrestha</p>
       <h1>Product-minded software builder shaping practical AI and web systems.</h1>
@@ -25,8 +26,8 @@
         business priorities, and measurable user outcomes.
       </p>
       <div class="hero-links">
-        <a href="/#highlights">See highlights</a>
-        <a href="mailto:hshrestha.hba2026@ivey.ca" class="secondary">Contact</a>
+        <a href="/#highlights" aria-label="Scroll to featured areas section">See highlights</a>
+        <a href="mailto:?subject=Portfolio%20inquiry%20from%20Hardik%20Shrestha%20site" class="secondary" aria-label="Open a compose window to contact Hardik">Contact</a>
       </div>
       <div class="hero-signals" aria-label="Focus signals">
         <span>Research-backed portfolio</span>
@@ -35,12 +36,12 @@
       </div>
     </header>
 
-    <section id="highlights" class="card-section">
-      <h2>Featured areas</h2>
+    <section id="highlights" class="card-section" aria-labelledby="highlights-title">
+      <h2 id="highlights-title">Featured areas</h2>
       <div class="cards">
         <article class="card">
           <h3>Portfolio & code</h3>
-          <p><a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">Hardik-S GitHub</a> holds practical side projects and public engineering work.</p>
+          <p><a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer" aria-label="Open Hardik-S GitHub profile in a new tab">Hardik-S GitHub</a> holds practical side projects and public engineering work.</p>
         </article>
         <article class="card">
           <h3>Product delivery</h3>
@@ -48,8 +49,8 @@
         </article>
         <article class="card">
           <h3>Resume and contact</h3>
-          <p><a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume (public)</a></p>
-          <p><a href="mailto:hshrestha.hba2026@ivey.ca">Email</a> · <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open public resume in a new tab">Resume (public)</a></p>
+          <p><a href="mailto:?subject=Resume%20request" aria-label="Open a compose window to request the resume">Request Resume</a> · <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer" aria-label="Open Hardik LinkedIn profile in a new tab">LinkedIn</a></p>
         </article>
       </div>
     </section>
@@ -65,9 +66,11 @@
       </noscript>
     </section>
 
-    <section class="card-section" id="contact">
-      <h2>Get in touch</h2>
-      <p>If you are hiring, building a team, or exploring product collaboration, message directly at <a href="mailto:hshrestha.hba2026@ivey.ca">hshrestha.hba2026@ivey.ca</a>.</p>
+    </section>
+
+    <section class="card-section" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Get in touch</h2>
+      <p>If you are hiring, building a team, or exploring product collaboration, use the Contact control in the hero to start your message.</p>
     </section>
 
     <footer class="footer-note">
