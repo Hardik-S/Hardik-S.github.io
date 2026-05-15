@@ -446,3 +446,17 @@
 - Public freshness: GitHub Pages `/` and Vercel alias `/` returned 200 with the new title metadata and `og:image`; both `/legacy/` routes returned 200.
 - Dirty paths: `?? state/qa/` appeared after push with `turn33-*` QA artifacts and active server logs from another surface; preserved uncommitted as unrelated work.
 - Next safe action: reconcile or intentionally keep the `state/qa/` Turn 33 artifacts before any future publish run that requires a clean target checkout.
+## Run 2026-05-15T18:09:11-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 34 - Template Grade Flagship Work Section.
+- Selected task: make the four verified flagship records read as a curated portfolio section by promoting the first selected-work item into a lead proof and rendering the remaining three as supporting proofs.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `js/v2-content.js`, `css/v2.css`, `README.md`, `docs/evidence-inventory.md`, `state/worker-log.md`.
+- Implementation notes: no project set, evidence copy, legacy routing, or contact policy changed. The hierarchy is layout-driven from the existing JSON order, and the rejected approach was adding new project candidates before stronger public evidence is verified.
+- Verification: start and end preflight `auth-ok`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; selected-work case-study field guard; local HTTP checks returned 200 for `/`, `/legacy/`, `/content/site-content.json`, and `/js/v2-interactions.js`; Playwright screenshots captured and inspected for selected work at `390x844` and `1440x900`, plus mobile root at `390x844`; four flagship URLs returned HTTP 200; changed-file redaction scans passed.
+- Commit SHA: `08ca3d25ac50571c74820ecf024fb53f7a407a47` (`Curate flagship work hierarchy`), pushed to `origin/master`; `git ls-remote origin HEAD` matched the same SHA.
+- Public status: GitHub Pages `/`, `/legacy/`, cache-busted `/js/v2-content.js?turn34=08ca3d2`, and cache-busted `/css/v2.css?turn34=08ca3d2` returned 200; Pages JS/CSS contained the Turn 34 markers after one propagation wait. Vercel alias `/`, `/legacy/`, cache-busted JS, and cache-busted CSS returned 200 with the Turn 34 markers in JS/CSS. No manual Vercel CLI deploy was attempted because the existing integration refreshed and the prior manual quota retry cap should not be consumed unnecessarily.
+- Preflight result: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy config points to Vercel project `hardik-s-github-io`.
+- Dirty paths: none after source push and before this log append; generated `state/qa/` screenshots/logs from rendered QA were removed before commit because they were not durable source.
+- Blocker state: none.
+- Next safe action: proceed to Turn 35 public-safe project visuals only if screenshot sources can be verified; otherwise use Turn 37 release QA and review freeze.
