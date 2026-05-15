@@ -57,3 +57,23 @@
 - Dirty paths: ?? .gitignore
 - Blocker state: none blocking this increment
 - Next safe action: continue with next evidence-backed increment for public project proof depth while preserving Legacy route and button
+
+## Run 2026-05-15T12:41:18-04:00
+- Director task: Turn 11 evidence card source annotations
+- Selected task: render evidence source metadata (source type + verified date + source link) for each public-ready proof card.
+- Commit: db5441d
+- Changed files: `js/v2-content.js`, `css/v2.css`, `README.md`
+- Preflight result: `auth-ok,dirty-worktree` (attempts used: 0)
+- Dirty paths at run start: `?? .gitignore`
+- Verification:
+  - `git diff --check` clean
+  - local `Invoke-WebRequest` checks for `http://127.0.0.1:4173/`, `/legacy/`, `/content/site-content.json` returned 200
+  - `codex-public-redaction-scan.ps1` still flags legacy-only known email in `legacy/index.html`
+- Deploy:
+  - production `https://hardik-s-github-4tlwnni17-batb4016-9101s-projects.vercel.app`
+  - alias `https://hardik-s-github-io.vercel.app`
+- Route checks:
+  - prod URL returned `401` in this environment (no auth passthrough)
+  - alias returned 200 for `/` and `/legacy/`
+- Blocker state: none blocking this increment
+- Next safe action: keep legacy preservation untouched and continue the next evidence-depth increment with verifiable new proof points.
