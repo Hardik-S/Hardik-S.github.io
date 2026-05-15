@@ -405,3 +405,10 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel ACL not re-tested`; Preflight result `auth-ok`; Dirty paths `none at start`; Attempts used `preflight 1, Vercel deploy 0 this run due retry cap`; Next safe action `push source and use GitHub Pages until quota reset`.
 - Dirty paths: none at start; expected dirty path is this log until committed.
 - Next safe action: proceed to Turn 32 accessibility/performance/SEO release polish, or run a Vercel deploy only after the quota window plausibly resets.
+
+## Run 2026-05-15T17:39:18-04:00 follow-up
+- Push status: commits `f02154ec1d1071a96941bd66101ee2966f024570` and `3d58dad356d3a51aa82269b5ce1fad15736e8864` pushed to `origin/master`; remote `HEAD` matched `3d58dad356d3a51aa82269b5ce1fad15736e8864` after push.
+- Public route freshness: GitHub Pages `/` and `/content/site-content.json` returned 200, and the JSON showed the new `caseStudy` / `reviewFor` payload after one propagation wait; `/legacy/` returned 200.
+- Vercel alias status: root and `/legacy/` returned 200, but `/content/site-content.json` was stale for the new case-study payload because no manual deploy was attempted under the active quota retry cap.
+- Full public redaction scan status: unchanged legacy-only contact exception in `legacy\index.html`; changed-file scans passed.
+- Next safe action: use GitHub Pages for current Turn 31 review; retry Vercel deployment only after quota reset.
