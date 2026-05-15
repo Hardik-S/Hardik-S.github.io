@@ -501,3 +501,19 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for the new Turn 37 handoff text`; Preflight result `auth-ok`; Dirty paths `none before handoff edit`; Attempts used `preflight 1, Vercel CLI deploy 0 this run due prior quota cap, Vercel freshness checks 2`; Next safe action `use fresh GitHub Pages for review and retry/manual-check Vercel only after quota reset or integration catches up`.
 - Dirty paths: none after QA cleanup; expected dirty path is this log until committed.
 - Next safe action: commit and push this worker-log entry, then keep the site frozen for user review unless new verified public-safe project evidence is supplied.
+
+## Run 2026-05-15T18:45:38-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 38 - External Review Backlog Triage.
+- Selected task: add a short review backlog and mirror it into the public handoff route so future work is filtered by must-fix, nice-polish, and needs-new-verified-evidence buckets instead of restarting broad redesign.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `docs/review-backlog.md`, `docs/handoff.md`, `handoff/index.html`, `README.md`, and this log entry in `state/worker-log.md`.
+- Site/docs commit SHA: `7d7819ae87ebd24a9758e693554227c98b4607e2` (`Add external review backlog`), pushed to `origin/master`; `git ls-remote origin HEAD` matched the same SHA before this log append.
+- Verification: start preflight `auth-ok`; `git status --short --branch`; `git diff --check` with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/docs/handoff.md`, and `/docs/review-backlog.md`; scoped redaction scans passed for all touched docs and handoff HTML.
+- Rendered QA: Playwright screenshots captured to temp files for `/handoff/` at `390x844`, `768x1024`, and `1440x900`; backlog-anchor screenshots at `390x844` and `1440x900` were re-captured after animation delay and inspected for readable cards, no overlap, and visible top-right `Legacy` button. Screenshots were not committed because they are transient QA evidence.
+- Public status: after one propagation wait, GitHub Pages and the Vercel alias both returned 200 for `/handoff/?turn38=7d7819a` and `/docs/review-backlog.md?turn38=7d7819a` with the Turn 38 backlog markers present.
+- Deploy URL/status: no manual Vercel CLI deploy was attempted; the existing Vercel integration served the new handoff and backlog markers. Review URLs remain `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`.
+- Preflight result: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy config points to Vercel project `hardik-s-github-io`.
+- Blocker state: none.
+- Dirty paths: none after source push; expected dirty path is this log until committed.
+- Next safe action: keep the site frozen for user review; only proceed to final share packet or specific fixes if review feedback, public freshness drift, or new verified public-safe evidence appears.
