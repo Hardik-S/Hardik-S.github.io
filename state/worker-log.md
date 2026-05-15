@@ -88,3 +88,13 @@
 - Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 at run start)
 - Blocker state: none blocking this increment.
 - Next safe action: continue Director Turn 13 (selected-work narrative layer) or finish Turn 12 docs consistency sweep if new evidence candidates appear.
+## Run 2026-05-15T13:05:51-04:00
+- Director task: Turn 13 selected-work narrative layer
+- Commit SHA: 2058d9a
+- Changed files: index.html, css/v2.css, js/v2-content.js, content/site-content.json, state/director-plan.md, README.md
+- Verification: `git status --short`, `git diff --check`, `node --check js/v2-content.js`, local HTTP checks for `/`, `/legacy/`, `/content/site-content.json`, redaction scan script (legacy-only known hit), `npx vercel@latest --prod --yes --name hardik-s-github-io`, and production/alias endpoint checks.
+- GitHub: commit 2058d9a pushed to master (https://github.com/Hardik-S/hardik-s.github.io)
+- Deploy: production https://hardik-s-github-c0idcy5lr-batb4016-9101s-projects.vercel.app (alias https://hardik-s-github-io.vercel.app)
+- Preflight result: auth-ok,dirty-worktree (AttemptsUsed 1)
+- Blocker state: redaction scan flagged known legacy email in legacy/index.html; production deployment path returned 401 in this environment (alias route returned 200).
+- Next safe action: continue Turn 13B narrative polish or next Director task; keep .gitignore untracked until user confirms cleanup.
