@@ -260,3 +260,21 @@
 - Deploy URL/status: production `https://hardik-s-github-2126z1uy1-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` (active, 200).
 - Blocker state: none blocking this increment.
 - Next safe action: continue Turn 22 legacy-inspired hero redesign now that first-load contact and accessibility defects are fixed.
+
+## 2026-05-15T15:48:56-04:00
+- Director task: Turn 22 - Legacy-Inspired Hero Redesign.
+- Selected task: replace the generic text-first v2 opening with a portrait-led editorial hero while preserving the simple translucent top-right Legacy button and `/legacy/` route.
+- Changed files: `index.html`, `css/v2.css`, `README.md`, `state/worker-log.md`.
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 before work, AttemptsUsed 1 before deploy and after deploy); dirty path remains the pre-existing untracked Vercel `.gitignore`.
+- Verification:
+  - `git diff --check`.
+  - `node --check js/v2-content.js`.
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json`.
+  - Local route checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`.
+  - Playwright CLI screenshots captured at `390x844`, `768x1024`, and `1440x900`.
+  - Manual screenshot inspection confirmed portrait presence, Legacy button visibility, and next-section hint on desktop, tablet, and mobile.
+  - Full redaction scan only reported the documented legacy-only email in `legacy/index.html`.
+- Commit SHA: `9bab01f` for the hero redesign; this log append is a follow-up commit.
+- Deploy URL/status: production `https://hardik-s-github-jaqb3hacc-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` returned 200 for `/`, `/legacy/`, and `/content/site-content.json`.
+- Blocker state: none blocking this increment; Browser plugin tools did not surface through tool discovery, so rendered QA used Playwright CLI fallback.
+- Next safe action: proceed to Turn 23 motion and interaction layer while keeping the portrait-led hero and Legacy route stable.
