@@ -71,19 +71,19 @@ The homepage flagship section is intentionally capped at four items:
 - PMO Decision Brief Builder
   - Inclusion rationale: live product workflow that demonstrates prioritization, brief structure, and public deployment quality.
   - Presentation role: lead proof, because it is the clearest live deployment for product workflow, decision framing, and implementation in one artifact.
-  - Visual treatment: structured text cue, not a screenshot, because no verified screenshot asset is checked into the repo.
+  - Visual treatment: generated proof map from the verified cue, not a screenshot, because no verified screenshot asset is checked into the repo.
 - BioScript Housing Decision
   - Inclusion rationale: strongest public-safe bridge to current BioScript-facing decision-support work without exposing private workflow details.
   - Presentation role: supporting proof, kept close to the lead item for current decision-support relevance.
-  - Visual treatment: structured text cue focused on criteria, tradeoffs, and handoff.
+  - Visual treatment: generated proof map focused on criteria, tradeoffs, and handoff.
 - Agent Permission Review Console
   - Inclusion rationale: AI governance and least-privilege review is a stronger current positioning signal than generic project breadth.
   - Presentation role: supporting proof, showing the AI governance angle without overstating production usage.
-  - Visual treatment: structured text cue focused on request, scope, and approval.
+  - Visual treatment: generated proof map focused on request, scope, and approval.
 - Invoice Dispute Packet Builder
   - Inclusion rationale: operations-facing decision support with clear packet-generation framing and public repository proof.
   - Presentation role: supporting proof, rounding out the operations packet-building narrative with public source evidence.
-  - Visual treatment: structured text cue focused on facts, evidence, and response.
+  - Visual treatment: generated proof map focused on facts, evidence, and response.
 
 Items not in this four-card layer remain available as proof anchors only when they are public-ready and verified.
 
@@ -95,6 +95,7 @@ Items not in this four-card layer remain available as proof anchors only when th
   - New deployments (PMO and BioScript) are marked as `deployment` source-type with HTTP 200 checks.
   - `selectedWork` is capped at four flagship records; additional verified links remain in `proofPoints`.
   - `visual` fields are structured public-safe cues, not claims of screenshot availability.
+  - The selected-work renderer now turns `visual.cue` into visible step maps and labels each map from `source.type`; these visuals remain generated UI treatments, not product screenshots.
   - `caseStudy` fields add role, artifact type, proof, and review guidance for each flagship item. These fields are intentionally evaluative and source-linked, not metric claims.
   - Rendering promotes the first selected-work item into a lead proof card and presents the remaining three as supporting proof cards. That hierarchy is layout-only and should be changed only after the JSON ordering is deliberately updated.
 

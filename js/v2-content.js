@@ -124,6 +124,45 @@
 
   const isPublicReady = (item) => item?.publicReady === true;
 
+  const createStructuredVisual = ({ label, cue, source, index }) => {
+    const visual = document.createElement("div");
+    visual.className = "work-visual structured-work-visual";
+    visual.setAttribute("aria-hidden", "true");
+    visual.dataset.visualTone = String((index % 4) + 1);
+
+    const visualMark = document.createElement("span");
+    visualMark.className = "work-visual-mark";
+    visualMark.textContent = label;
+
+    const sourceType = safeText(source?.type) || "proof";
+    const visualMeta = document.createElement("span");
+    visualMeta.className = "work-visual-meta";
+    visualMeta.textContent = sourceType;
+
+    const visualCueEl = document.createElement("span");
+    visualCueEl.className = "work-visual-cue";
+    visualCueEl.textContent = cue;
+
+    const flow = document.createElement("div");
+    flow.className = "work-visual-flow";
+    cue
+      .split(/\s*->\s*/)
+      .map((step) => safeText(step))
+      .filter(Boolean)
+      .slice(0, 4)
+      .forEach((step, stepIndex) => {
+        const node = document.createElement("span");
+        node.className = "work-visual-node";
+        node.dataset.step = String(stepIndex + 1);
+        node.textContent = step;
+        flow.append(node);
+      });
+
+    // This is intentionally generated from verified JSON cues, not a screenshot.
+    visual.append(visualMark, visualMeta, visualCueEl, flow);
+    return visual;
+  };
+
   // Keep selected-work as a tight flagship layer; broader proof remains below.
   const createSelectedWorkCard = (item, index) => {
     const title = safeText(item?.title);
@@ -149,18 +188,12 @@
     article.dataset.workFocus = focus || "Flagship proof";
     article.dataset.workSummary = summary;
 
-    const visual = document.createElement("div");
-    visual.className = "work-visual";
-    visual.setAttribute("aria-hidden", "true");
-
-    const visualMark = document.createElement("span");
-    visualMark.className = "work-visual-mark";
-    visualMark.textContent = visualLabel;
-
-    const visualCueEl = document.createElement("span");
-    visualCueEl.className = "work-visual-cue";
-    visualCueEl.textContent = visualCue;
-    visual.append(visualMark, visualCueEl);
+    const visual = createStructuredVisual({
+      label: visualLabel,
+      cue: visualCue,
+      source: item.source,
+      index
+    });
 
     const rankLabel = document.createElement("p");
     rankLabel.className = "selected-work-rank";

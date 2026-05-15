@@ -32,6 +32,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - The section rail below the hero borrows the old site's anchored navigation idea without restoring the heavier legacy navbar. It gives reviewers a fast path through the current v2 sections while keeping the fixed `Legacy` button as the only global control.
 - The first post-hero section is a recruiter-facing "What I bring" band instead of a generic link list. It describes product framing, implementation range, and evidence-first handoff because those are supported by the current public proof anchors.
 - The flagship cards use structured text visuals (`visual.label` and `visual.cue`) instead of screenshots because no current project screenshot assets have been verified for public reuse in this repo.
+- The public-safe project visual pass converts each selected-work `visual.cue` into a small generated proof map. This adds visual variety without implying a live screenshot, private product screen, or unverified artifact.
 - The flagship work section adds a native project spotlight controller after the evidence payload renders. Cards are keyboard-focusable, arrow-key scrubbable, and source their spotlight labels from the verified selected-work JSON instead of duplicate copy.
 - The flagship section now treats the first verified selected-work record as the lead proof and the remaining three as supporting proofs. This keeps hierarchy source-driven without inventing a new ranking claim, and the rejected approach was adding fresh project candidates before verifying stronger public evidence.
 - Section-level color bands are implemented in CSS rather than as wrapper cards. This makes the hero, featured areas, flagship work, evidence anchors, and contact sections feel intentionally distinct while preserving the static HTML structure and avoiding a nested-card redesign.
@@ -54,6 +55,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - Selected-work summary and evidence meta lines are generated from `meta` (`verifiedOn`, `verifiedBy`, `verifiedScope`) to keep the narrative in sync with this file.
 - Current selected-work items are intentionally narrowed to four high-signal public repositories and deployments that reinforce the v2 positioning, rather than a full archive list.
 - Selected-work case-study details use compact `caseStudy` fields (`role`, `artifactType`, `proof`, and `reviewFor`) so each flagship card explains how to evaluate the artifact without adding unverified metrics or employer claims.
+- Selected-work visual maps are generated from `visual.label`, `visual.cue`, and `source.type`; they are not screenshot captures. The rejected approach for this pass was committing screenshots before verifying capture source, privacy review, and public-safe asset size.
 - Broader verified work stays in `proofPoints` below the flagship section, while demoted or unverified candidates stay in `researchNeeds` with rationale.
 
 ## Contact and safety boundaries

@@ -31,3 +31,4 @@
 - Public-facing state logs and docs should avoid raw local filesystem paths and direct contact literals unless the item is an explicit legacy-only exception.
 - Legacy contact literals in `legacy/index.html` remain allowed only as documented historical content and must stay confined to the legacy route.
 - Open Graph and Twitter image metadata should continue to point only at committed public assets or verified public URLs.
+- Selected-work visuals are generated from public JSON labels and cues. Do not replace them with screenshots until the capture source, visible data, image size, and reuse rationale are documented in `docs/evidence-inventory.md`.
