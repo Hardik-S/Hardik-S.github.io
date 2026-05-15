@@ -735,6 +735,28 @@ h1 {
   font-size: 0.95rem;
 }
 
+.footer-links {
+  margin-top: 0.45rem;
+}
+
+.handoff-shell {
+  padding-top: 4.4rem;
+}
+
+.handoff-hero {
+  min-height: auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.handoff-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  display: grid;
+  gap: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 a:focus-visible,
 button:focus-visible,
 .legacy-pill:focus-visible {
@@ -799,6 +821,10 @@ button:focus-visible,
 
   .hero-links {
     order: -1;
+  }
+
+  .handoff-hero .hero-links {
+    order: initial;
   }
 
   h1 {

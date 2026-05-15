@@ -58,8 +58,9 @@ The v2 contact path is profile-first:
 
 - `/` for v2 homepage.
 - `/legacy/` for the prior site.
+- `/handoff/` for the public browser-readable release handoff.
 - `/content/site-content.json` for the evidence payload.
-- `/docs/handoff.md` for this release handoff.
+- `/docs/handoff.md` for the source handoff note.
 
 ## Deployment notes
 
@@ -82,6 +83,7 @@ Get-Content content\site-content.json -Raw | ConvertFrom-Json
 python -m http.server 4173
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/handoff/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/docs/handoff.md
 

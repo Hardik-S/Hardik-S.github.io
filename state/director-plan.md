@@ -22,3 +22,10 @@ Target repository: `Hardik-S/hardik-s.github.io`
 ## Escalation notes
 
 - If dirty-worktree or preflight blockers appear again, follow `codex-workflow-reliability` states and two-equivalent-failure cap before changing surface.
+
+## Turn 29 queue
+
+- Turn 29A: public handoff route
+  - Add a browser-readable `/handoff/` route that mirrors the release-candidate handoff.
+  - Keep the source Markdown handoff in `docs/handoff.md`.
+  - Preserve the top-right Legacy button and `/legacy/` behavior unchanged.

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardik Shrestha | v2 Handoff</title>
+  <meta name="description" content="Release handoff for the v2 Hardik Shrestha personal website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/v2.css">
+  <link rel="shortcut icon" href="../images/favicon2.png">
+</head>
+
+<body>
+  <a class="skip-link" href="#handoff-main">Skip to handoff content</a>
+  <a class="legacy-pill" href="/legacy/" aria-label="Open legacy personal site">Legacy</a>
+
+  <main class="site-shell handoff-shell" id="handoff-main">
+    <header class="card-section handoff-hero" aria-labelledby="handoff-title">
+      <p class="eyebrow">Release handoff</p>
+      <h1 id="handoff-title">v2 site handoff</h1>
+      <p class="hero-lede">
+        Static route for reviewing the current v2 personal website scope, preservation rules, and verification checklist.
+      </p>
+      <div class="hero-links" aria-label="Handoff navigation">
+        <a href="/">Back to v2 home</a>
+        <a href="/legacy/" class="secondary">Legacy site</a>
+        <a href="../docs/handoff.md" class="secondary">Source handoff notes</a>
+      </div>
+    </header>
+
+    <section class="card-section" aria-labelledby="handoff-scope-title">
+      <h2 id="handoff-scope-title">Scope to preserve</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Root route</h3>
+          <p>The `/` route is the v2 homepage and should keep the current evidence-backed portfolio positioning.</p>
+        </article>
+        <article class="card">
+          <h3>Legacy route</h3>
+          <p>The `/legacy/` route and fixed translucent Legacy button preserve the prior site for continuity.</p>
+        </article>
+        <article class="card">
+          <h3>Evidence payload</h3>
+          <p>The displayed proof items continue to come from `content/site-content.json` and public-ready source metadata.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card-section" aria-labelledby="handoff-checklist-title">
+      <h2 id="handoff-checklist-title">Release checklist</h2>
+      <ol class="handoff-list">
+        <li>Confirm `/`, `/legacy/`, `/handoff/`, and `/content/site-content.json` return HTTP 200 locally and publicly.</li>
+        <li>Run `node --check` for both v2 scripts and parse `content/site-content.json` before publishing.</li>
+        <li>Keep full-site redaction findings limited to the documented legacy-only contact exception.</li>
+        <li>Redeploy the current pushed commit to Vercel after the daily quota window resets.</li>
+      </ol>
+    </section>
+
+    <section class="card-section" aria-labelledby="handoff-caveats-title">
+      <h2 id="handoff-caveats-title">Current caveats</h2>
+      <p class="section-note">
+        Vercel deployment was quota-blocked in the last release runs, so GitHub Pages is the freshest public surface until a production Vercel deploy succeeds.
+      </p>
+      <p class="section-note">
+        Future public claims should stay tied to reachable repositories, deployment routes, or documented source notes.
+      </p>
+    </section>
+
+    <footer class="footer-note">
+      <p>Handoff route for v2 release review. Legacy profile remains available via the top-right Legacy button.</p>
+    </footer>
+  </main>
+</body>
+
+</html>

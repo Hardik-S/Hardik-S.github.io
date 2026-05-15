@@ -13,6 +13,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - `js/v2-interactions.js` adds the small native hero interaction layer.
 - `content/site-content.json` is the single source for evidence and selected-work links.
 - `docs/evidence-inventory.md`, `docs/public-safety.md`, and `docs/handoff.md` track proof policy, contact safety decisions, and release-candidate handoff notes.
+- `handoff/index.html` exposes the release handoff as a static public route for GitHub Pages and Vercel review.
 - `state/director-plan.md` is the director surface for the next increment.
 - `state/worker-log.md` records run-by-run implementation and verification evidence.
 
@@ -33,6 +34,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - The flagship work section adds a native project spotlight controller after the evidence payload renders. Cards are keyboard-focusable, arrow-key scrubbable, and source their spotlight labels from the verified selected-work JSON instead of duplicate copy.
 - Section-level color bands are implemented in CSS rather than as wrapper cards. This makes the hero, featured areas, flagship work, evidence anchors, and contact sections feel intentionally distinct while preserving the static HTML structure and avoiding a nested-card redesign.
 - `.gitignore` intentionally ignores `.vercel/` so local deployment identity stays out of the public source while the documented Vercel project name and alias remain in handoff notes.
+- `/handoff/` mirrors the durable release-handoff checklist in browser-friendly form because GitHub Pages does not reliably serve the Markdown handoff as a navigable site route.
 
 ## Evidence model
 
@@ -67,6 +69,7 @@ git diff --check
 python -m http.server 4173
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/handoff/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\\scripts\\github-deploy-preflight.ps1" -TargetProject Hardik-S/hardik-s.github.io -AttemptsUsed 0
@@ -77,4 +80,5 @@ For release-candidate QA, use `docs/handoff.md` as the durable checklist and dep
 ## Route behavior notes
 
 - GitHub Pages and Vercel keep the same v2 root and `/legacy/` reachability for this checkout.
+- `/handoff/` is the public release-review route; `docs/handoff.md` remains the source handoff note.
 - Do not edit legacy contact details or legacy route behavior in site-behavior-focused turns unless explicitly requested.
