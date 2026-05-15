@@ -189,6 +189,30 @@ h1 {
 .hero-links a.secondary:focus-visible {
   background: rgba(255, 255, 255, 0.08);
 }
+.quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.quick-nav a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.38rem 0.72rem;
+  width: max-content;
+}
+
+.quick-nav a:hover,
+.quick-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
 
 .skip-link {
   position: absolute;
@@ -205,6 +229,23 @@ h1 {
 
 .skip-link:focus {
   left: 1rem;
+}
+/* Keyboard-only anchors in the header for faster route discovery. */
+.skip-link-secondary {
+  left: 1rem;
+  top: 0.9rem;
+}
+
+.skip-link-secondary:focus {
+  top: 2.4rem;
+}
+
+.skip-link:nth-of-type(3):focus {
+  top: 3.7rem;
+}
+
+.skip-link:nth-of-type(4):focus {
+  top: 5rem;
 }
 
 .card-section {

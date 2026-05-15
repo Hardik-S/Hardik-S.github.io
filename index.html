@@ -15,6 +15,9 @@
 
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link skip-link-secondary" href="#highlights">Skip to highlights</a>
+  <a class="skip-link skip-link-secondary" href="#evidence-section">Skip to evidence anchors</a>
+  <a class="skip-link skip-link-secondary" href="#contact">Skip to contact</a>
   <a class="legacy-pill" href="/legacy/" aria-label="Open legacy personal site">Legacy</a>
 
   <main class="site-shell" id="main-content">
@@ -34,6 +37,11 @@
         <span>Product + engineering</span>
         <span>Recruiter-ready artifacts</span>
       </div>
+      <nav class="quick-nav" aria-label="In-page navigation shortcuts">
+        <a href="#highlights">Go to highlights</a>
+        <a href="#evidence-section">Go to evidence anchors</a>
+        <a href="#contact">Go to contact</a>
+      </nav>
     </header>
 
     <section id="highlights" class="card-section" aria-labelledby="highlights-title">
@@ -55,7 +63,7 @@
       </div>
     </section>
 
-    <section class="card-section" aria-labelledby="evidence-title">
+    <section id="evidence-section" class="card-section" aria-labelledby="evidence-title" tabindex="-1">
       <h2 id="evidence-title">Evidence-backed anchors</h2>
       <p class="section-note">This homepage only surfaces publicly reachable links that can be verified from source artifacts.</p>
       <div id="evidence-grid" class="cards" aria-live="polite">
@@ -67,7 +75,7 @@
       </noscript>
     </section>
 
-    <section class="card-section" id="contact" aria-labelledby="contact-title">
+    <section class="card-section" id="contact" aria-labelledby="contact-title" tabindex="-1">
       <h2 id="contact-title">Get in touch</h2>
       <p>If you are hiring, building a team, or exploring product collaboration, use the Contact control in the hero to start your message.</p>
     </section>

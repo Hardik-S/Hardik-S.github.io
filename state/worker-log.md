@@ -12,6 +12,18 @@
 - Blocker state: none at this stage
 - Next safe action: complete verification, then push scoped v2 increment and write final artifact URL/status.
 
+## 2026-05-15T15:31:42-04:00
+- Director task: Turn 7B route and accessibility hardening
+- Selected task: add additional semantic anchors for evidence block and in-page keyboard shortcuts for critical controls
+- Scope: `index.html`, `css/v2.css`
+- Commit: pending
+- Preflight result: auth-ok,dirty-worktree (attempts used 0)
+- Dirty paths at run start: `?? .gitignore`
+- Verification: keyboard anchors and skip links added; pending route checks and `git diff --check`
+- Deploy: pending
+- Blocker state: none blocking this turn
+- Next safe action: push commit after passing local checks and append final log + automation memory entry
+
 ## Run 2026-05-15T11:28:42-04:00
 - Director task: Turn 7A evidence provenance visibility
 - Selected task: add evidence metadata line on v2 and bootstrap director-plan artifacts.

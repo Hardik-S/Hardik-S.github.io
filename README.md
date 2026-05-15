@@ -106,3 +106,9 @@ vercel --version
 - Kept the Legacy control and /legacy/ route unchanged.
 - Added state/director-plan.md and state/worker-log.md for continued unbundled director-task execution.
 
+## Turn 7B route and accessibility hardening
+- Added in-page semantic anchors for `/highlights`, `#evidence-section`, and `#contact` to improve keyboard navigation.
+- Added keyboard-only quick navigation links in the hero and quick-nav cluster for faster control discovery.
+- Made evidence and contact sections explicitly tabbable targets (`tabindex="-1"`) for robust anchor focus behavior.
+- Kept the Legacy button and legacy route behavior unchanged.
+
