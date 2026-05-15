@@ -79,3 +79,17 @@ git diff --check
 powershell -NoProfile -ExecutionPolicy Bypass -File "path\\to\\codex-public-redaction-scan.ps1" -Path .
 ```
 
+### Turn 5 - Vercel deployment readiness
+
+```powershell
+vercel --version
+```
+
+- Added `vercel.json` with explicit legacy routing:
+  - `/legacy` resolves to `/legacy/index.html`.
+  - `/legacy/<path>` preserves legacy sub-route behavior for assets and assets-like files.
+- Kept `trailingSlash: true` and `cleanUrls: false` to avoid unintended conversion of legacy paths.
+- Deployment surface remains static and repository-local; no build step was introduced for this increment.
+- Next step in this run sequence: run focused post-change checks, then push the scoped change set.
+
+

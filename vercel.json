@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/legacy",
+      "destination": "/legacy/index.html"
+    },
+    {
+      "source": "/legacy/(.*)",
+      "destination": "/legacy/$1"
+    }
+  ]
+}
