@@ -151,3 +151,19 @@ px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias ro
 - Deploy URL/status: production `https://hardik-s-github-blxsjpczg-batb4016-9101s-projects.vercel.app` (alias `https://hardik-s-github-io.vercel.app`, deployed and reachable on alias).
 - Blocker state: none blocking this increment.
 - Next safe action: keep selected-work evidence scope and move next director increment to additional narrative polish only if validated new links arrive.
+## 2026-05-15T14:31:00-04:00
+- Director task: Turn 13B narrative polish pass - metadata alignment for selected-work and evidence sections
+- Changed files: js/v2-content.js, README.md
+- Commit SHA: 686470
+- Preflight result: uth-ok,dirty-worktree (target check at start and post-edit verification, attempts used: 1)
+- Verification performed:
+  - 
+ode --check js/v2-content.js
+  - git diff --check
+  - local route checks at http://127.0.0.1:4173/, /legacy/, /content/site-content.json returned HTTP 200
+  - deploy checks: https://hardik-s-github-io.vercel.app/ 200, https://hardik-s-github-3l1et1bhd-batb4016-9101s-projects.vercel.app/ 401 (environment-protected), /legacy/ 200
+- Deploy: https://hardik-s-github-3l1et1bhd-batb4016-9101s-projects.vercel.app
+- Alias: https://hardik-s-github-io.vercel.app
+- Dirty paths at start: ?? .gitignore
+- Blocker state: none for this increment.
+- Next safe action: Continue Turn 13 narrative polish if a new evidence source arrives; otherwise keep selected-work metadata behavior and move to next director increment in queue.
