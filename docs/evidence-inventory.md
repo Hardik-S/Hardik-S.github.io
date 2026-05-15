@@ -8,36 +8,71 @@ All items below are currently rendered as public proof anchors:
   - URL: https://github.com/Hardik-S
   - Verification date: 2026-05-15
   - Notes: public and reachable from local route checks.
-- Duck Duck Mallard
-  - URL: https://github.com/Hardik-S/DuckDuckGo
+- Cloud Cost Decision Notebook
+  - URL: https://github.com/Hardik-S/cloud-cost-decision-notebook
+  - Verification date: 2026-05-15
+  - Notes: public repo confirmed with recent maintenance.
+- PMO Decision Brief Builder
+  - URL: https://pmo-decision-brief-builder.vercel.app
+  - Verification date: 2026-05-15
+  - Notes: public deployment route returned HTTP 200.
+- BioScript Housing Decision
+  - URL: https://bioscript-housing-decision.vercel.app
+  - Verification date: 2026-05-15
+  - Notes: public deployment route returned HTTP 200.
+- Agent Permission Review Console
+  - URL: https://github.com/Hardik-S/agent-permission-review-console
   - Verification date: 2026-05-15
   - Notes: public repo confirmed.
-- Picture This
-  - URL: https://github.com/Hardik-S/picturethisv2
+- Ops Follow-Up Radar
+  - URL: https://github.com/Hardik-S/ops-follow-up-radar
   - Verification date: 2026-05-15
   - Notes: public repo confirmed.
+- Personal site source
+  - URL: https://github.com/Hardik-S/hardik-s.github.io
+  - Verification date: 2026-05-15
+  - Notes: this v2 implementation and evidence payload are stored here.
 - Resume (public)
   - URL: https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing
   - Verification date: 2026-05-15
-  - Notes: public artifact used for recruiting review.
+  - Notes: public artifact in local checks.
 - Legacy profile
   - URL: /legacy/
   - Verification date: 2026-05-15
   - Notes: legacy route check returned HTTP 200.
 
+## Demoted from homepage proof rotation
+
+- Duck Duck Mallard
+  - URL: https://github.com/Hardik-S/DuckDuckGo
+  - Status: demoted
+  - Reason: retained for archival context, no longer the strongest signal for current work.
+- Picture This
+  - URL: https://github.com/Hardik-S/picturethisv2
+  - Status: demoted
+  - Reason: retained for archival context, lower priority than decision-support portfolio evidence.
+
+## Source verification and notes
+
+- JSON source updated in `content/site-content.json`:
+  - `publicReady` remains `true` for all rendered items.
+  - `source.type` and `source.verifiedAt` are populated for each anchor.
+  - New deployments (PMO and BioScript) are marked as `deployment` source-type with HTTP 200 checks.
+
 ## Research backlog (not public claims)
 
 - BioScript active product demos
   - Status: not-yet-verified
-  - Reason: no local/public source verified in this run
+  - Reason: no direct source was verified in this turn for additional current BioScript artifacts.
   - Next action: add a verified source path + link before homepage publication.
 - Portfolio post-2026-05-15 updates
+  - Verification date: 2026-05-15
   - Status: needs-verification
-  - Reason: not validated in this increment
+  - Reason: not validated in this increment.
   - Next action: add only after a verifiable source exists.
 - Current demo readiness scorecards
   - Status: needs-verification
-  - Reason: no verifiable scorecard payload found during this run
+  - Reason: no verifiable scorecard payload found during this run.
   - Next action: add only with accessible source links.
 
 ## Current action constraints

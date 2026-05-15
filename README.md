@@ -80,6 +80,19 @@ git diff --check
 powershell -NoProfile -ExecutionPolicy Bypass -File "path\\to\\codex-public-redaction-scan.ps1" -Path .
 ```
 
+### Turn 12 - Current Project Proof Upgrade
+
+- Updated `content/site-content.json` to promote verified current project proof anchors and demote older lower-relevance ones.
+- Rendered public proof now includes:
+  - `cloud-cost-decision-notebook`
+  - `pmo-decision-brief-builder`
+  - `bioscript-housing-decision`
+  - `agent-permission-review-console`
+  - `ops-follow-up-radar`
+- Added demotion notes for `DuckDuckGo` and `picturethisv2` in `docs/evidence-inventory.md`.
+- Kept existing utility signals (`Hardik-S GitHub`, site source, resume, `/legacy/`) unchanged.
+- Confirmed `publicReady` and source metadata were preserved on all homepage rendered items.
+
 ### Turn 5 - Vercel deployment readiness
 
 ```powershell

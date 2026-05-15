@@ -23,7 +23,7 @@
     {
       "title": "Hardik-S GitHub",
       "url": "https://github.com/Hardik-S",
-      "description": "Public repository index for software, AI, and product side work.",
+      "description": "Public repository index for software, AI, and product-side work.",
       "publicReady": true,
       "source": {
         "type": "direct-visit",
@@ -33,15 +33,63 @@
       }
     },
     {
-      "title": "Duck Duck Mallard",
-      "url": "https://github.com/Hardik-S/DuckDuckGo",
-      "description": "Public repository for computer-vision experimentation and ML tooling.",
+      "title": "Cloud Cost Decision Notebook",
+      "url": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
+      "description": "Fixture-first cloud cost decision notebook for early-stage deploy tradeoffs.",
       "publicReady": true,
       "source": {
-        "type": "direct-visit",
-        "url": "https://github.com/Hardik-S/DuckDuckGo",
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/cloud-cost-decision-notebook",
         "verifiedAt": "2026-05-15",
-        "notes": "Verified from GitHub repo landing page and reachable public artifacts."
+        "notes": "Verified as public; repo metadata and homepage checks returned HTTP 200."
+      }
+    },
+    {
+      "title": "PMO Decision Brief Builder",
+      "url": "https://pmo-decision-brief-builder.vercel.app",
+      "description": "Fixture-first decision-brief builder for prioritizing PMO actions with auditable context.",
+      "publicReady": true,
+      "source": {
+        "type": "deployment",
+        "url": "https://pmo-decision-brief-builder.vercel.app",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified public deployment route returned HTTP 200."
+      }
+    },
+    {
+      "title": "BioScript Housing Decision",
+      "url": "https://bioscript-housing-decision.vercel.app",
+      "description": "Housing-focused decision packet evidence with public source and demo route.",
+      "publicReady": true,
+      "source": {
+        "type": "deployment",
+        "url": "https://bioscript-housing-decision.vercel.app",
+        "verifiedAt": "2026-05-15",
+        "notes": "Demo route is publicly reachable; linked to the public Hardik-S repository."
+      }
+    },
+    {
+      "title": "Agent Permission Review Console",
+      "url": "https://github.com/Hardik-S/agent-permission-review-console",
+      "description": "Synthetic governance console for least-privilege review workflows.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/agent-permission-review-console",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified as a public repository with current pushes in 2026-05-15."
+      }
+    },
+    {
+      "title": "Ops Follow-Up Radar",
+      "url": "https://github.com/Hardik-S/ops-follow-up-radar",
+      "description": "Operational follow-up tracker with public workflow-oriented implementation.",
+      "publicReady": true,
+      "source": {
+        "type": "repo",
+        "url": "https://github.com/Hardik-S/ops-follow-up-radar",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified as a public repository; homepage smoke check returned HTTP 200."
       }
     },
     {
@@ -50,22 +98,10 @@
       "description": "Public source repository for this portfolio site, including v2 implementation and evidence payload.",
       "publicReady": true,
       "source": {
-        "type": "direct-visit",
+        "type": "site-route",
         "url": "https://github.com/Hardik-S/hardik-s.github.io",
         "verifiedAt": "2026-05-15",
-        "notes": "Verified as a public GitHub repository and used as the active site source in this run."
-      }
-    },
-    {
-      "title": "Picture This",
-      "url": "https://github.com/Hardik-S/picturethisv2",
-      "description": "Public educational card game project with repository history and release activity.",
-      "publicReady": true,
-      "source": {
-        "type": "direct-visit",
-        "url": "https://github.com/Hardik-S/picturethisv2",
-        "verifiedAt": "2026-05-15",
-        "notes": "Verified as public GitHub repository with a public README and commit history."
+        "notes": "Verified as a public GitHub repository and active site source in current run."
       }
     },
     {
@@ -77,7 +113,7 @@
         "type": "direct-visit",
         "url": "https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing",
         "verifiedAt": "2026-05-15",
-        "notes": "Verified for public accessibility and link quality from local checks."
+        "notes": "Verified for public accessibility and link quality from route checks."
       }
     },
     {
@@ -107,6 +143,20 @@
       "sourceHint": "GitHub profile, issue notes, and live demo endpoints",
       "reason": "Current run did not verify new projects beyond existing references.",
       "nextAction": "Populate `publicReady` items only after a verified source appears."
+    },
+    {
+      "title": "Duck Duck Mallard",
+      "status": "demoted",
+      "sourceHint": "https://github.com/Hardik-S/DuckDuckGo",
+      "reason": "Kept for archive reference, but not top-priority proof for current positioning.",
+      "nextAction": "Promote again only if it remains one of the four strongest public projects."
+    },
+    {
+      "title": "Picture This",
+      "status": "demoted",
+      "sourceHint": "https://github.com/Hardik-S/picturethisv2",
+      "reason": "Kept for archive reference, but lower priority than recent decision-support work.",
+      "nextAction": "Promote again only if recast as a current proof item."
     },
     {
       "title": "Current demo readiness scorecards",
