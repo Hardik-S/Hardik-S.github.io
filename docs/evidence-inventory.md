@@ -91,6 +91,7 @@ Items not in this four-card layer remain available as proof anchors only when th
   - New deployments (PMO and BioScript) are marked as `deployment` source-type with HTTP 200 checks.
   - `selectedWork` is capped at four flagship records; additional verified links remain in `proofPoints`.
   - `visual` fields are structured public-safe cues, not claims of screenshot availability.
+  - `caseStudy` fields add role, artifact type, proof, and review guidance for each flagship item. These fields are intentionally evaluative and source-linked, not metric claims.
 
 ## Research backlog (not public claims)
 

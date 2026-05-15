@@ -133,6 +133,7 @@
     const problem = safeText(item?.problem);
     const contribution = safeText(item?.contribution);
     const whyItMatters = safeText(item?.whyItMatters);
+    const caseStudy = item?.caseStudy && typeof item.caseStudy === "object" ? item.caseStudy : {};
     const visualLabel = safeText(item?.visual?.label) || focus || "Proof";
     const visualCue = safeText(item?.visual?.cue) || "Problem -> build -> proof";
 
@@ -189,6 +190,26 @@
         detailList.append(term, description);
       });
       article.append(detailList);
+    }
+
+    const caseDetails = [
+      ["Role", caseStudy.role],
+      ["Artifact", caseStudy.artifactType],
+      ["Proof", caseStudy.proof],
+      ["Review", caseStudy.reviewFor]
+    ].map(([label, value]) => [label, safeText(value)]).filter(([, value]) => value);
+
+    if (caseDetails.length > 0) {
+      const caseList = document.createElement("dl");
+      caseList.className = "case-study-details";
+      caseDetails.forEach(([label, value]) => {
+        const term = document.createElement("dt");
+        term.textContent = label;
+        const description = document.createElement("dd");
+        description.textContent = value;
+        caseList.append(term, description);
+      });
+      article.append(caseList);
     }
 
     renderSourceMeta(item.source, article);

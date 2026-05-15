@@ -150,6 +150,12 @@
       "problem": "Busy teams need a clearer way to convert scattered operational context into reviewable decisions.",
       "contribution": "Built the public workflow surface and shaped the brief around prioritization, context, and action clarity.",
       "whyItMatters": "Shows product judgment, workflow design, and front-end implementation in one live artifact.",
+      "caseStudy": {
+        "role": "Product framing and implementation",
+        "artifactType": "Public deployment",
+        "proof": "Live route verified from the deployment source.",
+        "reviewFor": "How the interface turns priority, context, and next action into a brief a reviewer can scan."
+      },
       "visual": {
         "type": "structured-signal",
         "label": "Brief",
@@ -171,6 +177,12 @@
       "problem": "A regulated support context needs review surfaces that reduce ambiguity without overstating automation.",
       "contribution": "Framed the demo around decision support, handoff clarity, and public-safe evidence rather than hidden internal data.",
       "whyItMatters": "Connects current BioScript-facing work to the portfolio while keeping private workflow details out of public copy.",
+      "caseStudy": {
+        "role": "Decision-support framing",
+        "artifactType": "Public prototype route",
+        "proof": "Live route verified from the deployment source.",
+        "reviewFor": "How the demo separates criteria, tradeoffs, and handoff without exposing private workflow details."
+      },
       "visual": {
         "type": "structured-signal",
         "label": "Review",
@@ -192,6 +204,12 @@
       "problem": "Agent-heavy workflows create authorization risk when permissions are approved without a visible review trail.",
       "contribution": "Built a synthetic console that models least-privilege review, approval-state traceability, and scope checks.",
       "whyItMatters": "Signals AI governance instincts alongside implementation skill, which is stronger than a generic app demo.",
+      "caseStudy": {
+        "role": "Workflow model and interface build",
+        "artifactType": "Public source repository",
+        "proof": "Repository verified from the Hardik-S public source.",
+        "reviewFor": "How the workflow makes request scope, approval state, and least-privilege review visible."
+      },
       "visual": {
         "type": "structured-signal",
         "label": "Access",
@@ -213,6 +231,12 @@
       "problem": "Support work can lose time when dispute context, evidence, and next actions are not packaged consistently.",
       "contribution": "Modeled a packet-building flow that keeps supporting evidence and response structure auditable.",
       "whyItMatters": "Demonstrates practical automation that improves review quality without claiming unverified production impact.",
+      "caseStudy": {
+        "role": "Packet workflow modeling",
+        "artifactType": "Public source repository",
+        "proof": "Repository verified from the Hardik-S public source.",
+        "reviewFor": "How the packet structure keeps facts, evidence, and response steps aligned for review."
+      },
       "visual": {
         "type": "structured-signal",
         "label": "Packet",

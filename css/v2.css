@@ -529,7 +529,7 @@ h1 {
 }
 
 .selected-work-section .card p {
-  color: rgba(231, 237, 249, 0.8);
+  color: rgba(231, 237, 249, 0.84);
 }
 
 .selected-work-grid {
@@ -677,8 +677,34 @@ h1 {
 
 .work-details dd {
   margin: 0;
-  color: rgba(231, 237, 249, 0.78);
+  color: rgba(231, 237, 249, 0.82);
   line-height: 1.5;
+}
+
+.case-study-details {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.34rem 0.58rem;
+  margin: 0.15rem 0 0;
+  padding: 0.72rem;
+  border: 1px solid rgba(231, 237, 249, 0.13);
+  border-radius: 0.5rem;
+  background: rgba(238, 243, 239, 0.055);
+}
+
+.case-study-details dt {
+  color: var(--accent-leaf);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.case-study-details dd {
+  min-width: 0;
+  margin: 0;
+  color: rgba(231, 237, 249, 0.78);
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .card:nth-child(2) {

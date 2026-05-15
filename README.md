@@ -48,6 +48,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - Renderer metadata uses plain ASCII separators so browser output and public logs stay stable across terminals and automation runs.
 - Selected-work summary and evidence meta lines are generated from `meta` (`verifiedOn`, `verifiedBy`, `verifiedScope`) to keep the narrative in sync with this file.
 - Current selected-work items are intentionally narrowed to four high-signal public repositories and deployments that reinforce the v2 positioning, rather than a full archive list.
+- Selected-work case-study details use compact `caseStudy` fields (`role`, `artifactType`, `proof`, and `reviewFor`) so each flagship card explains how to evaluate the artifact without adding unverified metrics or employer claims.
 - Broader verified work stays in `proofPoints` below the flagship section, while demoted or unverified candidates stay in `researchNeeds` with rationale.
 
 ## Contact and safety boundaries
