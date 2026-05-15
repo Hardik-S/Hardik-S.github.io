@@ -240,3 +240,23 @@
 - Deploy URL/status: production `https://hardik-s-github-ijpcq0pww-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` (active, 200).
 - Blocker state: none blocking this increment.
 - Next safe action: continue Turn 22 first-screen positioning and contact-friction pass, or refresh the Director plan if it still points at completed Turn 20.
+
+## 2026-05-15T15:32:10-04:00
+- Director task: Turn 21 - Critical Visual Bug And Copy Hygiene.
+- Selected task: hide keyboard skip shortcuts until focus and remove the stale empty-recipient resume `mailto:` from the v2 featured contact card.
+- Changed files: `index.html`, `css/v2.css`, `README.md`, `docs/public-safety.md`, `state/worker-log.md`.
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 before work, AttemptsUsed 1 before deploy); dirty path remains the pre-existing untracked Vercel `.gitignore`.
+- Verification:
+  - `node --check js/v2-content.js`.
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json`.
+  - `rg` check for empty-recipient mailto, mojibake markers, and `skip-link-secondary` returned only expected skip-link selectors/usages.
+  - `git diff --check`.
+  - CSS inspection confirmed skip links are offscreen by default, return on focus, and secondary skip links no longer force a visible left position.
+  - Local route checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`.
+  - Playwright CLI screenshots at `390x844` and `1440x900` showed no visible first-load skip-link overlay.
+  - Scoped redaction scans passed for all changed public files.
+  - Vercel alias checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`; the direct deployment URL returned 401 in this environment.
+- Commit SHA: `d0b3c24` for the site/docs change; this log append is a follow-up commit.
+- Deploy URL/status: production `https://hardik-s-github-2126z1uy1-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` (active, 200).
+- Blocker state: none blocking this increment.
+- Next safe action: continue Turn 22 legacy-inspired hero redesign now that first-load contact and accessibility defects are fixed.
