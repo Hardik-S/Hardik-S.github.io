@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,28 +39,25 @@
         </article>
         <article class="card">
           <h3>Product delivery</h3>
-          <p>Recent work includes shipping public-facing technical tools and demo-ready artifacts across software and AI-focused projects.</p>
+          <p>The site keeps the focus on verifiable product and engineering outputs that are visible in public code.</p>
         </article>
         <article class="card">
           <h3>Resume and contact</h3>
           <p><a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume (public)</a></p>
-          <p><a href="mailto:hshrestha.hba2026@ivey.ca">Email</a> � <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><a href="mailto:hshrestha.hba2026@ivey.ca">Email</a> · <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         </article>
       </div>
     </section>
 
-    <section class="card-section" aria-labelledby="selected-work">
-      <h2 id="selected-work">Selected verified work</h2>
-      <ul class="work-list">
-        <li>
-          <a href="https://github.com/Hardik-S/DuckDuckGo" target="_blank" rel="noopener noreferrer">Duck Duck Mallard</a>
-          <p>Vision project and ML experiments in a public GitHub repo.</p>
-        </li>
-        <li>
-          <a href="https://github.com/Hardik-S/picturethisv2" target="_blank" rel="noopener noreferrer">Picture This</a>
-          <p>Public educational game project with release history and artifacts in-repo.</p>
-        </li>
-      </ul>
+    <section class="card-section" aria-labelledby="evidence-title">
+      <h2 id="evidence-title">Evidence-backed anchors</h2>
+      <p class="section-note">This homepage only surfaces publicly reachable links that can be verified from source artifacts.</p>
+      <div id="evidence-grid" class="cards" aria-live="polite">
+        <p class="evidence-loading">Loading evidence anchors...</p>
+      </div>
+      <noscript>
+        <p class="section-note">JavaScript is required for the dynamic evidence list on this page.</p>
+      </noscript>
     </section>
 
     <section class="card-section" id="contact">
@@ -72,6 +69,8 @@
       <p>Built as v2 of the site. Legacy profile remains available via the top-right Legacy button.</p>
     </footer>
   </main>
+
+  <script src="js/v2-content.js" defer></script>
 </body>
 
 </html>

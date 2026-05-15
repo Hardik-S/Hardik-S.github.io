@@ -1,0 +1,30 @@
+﻿{
+  "proofPoints": [
+    {
+      "title": "Hardik-S GitHub",
+      "url": "https://github.com/Hardik-S",
+      "description": "Public repository index for software, AI, and product side work."
+    },
+    {
+      "title": "Duck Duck Mallard",
+      "url": "https://github.com/Hardik-S/DuckDuckGo",
+      "description": "Public repository for computer-vision experimentation and ML tooling."
+    },
+    {
+      "title": "Picture This",
+      "url": "https://github.com/Hardik-S/picturethisv2",
+      "description": "Public educational card game project with release history in the repository."
+    },
+    {
+      "title": "Resume (public)",
+      "url": "https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing",
+      "description": "Public resume artifact currently used for portfolio and recruiting review."
+    },
+    {
+      "title": "Legacy profile",
+      "url": "/legacy/",
+      "description": "The earlier portfolio and experience page, preserved for continuity."
+    }
+  ],
+  "source": "Evidence-first increment for Worker Wally Turn 2"
+}
