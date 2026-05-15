@@ -203,3 +203,24 @@ ode --check js/v2-content.js
 - Deploy: `https://hardik-s-github-ql6ef0umo-batb4016-9101s-projects.vercel.app` (alias: `https://hardik-s-github-io.vercel.app`)
 - Blocker state: none blocking this increment; pre-existing legacy email redaction note remains unchanged in `legacy/index.html`.
 - Next safe action: continue next Director narrative-increment and preserve Legacy pill route.
+## 2026-05-15T18:55:20-04:00
+- Director task: Turn 13B selected-work narrative polish continuation
+- Selected task: render selected-work cards as focus-grouped narrative tracks and preserve existing evidence provenance behavior.
+- Changed files: `index.html`, `css/v2.css`, `js/v2-content.js`, `README.md`
+- Preflight result at run start: `auth-ok,dirty-worktree` (AttemptsUsed: 0 from `github-deploy-preflight.ps1`)
+- Verification:
+  - `git status --short` before edit showed `?? .gitignore` only
+  - `git diff --check`
+  - `node --check js/v2-content.js`
+  - local checks at `http://127.0.0.1:4173/`, `/legacy/`, `/content/site-content.json` returned `200`
+  - `codex-public-redaction-scan.ps1` on modified files passed
+  - Vercel checks:
+    - Alias: `https://hardik-s-github-io.vercel.app/` -> 200
+    - Alias: `https://hardik-s-github-io.vercel.app/legacy/` -> 200
+    - Alias: `https://hardik-s-github-io.vercel.app/content/site-content.json` -> 200
+    - Production: `https://hardik-s-github-3lznb833r-batb4016-9101s-projects.vercel.app/` -> 401 (environment-protected)
+- Commit SHA: `TBD`
+- Deploy URL/status: `https://hardik-s-github-3lznb833r-batb4016-9101s-projects.vercel.app` (ready), alias `https://hardik-s-github-io.vercel.app` (active)
+- Blocker state: none blocking this increment; `.gitignore` remains intentionally untracked Vercel artifact
+- Dirty paths at run start: `?? .gitignore`
+- Next safe action: continue selected-work polish if additional verified focus-area evidence surfaces; otherwise move queue to next director task.

@@ -20,6 +20,7 @@ This repository is the current home for Hardik’s personal website (v2) with le
 - A translucent top-right fixed `Legacy` button in `index.html` links to `/legacy/`.
 - Legacy remains reachable through `/legacy/` while v2 surfaces current, evidence-backed proof.
 - v2 content is static and source-driven; no build step exists in this repository.
+- `selected-work` is rendered as a focus-grouped narrative to separate decision, product, support, and ops tracks while keeping evidence provenance tied to verified links.
 
 ## Evidence model
 

@@ -289,6 +289,33 @@ h1 {
   color: rgba(231, 237, 249, 0.8);
 }
 
+.selected-work-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.work-group {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.work-group-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: rgba(231, 237, 249, 0.93);
+}
+
+.work-group-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.89rem;
+}
+
+.work-group .cards {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .selected-work-grid .card,
 .selected-work-grid .card p,
 .selected-work-grid .card h3 {

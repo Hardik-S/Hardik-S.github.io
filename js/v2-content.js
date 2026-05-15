@@ -124,16 +124,69 @@
 
   const isPublicReady = (item) => item?.publicReady === true;
 
+  // Render selected-work as a narrative layer grouped by focus area to preserve readability
+  // when multiple evidence-ready cards compete for attention in one row.
+  const focusOrder = [
+    "Decision model",
+    "Product workflow",
+    "Decision support",
+    "Operational reliability",
+    "Governance tooling",
+    "Support productivity"
+  ];
+
+  const focusPriority = focusOrder.reduce((acc, label, index) => {
+    acc[label.toLowerCase()] = index;
+    return acc;
+  }, {});
+
+  const normalizeFocus = (value) => safeText(value).toLowerCase();
+
+  const createSelectedWorkCard = (item) => {
+    const title = safeText(item?.title);
+    const url = safeText(item?.url);
+    const summary = safeText(item?.summary);
+
+    if (!title || !url || !summary) {
+      return null;
+    }
+
+    const article = document.createElement("article");
+    article.className = "card";
+
+    const heading = document.createElement("h3");
+    heading.appendChild(makeLink(url, title));
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent = summary;
+
+    article.appendChild(heading);
+    article.appendChild(paragraph);
+    renderSourceMeta(item.source, article);
+    return article;
+  };
+
+  const orderGroups = (lhs, rhs) => {
+    const lhsPriority = focusPriority[lhs] ?? Number.MAX_SAFE_INTEGER;
+    const rhsPriority = focusPriority[rhs] ?? Number.MAX_SAFE_INTEGER;
+    if (lhsPriority !== rhsPriority) {
+      return lhsPriority - rhsPriority;
+    }
+    return lhs.localeCompare(rhs, "en", { sensitivity: "base" });
+  };
+
   const renderSelectedWork = (items, meta) => {
     if (!selectedWorkContainer) {
       return;
     }
 
     const selectedItems = Array.isArray(items) ? items.filter((item) => isPublicReady(item)) : [];
+    const groupedItems = {};
 
     if (selectedWorkLoadingEl) {
       selectedWorkLoadingEl.remove();
     }
+    selectedWorkContainer.innerHTML = "";
 
     if (selectedItems.length === 0) {
       const fallback = document.createElement("p");
@@ -141,42 +194,58 @@
       fallback.textContent = "No selected-work entries available yet. Evidence payload may be sparse.";
       selectedWorkContainer.innerHTML = "";
       selectedWorkContainer.append(fallback);
+      selectedWorkContainer.closest("section")?.setAttribute("data-empty-work", "true");
+      if (selectedWorkMetaEl) {
+        selectedWorkMetaEl.textContent = "Selected-work cards: 0";
+      }
+      return;
     }
 
     selectedItems.forEach((item) => {
-      const title = safeText(item?.title);
-      const url = safeText(item?.url);
-      const summary = safeText(item?.summary);
-      const focus = safeText(item?.focus);
-
-      if (!title || !url || !summary || !focus) {
-        return;
+      const focus = safeText(item?.focus) || "Core evidence";
+      if (!groupedItems[focus]) {
+        groupedItems[focus] = [];
       }
+      groupedItems[focus].push(item);
+    });
 
-      const article = document.createElement("article");
-      article.className = "card";
+    Object.entries(groupedItems).forEach(([focus, works]) => {
+      works.sort((a, b) => safeText(a?.title).localeCompare(safeText(b?.title), "en", { sensitivity: "base" }));
+    });
 
-      const label = document.createElement("p");
-      label.className = "selected-work-label";
-      label.textContent = focus;
+    const orderedFocuses = Object.keys(groupedItems).sort(orderGroups);
 
-      const heading = document.createElement("h3");
-      heading.appendChild(makeLink(url, title));
+    orderedFocuses.forEach((focus) => {
+      const group = document.createElement("section");
+      group.className = "work-group";
+      group.setAttribute("aria-label", `${focus} selected-work`);
 
-      const paragraph = document.createElement("p");
-      paragraph.textContent = summary;
+      const groupHeading = document.createElement("h3");
+      groupHeading.className = "work-group-title";
+      groupHeading.textContent = focus;
 
-      article.appendChild(label);
-      article.appendChild(heading);
-      article.appendChild(paragraph);
-      renderSourceMeta(item.source, article);
-      selectedWorkContainer.append(article);
+      const groupMeta = document.createElement("p");
+      groupMeta.className = "work-group-meta";
+      groupMeta.textContent = `${groupedItems[focus].length} selected-work item${groupedItems[focus].length === 1 ? "" : "s"}`;
+
+      const workGrid = document.createElement("div");
+      workGrid.className = "cards work-group-list";
+
+      groupedItems[focus].forEach((item) => {
+        const card = createSelectedWorkCard(item);
+        if (card) {
+          workGrid.append(card);
+        }
+      });
+
+      group.append(groupHeading, groupMeta, workGrid);
+      selectedWorkContainer.append(group);
     });
 
     if (selectedWorkMetaEl) {
       const selectedShown = selectedItems.length;
       const selectedSkipped = Math.max(0, Array.isArray(items) ? items.length - selectedShown : 0);
-      const selectedSummary = [`Selected-work cards: ${selectedShown}`];
+      const selectedSummary = [`Selected-work cards: ${selectedShown}`, `Focus tracks: ${orderedFocuses.length}`];
       if (selectedSkipped > 0) {
         selectedSummary.push(`${selectedSkipped} not public-ready`);
       }
@@ -192,6 +261,8 @@
     // Preserve a single narrative section even if this data shape is missing.
     if (!meta || !Array.isArray(items) || items.length === 0) {
       selectedWorkContainer.closest("section")?.setAttribute("data-empty-work", "true");
+    } else {
+      selectedWorkContainer.closest("section")?.removeAttribute("data-empty-work");
     }
   };
 
