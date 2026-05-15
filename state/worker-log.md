@@ -46,3 +46,14 @@
 - Blocker state: none blocking this increment
 - Dirty paths: ?? .gitignore
 - Next safe action: continue with next evidence-priority increment and keep legacy button path unchanged.
+## Run 2026-05-15T12:31:21-04:00
+- Director task: Turn 10 evidence proofpoint expansion
+- Selected task: add one verified repository-backed proof item for the active Hardik-S homepage repository
+- Changed files: README.md, content/site-content.json
+- Verification: git diff --check; preflight auth-ok,dirty-worktree (Attempts used: 1); local GET /, /legacy/, /content/site-content.json all 200; deployed alias route check returned 200, direct production URL returned 401 (auth-protected in this environment)
+- Commit SHA: 8eaf927
+- Deploy: production https://hardik-s-github-77l1ldlwt-batb4016-9101s-projects.vercel.app ; alias https://hardik-s-github-io.vercel.app
+- Preflight: auth-ok,dirty-worktree
+- Dirty paths: ?? .gitignore
+- Blocker state: none blocking this increment
+- Next safe action: continue with next evidence-backed increment for public project proof depth while preserving Legacy route and button
