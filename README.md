@@ -29,6 +29,7 @@ This repository is the active home for Hardik's personal website.
 - Public homepage content now points to verifiable artifacts only:
   - Hardik-S GitHub profile
   - Public repository references for Duck Duck Mallard and Picture This
+  - Public repository reference for hardik-s.github.io (this site source)
   - Public resume artifact
   - Legacy route (`/legacy/`)
 - New project claims are intentionally limited to links already validated as present in the public site context.

@@ -45,6 +45,18 @@
       }
     },
     {
+      "title": "Personal site source",
+      "url": "https://github.com/Hardik-S/hardik-s.github.io",
+      "description": "Public source repository for this portfolio site, including v2 implementation and evidence payload.",
+      "publicReady": true,
+      "source": {
+        "type": "direct-visit",
+        "url": "https://github.com/Hardik-S/hardik-s.github.io",
+        "verifiedAt": "2026-05-15",
+        "notes": "Verified as a public GitHub repository and used as the active site source in this run."
+      }
+    },
+    {
       "title": "Picture This",
       "url": "https://github.com/Hardik-S/picturethisv2",
       "description": "Public educational card game project with repository history and release activity.",
