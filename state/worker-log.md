@@ -299,3 +299,22 @@
 - Deploy URL/status: production `https://hardik-s-github-bp0vnbh5i-batb4016-9101s-projects.vercel.app` (direct route 401 here), alias `https://hardik-s-github-io.vercel.app` returned 200.
 - Blocker state: none blocking this increment; package-surface test-runner fallback was capped and switched to Chrome DevTools Protocol instead of repeated retries.
 - Next safe action: proceed to Turn 24 portfolio narrative and project visuals while preserving the hero switcher, portrait-led opening, and Legacy route.
+
+## 2026-05-15T16:13:17-04:00
+- Director task: Turn 24 - Portfolio Narrative And Project Visuals.
+- Selected task: convert selected work into four flagship proof blocks with problem, contribution, why-it-matters copy, and structured text visual cues while keeping broader proof anchors secondary.
+- Changed files: `index.html`, `css/v2.css`, `js/v2-content.js`, `content/site-content.json`, `docs/evidence-inventory.md`, `README.md`, `state/worker-log.md`.
+- Preflight result: `auth-ok,dirty-worktree` (AttemptsUsed 0 before work, AttemptsUsed 1 before deploy); dirty path remains the pre-existing untracked Vercel `.gitignore`.
+- Verification:
+  - `Get-Content content/site-content.json -Raw | ConvertFrom-Json`; selectedWork count verified at 4.
+  - `node --check js/v2-content.js` and `node --check js/v2-interactions.js`.
+  - `git diff --check`.
+  - Local route checks returned 200 for `/`, `/legacy/`, and `/content/site-content.json`.
+  - Playwright CLI screenshots captured the hero and flagship work section at mobile and desktop widths.
+  - Flagship URLs returned HTTP 200 for PMO Decision Brief Builder, BioScript Housing Decision, Agent Permission Review Console, and Invoice Dispute Packet Builder.
+  - Scoped public redaction scans passed for changed v2 files and docs.
+- Commit SHA: `ed9d8e0` for the site/docs change; this log append is a follow-up commit.
+- Deploy URL/status: Vercel production deploy attempt failed with `api-deployments-free-per-day`; no new Vercel deployment URL was created. Existing alias remains the last successful deployment until quota resets.
+- Blocker state: `blocked-cleanly` for Vercel deploy quota; GitHub commit/push remains unblocked.
+- Attempts used: preflight 1, Vercel deploy 1. No second Vercel retry because the returned quota message says to try again in 24 hours.
+- Next safe action: push the commits now; after Vercel quota resets, redeploy the same commit or continue Turn 25 final QA and deploy handoff.
