@@ -118,3 +118,15 @@
 - `git diff --check` run clean after removing temporary QA artifacts.
 - Blocker state: none at this increment.
 - Next safe action: proceed to Turn 16 documentation encoding cleanup with keyboard/focus behavior unchanged and legacy button retained top-right/translucent.
+## Run 2026-05-15T14:06:06-04:00
+- Director task: Turn 13B narrative polish continuation (selected-work evidence refresh)
+- Changed files: index.html, content/site-content.json, README.md
+- Verification: 
+ode --check js/v2-content.js; git diff --check; local Invoke-WebRequest checks for http://127.0.0.1:4173/, /legacy/, /content/site-content.json; 
+px --yes vercel@latest --prod --yes --name hardik-s-github-io executed; alias root + /legacy/ checks 200, production deployment returned 401 in this environment
+- Commit SHA: e82b80c
+- Deploy URL: https://hardik-s-github-hu9uqk5w1-batb4016-9101s-projects.vercel.app (production), alias: https://hardik-s-github-io.vercel.app
+- Preflight result: uth-ok,dirty-worktree
+- Blocker state: none (no new blockers; legacy scan hit unchanged legacy contact email in legacy/index.html)
+- Next safe action: Turn 14 candidate follow-up with next strongest proof item or route text polish, keeping Legacy button / /legacy/ unchanged.
+
