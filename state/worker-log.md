@@ -377,3 +377,17 @@
 - Deploy URL/status: no manual Vercel CLI deploy attempted because the prior daily quota retry cap remains active; existing alias `https://hardik-s-github-io.vercel.app/handoff/` serves the new handoff route with the expected marker.
 - Blocker state: none blocking this increment; prior manual Vercel quota cap remains a deploy-surface caution only.
 - Next safe action: continue release polish only if new QA evidence appears; otherwise treat `/handoff/` as the current public review route.
+
+## Run 2026-05-15T17:23:09-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 30 - Final Visual Personality Pass.
+- Selected task: add a restrained legacy-inspired section rail plus editorial CSS texture so the v2 feels more personal without adding claims, dependencies, or changing legacy routing.
+- Changed files in target repo: `index.html`, `css/v2.css`, `README.md`; this log entry in `state/worker-log.md`.
+- Verification: start preflight `auth-ok`; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local route checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, and `/js/v2-interactions.js`; Playwright CLI screenshots inspected at `390x844`, `768x1024`, and `1440x900`; additional selected-work and contact anchor screenshots inspected; first screenshot pass caught H1 clipping/portrait collision and the CSS was corrected before commit; changed-file redaction scans passed; full scan still reports only the documented legacy-only email in `legacy\index.html`.
+- Commit SHA: `ba7cfb5b7ac70127dd6051dee4ce244ffebb7a8c` for the visual-personality change; log append commit pending at append time.
+- Deploy URL/status: no manual Vercel deploy attempted because the prior `api-deployments-free-per-day` retry cap remains active and the quota window was not plausibly reset in this run. Existing review routes remain GitHub Pages root, `/legacy/`, and `/handoff/` after push propagation.
+- Preflight result: `auth-ok`.
+- Blocker state: no implementation blocker. Vercel production deploy remains `blocked-cleanly` from the prior quota cap.
+- Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel ACL not re-tested`; Preflight result `auth-ok`; Dirty paths `none before edits`; Attempts used `preflight 1, Vercel deploy 0 this run due retry cap`; Next safe action `push source, let GitHub Pages update, and only retry Vercel after quota reset`.
+- Dirty paths: none before edits; expected dirty path is this log until committed.
+- Next safe action: proceed to Turn 31 flagship case-study depth, or run a quota-reset Vercel deploy check first if enough time has passed.
