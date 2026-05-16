@@ -8,6 +8,8 @@ This handoff covers the static v2 personal website in this repository. The relea
 
 2026-05-16 update: the root route has been reworked again as a full personal portfolio. It restores the legacy site sections, adds a working static contact form, removes visible helper/reviewer text from the homepage, and replaces the legacy external node-network dependency with a local cursor-reactive canvas.
 
+2026-05-16 flagship correction: the root flagship section no longer leads with PMO Decision Brief Builder. The best-four layer now presents BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision, followed by a native tabbed year browser with four items each for 2026, 2025, 2024, 2022-23, 2021, and 2020. Resume links now use committed local PDFs in `files/` instead of the old Drive link. Verify this correction by checking `#flagship` on desktop and mobile, clicking each year tab, and opening both resume links from the contact card.
+
 ## Architecture
 
 - `index.html` is the current homepage and owns the page landmarks, skip link, Legacy button, hero, About, Experience, Flagship Work, Skills, Projects, Sustainability, and Contact sections.
@@ -15,7 +17,7 @@ This handoff covers the static v2 personal website in this repository. The relea
 - `css/flagship-rework.css` contains the active homepage visual system, responsive rules, contact form styling, and editorial section rhythm.
 - `js/flagship-rework.js` owns the native typed identity line, cursor-reactive node network canvas, active nav state, and contact form status.
 - `css/v2.css`, `js/v2-content.js`, and `js/v2-interactions.js` remain in the repository as prior-v2 implementation history; the current root page no longer references them.
-- `content/site-content.json` is the source of truth for displayed proof claims.
+- `content/site-content.json` is retained as the prior-v2 evidence record. The current root flagship/year-browser copy is static HTML in `index.html`.
 - `docs/evidence-inventory.md` records why proof items are included, demoted, or held for research.
 - `docs/public-safety.md` records the contact and publication-safety decisions.
 - The root document includes canonical, Open Graph, Twitter, theme-color, and description metadata. These tags intentionally restate existing public positioning instead of introducing new metrics, employers, or project-status claims.

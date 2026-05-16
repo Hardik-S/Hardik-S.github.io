@@ -243,6 +243,45 @@
 })();
 
 (function () {
+  const browser = document.querySelector("[data-year-browser]");
+  if (!browser) {
+    return;
+  }
+
+  const tabs = Array.from(browser.querySelectorAll("[data-year-tab]"));
+  const panels = Array.from(browser.querySelectorAll("[data-year-panel]"));
+
+  const activateYear = (year) => {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.yearTab === year;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+    });
+
+    panels.forEach((panel) => {
+      const active = panel.dataset.yearPanel === year;
+      panel.hidden = !active;
+      panel.classList.toggle("is-active", active);
+    });
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateYear(tab.dataset.yearTab));
+    tab.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+        return;
+      }
+
+      event.preventDefault();
+      const offset = event.key === "ArrowRight" ? 1 : -1;
+      const next = (index + offset + tabs.length) % tabs.length;
+      tabs[next].focus();
+      activateYear(tabs[next].dataset.yearTab);
+    });
+  });
+})();
+
+(function () {
   const form = document.querySelector("[data-contact-form]");
   const status = form?.querySelector("[data-form-status]");
   const frame = form?.querySelector("iframe");

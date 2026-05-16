@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/me3.jpg">
-  <link rel="preload" as="image" href="images/work-pmo-decision-brief-builder.png">
+  <link rel="preload" as="image" href="images/project-2.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/flagship-rework.css">
   <link rel="shortcut icon" href="images/favicon2.png">
@@ -61,7 +61,7 @@
         </p>
         <div class="hero-actions">
           <a href="#flagship">See flagship work</a>
-          <a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="files/Hardik_Shrestha_Product_Resume_2026-05.pdf" target="_blank" rel="noopener noreferrer">Latest resume</a>
           <a href="#contact">Contact</a>
         </div>
         <ul class="hero-socials" aria-label="Social links">
@@ -149,44 +149,105 @@
     <section id="flagship" class="flagship-section">
       <div class="section-heading">
         <p>Flagship work</p>
-        <h2>Products that make complex work reviewable.</h2>
+        <h2>Four best signals, then the archive by year.</h2>
       </div>
-      <div class="flagship-grid">
+      <div class="flagship-grid flagship-grid-rebuilt" aria-label="Current best four projects">
         <article class="flagship-card flagship-lead">
-          <div class="flagship-media">
-            <img src="images/work-pmo-decision-brief-builder.png" alt="PMO Decision Brief Builder public demo screenshot" width="1280" height="720" decoding="async">
+          <div class="flagship-media flagship-media-text" aria-hidden="true">
+            <span>Regulated workflow</span>
+            <strong>BioScript</strong>
+            <em>intake -> criteria -> handoff</em>
           </div>
           <div>
-            <span class="work-type">Product workflow</span>
-            <h3><a href="https://pmo-decision-brief-builder.vercel.app" target="_blank" rel="noopener noreferrer">PMO Decision Brief Builder</a></h3>
-            <p>Turns scattered PMO context into a reviewer-ready brief with priority, rationale, evidence, and next action.</p>
+            <span class="work-type">Decision support</span>
+            <h3><a href="https://bioscript-housing-decision.vercel.app" target="_blank" rel="noopener noreferrer">BioScript Workflow Prototype</a></h3>
+            <p>A public-safe decision-support demo that shows how messy healthcare-adjacent context becomes criteria, tradeoffs, and handoff notes without exposing private workflow details.</p>
             <dl>
-              <div><dt>Built</dt><dd>Public fixture route, decision model, briefing interface.</dd></div>
-              <div><dt>Signal</dt><dd>Product framing, UI execution, judgment under ambiguity.</dd></div>
+              <div><dt>Why it leads</dt><dd>It shows product judgment, controlled disclosure, domain empathy, and working software in one artifact.</dd></div>
+              <div><dt>Look for</dt><dd>Clear decision framing, reviewable rationale, and a tight public boundary.</dd></div>
             </dl>
           </div>
         </article>
 
         <article class="flagship-card">
-          <span class="work-type">Decision support</span>
-          <h3><a href="https://bioscript-housing-decision.vercel.app" target="_blank" rel="noopener noreferrer">BioScript Housing Decision</a></h3>
-          <p>Frames a constrained support choice as criteria, tradeoffs, and handoff notes while keeping the public story controlled.</p>
-          <div class="signal-chain"><span>Criteria</span><span>Tradeoff</span><span>Handoff</span></div>
-        </article>
-
-        <article class="flagship-card">
           <span class="work-type">AI governance</span>
           <h3><a href="https://github.com/Hardik-S/agent-permission-review-console" target="_blank" rel="noopener noreferrer">Agent Permission Review Console</a></h3>
-          <p>Models agent-access review so request scope, approval state, and least-privilege checks become visible.</p>
-          <div class="signal-chain"><span>Request</span><span>Scope</span><span>Approval</span></div>
+          <p>A least-privilege review surface for agent access, built around request scope, approval state, and human-readable control checks.</p>
+          <div class="signal-chain"><span>Request</span><span>Risk</span><span>Approval</span></div>
         </article>
 
         <article class="flagship-card">
-          <span class="work-type">Support operations</span>
-          <h3><a href="https://github.com/Hardik-S/invoice-dispute-packet-builder" target="_blank" rel="noopener noreferrer">Invoice Dispute Packet Builder</a></h3>
-          <p>Packages dispute facts, evidence, and response steps into a source-backed workflow for faster review.</p>
-          <div class="signal-chain"><span>Facts</span><span>Evidence</span><span>Response</span></div>
+          <span class="work-type">Product venture</span>
+          <h3><a href="https://github.com/Hardik-S/picturethisv2" target="_blank" rel="noopener noreferrer">Picture This</a></h3>
+          <p>Educational storytelling game work with product, manufacturing, distribution, and investment signals instead of another software-only demo.</p>
+          <div class="signal-chain"><span>Game</span><span>Market</span><span>Build</span></div>
         </article>
+
+        <article class="flagship-card">
+          <span class="work-type">Computer vision</span>
+          <h3><a href="https://github.com/Hardik-S/wacky-chess-vision" target="_blank" rel="noopener noreferrer">Wacky Chess Vision</a></h3>
+          <p>A chess-and-vision project that makes the technical range more obvious: perception, game state, and a domain Hardik actually cares about.</p>
+          <div class="signal-chain"><span>Vision</span><span>Chess</span><span>State</span></div>
+        </article>
+      </div>
+
+      <div class="year-browser" data-year-browser>
+        <div class="year-browser-head">
+          <div>
+            <span class="work-type">Archive browser</span>
+            <h3>Best four from each year</h3>
+          </div>
+          <div class="year-tabs" role="tablist" aria-label="Project years">
+            <button type="button" role="tab" aria-selected="true" aria-controls="projects-2026" id="tab-2026" data-year-tab="2026">2026</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2025" id="tab-2025" data-year-tab="2025">2025</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2024" id="tab-2024" data-year-tab="2024">2024</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2022" id="tab-2022" data-year-tab="2022">2022-23</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2021" id="tab-2021" data-year-tab="2021">2021</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2020" id="tab-2020" data-year-tab="2020">2020</button>
+          </div>
+        </div>
+
+        <div class="year-panel is-active" id="projects-2026" role="tabpanel" aria-labelledby="tab-2026" data-year-panel="2026">
+          <article><span>01</span><h4><a href="https://bioscript-housing-decision.vercel.app" target="_blank" rel="noopener noreferrer">BioScript Workflow Prototype</a></h4><p>Decision-support interface for constrained review, criteria, and handoff.</p></article>
+          <article><span>02</span><h4><a href="https://github.com/Hardik-S/agent-permission-review-console" target="_blank" rel="noopener noreferrer">Agent Permission Review Console</a></h4><p>AI governance surface for request scope and approval state.</p></article>
+          <article><span>03</span><h4><a href="https://github.com/Hardik-S/wacky-chess-vision" target="_blank" rel="noopener noreferrer">Wacky Chess Vision</a></h4><p>Computer-vision chess work that adds creative technical breadth.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/corporate-climate-adaptability-canada" target="_blank" rel="noopener noreferrer">Corporate Climate Adaptability Canada</a></h4><p>Public-safe climate research methodology and synthetic sentiment demo.</p></article>
+        </div>
+
+        <div class="year-panel" id="projects-2025" role="tabpanel" aria-labelledby="tab-2025" data-year-panel="2025" hidden>
+          <article><span>01</span><h4><a href="https://hardik-s.github.io/EmotionalEchoes/" target="_blank" rel="noopener noreferrer">Emotional Echoes</a></h4><p>Digital product MVP with a public demo surface.</p></article>
+          <article><span>02</span><h4><a href="https://github.com/Hardik-S/geodata" target="_blank" rel="noopener noreferrer">GeoData</a></h4><p>Geospatial demo work with a recorded walkthrough.</p></article>
+          <article><span>03</span><h4><a href="https://hardik-s.github.io/g1" target="_blank" rel="noopener noreferrer">React Micro Apps Collection</a></h4><p>Small interactive web apps bundled as a public collection.</p></article>
+          <article><span>04</span><h4><a href="https://hardik-s.github.io/SustainTrack/" target="_blank" rel="noopener noreferrer">SustainTrack</a></h4><p>Product carbon footprint analyzer and sustainability-facing UI.</p></article>
+        </div>
+
+        <div class="year-panel" id="projects-2024" role="tabpanel" aria-labelledby="tab-2024" data-year-panel="2024" hidden>
+          <article><span>01</span><h4><a href="https://github.com/Hardik-S/picturethisv2" target="_blank" rel="noopener noreferrer">Picture This</a></h4><p>Educational storytelling game with product and go-to-market depth.</p></article>
+          <article><span>02</span><h4>Loblaw Finance Automation</h4><p>Backlog and workflow automation that reduced recurring finance operations work.</p></article>
+          <article><span>03</span><h4>LoblawTank Food Waste Solution</h4><p>Hackathon-winning sustainability concept presented to leadership.</p></article>
+          <article><span>04</span><h4>UN Global Compact Climate Research</h4><p>Corporate climate adaptation research, literature review, and sentiment analysis.</p></article>
+        </div>
+
+        <div class="year-panel" id="projects-2022" role="tabpanel" aria-labelledby="tab-2022" data-year-panel="2022" hidden>
+          <article><span>01</span><h4>Kinaxis AI Platform QA</h4><p>AI platform quality work across product workflows and partner-facing releases.</p></article>
+          <article><span>02</span><h4>PointClickCare IAM</h4><p>Full-stack identity tooling on Azure with bulk-user migration capability.</p></article>
+          <article><span>03</span><h4><a href="https://github.com/Hardik-S/CryptoTradingPlatform" target="_blank" rel="noopener noreferrer">Crypto Trading Platform</a></h4><p>Team-built trading platform project with database and application layers.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/Todoeth" target="_blank" rel="noopener noreferrer">Ethereum To Do List</a></h4><p>Early blockchain application experiment.</p></article>
+        </div>
+
+        <div class="year-panel" id="projects-2021" role="tabpanel" aria-labelledby="tab-2021" data-year-panel="2021" hidden>
+          <article><span>01</span><h4>P3 Adaptive RPA</h4><p>Power Automate workflows for Eventbrite, SharePoint, and training operations.</p></article>
+          <article><span>02</span><h4><a href="https://github.com/Hardik-S/remory" target="_blank" rel="noopener noreferrer">Remory</a></h4><p>Memento-focused app concept from the earlier product-building arc.</p></article>
+          <article><span>03</span><h4><a href="https://github.com/Hardik-S/SaltyChessCoaching" target="_blank" rel="noopener noreferrer">Salty Chess Coaching</a></h4><p>Coaching website work that connects software with chess instruction.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/TreeOfShapes" target="_blank" rel="noopener noreferrer">Tree Of Shapes</a></h4><p>Data-structures coursework preserved as public source.</p></article>
+        </div>
+
+        <div class="year-panel" id="projects-2020" role="tabpanel" aria-labelledby="tab-2020" data-year-panel="2020" hidden>
+          <article><span>01</span><h4><a href="https://github.com/Hardik-S/DuckDuckGo" target="_blank" rel="noopener noreferrer">Duck, Duck, Mallard</a></h4><p>Transfer-learning image classifier from the legacy project set.</p></article>
+          <article><span>02</span><h4><a href="https://github.com/Hardik-S/the-starburst-project" target="_blank" rel="noopener noreferrer">The Starburst Project</a></h4><p>Computer-vision air-painting concept for virtual teaching.</p></article>
+          <article><span>03</span><h4><a href="https://github.com/Hardik-S/WesternPortal" target="_blank" rel="noopener noreferrer">Western Portal</a></h4><p>Chrome extension for launching Western student services quickly.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/blindchess" target="_blank" rel="noopener noreferrer">Blind Chess</a></h4><p>Chess project from the early public-source archive.</p></article>
+        </div>
       </div>
     </section>
 
@@ -265,6 +326,8 @@
           <p>I'm always up for a coffee or a call.</p>
           <a href="tel:+12896544428">+1 289-654-4428</a>
           <a href="mailto:hshrestha.hba2026@ivey.ca">hshrestha.hba2026@ivey.ca</a>
+          <a href="files/Hardik_Shrestha_Product_Resume_2026-05.pdf" target="_blank" rel="noopener noreferrer">Latest product resume</a>
+          <a href="files/Hardik_Shrestha_Product_AI_Resume.pdf" target="_blank" rel="noopener noreferrer">Product + AI capability resume</a>
           <a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">github.com/Hardik-S</a>
           <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">linkedin.com/in/hardik-shres</a>
         </aside>
@@ -308,7 +371,7 @@
       <li><a href="https://www.instagram.com/hardikithink/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
     </ul>
     <p>"It's not angel jazz, it's not magic, just scientists on coffee and applied mathematics!" <a href="https://www.youtube.com/channel/UCimiUgDLbi6P17BdaCZpVbg" target="_blank" rel="noopener noreferrer">- Exurb1a</a></p>
-    <p><a href="/handoff/">Release handoff</a> <span aria-hidden="true">/</span> <a href="/legacy/">Legacy site</a></p>
+    <p><a href="files/Hardik_Shrestha_Product_Resume_2026-05.pdf" target="_blank" rel="noopener noreferrer">Latest resume</a> <span aria-hidden="true">/</span> <a href="/handoff/">Release handoff</a> <span aria-hidden="true">/</span> <a href="/legacy/">Legacy site</a></p>
   </footer>
 
   <script src="js/flagship-rework.js" defer></script>

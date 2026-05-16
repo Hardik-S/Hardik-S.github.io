@@ -7,6 +7,11 @@
   - The homepage now exposes the same direct phone/email contact surface the user asked to restore from legacy.
   - This is an intentional public personal-data exposure in the already-public personal website repository, not an accidental leak.
   - Do not add additional contact channels, scheduler links, private profile URLs, or alternate recipients without a new explicit decision here.
+- 2026-05-16 flagship-year browser correction adds two committed public resume PDFs under `files/`:
+  - `Hardik_Shrestha_Product_Resume_2026-05.pdf` is the latest broad product resume and is used as the primary hero/footer resume link.
+  - `Hardik_Shrestha_Product_AI_Resume.pdf` is the product + AI capability resume recommended by the Career workspace subagent as the best general public-site fit.
+  - These PDFs intentionally widen the public personal-data surface because public resumes can contain phone, email, LinkedIn, GitHub, education, and work-history details.
+  - Do not add additional resume variants, transcripts, application packets, or role-specific PDFs without a new public-safety note.
 - Turn 14 leaves v2 contact in a deliberately explicit route:
   - `Contact` in the hero links to the in-page `#contact` section.
   - Featured contact cards also route to `#contact` instead of using an empty-recipient email compose link.

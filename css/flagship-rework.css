@@ -453,6 +453,10 @@ h1 span {
   gap: 0.9rem;
 }
 
+.flagship-grid-rebuilt {
+  margin-bottom: 1rem;
+}
+
 .flagship-card {
   display: grid;
   gap: 0.75rem;
@@ -487,12 +491,44 @@ h1 span {
   object-position: 0 0;
 }
 
+.flagship-media-text {
+  min-height: 19rem;
+  display: grid;
+  align-content: end;
+  gap: 0.35rem;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, rgba(117, 221, 255, 0.18), transparent 38%),
+    linear-gradient(315deg, rgba(240, 189, 114, 0.16), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(244, 240, 232, 0.08) 0 1px, transparent 1px 18px),
+    #081316;
+}
+
+.flagship-media-text span,
+.flagship-media-text em {
+  color: rgba(244, 240, 232, 0.74);
+  font-family: "Source Code Pro", Consolas, monospace;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flagship-media-text strong {
+  color: var(--text);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.86;
+}
+
 .flagship-card h3 {
   font-size: clamp(1.35rem, 2.2vw, 2.1rem);
 }
 
 .flagship-card h3 a,
-.project-grid h3 a {
+.project-grid h3 a,
+.year-panel h4 a {
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
 }
@@ -542,6 +578,104 @@ h1 span {
   font-size: 0.72rem;
   font-weight: 800;
   text-align: center;
+}
+
+.year-browser {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgba(244, 240, 232, 0.16);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(240, 189, 114, 0.08), rgba(157, 220, 141, 0.055)),
+    rgba(12, 17, 24, 0.82);
+}
+
+.year-browser-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+.year-browser-head h3 {
+  margin-top: 0.35rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 3.1rem);
+  line-height: 0.96;
+}
+
+.year-tabs {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  overflow-x: auto;
+  padding-bottom: 0.1rem;
+}
+
+.year-tabs button {
+  flex: 0 0 auto;
+  min-width: 4.6rem;
+  min-height: 2.3rem;
+  border: 1px solid rgba(244, 240, 232, 0.18);
+  border-radius: var(--radius);
+  color: rgba(244, 240, 232, 0.82);
+  background: rgba(7, 8, 15, 0.56);
+  cursor: pointer;
+  font: 800 0.82rem "Source Code Pro", Consolas, monospace;
+}
+
+.year-tabs button:hover,
+.year-tabs button:focus-visible,
+.year-tabs button[aria-selected="true"] {
+  border-color: rgba(117, 221, 255, 0.58);
+  color: var(--text);
+  background: rgba(117, 221, 255, 0.15);
+}
+
+.year-panel {
+  grid-template-columns: repeat(4, minmax(15rem, 1fr));
+  gap: 0.72rem;
+}
+
+.year-panel.is-active {
+  display: grid;
+}
+
+.year-panel[hidden] {
+  display: none;
+}
+
+.year-panel article {
+  min-height: 14rem;
+  display: grid;
+  align-content: space-between;
+  gap: 0.65rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(244, 240, 232, 0.15);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, rgba(117, 221, 255, 0.075), rgba(241, 157, 168, 0.045)),
+    rgba(7, 8, 15, 0.5);
+}
+
+.year-panel article > span {
+  color: var(--green);
+  font-family: "Source Code Pro", Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.year-panel h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.16;
+}
+
+.year-panel p {
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .skill-grid,
@@ -694,7 +828,8 @@ button:focus-visible {
   .hero-section,
   .panel-grid,
   .contact-layout,
-  .flagship-grid {
+  .flagship-grid,
+  .year-browser-head {
     grid-template-columns: 1fr;
   }
 
@@ -724,6 +859,14 @@ button:focus-visible {
 
   .flagship-lead {
     grid-row: auto;
+  }
+
+  .year-tabs {
+    justify-content: flex-start;
+  }
+
+  .year-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -765,7 +908,8 @@ button:focus-visible {
   .skill-grid,
   .project-grid,
   .initiative-grid,
-  .signal-chain {
+  .signal-chain,
+  .year-panel {
     grid-template-columns: 1fr;
   }
 
@@ -775,6 +919,10 @@ button:focus-visible {
 
   .flagship-card dl div {
     grid-template-columns: 1fr;
+  }
+
+  .flagship-media-text {
+    min-height: 14rem;
   }
 }
 

@@ -1063,3 +1063,17 @@
 - No manual Vercel deploy was needed because the alias updated from the pushed source.
 - Final blocker state: none.
 - Dirty paths after this note: only this worker-log update until committed.
+
+## Run 2026-05-16T08:22:00-04:00
+- Mission scope: user-requested correction to the root flagship-work model and resume links.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Subagent usage: Career explorer inspected the local Career workspace and recommended the product + AI capability resume as the best general public-site fit, with the newer Avida product resume as the freshest broad product fallback. Portfolio explorer challenged PMO as the lead flagship and recommended BioScript, Agent Permission, Picture This, and PMO only as a supporting proof if stronger public evidence is unavailable.
+- Decision: use the latest broad product resume as the primary hero/footer link because the user explicitly asked for the latest resume, and expose the product + AI capability resume in the contact card because it is the better general-site artifact.
+- Decision: replace the PMO-led flagship set with BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision. PMO is intentionally not presented as the best project.
+- Implementation notes: added a native tabbed year browser for 2026, 2025, 2024, 2022-23, 2021, and 2020; each tab surfaces four items. The browser is static HTML with small JavaScript for tab state and arrow-key navigation, so it still reads when JavaScript is unavailable.
+- Changed files in target repo: `index.html`, `css/flagship-rework.css`, `js/flagship-rework.js`, `README.md`, `docs/evidence-inventory.md`, `docs/handoff.md`, `docs/public-safety.md`, `state/worker-log.md`, and new public resume PDFs under `files/`.
+- Preflight result before edits: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`; dirty paths none.
+- Verification before commit: `git diff --check`; `node --check js\flagship-rework.js`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; JSON parsing for `content\site-content.json` and `vercel.json`; local HTTP checks for `/`, `/legacy/`, `/handoff/`, `css/flagship-rework.css`, `js/flagship-rework.js`, and both public resume PDFs; root scan confirmed no old Drive resume link, PMO lead title, reviewer-helper text, or PMO brief lead copy in `index.html`.
+- Rendered QA: Playwright CLI screenshots captured mobile root, desktop flagship, and mobile flagship views. Visual inspection confirmed the BioScript-led flagship, best-four cards, year-browser controls, local resume links, fixed `Legacy` button, and node network background render without obvious overlap.
+- QA caveat: a transient Node Playwright interaction probe could not resolve the `playwright` module; this run did not loop on that degraded surface and relied on CLI screenshots, source checks, syntax checks, and route checks for verification.
+- Redaction caveat: full redaction scan still reports the intentionally public root and legacy email addresses; `docs/public-safety.md` documents this direct-contact boundary. A raw local Career workspace path found in this log was removed before commit.

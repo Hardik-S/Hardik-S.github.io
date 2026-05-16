@@ -1,5 +1,16 @@
 # Evidence Inventory - Personal Website v2
 
+## 2026-05-16 flagship-year browser correction
+
+- Review trigger: the PMO Decision Brief Builder read as too generic to define the portfolio's best work.
+- Decision: the homepage best-four layer now leads with BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision.
+- Rejected approach: preserving PMO as lead because it has the only committed workflow screenshot. Visual availability is not sufficient evidence of flagship strength.
+- Archive decision: the new year browser groups four strongest visible items by period so older product, professional, sustainability, and early technical work can be scanned without flattening everything into the current synthetic-workflow lane.
+- Resume decision: the site now links local public PDF artifacts under `files/`:
+  - `files/Hardik_Shrestha_Product_Resume_2026-05.pdf`
+  - `files/Hardik_Shrestha_Product_AI_Resume.pdf`
+- Public-data note: both PDFs are intended public resume artifacts and may expose personal contact details and work history.
+
 ## Current audited proof points
 
 All items below are currently rendered as public proof anchors:
@@ -36,16 +47,20 @@ All items below are currently rendered as public proof anchors:
   - URL: https://github.com/Hardik-S/hardik-s.github.io
   - Verification date: 2026-05-15
   - Notes: this v2 implementation and evidence payload are stored here.
-- Resume (public)
-  - URL: https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing
-  - Verification date: 2026-05-15
-  - Notes: public artifact in local checks.
+- Latest product resume (public)
+  - URL: /files/Hardik_Shrestha_Product_Resume_2026-05.pdf
+  - Verification date: 2026-05-16
+  - Notes: copied from the Career workspace after subagent review; primary hero/footer resume link.
+- Product + AI capability resume (public)
+  - URL: /files/Hardik_Shrestha_Product_AI_Resume.pdf
+  - Verification date: 2026-05-16
+  - Notes: copied from the Career workspace after subagent review; recommended as the best general public-site fit.
 - Legacy profile
   - URL: /legacy/
   - Verification date: 2026-05-15
   - Notes: legacy route check returned HTTP 200.
 
-## Demoted from homepage proof rotation
+## Prior demotion notes from the PMO-led model
 
 - Cloud Cost Decision Notebook
   - URL: https://github.com/Hardik-S/cloud-cost-decision-notebook
@@ -61,12 +76,12 @@ All items below are currently rendered as public proof anchors:
   - Reason: useful operations proof, but overlaps with invoice and PMO operations narratives in a four-card section.
 - Picture This
   - URL: https://github.com/Hardik-S/picturethisv2
-  - Status: demoted
-  - Reason: retained for archival context, lower priority than decision-support portfolio evidence.
+  - Status: promoted back into the best-four layer by the 2026-05-16 flagship-year browser correction.
+  - Reason: stronger broad product signal than another synthetic decision workflow, especially when the top layer needs human product breadth.
 
-## Flagship selection rationale
+## Superseded PMO-led selection rationale
 
-The homepage flagship section is intentionally capped at four items:
+The prior homepage flagship section was capped at four items. This section is retained as historical rationale, but the active root page now uses the newer best-four/year-browser model documented above:
 
 - PMO Decision Brief Builder
   - Inclusion rationale: live product workflow that demonstrates prioritization, brief structure, and public deployment quality.

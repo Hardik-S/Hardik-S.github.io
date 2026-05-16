@@ -4,6 +4,17 @@
 
 This repository is the current home for Hardik's personal website (v2) with legacy continuity preserved.
 
+## 2026-05-16 flagship-year browser correction
+
+The flagship section was corrected after review feedback that the PMO Decision Brief Builder should not be presented as Hardik's best work.
+
+- The current best-four layer now leads with BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision.
+- PMO Decision Brief Builder is no longer the lead identity proof. The rejected approach was keeping it on top because it had the cleanest screenshot; screenshot availability is not the same as flagship strength.
+- A native year browser now gives reviewers an intuitive way to scan four strongest items by period: 2026, 2025, 2024, 2022-23, 2021, and 2020.
+- The year browser intentionally mixes public repositories, live demos, and clearly named professional work where the older year has fewer repo-backed artifacts. It is an archive-navigation surface, not a claim that every item has equal public-source depth.
+- Resume links now point to committed local PDFs under `files/`: the latest broad product resume and the stronger product + AI capability resume selected from the Career workspace.
+- The primary hero resume button uses `files/Hardik_Shrestha_Product_Resume_2026-05.pdf` because the user asked for the latest resume. The contact card also exposes `files/Hardik_Shrestha_Product_AI_Resume.pdf` because the Career subagent found it to be the best general public-site fit.
+
 ## 2026-05-16 flagship rework
 
 The root homepage was rebuilt as a fuller personal portfolio instead of the previous evidence-dashboard shell. The decision was to restore the legacy site's human sections and motion energy while keeping the old site available at `/legacy/`.
@@ -23,7 +34,7 @@ The root homepage was rebuilt as a fuller personal portfolio instead of the prev
 - `css/flagship-rework.css` provides the active root visual system and responsive layout.
 - `js/flagship-rework.js` adds the native typed identity, cursor-reactive node network, active nav, and contact form status.
 - `css/v2.css`, `js/v2-content.js`, and `js/v2-interactions.js` are retained as prior-v2 implementation history and may still be useful for comparison, but the root page no longer references them.
-- `content/site-content.json` is the single source for evidence and selected-work links.
+- `content/site-content.json` is retained as the prior-v2 evidence record. The current root flagship/year-browser presentation is static HTML in `index.html` because the latest correction deliberately moved faster than the old JSON renderer.
 - `docs/evidence-inventory.md`, `docs/public-safety.md`, and `docs/handoff.md` track proof policy, contact safety decisions, and release-candidate handoff notes.
 - `docs/review-backlog.md` keeps post-freeze review work separated into must-fix, nice-polish, and needs-new-evidence buckets so future turns do not restart broad redesign by default.
 - `handoff/index.html` exposes the release handoff as a static public route for GitHub Pages and Vercel review.
@@ -34,7 +45,7 @@ The root homepage was rebuilt as a fuller personal portfolio instead of the prev
 
 - A translucent top-right fixed `Legacy` button in `index.html` links to `/legacy/`.
 - Legacy remains reachable through `/legacy/` while v2 surfaces current, evidence-backed proof.
-- v2 content is static and source-driven; no build step exists in this repository.
+- v2 content is static; no build step exists in this repository.
 - `selected-work` is rendered as a four-card flagship layer so the homepage reads as a curated portfolio rather than a full evidence manifest.
 - Skip links are intentionally hidden until keyboard focus so accessibility shortcuts remain available without creating a visible first-load overlay.
 - The v2 hero uses the existing legacy portrait asset (`images/me3.jpg`) instead of a generated or stock visual. This keeps the first viewport personal, evidence-safe, and consistent with the legacy site while avoiding new unverified claims or assets.
