@@ -951,6 +951,14 @@
 - Dirty paths: target checkout dirty path is this worker-log entry until committed.
 - Next safe action: commit and push this worker-log entry, update coordination/automation memory, then pause broad visual polish unless review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence appears.
 
+## Run 2026-05-16T05:18:10-04:00 final follow-up
+- Worker-log commit `01b697f1c3fc3022e2e51076416ecebaa6d58e4b` (`Record first viewport rhythm run`) was pushed to `origin/master`; `git ls-remote origin HEAD` matched after push.
+- Final preflight result after source/docs and log pushes: `auth-ok`; dirty paths none; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`.
+- Final public status: GitHub Pages returned HTTP 200 and fresh Turn 59 markers for cache-busted `css/v2.css`, `docs/handoff.md`, and `docs/review-backlog.md`; root and `/legacy/` returned HTTP 200. The Vercel alias returned HTTP 200 and fresh Turn 59 markers for cache-busted `css/v2.css` and `/handoff/`.
+- Deploy status: no manual Vercel CLI deploy was needed because the existing integration served the pushed Turn 59 baseline.
+- Blocker state: none.
+- Next safe action: update automation memory and pause broad visual polish unless review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence appears.
+
 ## Run 2026-05-16T05:08:25-04:00
 - Mission scope: Worker Wally - Personal Website v2.
 - Director task: Turn 59 - Screenshot-Driven First-Viewport Rhythm Pass.
