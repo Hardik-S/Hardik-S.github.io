@@ -99,16 +99,19 @@ a {
   align-items: center;
   gap: clamp(1.4rem, 4vw, 3.2rem);
   border-bottom: 1px solid var(--line);
+  border-top: 1px solid rgba(248, 235, 208, 0.12);
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  inset: 1rem auto 1.2rem -1.8rem;
-  width: 0.26rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--accent-warm), var(--accent), var(--accent-rose));
-  box-shadow: 0 0 0 1px rgba(238, 243, 239, 0.08);
+  inset: 0 -2vw 0 -2vw;
+  z-index: -1;
+  border-radius: 0.6rem;
+  background:
+    linear-gradient(90deg, rgba(242, 193, 123, 0.32) 0 0.26rem, transparent 0.26rem),
+    linear-gradient(135deg, rgba(248, 235, 208, 0.055), rgba(107, 220, 255, 0.025) 38%, rgba(224, 142, 154, 0.04));
+  box-shadow: inset 0 1px 0 rgba(238, 243, 239, 0.08);
 }
 
 .hero::after {
@@ -311,6 +314,36 @@ h1 {
 
 .hero-support {
   max-width: 49ch;
+}
+
+.hero-method {
+  /* This repeats the Turn 55 working pattern in the hero without adding a new proof claim. */
+  width: min(100%, 45rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 0.18rem;
+}
+
+.hero-method span {
+  min-width: 0;
+  padding: 0.44rem 0.58rem;
+  border: 1px solid rgba(248, 235, 208, 0.16);
+  border-radius: 0.45rem;
+  color: rgba(231, 237, 249, 0.78);
+  background: rgba(7, 16, 15, 0.4);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.hero-method strong {
+  display: block;
+  margin-bottom: 0.08rem;
+  color: var(--accent-warm);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-portrait {
@@ -1347,6 +1380,10 @@ button:focus-visible,
     padding: 0.75rem 0 1rem;
   }
 
+  .hero::before {
+    inset: -0.45rem -3vw -0.25rem -3vw;
+  }
+
   .hero::after {
     display: none;
   }
@@ -1375,6 +1412,16 @@ button:focus-visible,
   .hero-support {
     font-size: 0.96rem;
     line-height: 1.55;
+  }
+
+  .hero-method {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.38rem;
+  }
+
+  .hero-method span {
+    padding: 0.4rem 0.48rem;
+    font-size: 0.74rem;
   }
 
   .hero-focus-panel {
@@ -1453,6 +1500,19 @@ button:focus-visible,
 @media (max-width: 480px) {
   .hero-support {
     display: none;
+  }
+
+  .hero-method {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-method span {
+    padding: 0.34rem 0.42rem;
+    font-size: 0.68rem;
+  }
+
+  .hero-method strong {
+    font-size: 0.64rem;
   }
 
   .hero-copy {
