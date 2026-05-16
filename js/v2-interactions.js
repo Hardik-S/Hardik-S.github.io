@@ -1,6 +1,109 @@
 // v2 interaction layer:
 // keep motion optional and native so the static site stays fast and readable.
 (function () {
+  const signal = document.querySelector("[data-signal-phrases]");
+  const signalText = signal?.querySelector("[data-signal-text]");
+
+  if (!signal || !signalText) {
+    return;
+  }
+
+  const phrases = signal.dataset.signalPhrases
+    .split("|")
+    .map((phrase) => phrase.trim())
+    .filter(Boolean);
+  const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (phrases.length < 2) {
+    return;
+  }
+
+  let phraseIndex = Math.max(0, phrases.indexOf(signalText.textContent.trim()));
+  let charIndex = signalText.textContent.trim().length || phrases[0].length;
+  let isDeleting = false;
+  let signalTimer;
+
+  const renderPhrase = () => {
+    signalText.textContent = phrases[phraseIndex].slice(0, charIndex);
+  };
+
+  const clearSignalTimer = () => {
+    if (signalTimer) {
+      window.clearTimeout(signalTimer);
+      signalTimer = null;
+    }
+  };
+
+  const scheduleSignal = (delay) => {
+    clearSignalTimer();
+    signalTimer = window.setTimeout(tickSignal, delay);
+  };
+
+  const setStaticSignal = () => {
+    clearSignalTimer();
+    signal.dataset.signalMode = "static";
+    phraseIndex = 0;
+    charIndex = phrases[0].length;
+    isDeleting = false;
+    renderPhrase();
+  };
+
+  const tickSignal = () => {
+    if (reduceMotionQuery.matches || document.hidden) {
+      return;
+    }
+
+    const phrase = phrases[phraseIndex];
+    if (!isDeleting) {
+      charIndex = Math.min(phrase.length, charIndex + 1);
+      renderPhrase();
+      if (charIndex === phrase.length) {
+        isDeleting = true;
+        scheduleSignal(1800);
+        return;
+      }
+      scheduleSignal(42);
+      return;
+    }
+
+    charIndex = Math.max(0, charIndex - 1);
+    renderPhrase();
+    if (charIndex === 0) {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      isDeleting = false;
+      scheduleSignal(260);
+      return;
+    }
+    scheduleSignal(24);
+  };
+
+  const startSignal = () => {
+    if (reduceMotionQuery.matches) {
+      setStaticSignal();
+      return;
+    }
+
+    signal.dataset.signalMode = "typing";
+    scheduleSignal(1400);
+  };
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      clearSignalTimer();
+      return;
+    }
+    startSignal();
+  });
+
+  if (reduceMotionQuery.addEventListener) {
+    reduceMotionQuery.addEventListener("change", startSignal);
+  } else {
+    reduceMotionQuery.addListener(startSignal);
+  }
+  startSignal();
+})();
+
+(function () {
   const focusText = document.getElementById("hero-focus-text");
   const cycleButton = document.querySelector(".focus-cycle-button");
   const journeyButton = document.querySelector(".proof-journey-button");

@@ -126,6 +126,18 @@ a {
   line-height: 0.72;
 }
 
+@keyframes signal-caret {
+  0%,
+  46% {
+    opacity: 1;
+  }
+
+  47%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .legacy-pill {
   position: fixed;
   top: 1rem;
@@ -315,6 +327,50 @@ h1 {
 
 .hero-support {
   max-width: 49ch;
+}
+
+.hero-signal {
+  width: min(100%, 36rem);
+  min-height: 2.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.62rem;
+  padding: 0.42rem 0.62rem;
+  border: 1px solid rgba(167, 209, 126, 0.22);
+  border-radius: 0.48rem;
+  color: rgba(238, 243, 239, 0.9);
+  background:
+    linear-gradient(90deg, rgba(167, 209, 126, 0.12), rgba(107, 220, 255, 0.05)),
+    rgba(7, 16, 15, 0.45);
+}
+
+.hero-signal-label {
+  flex: 0 0 auto;
+  color: var(--accent-leaf);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-signal-text {
+  min-width: 0;
+  color: rgba(238, 243, 239, 0.92);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.hero-signal[data-signal-mode="typing"] .hero-signal-text::after {
+  content: "";
+  display: inline-block;
+  width: 0.52em;
+  height: 1.1em;
+  margin-left: 0.14rem;
+  border-right: 2px solid rgba(242, 193, 123, 0.82);
+  vertical-align: -0.16em;
+  animation: signal-caret 900ms steps(2, start) infinite;
 }
 
 .hero-method {
@@ -1487,6 +1543,17 @@ button:focus-visible,
     line-height: 1.55;
   }
 
+  .hero-signal {
+    width: 100%;
+    min-height: 2.38rem;
+    padding: 0.36rem 0.52rem;
+  }
+
+  .hero-signal-text {
+    min-width: 0;
+    font-size: 0.78rem;
+  }
+
   .hero-method {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.32rem;
@@ -1573,6 +1640,18 @@ button:focus-visible,
 @media (max-width: 480px) {
   .hero-support {
     display: none;
+  }
+
+  .hero-signal {
+    gap: 0.46rem;
+  }
+
+  .hero-signal-label {
+    font-size: 0.62rem;
+  }
+
+  .hero-signal-text {
+    font-size: 0.72rem;
   }
 
   .hero-method {
@@ -1735,5 +1814,9 @@ button:focus-visible,
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .hero-signal[data-signal-mode="typing"] .hero-signal-text::after {
+    animation: none;
   }
 }
