@@ -67,7 +67,7 @@ The v2 contact path is profile-first:
 
 - Page language, title, description, canonical URL, social-preview tags, landmarks, section labels, portrait alt text, and external-link `rel="noopener noreferrer"` attributes were reviewed in the release-polish pass.
 - `prefers-reduced-motion` keeps native interactions available while suppressing transitions and animations for reduced-motion users.
-- The social preview points to the committed `images/website-preview.png`; replace it only after a separately verified public-safe preview asset exists.
+- The social preview points to the committed `images/website-preview.png`, regenerated in Turn 46 as a 1200x630 capture of the current v2 homepage. It shows the current name, portrait, proof-focus panel, and top-right `Legacy` access instead of the old legacy-era hero.
 
 ## Routes to preserve
 
@@ -96,6 +96,7 @@ The v2 contact path is profile-first:
 - Cache-busted public checks confirmed the Turn 40 active-section rail markers in `js/v2-interactions.js` and `css/v2.css` on both public surfaces.
 - The Turn 42 deploy repaired the stale Vercel `/handoff/` route observed after the final share packet. The final log-only source commit is not manually redeployed to Vercel because the daily quota cap returned; this does not change homepage or legacy behavior.
 - Rendered screenshots have been inspected at mobile, tablet, desktop, selected-work, contact, and handoff routes across the release-freeze and Turn 40 passes; the Legacy button remained visible and no first-viewport or flagship-work overlap was observed.
+- Turn 46 regenerated the link-preview asset from the current v2 homepage and updated Open Graph dimensions to 1200x630. This keeps cold-share previews aligned with the actual review surface without adding a new claim, direct contact path, or unverified project image.
 - Recommendation: share the current public URL for review. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -105,7 +106,7 @@ The active review backlog is intentionally short and lives in `docs/review-backl
 Current recommendation:
 
 - Must fix before sharing: none identified from the current release-candidate evidence.
-- Nice polish: custom social preview, verified real project screenshots, or one restrained native interaction only after review value is clear.
+- Nice polish: verified real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented. The social preview and restrained native interaction lanes are already covered by the current v2 baseline.
 - Needs new verified evidence: BioScript artifacts, project screenshots, metrics, employer/customer status, and any new project claims must remain excluded until public-safe proof is documented.
 - Default next action: share the current public URL for review, then act only on concrete feedback or newly verified evidence.
 

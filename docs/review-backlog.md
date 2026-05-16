@@ -23,9 +23,9 @@ Decision rationale:
 
 ## Nice polish
 
-- Create a new public-safe social preview image if the user wants stronger link-unfurl presentation. Reuse only committed, owned, or generated assets with documented dimensions and source.
+- Social preview is no longer an open nice-polish item: Turn 46 regenerated `images/website-preview.png` as a 1200x630 public-safe capture of the current v2 homepage and updated the Open Graph dimensions.
 - Replace or augment structured proof maps with real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented.
-- Add one restrained native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access. The active section rail now covers this category; future interaction work should wait for reviewer feedback.
+- Add more native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access. The active section rail and Turn 45 proof journey already cover this category; future interaction work should wait for reviewer feedback.
 - Refresh resume/profile links after the user confirms a newer public artifact.
 
 ## Needs new verified evidence
