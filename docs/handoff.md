@@ -97,7 +97,9 @@ The v2 contact path is profile-first:
 - The Turn 42 deploy repaired the stale Vercel `/handoff/` route observed after the final share packet. The final log-only source commit is not manually redeployed to Vercel because the daily quota cap returned; this does not change homepage or legacy behavior.
 - Rendered screenshots have been inspected at mobile, tablet, desktop, selected-work, contact, and handoff routes across the release-freeze and Turn 40 passes; the Legacy button remained visible and no first-viewport or flagship-work overlap was observed.
 - Turn 46 regenerated the link-preview asset from the current v2 homepage and updated Open Graph dimensions to 1200x630. This keeps cold-share previews aligned with the actual review surface without adding a new claim, direct contact path, or unverified project image.
-- Recommendation: share the current public URL for review. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
+- Turn 47 release QA checked source baseline `89226320c8e8cbdb15f22ddd31b9de27a6401b7f` before this freeze-note update. Local route checks returned 200 for root, legacy, handoff, docs, content JSON, preview image, CSS, and JS; Browser interaction QA confirmed `Trace proof` adds `is-proof-journey` with no console errors; Playwright screenshots covered mobile, tablet, desktop, selected-work after JSON render delay, and contact.
+- Turn 47 public checks returned 200 on both GitHub Pages and the Vercel alias for root, legacy, handoff, content JSON, cache-busted CSS, and cache-busted JS. The 1200x630 preview image remained present locally and is part of the public share surface.
+- Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
 
@@ -139,7 +141,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 
 ## Current caveats
 
-- Manual Vercel CLI deploys are quota-blocked for the final log-only Turn 42 source state after one post-repair retry. Use GitHub Pages for freshest docs and retry Vercel only after quota reset or integration catch-up, with the two-equivalent-failures cap still in force.
+- Manual Vercel CLI deploys previously hit quota during Turn 42 and Turn 45/46 follow-ups, so future manual deploys should still start with preflight and respect the two-equivalent-failures cap. Turn 47 did not need a manual deploy because the Vercel alias served the checked baseline during public freshness QA.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 

@@ -4,6 +4,7 @@ Last updated: 2026-05-15
 Baseline source commit before this backlog note: `7c3d324fa8f7b4644adde39664602a067844498a`
 Current final-share baseline: `23fce34a56aec3261c0eae3b0376b4a737a9262b`
 Final share-packet baseline repaired by Turn 42 release-health reconciliation: `4b1161562e318d1fed61087ec5372b536ab4a1af`
+Turn 47 release-QA baseline checked before freeze-note update: `89226320c8e8cbdb15f22ddd31b9de27a6401b7f`
 
 ## Recommendation
 
@@ -17,6 +18,7 @@ None identified in the current release-candidate evidence.
 
 Decision rationale:
 - The root, legacy, handoff, and evidence payload routes were already verified in the Turn 37 freeze run.
+- Turn 47 rechecked root, legacy, handoff, content JSON, docs, preview image, CSS, and JS locally; GitHub Pages and the Vercel alias also returned 200 for the core public routes and cache-busted v2 assets.
 - The `Legacy` button is present on the v2 root and handoff route.
 - The site does not expose a new raw email address, form endpoint, or private workflow data in v2.
 - The full redaction scan caveat is limited to the documented legacy-only contact exception in `legacy/index.html`.
