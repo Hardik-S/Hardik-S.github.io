@@ -933,3 +933,20 @@
 - Final preflight after detecting that edit returned `auth-ok,dirty-worktree`; dirty paths `M css/v2.css`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`.
 - Blocker state: no blocker for the pushed docs/log baseline, but the local checkout is not clean for future source work.
 - Next safe action: before Turn 59 source/CSS work, either claim/review the `css/v2.css` change explicitly or isolate Turn 59 in a clean sibling worktree so this unowned visual edit is not accidentally published.
+
+## Run 2026-05-16T05:08:25-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 59 - Screenshot-Driven First-Viewport Rhythm Pass.
+- Selected task: claim and finish the pending `css/v2.css` rhythm edit from the dirty-worktree correction, then document it as the single coherent visual increment.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `css/v2.css`, `README.md`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, and this `state/worker-log.md` entry.
+- Implementation notes: compacted the hero frame, portrait scale, mobile gaps, primary-action spacing, proof-focus panel, and section rail. Hid the redundant hero proof-strip row because the Turn 57 method chips now provide direct proof-path anchors and the `Next focus` / `Trace proof` controls remain available. Rejected new copy, new media, evidence JSON changes, JavaScript changes, route changes, contact changes, social-preview regeneration, and any `/legacy/` edit.
+- Verification before source/docs commit: start preflight `auth-ok`; dirty preflight `auth-ok,dirty-worktree` with only owned Turn 59 paths; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/css/v2.css`, `/js/v2-content.js`, `/js/v2-interactions.js`, `/docs/handoff.md`, and `/docs/review-backlog.md`; changed-file redaction scans passed.
+- Rendered QA: Browser plugin setup failed once by timeout and then returned `iab` unavailable, so CLI Playwright was used. Before screenshots were captured at `390x844`, `768x1024`, `1440x900`, `#highlights`, and `#selected-work` in the coordination `state` folder. After screenshots were captured at `390x844`, `768x1024`, `1440x900`, `#highlights`, and `#selected-work`; the final mobile root kept Hardik's name, portrait, method proof path, primary actions, proof-focus panel, visible `Legacy`, and visible section rail without clipping, and the desktop root showed the section rail inside the first viewport.
+- Verification caveat: a redirected-output Python server surface dropped during selected-work screenshot attempts, so after repeated connection refusals this run switched to a no-redirect short-lived server surface, which succeeded for the final selected-work screenshot.
+- Source/docs commit SHA: `9cc32c03f6465a48b4fbad56bb14581fe1236b97` (`Tighten first viewport rhythm`), pushed to `origin/master`; `git ls-remote origin HEAD` matched the source/docs commit before this worker-log follow-up.
+- Deploy URL/status: pending public freshness check after push. No manual Vercel CLI deploy planned unless the Vercel alias is stale after the retry-capped freshness checks.
+- Preflight result: start `auth-ok`; dirty-edit `auth-ok,dirty-worktree`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`, project id `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`, org/team id `team_vRPi8T7ENTL7OukzlH1s0qnu`.
+- Blocker state: none for source; local redirected-output server surface degraded and switched surfaces.
+- Dirty paths: target checkout dirty paths are the owned Turn 59 source/docs/log files until committed.
+- Next safe action: commit and push this rhythm pass, then check GitHub Pages and Vercel freshness before updating automation memory.
