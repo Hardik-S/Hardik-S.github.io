@@ -121,6 +121,7 @@ The v2 contact path is profile-first:
 - Turn 56 confirms Turn 55 closure rather than changing the homepage: source commit `e76f70e84cf19d204a3b31b8c85e193c3494b527`, worker-log/freshness commit `429063e3a23584efa5d4992f2ee01c139b97b546`, root/handoff/docs freshness, and automation-memory catch-up are the scope.
 - The 2026-05-16 above-fold warmth pass implements the Director's next visual task after the closure note: the first viewport now exposes `Listen / Frame / Build / Document` directly in the hero and uses a warmer framed masthead treatment. No new content claims, media captures, route changes, or contact surfaces were added.
 - The 2026-05-16 native proof-path pass implements the next Director interaction task after the warmth pass. The hero method chips now route reviewers through `#highlights`, `#selected-work`, and `#evidence-section`, with the selected-work spotlight bridged only as progressive enhancement.
+- The 2026-05-16 generated-QA cleanup baseline verifies the target checkout at `1cef7bba1cf0baac672121d2d4688cf02e98da0f` had no retained generated QA folder, server logs, or dirty paths before future visual QA work. This handoff record deliberately does not change homepage layout, CSS, JavaScript, content JSON, media, contact policy, or `/legacy/` behavior.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -170,6 +171,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 - Turn 56 remains a release-health record only. Future workers should treat it as closure evidence, not as a new design mandate.
 - The above-fold warmth pass should be evaluated visually, not as new evidence. Future workers should not keep adding hero chips or stronger claims unless a reviewer says the first viewport is still unclear.
 - The proof-path interaction should be evaluated as navigation clarity, not as new evidence. Future interaction work should not add overlays, blocking tours, or heavier runtime dependencies unless a reviewer reports that the current path is unclear.
+- Generated QA artifacts should not linger across turns. The Turn 58G baseline found no untracked `state/director-qa/` folder or server logs, so later screenshot-driven turns should create new evidence, inspect it, then either remove it before commit or commit it with a clear retention rationale.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 
