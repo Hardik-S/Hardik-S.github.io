@@ -630,3 +630,9 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable and fresh for Turn 45 homepage assets but stale for Turn 45 handoff mirror note`; Preflight result `auth-ok`; Dirty paths `none before edit`; Attempts used `preflight 1, GitHub pushes 2, Vercel freshness checks 2 for handoff, Vercel CLI deploy 1 quota failure`; Next safe action `use fresh GitHub Pages for handoff review and retry Vercel handoff freshness only after quota reset or automatic integration catch-up`.
 - Dirty paths: expected dirty path is this target worker-log entry until committed.
 - Next safe action: commit and push this worker-log entry, then proceed to Turn 46 recruiter share/social preview only if Director still wants more release polish.
+
+## Run 2026-05-15T20:05:45-04:00 follow-up
+- Follow-up log commit `9d4d4f62b6378f1d384f4d68cbf3b0861b2df720` (`Record proof journey run`) was pushed and matched `origin/HEAD`.
+- Final public check: GitHub Pages returned 200 with Turn 45 markers for root and `/handoff/`; Vercel returned 200 with the Turn 45 root marker but still did not show the new `/handoff/` mirror note after the quota-blocked manual deploy attempt.
+- Dirty-worktree follow-up: `images/website-preview.png` appeared modified after the final public checks. It was not part of this Director task, was not staged, and was left uncommitted to preserve unrelated/unowned work.
+- Next safe action: reconcile or intentionally refresh `images/website-preview.png` in a separate scoped turn; use GitHub Pages as the freshest handoff surface and Vercel root for the fresh interaction until Vercel `/handoff/` catches up.
