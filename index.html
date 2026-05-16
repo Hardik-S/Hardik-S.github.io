@@ -149,7 +149,7 @@
     <section id="flagship" class="flagship-section">
       <div class="section-heading">
         <p>Flagship work</p>
-        <h2>Four best signals, then the archive by year.</h2>
+        <h2>Four best signals, then the depth archive.</h2>
       </div>
       <div class="flagship-grid flagship-grid-rebuilt" aria-label="Current best four projects">
         <article class="flagship-card flagship-lead">
@@ -173,6 +173,7 @@
           <span class="work-type">AI governance</span>
           <h3><a href="https://github.com/Hardik-S/agent-permission-review-console" target="_blank" rel="noopener noreferrer">Agent Permission Review Console</a></h3>
           <p>A least-privilege review surface for agent access, built around request scope, approval state, and human-readable control checks.</p>
+          <p class="artifact-note">Source-only proof for now: built to show why agent permissions need a review trail before teams trust automation.</p>
           <div class="signal-chain"><span>Request</span><span>Risk</span><span>Approval</span></div>
         </article>
 
@@ -195,58 +196,50 @@
         <div class="year-browser-head">
           <div>
             <span class="work-type">Archive browser</span>
-            <h3>Best four from each year</h3>
+            <h3>Browse by complexity</h3>
           </div>
-          <div class="year-tabs" role="tablist" aria-label="Project years">
-            <button type="button" role="tab" aria-selected="true" aria-controls="projects-2026" id="tab-2026" data-year-tab="2026">2026</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2025" id="tab-2025" data-year-tab="2025">2025</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2024" id="tab-2024" data-year-tab="2024">2024</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2022" id="tab-2022" data-year-tab="2022">2022-23</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2021" id="tab-2021" data-year-tab="2021">2021</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="projects-2020" id="tab-2020" data-year-tab="2020">2020</button>
+          <div class="year-tabs" role="tablist" aria-label="Project complexity levels">
+            <button type="button" role="tab" aria-selected="true" aria-controls="projects-advanced" id="tab-advanced" data-year-tab="advanced">Advanced</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-systems" id="tab-systems" data-year-tab="systems">AI systems</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-product" id="tab-product" data-year-tab="product">Product</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-ops" id="tab-ops" data-year-tab="ops">Operations</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="projects-foundations" id="tab-foundations" data-year-tab="foundations">Foundations</button>
           </div>
         </div>
 
-        <div class="year-panel is-active" id="projects-2026" role="tabpanel" aria-labelledby="tab-2026" data-year-panel="2026">
+        <div class="year-panel is-active" id="projects-advanced" role="tabpanel" aria-labelledby="tab-advanced" data-year-panel="advanced">
           <article><span>01</span><h4><a href="https://bioscript-housing-decision.vercel.app" target="_blank" rel="noopener noreferrer">BioScript Workflow Prototype</a></h4><p>Decision-support interface for constrained review, criteria, and handoff.</p></article>
           <article><span>02</span><h4><a href="https://github.com/Hardik-S/agent-permission-review-console" target="_blank" rel="noopener noreferrer">Agent Permission Review Console</a></h4><p>AI governance surface for request scope and approval state.</p></article>
           <article><span>03</span><h4><a href="https://github.com/Hardik-S/wacky-chess-vision" target="_blank" rel="noopener noreferrer">Wacky Chess Vision</a></h4><p>Computer-vision chess work that adds creative technical breadth.</p></article>
           <article><span>04</span><h4><a href="https://github.com/Hardik-S/corporate-climate-adaptability-canada" target="_blank" rel="noopener noreferrer">Corporate Climate Adaptability Canada</a></h4><p>Public-safe climate research methodology and synthetic sentiment demo.</p></article>
         </div>
 
-        <div class="year-panel" id="projects-2025" role="tabpanel" aria-labelledby="tab-2025" data-year-panel="2025" hidden>
-          <article><span>01</span><h4><a href="https://hardik-s.github.io/EmotionalEchoes/" target="_blank" rel="noopener noreferrer">Emotional Echoes</a></h4><p>Digital product MVP with a public demo surface.</p></article>
-          <article><span>02</span><h4><a href="https://github.com/Hardik-S/geodata" target="_blank" rel="noopener noreferrer">GeoData</a></h4><p>Geospatial demo work with a recorded walkthrough.</p></article>
-          <article><span>03</span><h4><a href="https://hardik-s.github.io/g1" target="_blank" rel="noopener noreferrer">React Micro Apps Collection</a></h4><p>Small interactive web apps bundled as a public collection.</p></article>
-          <article><span>04</span><h4><a href="https://hardik-s.github.io/SustainTrack/" target="_blank" rel="noopener noreferrer">SustainTrack</a></h4><p>Product carbon footprint analyzer and sustainability-facing UI.</p></article>
+        <div class="year-panel" id="projects-systems" role="tabpanel" aria-labelledby="tab-systems" data-year-panel="systems" hidden>
+          <article><span>01</span><h4><a href="https://github.com/Hardik-S/continuous-control-policy-benchmark" target="_blank" rel="noopener noreferrer">Continuous-Control Policy Benchmark</a></h4><p>Reproducible reinforcement-learning benchmark work with deterministic proof paths.</p></article>
+          <article><span>02</span><h4><a href="https://github.com/Hardik-S/intraday-execution-research-lab" target="_blank" rel="noopener noreferrer">Intraday Execution Research Lab</a></h4><p>Synthetic TWAP/VWAP research package with caveats and tests.</p></article>
+          <article><span>03</span><h4><a href="https://github.com/Hardik-S/gas-price-tracker" target="_blank" rel="noopener noreferrer">Gas Price Tracker</a></h4><p>Android-facing data product proof for recurring price checks and public verification.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/demo-data-redaction-studio" target="_blank" rel="noopener noreferrer">Demo Data Redaction Studio</a></h4><p>Privacy-aware fixture preparation and export tooling for safer public demos.</p></article>
         </div>
 
-        <div class="year-panel" id="projects-2024" role="tabpanel" aria-labelledby="tab-2024" data-year-panel="2024" hidden>
+        <div class="year-panel" id="projects-product" role="tabpanel" aria-labelledby="tab-product" data-year-panel="product" hidden>
           <article><span>01</span><h4><a href="https://github.com/Hardik-S/picturethisv2" target="_blank" rel="noopener noreferrer">Picture This</a></h4><p>Educational storytelling game with product and go-to-market depth.</p></article>
-          <article><span>02</span><h4>Loblaw Finance Automation</h4><p>Backlog and workflow automation that reduced recurring finance operations work.</p></article>
-          <article><span>03</span><h4>LoblawTank Food Waste Solution</h4><p>Hackathon-winning sustainability concept presented to leadership.</p></article>
-          <article><span>04</span><h4>UN Global Compact Climate Research</h4><p>Corporate climate adaptation research, literature review, and sentiment analysis.</p></article>
+          <article><span>02</span><h4><a href="https://hardik-s.github.io/EmotionalEchoes/" target="_blank" rel="noopener noreferrer">Emotional Echoes</a></h4><p>Digital product MVP with a public demo surface.</p></article>
+          <article><span>03</span><h4><a href="https://hardik-s.github.io/g1" target="_blank" rel="noopener noreferrer">React Micro Apps Collection</a></h4><p>Small interactive web apps bundled as a public collection.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/geodata" target="_blank" rel="noopener noreferrer">GeoData</a></h4><p>Geospatial demo work with a recorded walkthrough.</p></article>
         </div>
 
-        <div class="year-panel" id="projects-2022" role="tabpanel" aria-labelledby="tab-2022" data-year-panel="2022" hidden>
-          <article><span>01</span><h4>Kinaxis AI Platform QA</h4><p>AI platform quality work across product workflows and partner-facing releases.</p></article>
-          <article><span>02</span><h4>PointClickCare IAM</h4><p>Full-stack identity tooling on Azure with bulk-user migration capability.</p></article>
-          <article><span>03</span><h4><a href="https://github.com/Hardik-S/CryptoTradingPlatform" target="_blank" rel="noopener noreferrer">Crypto Trading Platform</a></h4><p>Team-built trading platform project with database and application layers.</p></article>
-          <article><span>04</span><h4><a href="https://github.com/Hardik-S/Todoeth" target="_blank" rel="noopener noreferrer">Ethereum To Do List</a></h4><p>Early blockchain application experiment.</p></article>
+        <div class="year-panel" id="projects-ops" role="tabpanel" aria-labelledby="tab-ops" data-year-panel="ops" hidden>
+          <article><span>01</span><h4><a href="https://github.com/Hardik-S/fulfillment-cost-driver-simulator" target="_blank" rel="noopener noreferrer">Fulfillment Cost Driver Simulator</a></h4><p>Scenario model for cost-mix sensitivity and reviewer-ready operating tradeoffs.</p></article>
+          <article><span>02</span><h4><a href="https://github.com/Hardik-S/invoice-dispute-packet-builder" target="_blank" rel="noopener noreferrer">Invoice Dispute Packet Builder</a></h4><p>Structured packet assembly for facts, evidence, and response steps.</p></article>
+          <article><span>03</span><h4><a href="https://pmo-decision-brief-builder.vercel.app" target="_blank" rel="noopener noreferrer">PMO Decision Brief Builder</a></h4><p>Useful supporting workflow proof, now correctly demoted from the lead flagship position.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/cloud-cost-decision-notebook" target="_blank" rel="noopener noreferrer">Cloud Cost Decision Notebook</a></h4><p>Deployment tradeoff analysis for early-stage cloud decisions.</p></article>
         </div>
 
-        <div class="year-panel" id="projects-2021" role="tabpanel" aria-labelledby="tab-2021" data-year-panel="2021" hidden>
-          <article><span>01</span><h4>P3 Adaptive RPA</h4><p>Power Automate workflows for Eventbrite, SharePoint, and training operations.</p></article>
-          <article><span>02</span><h4><a href="https://github.com/Hardik-S/remory" target="_blank" rel="noopener noreferrer">Remory</a></h4><p>Memento-focused app concept from the earlier product-building arc.</p></article>
-          <article><span>03</span><h4><a href="https://github.com/Hardik-S/SaltyChessCoaching" target="_blank" rel="noopener noreferrer">Salty Chess Coaching</a></h4><p>Coaching website work that connects software with chess instruction.</p></article>
-          <article><span>04</span><h4><a href="https://github.com/Hardik-S/TreeOfShapes" target="_blank" rel="noopener noreferrer">Tree Of Shapes</a></h4><p>Data-structures coursework preserved as public source.</p></article>
-        </div>
-
-        <div class="year-panel" id="projects-2020" role="tabpanel" aria-labelledby="tab-2020" data-year-panel="2020" hidden>
+        <div class="year-panel" id="projects-foundations" role="tabpanel" aria-labelledby="tab-foundations" data-year-panel="foundations" hidden>
           <article><span>01</span><h4><a href="https://github.com/Hardik-S/DuckDuckGo" target="_blank" rel="noopener noreferrer">Duck, Duck, Mallard</a></h4><p>Transfer-learning image classifier from the legacy project set.</p></article>
           <article><span>02</span><h4><a href="https://github.com/Hardik-S/the-starburst-project" target="_blank" rel="noopener noreferrer">The Starburst Project</a></h4><p>Computer-vision air-painting concept for virtual teaching.</p></article>
           <article><span>03</span><h4><a href="https://github.com/Hardik-S/WesternPortal" target="_blank" rel="noopener noreferrer">Western Portal</a></h4><p>Chrome extension for launching Western student services quickly.</p></article>
-          <article><span>04</span><h4><a href="https://github.com/Hardik-S/blindchess" target="_blank" rel="noopener noreferrer">Blind Chess</a></h4><p>Chess project from the early public-source archive.</p></article>
+          <article><span>04</span><h4><a href="https://github.com/Hardik-S/CryptoTradingPlatform" target="_blank" rel="noopener noreferrer">Crypto Trading Platform</a></h4><p>Team-built trading platform project with database and application layers.</p></article>
         </div>
       </div>
     </section>
@@ -254,24 +247,23 @@
     <section id="skills" class="skills-section">
       <div class="section-heading">
         <p>Skills</p>
-        <h2>Technical and operating range.</h2>
+        <h2>Depth, not a tag dump.</h2>
       </div>
       <div class="skill-grid">
-        <article><h3>Programming</h3><p>Python, Java, JUnit, Mockito, Maven, SQL, JavaScript, Cypress.</p></article>
-        <article><h3>Cloud and DevOps</h3><p>Azure, AWS EC2, GCS, Docker, Kubernetes, Prometheus, Datadog.</p></article>
-        <article><h3>Frontend</h3><p>React, Vue, GraphQL, HTML, CSS, Bootstrap.</p></article>
-        <article><h3>Tools</h3><p>Git, Power BI, OAuth2, Jira, Postman, Kafka.</p></article>
-        <article><h3>Engagement</h3><p>Program coordination, educational resources, stakeholder workshops, public speaking.</p></article>
-        <article><h3>Research</h3><p>Literature review, academic writing, data analysis, sustainability policy synthesis.</p></article>
-        <article><h3>Languages</h3><p>English native, French conversational.</p></article>
-        <article><h3>Analytics</h3><p>Data-driven decision making, BI tools, operating metrics, review surfaces.</p></article>
+        <article><span class="tier-label">Daily use</span><h3>Build and ship</h3><p>Python, JavaScript, HTML/CSS, React, Git, source-backed documentation, product framing.</p></article>
+        <article><span class="tier-label">Strong</span><h3>Application engineering</h3><p>Java, SQL, JUnit, Mockito, Maven, Cypress, Power BI, workflow automation.</p></article>
+        <article><span class="tier-label">Working fluency</span><h3>Cloud and platform</h3><p>Azure, AWS EC2, GCS, Docker, Kubernetes, OAuth2, Postman, Jira.</p></article>
+        <article><span class="tier-label">Project exposure</span><h3>Specialized tools</h3><p>Vue, GraphQL, Kafka, Prometheus, Datadog, Bootstrap, Android project workflows.</p></article>
+        <article><span class="tier-label">Operator strength</span><h3>Research and judgment</h3><p>Literature review, sustainability policy synthesis, evidence mapping, stakeholder workshops.</p></article>
+        <article><span class="tier-label">Communication</span><h3>Public-facing work</h3><p>Program coordination, educational resources, public speaking, concise handoff artifacts.</p></article>
       </div>
     </section>
 
     <section id="projects" class="projects-section">
       <div class="section-heading">
-        <p>Projects</p>
-        <h2>Legacy work, rebuilt into the current story.</h2>
+        <p>Earlier work</p>
+        <h2>Older pieces kept intentionally.</h2>
+        <p class="section-note">This section preserves visual artifacts from the legacy site. The strongest current work lives above; this is here to show range and origin story.</p>
       </div>
       <div class="project-grid">
         <article>
@@ -280,9 +272,9 @@
           <p>Computer-vision classification project using transfer learning and test coverage to distinguish duck images.</p>
         </article>
         <article>
-          <img src="images/project-2.png" alt="Picture This project preview" width="640" height="420" decoding="async">
-          <h3><a href="https://github.com/Hardik-S/picturethisv2" target="_blank" rel="noopener noreferrer">Picture This</a></h3>
-          <p>Educational storytelling card game that secured $15,000 in investment for development, manufacturing, and distribution.</p>
+          <img src="images/project-2.png" alt="Sudoku solver project preview" width="640" height="420" decoding="async">
+          <h3><a href="https://github.com/Hardik-S/Sudoku-backtracking-algo" target="_blank" rel="noopener noreferrer">Sudoku Backtracking Solver</a></h3>
+          <p>Constraint-solving project from the early algorithm archive, preserved as a clean foundation signal.</p>
         </article>
         <article>
           <img src="images/project-3.png" alt="London Chess Club project preview" width="640" height="420" decoding="async">
@@ -312,6 +304,7 @@
           <span>Summer 2024</span>
           <h3>LoblawTank Hackathon Winner</h3>
           <p>Led a food-waste solution and presented it directly to a Sustainability Manager and leadership team.</p>
+          <a class="artifact-link" href="https://github.com/Hardik-S/corporate-climate-adaptability-canada" target="_blank" rel="noopener noreferrer">Related climate research artifact</a>
         </article>
       </div>
     </section>
@@ -323,9 +316,7 @@
       </div>
       <div class="contact-layout">
         <aside class="contact-card">
-          <p>I'm always up for a coffee or a call.</p>
-          <a href="tel:+12896544428">+1 289-654-4428</a>
-          <a href="mailto:hshrestha.hba2026@ivey.ca">hshrestha.hba2026@ivey.ca</a>
+          <p>Use the form for direct contact. For public review, the resume, GitHub, and LinkedIn links are below.</p>
           <a href="files/Hardik_Shrestha_Product_Resume_2026-05.pdf" target="_blank" rel="noopener noreferrer">Latest product resume</a>
           <a href="files/Hardik_Shrestha_Product_AI_Resume.pdf" target="_blank" rel="noopener noreferrer">Product + AI capability resume</a>
           <a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">github.com/Hardik-S</a>

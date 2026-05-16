@@ -8,7 +8,7 @@ This handoff covers the static v2 personal website in this repository. The relea
 
 2026-05-16 update: the root route has been reworked again as a full personal portfolio. It restores the legacy site sections, adds a working static contact form, removes visible helper/reviewer text from the homepage, and replaces the legacy external node-network dependency with a local cursor-reactive canvas.
 
-2026-05-16 flagship correction: the root flagship section no longer leads with PMO Decision Brief Builder. The best-four layer now presents BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision, followed by a native tabbed year browser with four items each for 2026, 2025, 2024, 2022-23, 2021, and 2020. Resume links now use committed local PDFs in `files/` instead of the old Drive link. Verify this correction by checking `#flagship` on desktop and mobile, clicking each year tab, and opening both resume links from the contact card.
+2026-05-16 feedback correction: the root flagship section no longer leads with PMO Decision Brief Builder. The best-four layer presents BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision, followed by a native complexity browser across Advanced, AI systems, Product, Operations, and Foundations. This avoids false backdating while still solving the thin-year problem. Resume links use committed local PDFs in `files/`, and the root contact card is now form-first with no visible phone number or raw email. Verify this correction by checking `#flagship` on desktop and mobile, clicking each complexity tab, opening both resume links from the contact card, and confirming contact still submits through the form.
 
 ## Architecture
 
@@ -17,7 +17,7 @@ This handoff covers the static v2 personal website in this repository. The relea
 - `css/flagship-rework.css` contains the active homepage visual system, responsive rules, contact form styling, and editorial section rhythm.
 - `js/flagship-rework.js` owns the native typed identity line, cursor-reactive node network canvas, active nav state, and contact form status.
 - `css/v2.css`, `js/v2-content.js`, and `js/v2-interactions.js` remain in the repository as prior-v2 implementation history; the current root page no longer references them.
-- `content/site-content.json` is retained as the prior-v2 evidence record. The current root flagship/year-browser copy is static HTML in `index.html`.
+- `content/site-content.json` is retained as the prior-v2 evidence record. The current root flagship/complexity-browser copy is static HTML in `index.html`.
 - `docs/evidence-inventory.md` records why proof items are included, demoted, or held for research.
 - `docs/public-safety.md` records the contact and publication-safety decisions.
 - The root document includes canonical, Open Graph, Twitter, theme-color, and description metadata. These tags intentionally restate existing public positioning instead of introducing new metrics, employers, or project-status claims.
@@ -28,7 +28,7 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 
 - Portrait-led hero using the existing `images/me3.jpg` asset.
 - Clear person-name headline with product and AI workflow positioning in supporting copy.
-- Four flagship proof cards first, with broader evidence anchors below.
+- Four flagship proof cards first, with a complexity browser below.
 - Section-level color bands instead of nested card stacks.
 - Recruiter-readable contact section that points to public profile surfaces.
 - Intrinsic hero-image dimensions and first-viewport preload are present to protect LCP and layout stability without adding a build step.
@@ -65,7 +65,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - The Turn 59 first-viewport rhythm pass is a CSS-only visual QA correction. It reduces hero height and spacing, hides the redundant proof-strip row now that method chips provide the direct proof path, and keeps the `Next focus` and `Trace proof` controls available.
 - The Turn 60 case-study path pass adds a compact reviewer path to each flagship work card. The path tells reviewers how to inspect the public route or repository, keeps the same four selected projects and media policy, and avoids new metrics, screenshots, customer claims, or production-status claims.
 - The Turn 61 native typed-signal pass restores a small amount of legacy-style motion without importing the old typed plugin or canvas stack. It changes only the hero signal layer and docs; evidence JSON, selected-work cards, media, routes, contact policy, and `/legacy/` remain unchanged.
-- The earlier final sprint recruiter-trust pass avoided raw direct contact. The 2026-05-16 flagship rework supersedes that profile-only root boundary by restoring direct contact details and a static form.
+- The earlier final sprint recruiter-trust pass avoided raw direct contact. The 2026-05-16 flagship rework briefly restored direct details, but the feedback correction returns the current root page to form-first contact with public resume/GitHub/LinkedIn links.
 
 ## Evidence policy
 
@@ -78,13 +78,13 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 
 ## Contact policy
 
-The current root contact path is direct again:
+The current root contact path is form-first:
 
 - Hero `Contact` routes to `#contact`.
-- Contact section links to phone, email, GitHub, and LinkedIn.
+- Contact section links to resumes, GitHub, and LinkedIn.
 - Contact form posts to the existing legacy Google Apps Script endpoint.
-- This intentionally restores the legacy contact surface and therefore exposes personal contact data on the public site.
-- Any future expansion of direct contact channels should first update `docs/public-safety.md` with a clear policy decision.
+- The root page no longer exposes a visible phone number or raw email address.
+- Any future expansion of direct phone/email channels should first update `docs/public-safety.md` with a clear policy decision.
 
 ## Accessibility and metadata polish
 

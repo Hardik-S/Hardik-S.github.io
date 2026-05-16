@@ -1,11 +1,12 @@
 # Evidence Inventory - Personal Website v2
 
-## 2026-05-16 flagship-year browser correction
+## 2026-05-16 feedback correction
 
 - Review trigger: the PMO Decision Brief Builder read as too generic to define the portfolio's best work.
 - Decision: the homepage best-four layer now leads with BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision.
 - Rejected approach: preserving PMO as lead because it has the only committed workflow screenshot. Visual availability is not sufficient evidence of flagship strength.
-- Archive decision: the new year browser groups four strongest visible items by period so older product, professional, sustainability, and early technical work can be scanned without flattening everything into the current synthetic-workflow lane.
+- Archive decision: the new complexity browser groups work by build depth instead of backdating or forcing thin early-year tabs. The visible buckets are Advanced, AI systems, Product, Operations, and Foundations.
+- Feedback fixes: root phone/email literals were removed, Skills were grouped by depth, Projects became `Earlier work`, Agent Permission gained a source-only proof note, and Sustainability gained a concrete climate research artifact link.
 - Resume decision: the site now links local public PDF artifacts under `files/`:
   - `files/Hardik_Shrestha_Product_Resume_2026-05.pdf`
   - `files/Hardik_Shrestha_Product_AI_Resume.pdf`
@@ -76,12 +77,12 @@ All items below are currently rendered as public proof anchors:
   - Reason: useful operations proof, but overlaps with invoice and PMO operations narratives in a four-card section.
 - Picture This
   - URL: https://github.com/Hardik-S/picturethisv2
-  - Status: promoted back into the best-four layer by the 2026-05-16 flagship-year browser correction.
+  - Status: promoted back into the best-four layer by the 2026-05-16 feedback correction.
   - Reason: stronger broad product signal than another synthetic decision workflow, especially when the top layer needs human product breadth.
 
 ## Superseded PMO-led selection rationale
 
-The prior homepage flagship section was capped at four items. This section is retained as historical rationale, but the active root page now uses the newer best-four/year-browser model documented above:
+The prior homepage flagship section was capped at four items. This section is retained as historical rationale, but the active root page now uses the newer best-four/complexity-browser model documented above:
 
 - PMO Decision Brief Builder
   - Inclusion rationale: live product workflow that demonstrates prioritization, brief structure, and public deployment quality.

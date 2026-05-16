@@ -1081,3 +1081,13 @@
 - Public status: Vercel alias served fresh root, CSS, and primary resume PDF immediately. GitHub Pages initially served stale root/CSS/JS and 404ed the new resume PDF, then served fresh root, CSS, JS, and both resume PDFs after one propagation wait.
 - Deploy URL/status: fresh on `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`; no manual Vercel CLI deploy was needed because the existing integration served the pushed source.
 - Final blocker state: none.
+
+## Run 2026-05-16T08:42:00-04:00
+- Mission scope: implement Claude feedback accepted by the user without misrepresenting project dates.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Design decision: do not backdate projects. The archive now uses complexity/maturity buckets instead of literal years: Advanced, AI systems, Product, Operations, and Foundations.
+- Implementation notes: removed visible root phone/email contact links; kept direct contact through the working form; tiered Skills by actual depth; reframed Projects as `Earlier work`; removed the duplicate Picture This lower-card in favor of Sudoku Backtracking Solver; added a source-only proof note to Agent Permission Review Console; added a climate research artifact link to the Sustainability section.
+- Changed files in target repo: `index.html`, `css/flagship-rework.css`, `README.md`, `docs/evidence-inventory.md`, `docs/handoff.md`, `docs/public-safety.md`, and this `state/worker-log.md` entry.
+- Verification before commit: `node --check js\flagship-rework.js`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `git diff --check`; local HTTP checks for `/`, `/legacy/`, `/handoff/`, `css/flagship-rework.css`, and the latest resume PDF; source scan of `index.html` confirmed no `tel:`, `mailto:`, root phone number, raw email, old year-tab labels, or old `Best four from each year` copy.
+- Rendered QA: Playwright CLI screenshots captured mobile flagship, desktop skills/earlier-work, and mobile contact. Visual inspection confirmed the complexity archive heading wraps cleanly on mobile, skill tiers read clearly, Earlier Work is framed as intentional, the Sustainability artifact link is visible, and the contact card no longer shows phone/email.
+- Redaction caveat: full redaction scan now reports only the documented legacy-route email literal in `legacy/index.html`; root `index.html` no longer triggers direct-contact redaction.

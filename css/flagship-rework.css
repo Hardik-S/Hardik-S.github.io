@@ -359,6 +359,17 @@ h1 span {
   line-height: 0.95;
 }
 
+.section-heading .section-note {
+  max-width: 62ch;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
 .panel-grid,
 .timeline-section,
 .flagship-section,
@@ -392,6 +403,7 @@ h1 span {
 .project-grid p,
 .initiative-grid p,
 .contact-card p,
+.section-note,
 .site-footer p {
   color: var(--muted);
   line-height: 1.56;
@@ -528,7 +540,8 @@ h1 span {
 
 .flagship-card h3 a,
 .project-grid h3 a,
-.year-panel h4 a {
+.year-panel h4 a,
+.artifact-link {
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
 }
@@ -557,6 +570,13 @@ h1 span {
 .flagship-card dd {
   color: var(--soft);
   line-height: 1.45;
+}
+
+.artifact-note {
+  padding-top: 0.72rem;
+  border-top: 1px solid rgba(244, 240, 232, 0.12);
+  color: rgba(244, 240, 232, 0.8) !important;
+  font-size: 0.93rem;
 }
 
 .signal-chain {
@@ -691,6 +711,21 @@ h1 span {
   display: grid;
   gap: 0.5rem;
   padding: 1rem;
+}
+
+.tier-label,
+.artifact-link {
+  color: var(--green);
+  font-family: "Source Code Pro", Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.artifact-link {
+  width: fit-content;
+  color: var(--cyan);
 }
 
 .project-grid article {

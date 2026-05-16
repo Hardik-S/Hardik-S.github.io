@@ -4,10 +4,10 @@
 
 - 2026-05-16 flagship rework changes the root v2 contact boundary:
   - The homepage now includes a direct contact form that posts to the same Google Apps Script endpoint preserved in the legacy site.
-  - The homepage now exposes the same direct phone/email contact surface the user asked to restore from legacy.
-  - This is an intentional public personal-data exposure in the already-public personal website repository, not an accidental leak.
+  - The later feedback pass removes the visible root phone number and raw email link. The current root page uses the form for direct contact and keeps resume/GitHub/LinkedIn public links.
+  - The legacy route may still preserve historical contact literals, but the root page should not expose direct phone/email unless a new explicit decision restores them.
   - Do not add additional contact channels, scheduler links, private profile URLs, or alternate recipients without a new explicit decision here.
-- 2026-05-16 flagship-year browser correction adds two committed public resume PDFs under `files/`:
+- 2026-05-16 feedback correction adds two committed public resume PDFs under `files/`:
   - `Hardik_Shrestha_Product_Resume_2026-05.pdf` is the latest broad product resume and is used as the primary hero/footer resume link.
   - `Hardik_Shrestha_Product_AI_Resume.pdf` is the product + AI capability resume recommended by the Career workspace subagent as the best general public-site fit.
   - These PDFs intentionally widen the public personal-data surface because public resumes can contain phone, email, LinkedIn, GitHub, education, and work-history details.
@@ -34,14 +34,14 @@
 
 ## Risk note
 
-- The direct root contact surface is now intentionally restored. Future changes should treat it as personal data on a public site and avoid expanding it casually.
+- The direct root contact surface is now form-first. Future changes should avoid adding raw phone or email literals to the root page casually.
 - If the Apps Script endpoint is replaced, prefer a same-origin Vercel Function with provider credentials in Vercel env vars; do not fake success in browser-only JavaScript.
 - Any future additional direct contact address should use a documented allowlist/scope and include a preflight-level privacy review.
 
 ## Publication safety policy
 
 - Public-facing state logs and docs should avoid raw local filesystem paths and new direct contact literals unless the item is an explicit root contact or legacy contact exception.
-- Legacy contact literals in `legacy/index.html` remain allowed as documented historical content. Root contact literals are now also intentional because the current request restored the legacy contact surface.
+- Legacy contact literals in `legacy/index.html` remain allowed as documented historical content. Root contact literals are no longer intentional after the feedback pass; keep root contact form-first.
 - Open Graph and Twitter image metadata should continue to point only at committed public assets or verified public URLs.
 - Turn 46 updates `images/website-preview.png` to a 1200x630 capture of the current committed v2 homepage. This is allowed because it contains only already-public homepage content, the existing portrait asset, profile-safe positioning copy, and the visible `Legacy` route affordance.
 - The final sprint refreshes `images/website-preview.png` from the current homepage after the typed signal and contact reviewer route were present. This remains allowed under the same public-content rule and does not introduce a synthetic graphic or new claim surface.

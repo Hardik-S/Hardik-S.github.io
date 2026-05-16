@@ -4,14 +4,16 @@
 
 This repository is the current home for Hardik's personal website (v2) with legacy continuity preserved.
 
-## 2026-05-16 flagship-year browser correction
+## 2026-05-16 feedback correction
 
-The flagship section was corrected after review feedback that the PMO Decision Brief Builder should not be presented as Hardik's best work.
+The flagship section was corrected after review feedback that the PMO Decision Brief Builder should not be presented as Hardik's best work and that literal early-year tabs made the archive feel thin.
 
 - The current best-four layer now leads with BioScript Workflow Prototype, Agent Permission Review Console, Picture This, and Wacky Chess Vision.
 - PMO Decision Brief Builder is no longer the lead identity proof. The rejected approach was keeping it on top because it had the cleanest screenshot; screenshot availability is not the same as flagship strength.
-- A native year browser now gives reviewers an intuitive way to scan four strongest items by period: 2026, 2025, 2024, 2022-23, 2021, and 2020.
-- The year browser intentionally mixes public repositories, live demos, and clearly named professional work where the older year has fewer repo-backed artifacts. It is an archive-navigation surface, not a claim that every item has equal public-source depth.
+- The archive is now a complexity browser instead of a backdated year browser. This avoids misrepresenting project dates while still letting reviewers scan Advanced, AI systems, Product, Operations, and Foundations work.
+- Skills are grouped by actual depth: Daily use, Strong, Working fluency, Project exposure, Operator strength, and Communication.
+- The Projects section is now `Earlier work`, with Picture This removed from that lower section to avoid duplicating the flagship.
+- The current root contact card no longer exposes a phone number or raw email address; direct contact routes through the form.
 - Resume links now point to committed local PDFs under `files/`: the latest broad product resume and the stronger product + AI capability resume selected from the Career workspace.
 - The primary hero resume button uses `files/Hardik_Shrestha_Product_Resume_2026-05.pdf` because the user asked for the latest resume. The contact card also exposes `files/Hardik_Shrestha_Product_AI_Resume.pdf` because the Career subagent found it to be the best general public-site fit.
 
@@ -25,7 +27,7 @@ The root homepage was rebuilt as a fuller personal portfolio instead of the prev
 - The old external S3/TweenLite node-network dependency was not restored. The replacement is local, vanilla JavaScript, reduced-motion-safe, and uses a unique `node-network` canvas.
 - The old visible helper/reviewer scaffolding was removed from the root page. Source metadata, review paths, freshness lines, and evidence-loading helper text remain in historical docs and data files, not in the current homepage UI.
 - The root contact form posts to the existing legacy Google Apps Script endpoint. This is the only send-capable contact endpoint available in this static repository without adding Vercel Function email-provider secrets.
-- Direct phone/email contact details are visible on the root page because the requested legacy contact surface was restored. This is personal contact data in a public repository; keep it intentional and revisit privacy before adding more direct channels.
+- Direct phone/email contact details are no longer visible on the current root page. The legacy route still preserves legacy contact history, while root contact now routes through the form plus public profile/resume links.
 
 ## Current architecture
 
@@ -34,7 +36,7 @@ The root homepage was rebuilt as a fuller personal portfolio instead of the prev
 - `css/flagship-rework.css` provides the active root visual system and responsive layout.
 - `js/flagship-rework.js` adds the native typed identity, cursor-reactive node network, active nav, and contact form status.
 - `css/v2.css`, `js/v2-content.js`, and `js/v2-interactions.js` are retained as prior-v2 implementation history and may still be useful for comparison, but the root page no longer references them.
-- `content/site-content.json` is retained as the prior-v2 evidence record. The current root flagship/year-browser presentation is static HTML in `index.html` because the latest correction deliberately moved faster than the old JSON renderer.
+- `content/site-content.json` is retained as the prior-v2 evidence record. The current root flagship/complexity-browser presentation is static HTML in `index.html` because the latest correction deliberately moved faster than the old JSON renderer.
 - `docs/evidence-inventory.md`, `docs/public-safety.md`, and `docs/handoff.md` track proof policy, contact safety decisions, and release-candidate handoff notes.
 - `docs/review-backlog.md` keeps post-freeze review work separated into must-fix, nice-polish, and needs-new-evidence buckets so future turns do not restart broad redesign by default.
 - `handoff/index.html` exposes the release handoff as a static public route for GitHub Pages and Vercel review.
@@ -81,7 +83,7 @@ The root homepage was rebuilt as a fuller personal portfolio instead of the prev
 - The Turn 59 screenshot-driven rhythm pass is CSS-only. It compacts the hero frame, portrait, primary actions, proof-focus panel, and section rail so the first viewport shows the name, portrait, actions, proof path, and fixed `Legacy` affordance with less control-panel weight. The rejected alternatives were new copy, new media, a route change, or another interaction layer.
 - The Turn 60 case-study path pass adds a reviewer-path sequence to each flagship card. This makes selected work read more like case studies while preserving the existing four-project set, PMO-only screenshot boundary, public source links, and `/legacy/` behavior. The rejected alternatives were adding new project screenshots, changing the project order, or claiming outcomes that are not source-verified.
 - The Turn 61 native typed-signal pass adds a small hero working-mode line that cycles through existing evidence-safe phrases with native JavaScript. The static text remains visible without JavaScript, the animation stops for reduced-motion users, and the rejected alternatives were importing the old typed library, adding a canvas effect, or creating new project claims.
-- The earlier final sprint recruiter-trust pass avoided raw direct contact. The 2026-05-16 flagship rework supersedes that profile-only root boundary by restoring direct contact details and a static form.
+- The earlier final sprint recruiter-trust pass avoided raw direct contact. The 2026-05-16 flagship rework briefly restored direct details and a static form; the feedback correction keeps the form and removes visible root phone/email links.
 - The release-polish pass adds public-safe title, description, canonical, Open Graph, and Twitter metadata that restate the already-visible v2 positioning without adding new claims.
 - The final sprint recruiter-share pass refreshes `images/website-preview.png` from the current v2 homepage after the hero typed signal and contact reviewer route were in place. The preview remains a screenshot of committed public page state with Hardik's name, portrait, proof-focus controls, and the top-right `Legacy` affordance visible; the rejected alternative was a separate generated graphic because that would add a second art direction and require a new public-safety review.
 - The hero portrait declares intrinsic dimensions and is preloaded as the first-viewport image. This is a static performance and layout-stability safeguard, not a new visual asset or dependency.
@@ -110,7 +112,7 @@ The root homepage was rebuilt as a fuller personal portfolio instead of the prev
 ## Contact and safety boundaries
 
 - The root page now includes a working static contact form that posts to the legacy Apps Script endpoint.
-- The root page also exposes direct phone and email contact details, plus GitHub and LinkedIn. This restores the legacy contact surface but widens the public personal-data surface compared with the previous profile-only v2 policy.
+- The current root page uses the contact form for direct contact and keeps public profile/resume links visible. Direct phone/email literals should stay out of the root page unless a new privacy decision explicitly restores them.
 - Legacy contact detail patterns and the root reintroduction are documented in `docs/public-safety.md`.
 - Public-facing logs and docs should still avoid adding new direct contact literals beyond the currently intentional root and legacy contact surfaces.
 
