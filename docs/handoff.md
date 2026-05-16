@@ -1,6 +1,6 @@
 # v2 Release Handoff
 
-Last updated: 2026-05-15
+Last updated: 2026-05-16
 
 ## Release-candidate scope
 
@@ -58,6 +58,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - The Turn 59 first-viewport rhythm pass is a CSS-only visual QA correction. It reduces hero height and spacing, hides the redundant proof-strip row now that method chips provide the direct proof path, and keeps the `Next focus` and `Trace proof` controls available.
 - The Turn 60 case-study path pass adds a compact reviewer path to each flagship work card. The path tells reviewers how to inspect the public route or repository, keeps the same four selected projects and media policy, and avoids new metrics, screenshots, customer claims, or production-status claims.
 - The Turn 61 native typed-signal pass restores a small amount of legacy-style motion without importing the old typed plugin or canvas stack. It changes only the hero signal layer and docs; evidence JSON, selected-work cards, media, routes, contact policy, and `/legacy/` remain unchanged.
+- The final sprint recruiter-trust pass adds one public-only reviewer route to the contact section: inspect a flagship public artifact, check the public resume, then follow up through GitHub or LinkedIn with the matching proof item named. It avoids a raw email address, form endpoint, scheduler, private link, or availability claim.
 
 ## Evidence policy
 
@@ -130,6 +131,7 @@ The v2 contact path is profile-first:
 - The 2026-05-16 case-study path pass verifies the four flagship links again, adds `caseStudy.reviewPath` guidance to the selected-work JSON, renders it as a compact reviewer sequence, and documents why no new media was promoted.
 - The 2026-05-16 native typed-signal pass keeps Turn 60's case-study baseline intact while adding one reduced-motion-aware hero motion cue. The cue should be evaluated as personality and scan rhythm, not as a new proof claim.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
+- The final sprint release pass refreshes the 1200x630 social preview after the typed signal and reviewer route are visible. The preview remains a screenshot of the public homepage, not a generated graphic or new claim surface.
 
 ## External review backlog
 
@@ -181,6 +183,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 - Generated QA artifacts should not linger across turns. The Turn 58G baseline found no untracked `state/director-qa/` folder or server logs, so later screenshot-driven turns should create new evidence, inspect it, then either remove it before commit or commit it with a clear retention rationale.
 - The first-viewport rhythm pass should be treated as the final broad visual polish unless a reviewer identifies a concrete clipping, density, or hierarchy defect.
 - The selected-work case-study path should be treated as review guidance, not new evidence. Future workers should not add screenshots, metrics, or stronger project status language unless a public-safe source is documented first.
+- Recruiter trust and share surface should be treated as closed unless a reviewer reports confusion. The contact route now explains how to use selected work, resume, GitHub, and LinkedIn together, and the preview image reflects the current homepage.
 - The typed-signal layer should stay small. Do not add a tour overlay, imported animation library, canvas effect, or new phrase set unless a reviewer reports that the current first viewport still feels static or unclear.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.

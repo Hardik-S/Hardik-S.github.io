@@ -15,6 +15,7 @@
   - This keeps the public page useful for hiring review while avoiding a new direct-contact exposure decision.
 - No new direct email recipient was added to v2 contact links in this increment.
 - Turn 32 metadata uses only public positioning already visible on the homepage: product-minded software builder, AI-enabled workflow tools, decision-support demos, and public source proof. It does not add employers, metrics, private project status, or new contact channels.
+- The final sprint recruiter-trust pass keeps the same profile-first boundary while adding a reviewer route: inspect a flagship public artifact, check the public resume, then follow up through GitHub or LinkedIn with the matching proof item named. It does not add a raw email address, form endpoint, scheduler, private profile link, or availability claim.
 
 ## Legacy continuity
 
@@ -32,6 +33,7 @@
 - Legacy contact literals in `legacy/index.html` remain allowed only as documented historical content and must stay confined to the legacy route.
 - Open Graph and Twitter image metadata should continue to point only at committed public assets or verified public URLs.
 - Turn 46 updates `images/website-preview.png` to a 1200x630 capture of the current committed v2 homepage. This is allowed because it contains only already-public homepage content, the existing portrait asset, profile-safe positioning copy, and the visible `Legacy` route affordance.
+- The final sprint refreshes `images/website-preview.png` from the current homepage after the typed signal and contact reviewer route were present. This remains allowed under the same public-content rule and does not introduce a synthetic graphic or new claim surface.
 - Do not replace the social preview with a synthetic or externally sourced graphic unless the source, ownership, visible text, dimensions, and publication rationale are documented here first.
 - Selected-work visuals are generated from public JSON labels and cues. Do not replace them with screenshots until the capture source, visible data, image size, and reuse rationale are documented in `docs/evidence-inventory.md`.
 - Turn 44 permits one exception: `images/work-pmo-decision-brief-builder.png` is allowed because it was captured from a public fixture-only PMO demo route, contains no private records or contact details, and has source URL, capture date, dimensions, file size, alt text, and safety rationale recorded in `content/site-content.json` and `docs/evidence-inventory.md`.
