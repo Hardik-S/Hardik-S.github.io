@@ -653,3 +653,10 @@
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for Turn 46 preview metadata and image`; Preflight result `auth-ok`; Dirty paths `none before edit`; Attempts used `preflight 1, GitHub push 1, Vercel freshness checks 2, Vercel CLI deploy 0 due prior quota cap`; Next safe action `use fresh GitHub Pages for recruiter-share review and retry/manual-check Vercel only after quota reset or automatic integration catch-up`.
 - Dirty paths: expected dirty path is this target worker-log entry until committed.
 - Next safe action: commit and push this worker-log entry, then proceed to Turn 47 release QA/freeze only if Director still wants a final public freshness pass.
+
+## Run 2026-05-15T20:17:02-04:00 follow-up
+- Follow-up log commit `a098a26cce2dff7e8c4cd0319687a4660d664abb` (`Record social preview run`) was pushed and matched `origin/HEAD` at the post-push check.
+- Final preflight result: `auth-ok` with dirty paths none; account `Hardik-S`; remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`.
+- Final public check: GitHub Pages root returned HTTP 200 with the Turn 46 `og:image:width=1200` marker. Vercel remains reachable but stale for Turn 46 preview changes under the existing quota guardrail.
+- Dirty paths: none in the target checkout after the log commit.
+- Next safe action: use `https://hardik-s.github.io/` as the current recruiter-share URL; retry Vercel only after quota reset or automatic integration catch-up.
