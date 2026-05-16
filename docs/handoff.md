@@ -48,6 +48,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - The section rail updates as reviewers move through the page, while hash navigation remains usable if observer support is unavailable.
 - These interactions are progressive enhancements; the core content remains readable without them.
 - Turn 45 deliberately reused custom events, `scrollIntoView`, and the existing spotlight state instead of adding a tour overlay, carousel package, or animation library.
+- Turn 53 makes the hero proof chips clickable focus controls and adds a pointer-responsive portrait tilt for users who have not requested reduced motion. The change is intentionally native JavaScript, keyboard-operable, and claim-neutral; it borrows the old site's sense of motion without restoring the legacy canvas, jQuery carousel, or typed-plugin stack.
 
 ## Evidence policy
 
@@ -109,6 +110,7 @@ The v2 contact path is profile-first:
 - Turn 51 release QA reset checks the current Turn 50 baseline `70e19ec9562dfbbd0203990e0dbbf7f107b1fadd` without changing homepage content or assets. Local HTTP checks returned 200 for root, legacy, handoff, docs, content JSON, v2 CSS/JS, and the social preview image; CLI Playwright screenshots covered mobile root, tablet root, desktop root, selected-work mobile, contact mobile, and handoff mobile; the fixed translucent `Legacy` control stayed visible in inspected mobile views. A plain Node interaction probe was abandoned after two equivalent transient Playwright module-resolution failures, so this run used route checks plus rendered screenshot evidence instead of retrying that surface.
 - Turn 51 public freshness checks returned HTTP 200 for GitHub Pages and the Vercel alias across root, legacy, handoff, content JSON, source handoff notes, cache-busted CSS, cache-busted JS, and the 752,937-byte social preview image. No manual Vercel deploy was needed because the alias already served the current baseline.
 - Turn 52 keeps the Turn 51 release evidence intact while making the root page more portfolio-grade through CSS only. The top-right `Legacy` affordance, `/legacy/`, `/handoff/`, evidence payload, JavaScript interactions, selected-work media policy, and social preview file remain unchanged.
+- Turn 53 adds native first-viewport interaction on top of the Turn 52 visual shell. The proof chips now switch the proof-focus line directly, and the hero portrait responds subtly to pointer movement when reduced motion is not requested; routes, evidence JSON, screenshots, and legacy continuity remain unchanged.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog

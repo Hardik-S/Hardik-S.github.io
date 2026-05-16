@@ -250,7 +250,7 @@ a {
   background: rgba(244, 184, 106, 0.1);
 }
 
-.hero-proof-strip span {
+.hero-proof-strip button {
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -260,6 +260,22 @@ a {
   padding: 0.3rem 0.5rem;
   background: rgba(255, 255, 255, 0.085);
   white-space: nowrap;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hero-proof-strip button:hover,
+.hero-proof-strip button:focus-visible,
+.hero-proof-strip button.is-active {
+  border-color: rgba(107, 220, 255, 0.58);
+  background: rgba(107, 220, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+.hero-proof-strip button.is-active {
+  color: #06101f;
+  background: var(--accent-leaf);
 }
 
 .eyebrow {
@@ -332,6 +348,14 @@ h1 {
     0 38px 88px rgba(0, 0, 0, 0.46),
     -20px 20px 0 rgba(167, 209, 126, 0.15),
     20px -20px 0 rgba(242, 193, 123, 0.12);
+}
+
+.hero.is-hero-reactive .hero-portrait img {
+  transform: perspective(900px) rotateX(var(--hero-tilt-y, 0deg)) rotateY(var(--hero-tilt-x, 0deg));
+}
+
+.hero.is-hero-reactive .hero-focus-panel {
+  transform: translate3d(var(--hero-shift-x, 0), var(--hero-shift-y, 0), 0);
 }
 
 .hero-portrait figcaption {
@@ -1312,7 +1336,7 @@ button:focus-visible,
     display: none;
   }
 
-  .hero-proof-strip span {
+  .hero-proof-strip button {
     white-space: normal;
     font-size: 0.72rem;
   }

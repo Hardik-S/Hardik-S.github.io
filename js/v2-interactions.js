@@ -4,6 +4,7 @@
   const focusText = document.getElementById("hero-focus-text");
   const cycleButton = document.querySelector(".focus-cycle-button");
   const journeyButton = document.querySelector(".proof-journey-button");
+  const focusChips = Array.from(document.querySelectorAll(".hero-proof-strip button[data-focus-index]"));
 
   if (!focusText || !cycleButton) {
     return;
@@ -32,6 +33,12 @@
         `Trace this proof focus through the flagship work section. Current focus: ${proofFocuses[currentIndex]}`
       );
     }
+    focusChips.forEach((chip) => {
+      const chipIndex = Number(chip.dataset.focusIndex);
+      const isActive = chipIndex === currentIndex;
+      chip.classList.toggle("is-active", isActive);
+      chip.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
   };
 
   const cycleFocus = () => {
@@ -53,12 +60,56 @@
 
   cycleButton.addEventListener("click", cycleFocus);
   journeyButton?.addEventListener("click", startProofJourney);
+  focusChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const chipIndex = Number(chip.dataset.focusIndex);
+      if (Number.isInteger(chipIndex)) {
+        updateFocus(chipIndex);
+      }
+    });
+  });
   updateFocus(currentIndex);
 
   // Auto-rotation is disabled for reduced-motion users; the button remains available.
   if (!reduceMotionQuery.matches) {
     window.setInterval(cycleFocus, 5200);
   }
+})();
+
+(function () {
+  const hero = document.querySelector(".hero-editorial");
+  const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (!hero || reduceMotionQuery.matches || !("PointerEvent" in window)) {
+    return;
+  }
+
+  const resetTilt = () => {
+    hero.style.setProperty("--hero-tilt-x", "0deg");
+    hero.style.setProperty("--hero-tilt-y", "0deg");
+    hero.style.setProperty("--hero-shift-x", "0px");
+    hero.style.setProperty("--hero-shift-y", "0px");
+    hero.classList.remove("is-hero-reactive");
+  };
+
+  const updateTilt = (event) => {
+    const bounds = hero.getBoundingClientRect();
+    if (bounds.width === 0 || bounds.height === 0) {
+      return;
+    }
+
+    const xRatio = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const yRatio = (event.clientY - bounds.top) / bounds.height - 0.5;
+    hero.style.setProperty("--hero-tilt-x", `${(xRatio * 4).toFixed(2)}deg`);
+    hero.style.setProperty("--hero-tilt-y", `${(yRatio * -3).toFixed(2)}deg`);
+    hero.style.setProperty("--hero-shift-x", `${(xRatio * -6).toFixed(1)}px`);
+    hero.style.setProperty("--hero-shift-y", `${(yRatio * 4).toFixed(1)}px`);
+    hero.classList.add("is-hero-reactive");
+  };
+
+  // Legacy used visible hero motion; v2 keeps that energy as a small progressive enhancement.
+  hero.addEventListener("pointermove", updateTilt);
+  hero.addEventListener("pointerleave", resetTilt);
 })();
 
 (function () {
