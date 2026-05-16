@@ -105,9 +105,18 @@ Items not in this four-card layer remain available as proof anchors only when th
   - `selectedWork` is capped at four flagship records; additional verified links remain in `proofPoints`.
   - `visual` fields are structured public-safe cues, not claims of screenshot availability.
   - The selected-work renderer now turns `visual.cue` into visible step maps and labels each map from `source.type`; these visuals remain generated UI treatments, not product screenshots.
+  - Turn 54 adds provenance chips to the visual area from `caseStudy.artifactType`, `source.type`, and `source.verifiedAt` or screenshot capture metadata. These chips are presentational proof context, not new evidence records.
   - `media` fields may override generated proof maps only after capture source, dimensions, file size, alt text, and safety rationale are recorded.
   - `caseStudy` fields add role, artifact type, proof, and review guidance for each flagship item. These fields are intentionally evaluative and source-linked, not metric claims.
   - Rendering promotes the first selected-work item into a lead proof card and presents the remaining three as supporting proof cards. That hierarchy is layout-only and should be changed only after the JSON ordering is deliberately updated.
+
+## Turn 54 visual provenance pass
+
+- Audit timestamp: 2026-05-15T21:42:00-04:00.
+- Scope: improve selected-work visual context without changing evidence copy, project order, links, media assets, or route behavior.
+- PMO Decision Brief Builder still uses the only committed screenshot. The visual now pairs the fixture screenshot with artifact/source/verified chips from the already documented public deployment metadata.
+- BioScript Housing Decision, Agent Permission Review Console, and Invoice Dispute Packet Builder still use generated proof maps. Each map now carries visible provenance chips so reviewers can distinguish deployment proof from source-repository proof without adding unsafe screenshots.
+- Rejected approach: adding screenshots for the remaining three flagship items. The Turn 49 safety rationale still applies until a public-safe workflow screen is verified.
 
 ## Turn 49 media audit
 

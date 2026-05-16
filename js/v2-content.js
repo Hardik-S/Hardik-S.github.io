@@ -124,7 +124,29 @@
 
   const isPublicReady = (item) => item?.publicReady === true;
 
-  const createStructuredVisual = ({ label, cue, source, index }) => {
+  const createVisualProvenance = ({ artifactType, sourceType, verifiedAt, capturedAt }) => {
+    const provenance = document.createElement("div");
+    provenance.className = "work-visual-provenance";
+
+    [
+      ["artifact", artifactType],
+      ["source", sourceType],
+      ["verified", verifiedAt || capturedAt]
+    ].forEach(([label, value]) => {
+      const safeValue = safeText(value);
+      if (!safeValue) {
+        return;
+      }
+
+      const chip = document.createElement("span");
+      chip.textContent = `${label}: ${safeValue}`;
+      provenance.append(chip);
+    });
+
+    return provenance.children.length > 0 ? provenance : null;
+  };
+
+  const createStructuredVisual = ({ label, cue, source, caseStudy, index }) => {
     const visual = document.createElement("div");
     visual.className = "work-visual structured-work-visual";
     visual.setAttribute("aria-hidden", "true");
@@ -158,12 +180,21 @@
         flow.append(node);
       });
 
+    const provenance = createVisualProvenance({
+      artifactType: caseStudy?.artifactType,
+      sourceType,
+      verifiedAt: source?.verifiedAt
+    });
+
     // This is intentionally generated from verified JSON cues, not a screenshot.
     visual.append(visualMark, visualMeta, visualCueEl, flow);
+    if (provenance) {
+      visual.append(provenance);
+    }
     return visual;
   };
 
-  const createMediaVisual = (media) => {
+  const createMediaVisual = (media, source, caseStudy) => {
     const src = safeText(media?.src);
     const alt = safeText(media?.alt);
     const caption = safeText(media?.caption);
@@ -195,6 +226,18 @@
       figure.append(image);
     }
 
+    // Keep screenshot provenance visible so media does not imply private or unverified product access.
+    const provenance = createVisualProvenance({
+      artifactType: caseStudy?.artifactType || media.type,
+      sourceType: source?.type,
+      verifiedAt: source?.verifiedAt,
+      capturedAt: media.capturedAt
+    });
+
+    if (provenance) {
+      figure.append(provenance);
+    }
+
     return figure;
   };
 
@@ -224,10 +267,11 @@
     article.dataset.workFocus = focus || "Flagship proof";
     article.dataset.workSummary = summary;
 
-    const visual = createMediaVisual(media) || createStructuredVisual({
+    const visual = createMediaVisual(media, item.source, caseStudy) || createStructuredVisual({
       label: visualLabel,
       cue: visualCue,
       source: item.source,
+      caseStudy,
       index
     });
 

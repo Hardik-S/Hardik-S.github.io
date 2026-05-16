@@ -49,6 +49,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - These interactions are progressive enhancements; the core content remains readable without them.
 - Turn 45 deliberately reused custom events, `scrollIntoView`, and the existing spotlight state instead of adding a tour overlay, carousel package, or animation library.
 - Turn 53 makes the hero proof chips clickable focus controls and adds a pointer-responsive portrait tilt for users who have not requested reduced motion. The change is intentionally native JavaScript, keyboard-operable, and claim-neutral; it borrows the old site's sense of motion without restoring the legacy canvas, jQuery carousel, or typed-plugin stack.
+- Turn 54 improves the flagship visual proof layer without adding media: the PMO screenshot and generated proof maps now show compact artifact/source/verified chips from the existing JSON metadata. This gives reviewers more context in the visual area while keeping the no-unverified-screenshot boundary intact.
 
 ## Evidence policy
 
@@ -111,6 +112,7 @@ The v2 contact path is profile-first:
 - Turn 51 public freshness checks returned HTTP 200 for GitHub Pages and the Vercel alias across root, legacy, handoff, content JSON, source handoff notes, cache-busted CSS, cache-busted JS, and the 752,937-byte social preview image. No manual Vercel deploy was needed because the alias already served the current baseline.
 - Turn 52 keeps the Turn 51 release evidence intact while making the root page more portfolio-grade through CSS only. The top-right `Legacy` affordance, `/legacy/`, `/handoff/`, evidence payload, JavaScript interactions, selected-work media policy, and social preview file remain unchanged.
 - Turn 53 adds native first-viewport interaction on top of the Turn 52 visual shell. The proof chips now switch the proof-focus line directly, and the hero portrait responds subtly to pointer movement when reduced motion is not requested; routes, evidence JSON, screenshots, and legacy continuity remain unchanged.
+- Turn 54 keeps the Turn 53 interaction baseline and adds visual provenance chips to selected-work cards. It does not change project order, links, claims, screenshots, routes, contact policy, or `Legacy` continuity.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -155,6 +157,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 
 - Manual Vercel CLI deploys previously hit quota during Turn 42 and Turn 45/46 follow-ups, so future manual deploys should still start with preflight and respect the two-equivalent-failures cap. Turn 47 did not need a manual deploy because the Vercel alias served the checked baseline during public freshness QA.
 - Turn 51 did not need a manual Vercel deploy either; the existing Vercel alias and GitHub Pages both served the current Turn 50 baseline during freshness checks.
+- Turn 54 remains within the existing media policy. New screenshots are still excluded unless source URL, privacy review, image size, alt text, and safety rationale are documented.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 

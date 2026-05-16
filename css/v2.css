@@ -915,6 +915,29 @@ h1 {
   font-size: 0.62rem;
 }
 
+.work-visual-provenance {
+  position: relative;
+  z-index: 1;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.34rem;
+  padding-top: 0.1rem;
+}
+
+.work-visual-provenance span {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.2rem 0.42rem;
+  border: 1px solid rgba(238, 243, 239, 0.14);
+  border-radius: 999px;
+  color: rgba(238, 243, 239, 0.78);
+  background: rgba(7, 16, 15, 0.44);
+  font-family: "Source Code Pro", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.64rem;
+  line-height: 1.25;
+}
+
 .work-media-visual {
   display: grid;
   grid-template-columns: 1fr;
@@ -943,6 +966,11 @@ h1 {
   background: rgba(7, 16, 15, 0.78);
   font-size: 0.76rem;
   line-height: 1.35;
+}
+
+.work-media-visual .work-visual-provenance {
+  padding: 0.48rem 0.62rem 0.6rem;
+  background: rgba(7, 16, 15, 0.78);
 }
 
 .selected-work-label {
