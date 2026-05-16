@@ -716,3 +716,20 @@
 - Blocker state: no GitHub/source blocker. Vercel docs freshness is `blocked-cleanly` under the daily deploy quota cap.
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for Turn 49 docs routes`; Preflight result `auth-ok`; Dirty paths `none before follow-up log append`; Attempts used `preflight 2, GitHub push 1, Vercel freshness checks 2, Vercel CLI deploy 1 quota failure`; Next safe action `use fresh GitHub Pages for review and retry/manual-check Vercel only after quota reset or automatic integration catch-up`.
 - Next safe action: commit and push this follow-up log entry, update automation memory, and keep the site frozen unless concrete review feedback, public freshness drift after quota reset, a confirmed resume/profile update, or newly verified public-safe evidence appears.
+
+## Run 2026-05-16T01:08:00-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 50 - Reviewer-Ready Narrative Tightening.
+- Selected task: shorten the first two scrolls so a cold reviewer gets identity, value, proof, and next action faster without changing verified facts.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `index.html`, `content/site-content.json`, `README.md`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, and this `state/worker-log.md` entry.
+- Implementation notes: tightened the hero lede/support copy, the three "What I bring" cards, selected-work summaries, selected-work section note, and contact guidance. Rejected stronger-sounding metrics, employer claims, production-impact language, direct availability claims, new screenshots, new routes, and any change to the `Legacy` affordance.
+- Verification before source commit: start preflight `auth-ok`; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; changed-file redaction scans passed; full redaction scan still failed only on the documented legacy-only contact string in `legacy\index.html`.
+- Rendered verification: local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/css/v2.css`, `/js/v2-content.js`, and `/js/v2-interactions.js`; Playwright screenshots were captured and inspected at `390x844` root, `1440x900` root, and `390x844` `/#selected-work`. The top-right `Legacy` button remained visible and the updated copy did not overlap or clip in inspected views.
+- Source/docs commit SHA: `2352d2c0b018be98e8e8e72f158fca87364c7a63` (`Tighten reviewer narrative`), pushed to `origin/master`; `git ls-remote origin HEAD` matched immediately after push.
+- Public status: after one propagation wait, GitHub Pages and Vercel alias both returned HTTP 200 and fresh Turn 50 markers for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, and `/docs/handoff.md`.
+- Deploy URL/status: no manual Vercel CLI deploy was needed because the existing Vercel alias served the pushed Turn 50 markers. Review URLs remain `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`.
+- Preflight result: `auth-ok`; dirty-worktree preflight during verification showed only owned Turn 50 paths; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`.
+- Blocker state: none.
+- Dirty paths: target checkout dirty only for this worker-log entry until committed.
+- Next safe action: commit and push this worker-log entry, update automation memory, and keep the site frozen unless concrete review feedback, public freshness drift, a confirmed resume/profile update, or newly verified public-safe evidence appears.
