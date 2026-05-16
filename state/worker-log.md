@@ -676,3 +676,19 @@
 - Blocker state: no GitHub/source blocker. Vercel handoff/docs freshness is `blocked-cleanly`.
 - Blocker report: Target `Hardik-S/hardik-s.github.io` / Vercel project `hardik-s-github-io`; Account `Hardik-S`; Org/team/project `team_vRPi8T7ENTL7OukzlH1s0qnu` / project `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; Remote `origin https://github.com/Hardik-S/hardik-s.github.io.git`; Public/private/ACL state `public GitHub repo, Vercel alias reachable but stale for Turn 47 handoff/docs`; Preflight result `auth-ok`; Dirty paths `none before log append`; Attempts used `preflight 2, GitHub push 1, Vercel freshness checks 2, Vercel CLI deploy 1`; Next safe action `use fresh GitHub Pages for review and retry/manual-check Vercel only after quota reset or integration catch-up`.
 - Next safe action: commit and push this target worker-log entry, update the automation memory, and keep the site frozen unless concrete review feedback, public freshness drift after quota reset, a resume/profile update, or newly verified public-safe evidence appears.
+
+## Run 2026-05-15T20:34:49-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 48 - Final Visual Critique Micro-Pass.
+- Selected task: tighten the selected-work mobile rhythm around the PMO lead proof without changing content claims, evidence payloads, media assets, routing, or legacy continuity.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `css/v2.css`, `README.md`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, and `state/worker-log.md`.
+- Implementation notes: added narrow-screen spacing and type rhythm for the selected-work grid, PMO lead card, spotlight block, media caption, rank chip, and label. Rejected a homepage rewrite, new project copy, new media, or another interaction pass because the Director screenshot showed only density around the PMO lead proof.
+- Verification: start preflight `auth-ok`; post-edit preflight `auth-ok,dirty-worktree` with only owned dirty paths; manual `gh auth status` and `gh api user --jq .login` confirmed active account `Hardik-S`; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/css/v2.css`, `/js/v2-content.js`, and `/js/v2-interactions.js`; route marker checks confirmed `legacy-pill`, the Turn 48 handoff note, and the Turn 48 CSS marker.
+- Rendered QA: Browser plugin tools were not available through tool search, so CLI Playwright screenshots were used. Screenshots were captured and inspected at `390x844` root, `390x844` selected work, `768x1024` selected work, and `1440x900` selected work under `%TEMP%\personal-site-turn48-qa`; the mobile selected-work view shows the PMO screenshot, caption, lead proof label, title, and first summary paragraph without overlap.
+- Redaction: changed-file scans passed for all touched files. Full-repo scan fails only on the documented legacy-only contact string in `legacy\index.html`; this run also redacted the prior worker-log line that had repeated that literal.
+- Source/docs commit SHA: `d033638b610cd9b6dc2c9a733868cc5809170f27` (`Tighten selected work mobile rhythm`), pending push before this log append.
+- Deploy status: no manual Vercel CLI deploy attempted before push. Existing Vercel integration will be checked after push; GitHub Pages remains the canonical review surface.
+- Preflight result: `auth-ok` at start; `auth-ok,dirty-worktree` before commit because this run owned the dirty paths.
+- Blocker state: none.
+- Next safe action: commit and push this worker-log entry, then confirm GitHub Pages and Vercel alias freshness for the Turn 48 CSS/docs markers.
