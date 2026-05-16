@@ -5,6 +5,7 @@ Baseline source commit before this backlog note: `7c3d324fa8f7b4644adde39664602a
 Current final-share baseline: `23fce34a56aec3261c0eae3b0376b4a737a9262b`
 Final share-packet baseline repaired by Turn 42 release-health reconciliation: `4b1161562e318d1fed61087ec5372b536ab4a1af`
 Turn 47 release-QA baseline checked before freeze-note update: `89226320c8e8cbdb15f22ddd31b9de27a6401b7f`
+Turn 51 release-QA reset baseline checked before this backlog note: `70e19ec9562dfbbd0203990e0dbbf7f107b1fadd`
 
 ## Recommendation
 
@@ -19,6 +20,7 @@ None identified in the current release-candidate evidence.
 Decision rationale:
 - The root, legacy, handoff, and evidence payload routes were already verified in the Turn 37 freeze run.
 - Turn 47 rechecked root, legacy, handoff, content JSON, docs, preview image, CSS, and JS locally; GitHub Pages and the Vercel alias also returned 200 for the core public routes and cache-busted v2 assets.
+- Turn 51 rechecked the current Turn 50 baseline locally and publicly. GitHub Pages and the Vercel alias both returned 200 for root, legacy, handoff, content JSON, docs handoff, cache-busted CSS, cache-busted JS, and the 752,937-byte preview image, so there is no freshness repair task open.
 - The `Legacy` button is present on the v2 root and handoff route.
 - The site does not expose a new raw email address, form endpoint, or private workflow data in v2.
 - The full redaction scan caveat is limited to the documented legacy-only contact exception in `legacy/index.html`.
@@ -28,6 +30,7 @@ Decision rationale:
 - Social preview is no longer an open nice-polish item: Turn 46 regenerated `images/website-preview.png` as a 1200x630 public-safe capture of the current v2 homepage and updated the Open Graph dimensions.
 - Selected-work mobile density is no longer an open nice-polish item unless a reviewer reports a concrete issue: Turn 48 tightened the narrow-screen PMO lead-proof rhythm without changing claims, media, or routing.
 - Reviewer narrative tightening is no longer an open nice-polish item unless a reviewer reports confusion: Turn 50 shortened the hero, highlights, selected-work summaries, and contact guidance without adding new claims or changing evidence sources.
+- Release QA/freeze reset is no longer an open nice-polish item unless a public surface becomes stale: Turn 51 confirmed GitHub Pages and the Vercel alias serve the current baseline without needing a manual deploy.
 - Replace or augment structured proof maps with real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented. Turn 49 re-audited the current non-PMO flagships and found no safe media upgrade: BioScript remains too housing-specific for a committed screenshot, and the two repo-only projects have no public workflow screen beyond GitHub chrome.
 - Add more native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access. The active section rail and Turn 45 proof journey already cover this category; future interaction work should wait for reviewer feedback.
 - Refresh resume/profile links after the user confirms a newer public artifact.

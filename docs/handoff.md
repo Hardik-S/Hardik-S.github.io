@@ -105,6 +105,8 @@ The v2 contact path is profile-first:
 - Turn 48 makes only a screenshot-driven mobile rhythm adjustment in the selected-work section: the spotlight, PMO media caption, rank chip, labels, and lead-card spacing are tighter on narrow screens. It intentionally does not change evidence copy, routes, media, or the top-right `Legacy` affordance.
 - Turn 49 confirms there is no safe new media asset to add from the current non-PMO flagship set. The PMO screenshot remains the only committed selected-work media until a sanitized BioScript preview or an actual public workflow screen for the repo-only projects is verified.
 - Turn 50 makes a copy-only narrative tightening pass. It keeps the H1 as `Hardik Shrestha`, removes harder-to-scan internal-process phrasing from the first two scrolls, and avoids new claims about metrics, employers, production impact, BioScript internals, or direct availability.
+- Turn 51 release QA reset checks the current Turn 50 baseline `70e19ec9562dfbbd0203990e0dbbf7f107b1fadd` without changing homepage content or assets. Local HTTP checks returned 200 for root, legacy, handoff, docs, content JSON, v2 CSS/JS, and the social preview image; CLI Playwright screenshots covered mobile root, tablet root, desktop root, selected-work mobile, contact mobile, and handoff mobile; the fixed translucent `Legacy` control stayed visible in inspected mobile views. A plain Node interaction probe was abandoned after two equivalent transient Playwright module-resolution failures, so this run used route checks plus rendered screenshot evidence instead of retrying that surface.
+- Turn 51 public freshness checks returned HTTP 200 for GitHub Pages and the Vercel alias across root, legacy, handoff, content JSON, source handoff notes, cache-busted CSS, cache-busted JS, and the 752,937-byte social preview image. No manual Vercel deploy was needed because the alias already served the current baseline.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -148,6 +150,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 ## Current caveats
 
 - Manual Vercel CLI deploys previously hit quota during Turn 42 and Turn 45/46 follow-ups, so future manual deploys should still start with preflight and respect the two-equivalent-failures cap. Turn 47 did not need a manual deploy because the Vercel alias served the checked baseline during public freshness QA.
+- Turn 51 did not need a manual Vercel deploy either; the existing Vercel alias and GitHub Pages both served the current Turn 50 baseline during freshness checks.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 
