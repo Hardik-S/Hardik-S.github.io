@@ -33,6 +33,7 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 - Turn 43 tightened the art direction without changing claims or routes: the homepage now uses a stronger editorial masthead, a slim accent rail, visible desktop positioning chips, warmer section bands, and more deliberate card depth. This borrows the review-friendly hierarchy of strong portfolio templates while keeping the static v2 source model.
 - Turn 44 adds a single public-safe media upgrade: the PMO Decision Brief Builder lead card now uses a committed fixture-only screenshot, while BioScript and source-repo flagship items stay on generated proof maps with documented no-screenshot decisions.
 - Turn 49 re-audits the remaining media candidates and keeps that boundary. BioScript is still a public proof route but exposes housing-specific packet context in screenshots, and the two source-repo flagship items still lack public workflow screens beyond GitHub repository pages.
+- Turn 50 tightens the first two scrolls for reviewer comprehension: the hero, "What I bring" cards, selected-work summaries, and contact guidance are shorter, while the same verified project set, source links, media boundary, and Legacy affordance remain unchanged.
 
 The design borrows portfolio patterns such as a personal first viewport, curated project hierarchy, and visible contact action, but it does not copy template code or unverified assets.
 
@@ -103,6 +104,7 @@ The v2 contact path is profile-first:
 - Turn 47 public checks returned 200 on both GitHub Pages and the Vercel alias for root, legacy, handoff, content JSON, cache-busted CSS, and cache-busted JS. The 1200x630 preview image remained present locally and is part of the public share surface.
 - Turn 48 makes only a screenshot-driven mobile rhythm adjustment in the selected-work section: the spotlight, PMO media caption, rank chip, labels, and lead-card spacing are tighter on narrow screens. It intentionally does not change evidence copy, routes, media, or the top-right `Legacy` affordance.
 - Turn 49 confirms there is no safe new media asset to add from the current non-PMO flagship set. The PMO screenshot remains the only committed selected-work media until a sanitized BioScript preview or an actual public workflow screen for the repo-only projects is verified.
+- Turn 50 makes a copy-only narrative tightening pass. It keeps the H1 as `Hardik Shrestha`, removes harder-to-scan internal-process phrasing from the first two scrolls, and avoids new claims about metrics, employers, production impact, BioScript internals, or direct availability.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
