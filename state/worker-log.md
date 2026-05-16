@@ -1077,3 +1077,7 @@
 - Rendered QA: Playwright CLI screenshots captured mobile root, desktop flagship, and mobile flagship views. Visual inspection confirmed the BioScript-led flagship, best-four cards, year-browser controls, local resume links, fixed `Legacy` button, and node network background render without obvious overlap.
 - QA caveat: a transient Node Playwright interaction probe could not resolve the `playwright` module; this run did not loop on that degraded surface and relied on CLI screenshots, source checks, syntax checks, and route checks for verification.
 - Redaction caveat: full redaction scan still reports the intentionally public root and legacy email addresses; `docs/public-safety.md` documents this direct-contact boundary. A raw local Career workspace path found in this log was removed before commit.
+- Source/docs commit SHA: `4faafd1b0188f09a3959aca188ab630698525a8c` (`Rebuild flagship project browser`), pushed to `origin/master`; `git ls-remote origin HEAD` matched after push.
+- Public status: Vercel alias served fresh root, CSS, and primary resume PDF immediately. GitHub Pages initially served stale root/CSS/JS and 404ed the new resume PDF, then served fresh root, CSS, JS, and both resume PDFs after one propagation wait.
+- Deploy URL/status: fresh on `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`; no manual Vercel CLI deploy was needed because the existing integration served the pushed source.
+- Final blocker state: none.
