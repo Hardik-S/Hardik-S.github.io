@@ -927,3 +927,9 @@
 - Deploy status: no manual Vercel CLI deploy was needed because the Vercel alias served the docs marker from the pushed commit.
 - Blocker state: none.
 - Next safe action: proceed only to Turn 59 screenshot-driven first-viewport taste work, concrete review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence.
+
+## Run 2026-05-16T05:00:15-04:00 dirty-worktree correction
+- After the final Turn 58G worker-log commit, an unrelated source edit appeared in `css/v2.css` that changes the hero height/padding and hides `.hero-proof-strip` with a Turn 58 comment. This change was not part of the selected Turn 58G cleanup task and was not staged, committed, reverted, or published by this run.
+- Final preflight after detecting that edit returned `auth-ok,dirty-worktree`; dirty paths `M css/v2.css`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`.
+- Blocker state: no blocker for the pushed docs/log baseline, but the local checkout is not clean for future source work.
+- Next safe action: before Turn 59 source/CSS work, either claim/review the `css/v2.css` change explicitly or isolate Turn 59 in a clean sibling worktree so this unowned visual edit is not accidentally published.
