@@ -919,3 +919,11 @@
 - Blocker state: none.
 - Dirty paths: target checkout dirty paths are the owned Turn 58G docs/log files until committed.
 - Next safe action: commit and push this docs/log baseline, update coordination log and automation memory, then proceed only to Turn 59 screenshot-driven taste work, concrete review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence.
+
+## Run 2026-05-16T04:58:00-04:00 follow-up
+- Turn 58G docs/log commit `693cff70e676177fe78cbb8bc0ee452bd0356ad5` (`Record generated QA baseline`) was pushed to `origin/master`; `git ls-remote origin HEAD` matched immediately after push.
+- Final preflight after the docs/log push returned `auth-ok`; dirty paths none; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`.
+- Public freshness: Vercel served the Turn 58G handoff marker on the first check. GitHub Pages served the updated handoff and review-backlog markers after one propagation wait; root and `/legacy/` stayed HTTP 200.
+- Deploy status: no manual Vercel CLI deploy was needed because the Vercel alias served the docs marker from the pushed commit.
+- Blocker state: none.
+- Next safe action: proceed only to Turn 59 screenshot-driven first-viewport taste work, concrete review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence.
