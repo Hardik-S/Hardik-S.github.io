@@ -1368,18 +1368,53 @@ button:focus-visible,
 
   .selected-work-grid {
     grid-template-columns: 1fr;
+    gap: 0.88rem;
   }
 
   .flagship-card-featured {
     grid-row: auto;
+    padding: 0.92rem;
   }
 
   .flagship-card-featured .work-visual {
     min-height: 6rem;
   }
 
+  /* Turn 48 keeps the PMO lead proof readable on narrow screens without changing evidence copy. */
+  .selected-work-section .section-note,
+  .selected-work-section .card p,
+  .work-spotlight-text {
+    line-height: 1.42;
+  }
+
+  .selected-work-section .card {
+    gap: 0.52rem;
+  }
+
+  .selected-work-section .card h3 {
+    font-size: 1.08rem;
+    line-height: 1.2;
+  }
+
   .work-spotlight {
     grid-template-columns: 1fr;
+    gap: 0.48rem;
+    padding: 0.78rem;
+  }
+
+  .work-media-visual figcaption {
+    padding: 0.38rem 0.52rem;
+    font-size: 0.72rem;
+  }
+
+  .selected-work-rank {
+    padding: 0.16rem 0.46rem;
+    font-size: 0.68rem;
+  }
+
+  .selected-work-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
   }
 
   .work-spotlight-actions {

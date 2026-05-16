@@ -26,6 +26,7 @@ Decision rationale:
 ## Nice polish
 
 - Social preview is no longer an open nice-polish item: Turn 46 regenerated `images/website-preview.png` as a 1200x630 public-safe capture of the current v2 homepage and updated the Open Graph dimensions.
+- Selected-work mobile density is no longer an open nice-polish item unless a reviewer reports a concrete issue: Turn 48 tightened the narrow-screen PMO lead-proof rhythm without changing claims, media, or routing.
 - Replace or augment structured proof maps with real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented.
 - Add more native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access. The active section rail and Turn 45 proof journey already cover this category; future interaction work should wait for reviewer feedback.
 - Refresh resume/profile links after the user confirms a newer public artifact.
