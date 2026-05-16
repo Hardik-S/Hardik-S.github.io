@@ -751,3 +751,21 @@
 - Blocker state: none. The Vercel docs freshness lag was repaired by one allowed manual production deploy.
 - Dirty paths: none before this worker-log entry.
 - Next safe action: commit and push this worker-log entry, update automation memory, and keep the site frozen unless concrete review feedback, public freshness drift, a confirmed resume/profile update, or newly verified public-safe evidence appears.
+
+## Run 2026-05-15T21:26:36-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 52 - Portfolio-Grade Art Direction Reset.
+- Selected task: reset the v2 visual shell so the homepage reads more like a polished personal portfolio and less like a dark evidence dashboard, without changing evidence claims, selected-work data, JavaScript behavior, media assets, routes, or the top-right `Legacy` affordance.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `css/v2.css`, `README.md`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, and this `state/worker-log.md` entry.
+- Implementation notes: strengthened the static CSS art direction with a larger editorial masthead, a subtle `HS` mark, warmer ruled section bands, tighter desktop first-viewport height, richer portrait framing, and stronger card accents. Rejected copied template code, generated hero graphics, decorative orb/blob backgrounds, new evidence claims, new project media, a new content architecture, and any legacy route change.
+- Verification before source/docs commit: start preflight `auth-ok`; post-edit preflight `auth-ok,dirty-worktree` with only owned Turn 52 paths; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local route checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/css/v2.css`, `/js/v2-content.js`, and `/js/v2-interactions.js`; changed-file redaction scans passed.
+- Rendered QA: Browser plugin tools were not available through tool search, so CLI Playwright screenshots were used. Screenshots were captured and inspected under `%TEMP%\personal-site-turn52-qa` for root at `390x844`, `768x1024`, and `1440x900`, plus `/#selected-work` at `390x844`. The final desktop root screenshot leaves the section rail visible in the first viewport; mobile and tablet keep the fixed translucent `Legacy` button, name, portrait, primary actions, proof controls, and readable section rail without visible overlap.
+- Full redaction scan: failed only on the documented legacy-only contact exception in `legacy\index.html`.
+- Source/docs commit SHA: `d044ef53a945f540c3cf24ddbc45186cd115e5b1` (`Reset v2 art direction`), pushed to `origin/master`; `git ls-remote origin HEAD` matched after push.
+- Public status: GitHub Pages and the Vercel alias returned HTTP 200 and fresh Turn 52 markers for root, cache-busted `css/v2.css`, and `docs/handoff.md`; GitHub Pages `/legacy/` also returned 200.
+- Deploy URL/status: no manual Vercel CLI deploy was needed because the existing Vercel alias served the pushed Turn 52 CSS and handoff markers. Review URLs remain `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`.
+- Preflight result: `auth-ok` at start; `auth-ok,dirty-worktree` during owned edits; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`, project id `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`, org/team id `team_vRPi8T7ENTL7OukzlH1s0qnu`.
+- Blocker state: none.
+- Dirty paths: none before this worker-log entry.
+- Next safe action: commit and push this worker-log entry, update automation memory, and keep further v2 work gated on concrete review feedback, public freshness drift, a confirmed resume/profile update, or newly verified public-safe evidence.
