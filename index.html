@@ -4,205 +4,314 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hardik Shrestha | Product-Minded Software Builder</title>
-  <meta name="description" content="Evidence-backed portfolio for Hardik Shrestha: AI-enabled workflow tools, decision-support demos, public source proof, and legacy site continuity.">
-  <meta name="theme-color" content="#07100f">
+  <title>Hardik Shrestha | AI Workflow Builder</title>
+  <meta name="description" content="Hardik Shrestha builds AI workflow tools, decision-support demos, governance surfaces, and high-signal product prototypes.">
+  <meta name="theme-color" content="#07080f">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://hardik-s.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Hardik Shrestha Portfolio">
-  <meta property="og:title" content="Hardik Shrestha | Product-Minded Software Builder">
-  <meta property="og:description" content="Evidence-backed portfolio for AI-enabled workflow tools, decision-support demos, and public source proof.">
+  <meta property="og:site_name" content="Hardik Shrestha">
+  <meta property="og:title" content="Hardik Shrestha | AI Workflow Builder">
+  <meta property="og:description" content="AI workflow tools, decision-support demos, governance surfaces, and product prototypes by Hardik Shrestha.">
   <meta property="og:url" content="https://hardik-s.github.io/">
   <meta property="og:image" content="https://hardik-s.github.io/images/website-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Current v2 portfolio preview for Hardik Shrestha with portrait, proof focus, and Legacy access">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hardik Shrestha | Product-Minded Software Builder">
-  <meta name="twitter:description" content="Evidence-backed portfolio for AI-enabled workflow tools, decision-support demos, and public source proof.">
+  <meta name="twitter:title" content="Hardik Shrestha | AI Workflow Builder">
+  <meta name="twitter:description" content="AI workflow tools, decision-support demos, governance surfaces, and product prototypes by Hardik Shrestha.">
   <meta name="twitter:image" content="https://hardik-s.github.io/images/website-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/me3.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/v2.css">
+  <link rel="preload" as="image" href="images/work-pmo-decision-brief-builder.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/flagship-rework.css">
   <link rel="shortcut icon" href="images/favicon2.png">
 </head>
 
 <body>
+  <canvas id="node-network" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <a class="skip-link skip-link-secondary skip-link-highlights" href="#highlights">Skip to highlights</a>
-  <a class="skip-link skip-link-secondary skip-link-selected" href="#selected-work">Skip to flagship work</a>
-  <a class="skip-link skip-link-secondary skip-link-evidence" href="#evidence-section">Skip to evidence anchors</a>
-  <a class="skip-link skip-link-secondary skip-link-contact" href="#contact">Skip to contact</a>
   <a class="legacy-pill" href="/legacy/" aria-label="Open legacy personal site">Legacy</a>
 
-  <main class="site-shell" id="main-content">
-    <header class="hero hero-editorial" id="top">
+  <header class="topbar" aria-label="Primary navigation">
+    <a class="brand-mark" href="#top" aria-label="Hardik Shrestha home">
+      <img src="images/logo5.png" alt="" width="52" height="52">
+      <span>Hardik Shrestha</span>
+    </a>
+    <nav class="main-nav" aria-label="Portfolio sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#flagship">Flagship</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#sustainability">Sustainability</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero-section">
       <div class="hero-copy">
-        <h1>Hardik Shrestha</h1>
+        <p class="hero-kicker">Developer. Sustainability advocate. HBA & CS student.</p>
+        <h1>I am <span id="typed-role" data-roles="Hardik Shrestha.|a software developer.|a product-minded operator.|a sustainability advocate.|a chess enthusiast.">Hardik Shrestha.</span></h1>
         <p class="hero-lede">
-          I build AI-enabled workflow tools and decision-support demos that make assumptions, tradeoffs, and next
-          steps easy to inspect.
+          I turn ambiguous work into sharp products: AI workflow tools, decision surfaces, public demos, and source-backed artifacts that people can actually inspect.
         </p>
-        <p class="hero-support">
-          Each project below links to a public route, repository, or handoff note so reviewers can evaluate the
-          product judgment and implementation path without private context.
-        </p>
-        <p
-          class="hero-signal"
-          aria-label="Working mode: messy context to reviewable decisions, criteria to handoff, small surfaces to public proof."
-          data-signal-phrases="Messy context -> reviewable decisions|Criteria -> handoff|Small surfaces -> public proof"
-        >
-          <span class="hero-signal-label">Working mode</span>
-          <span class="hero-signal-text" data-signal-text aria-hidden="true">Messy context -> reviewable decisions</span>
-        </p>
-        <div class="hero-method" aria-label="Working pattern proof path">
-          <a href="#highlights" data-proof-path-index="0" data-focus-index="1" aria-label="Explore how Hardik listens to messy context">
-            <strong>Listen</strong> messy context
-          </a>
-          <a href="#selected-work" data-proof-path-index="1" data-focus-index="0" aria-label="Explore how Hardik frames criteria and tradeoffs">
-            <strong>Frame</strong> criteria and tradeoffs
-          </a>
-          <a href="#selected-work" data-proof-path-index="2" data-focus-index="2" aria-label="Explore how Hardik builds a small review surface">
-            <strong>Build</strong> a small review surface
-          </a>
-          <a href="#evidence-section" data-proof-path-index="3" data-focus-index="3" aria-label="Explore how Hardik documents public proof">
-            <strong>Document</strong> public proof
-          </a>
+        <div class="hero-actions">
+          <a href="#flagship">See flagship work</a>
+          <a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="#contact">Contact</a>
         </div>
+        <ul class="hero-socials" aria-label="Social links">
+          <li><a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/hardikithink/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
       </div>
+
       <figure class="hero-portrait" aria-label="Portrait of Hardik Shrestha">
         <img src="images/me3.jpg" alt="Hardik Shrestha portrait" width="1275" height="1700" decoding="async" fetchpriority="high">
-        <figcaption>
-          <span>Current focus</span>
-          Workflow tools, product demos, and source-backed portfolio proof.
-        </figcaption>
       </figure>
-      <div class="hero-actions-panel">
-        <div class="hero-focus-panel" aria-label="Rotating public proof focus">
-          <p class="eyebrow">Proof focus</p>
-          <p id="hero-focus-text" class="hero-focus-text" aria-live="polite">
-            Decision models that keep assumptions and tradeoffs visible.
-          </p>
-          <div class="hero-focus-actions">
-            <button class="focus-cycle-button" type="button" aria-controls="hero-focus-text">
-              Next focus
-            </button>
-            <button class="proof-journey-button" type="button" aria-controls="selected-work-grid">
-              Trace proof
-            </button>
+
+      <div class="hero-proof-board" aria-label="Current signal">
+        <span>AI workflow products</span>
+        <span>Decision-support demos</span>
+        <span>Governance tooling</span>
+        <span>Climate and operations research</span>
+      </div>
+    </section>
+
+    <section id="about" class="about-section panel-grid">
+      <div class="section-heading">
+        <p>About</p>
+        <h2>Technical depth with business judgment.</h2>
+      </div>
+      <div class="about-copy">
+        <p class="lead-copy">I am pursuing a dual degree in Computer Science and Business Administration at Western University and Ivey Business School.</p>
+        <p>cGPA: 3.9/4.0. Dean's Honour List. Wellington Financial LP Award in Technology Evaluation.</p>
+        <p>My work sits at the intersection of software, product thinking, AI workflows, finance operations, sustainability, and human review.</p>
+        <p>Outside the build queue, I study chess, read and write poetry, and train.</p>
+      </div>
+    </section>
+
+    <section id="experience" class="timeline-section">
+      <div class="section-heading">
+        <p>Experience</p>
+        <h2>Professional work across AI platforms, finance automation, IAM, RPA, and climate research.</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>Sep 2024 - Present</span>
+          <h3>UN Global Compact Network Canada | Corporate Climate Adaptability Researcher</h3>
+          <ul>
+            <li>Conducting literature reviews and sentiment analyses on corporate climate change adaptation strategies.</li>
+            <li>Translating public responses to sustainability policies into actionable insights through case studies.</li>
+          </ul>
+        </article>
+        <article>
+          <span>May 2024 - Aug 2024</span>
+          <h3>Loblaw | Finance Analyst Intern, LCL Marketing</h3>
+          <ul>
+            <li>Led backlog prioritization for finance automation tools, saving the marketing finance team 26 hours per period.</li>
+            <li>Led a LoblawTank-winning food-waste solution and presented it to sustainability leadership.</li>
+            <li>Organized a PM fundamentals workshop for more than 260 attendees.</li>
+          </ul>
+        </article>
+        <article>
+          <span>Sep 2022 - Aug 2023</span>
+          <h3>Kinaxis | Quality Assurance Intern, AI Platform</h3>
+          <ul>
+            <li>Collaborated with product leads to refine AI workflows and support feature launches.</li>
+            <li>Supported end-to-end product quality for AI solutions used by partners including HAVI.</li>
+          </ul>
+        </article>
+        <article>
+          <span>May 2022 - Aug 2022</span>
+          <h3>PointClickCare | Software Engineer Co-op, IAM Team</h3>
+          <ul>
+            <li>Engineered a scalable full-stack IAM solution on Azure using Java, React, and Vue.</li>
+            <li>Implemented bulk-user migration capabilities to process 100x more users simultaneously.</li>
+          </ul>
+        </article>
+        <article>
+          <span>Jun 2021 - Oct 2021</span>
+          <h3>P3 Adaptive | Robotic Processes Automation Intern</h3>
+          <ul>
+            <li>Developed RPA solutions for Eventbrite and SharePoint using Power Automate.</li>
+            <li>Optimized post-training work by 90% through automated workflows.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="flagship" class="flagship-section">
+      <div class="section-heading">
+        <p>Flagship work</p>
+        <h2>Products that make complex work reviewable.</h2>
+      </div>
+      <div class="flagship-grid">
+        <article class="flagship-card flagship-lead">
+          <div class="flagship-media">
+            <img src="images/work-pmo-decision-brief-builder.png" alt="PMO Decision Brief Builder public demo screenshot" width="1280" height="720" decoding="async">
           </div>
-        </div>
-        <div class="hero-links" aria-label="Primary portfolio actions">
-          <a href="#selected-work" aria-label="Jump to selected public work">Selected work</a>
-          <a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="secondary" aria-label="Open public resume in a new tab">Resume</a>
-          <a href="#contact" class="secondary" aria-label="Jump to hiring and collaboration contact details">Contact</a>
-        </div>
-        <div class="hero-proof-strip" aria-label="Choose a public proof focus">
-          <button type="button" data-focus-index="1">Practical AI systems</button>
-          <button type="button" data-focus-index="0">Decision-support demos</button>
-          <button type="button" data-focus-index="2">Governance surfaces</button>
-          <button type="button" data-focus-index="3">Public source evidence</button>
-        </div>
-      </div>
-    </header>
-
-    <nav class="section-rail" aria-label="Portfolio sections">
-      <a href="#highlights"><span>01</span> What I bring</a>
-      <a href="#selected-work"><span>02</span> Flagship work</a>
-      <a href="#evidence-section"><span>03</span> Evidence</a>
-      <a href="#contact"><span>04</span> Contact</a>
-      <a href="/handoff/"><span>05</span> Handoff</a>
-    </nav>
-
-    <section id="highlights" class="card-section" aria-labelledby="highlights-title" tabindex="-1">
-      <h2 id="highlights-title">What I bring</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Product framing</h3>
-          <p>I turn loose workflow problems into interfaces that make the user, constraint, and decision visible.</p>
+          <div>
+            <span class="work-type">Product workflow</span>
+            <h3><a href="https://pmo-decision-brief-builder.vercel.app" target="_blank" rel="noopener noreferrer">PMO Decision Brief Builder</a></h3>
+            <p>Turns scattered PMO context into a reviewer-ready brief with priority, rationale, evidence, and next action.</p>
+            <dl>
+              <div><dt>Built</dt><dd>Public fixture route, decision model, briefing interface.</dd></div>
+              <div><dt>Signal</dt><dd>Product framing, UI execution, judgment under ambiguity.</dd></div>
+            </dl>
+          </div>
         </article>
-        <article class="card">
-          <h3>Implementation range</h3>
-          <p>Static sites, live demos, and source-backed tools show the product story and implementation together.</p>
+
+        <article class="flagship-card">
+          <span class="work-type">Decision support</span>
+          <h3><a href="https://bioscript-housing-decision.vercel.app" target="_blank" rel="noopener noreferrer">BioScript Housing Decision</a></h3>
+          <p>Frames a constrained support choice as criteria, tradeoffs, and handoff notes while keeping the public story controlled.</p>
+          <div class="signal-chain"><span>Criteria</span><span>Tradeoff</span><span>Handoff</span></div>
         </article>
-        <article class="card">
-          <h3>Evidence-first handoff</h3>
-          <p>Each featured item points to a reachable route or repository so the claim can be checked quickly.</p>
+
+        <article class="flagship-card">
+          <span class="work-type">AI governance</span>
+          <h3><a href="https://github.com/Hardik-S/agent-permission-review-console" target="_blank" rel="noopener noreferrer">Agent Permission Review Console</a></h3>
+          <p>Models agent-access review so request scope, approval state, and least-privilege checks become visible.</p>
+          <div class="signal-chain"><span>Request</span><span>Scope</span><span>Approval</span></div>
+        </article>
+
+        <article class="flagship-card">
+          <span class="work-type">Support operations</span>
+          <h3><a href="https://github.com/Hardik-S/invoice-dispute-packet-builder" target="_blank" rel="noopener noreferrer">Invoice Dispute Packet Builder</a></h3>
+          <p>Packages dispute facts, evidence, and response steps into a source-backed workflow for faster review.</p>
+          <div class="signal-chain"><span>Facts</span><span>Evidence</span><span>Response</span></div>
         </article>
       </div>
-      <aside class="builder-story" aria-labelledby="builder-story-title">
-        <p class="eyebrow">Builder through-line</p>
-        <h3 id="builder-story-title">I work from messy context toward a reviewable decision.</h3>
-        <p>
-          The pattern across the flagship work is intentionally consistent: understand the handoff, separate criteria
-          from assumptions, build a small surface people can inspect, and leave a public proof trail when the work is
-          safe to share.
-        </p>
-        <div class="story-steps" aria-label="Source-backed working pattern">
-          <span>Listen</span>
-          <span>Frame</span>
-          <span>Build</span>
-          <span>Document</span>
-        </div>
-      </aside>
     </section>
 
-    <section id="selected-work" class="card-section selected-work-section" aria-labelledby="selected-work-title" tabindex="-1">
-      <h2 id="selected-work-title">Flagship work</h2>
-      <p class="section-note">
-        Verified public projects that show product judgment, implementation, and evidence-backed workflow design.
-      </p>
-      <div id="selected-work-grid" class="cards selected-work-grid" aria-live="polite">
-        <p class="evidence-loading">Loading selected work...</p>
+    <section id="skills" class="skills-section">
+      <div class="section-heading">
+        <p>Skills</p>
+        <h2>Technical and operating range.</h2>
       </div>
-      <p id="selected-work-meta" class="section-note evidence-meta" aria-live="polite">Selected-work freshness: pending.</p>
-    </section>
-
-    <section id="evidence-section" class="card-section" aria-labelledby="evidence-title" tabindex="-1">
-      <h2 id="evidence-title">Evidence-backed anchors</h2>
-      <p class="section-note">This homepage only surfaces publicly reachable links that can be verified from source artifacts.</p>
-      <div id="evidence-grid" class="cards" aria-live="polite">
-        <p class="evidence-loading">Loading evidence anchors...</p>
+      <div class="skill-grid">
+        <article><h3>Programming</h3><p>Python, Java, JUnit, Mockito, Maven, SQL, JavaScript, Cypress.</p></article>
+        <article><h3>Cloud and DevOps</h3><p>Azure, AWS EC2, GCS, Docker, Kubernetes, Prometheus, Datadog.</p></article>
+        <article><h3>Frontend</h3><p>React, Vue, GraphQL, HTML, CSS, Bootstrap.</p></article>
+        <article><h3>Tools</h3><p>Git, Power BI, OAuth2, Jira, Postman, Kafka.</p></article>
+        <article><h3>Engagement</h3><p>Program coordination, educational resources, stakeholder workshops, public speaking.</p></article>
+        <article><h3>Research</h3><p>Literature review, academic writing, data analysis, sustainability policy synthesis.</p></article>
+        <article><h3>Languages</h3><p>English native, French conversational.</p></article>
+        <article><h3>Analytics</h3><p>Data-driven decision making, BI tools, operating metrics, review surfaces.</p></article>
       </div>
-      <p id="evidence-meta" class="section-note evidence-meta" aria-live="polite">Evidence freshness: pending.</p>
-      <p id="evidence-summary" class="section-note" aria-live="polite"></p>
-      <noscript>
-        <p class="section-note">JavaScript is required for the dynamic evidence list on this page.</p>
-      </noscript>
     </section>
 
-    <section class="card-section" id="contact" aria-labelledby="contact-title" tabindex="-1">
-      <h2 id="contact-title">Get in touch</h2>
-      <p class="contact-intro">If you are hiring, reviewing project fit, or exploring collaboration, start with the public resume and source profile, then reference the flagship work that best matches the conversation.</p>
-      <div class="contact-actions">
-        <a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">GitHub profile</a>
-        <a href="https://drive.google.com/file/d/1rbTC2hLoid0K8culdn1go-qfMCaq1WEd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="secondary">Resume (public)</a>
-        <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <section id="projects" class="projects-section">
+      <div class="section-heading">
+        <p>Projects</p>
+        <h2>Legacy work, rebuilt into the current story.</h2>
       </div>
-      <p class="contact-guidance">Best next step: mention the proof item that matches the role or project conversation.</p>
-      <aside class="contact-review-route" aria-labelledby="contact-route-title">
-        <p class="eyebrow">Reviewer route</p>
-        <h3 id="contact-route-title">Start from public proof, then choose the right profile link.</h3>
-        <ol>
-          <li><strong>Inspect work:</strong> open a flagship route or repository that matches the conversation.</li>
-          <li><strong>Check background:</strong> use the public resume for education, experience, and broader context.</li>
-          <li><strong>Follow up:</strong> use GitHub or LinkedIn with the matching proof item named in the note.</li>
-        </ol>
-      </aside>
-      <p class="section-note">Legacy profile remains available through the top-right Legacy button for continuity.</p>
+      <div class="project-grid">
+        <article>
+          <img src="images/project-1-1.png" alt="Duck Duck Mallard project preview" width="640" height="420" decoding="async">
+          <h3><a href="https://github.com/Hardik-S/DuckDuckGo" target="_blank" rel="noopener noreferrer">Duck, Duck, Mallard</a></h3>
+          <p>Computer-vision classification project using transfer learning and test coverage to distinguish duck images.</p>
+        </article>
+        <article>
+          <img src="images/project-2.png" alt="Picture This project preview" width="640" height="420" decoding="async">
+          <h3><a href="https://github.com/Hardik-S/picturethisv2" target="_blank" rel="noopener noreferrer">Picture This</a></h3>
+          <p>Educational storytelling card game that secured $15,000 in investment for development, manufacturing, and distribution.</p>
+        </article>
+        <article>
+          <img src="images/project-3.png" alt="London Chess Club project preview" width="640" height="420" decoding="async">
+          <h3>London Chess Club</h3>
+          <p>Led product development for a digital platform using Angular and AWS, informed by user feedback and club growth.</p>
+        </article>
+      </div>
     </section>
 
-    <footer class="footer-note">
-      <p>Built as v2 of the site. Legacy profile remains available via the top-right Legacy button.</p>
-      <p class="footer-links"><a href="/handoff/">Release handoff</a></p>
-    </footer>
+    <section id="sustainability" class="sustainability-section">
+      <div class="section-heading">
+        <p>Sustainability</p>
+        <h2>Environmental leadership with operating discipline.</h2>
+      </div>
+      <div class="initiative-grid">
+        <article>
+          <span>May 2024 - Present</span>
+          <h3>Ivey HBAA | Director of Sustainability</h3>
+          <p>Spearheading campus initiatives including meal plans forward, waste reduction campaigns, energy audits, and workshops reaching 500+ students.</p>
+        </article>
+        <article>
+          <span>May 2024 - Present</span>
+          <h3>Ivey Degrowth Club | President</h3>
+          <p>Facilitating student discussions on growth models, responsibility in sustainable transitions, Indigenous sovereignty, and climate justice.</p>
+        </article>
+        <article>
+          <span>Summer 2024</span>
+          <h3>LoblawTank Hackathon Winner</h3>
+          <p>Led a food-waste solution and presented it directly to a Sustainability Manager and leadership team.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-heading">
+        <p>Contact</p>
+        <h2>Let's connect.</h2>
+      </div>
+      <div class="contact-layout">
+        <aside class="contact-card">
+          <p>I'm always up for a coffee or a call.</p>
+          <a href="tel:+12896544428">+1 289-654-4428</a>
+          <a href="mailto:hshrestha.hba2026@ivey.ca">hshrestha.hba2026@ivey.ca</a>
+          <a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">github.com/Hardik-S</a>
+          <a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">linkedin.com/in/hardik-shres</a>
+        </aside>
+
+        <form
+          class="contact-form"
+          action="https://script.google.com/macros/s/AKfycbxTqokXBDRtyIykcJhYJEeH_FM0VZk0qBfylG-D0a0A8dlu8xI/exec"
+          method="post"
+          target="contact-submit-frame"
+          data-contact-form
+        >
+          <!-- Static Vercel hosting cannot receive mail directly, so this uses the legacy Apps Script endpoint and a hidden iframe to keep the page in place after POST. -->
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required minlength="2">
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" required minlength="4">
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="7" required></textarea>
+          </label>
+          <button type="submit">Send message</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          <iframe class="contact-frame" name="contact-submit-frame" title="Contact form submission"></iframe>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <script src="js/v2-content.js" defer></script>
-  <script src="js/v2-interactions.js" defer></script>
+  <footer class="site-footer">
+    <ul class="footer-socials" aria-label="Footer social links">
+      <li><a href="https://github.com/Hardik-S" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/hardik-shres/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/hardikithink/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    </ul>
+    <p>"It's not angel jazz, it's not magic, just scientists on coffee and applied mathematics!" <a href="https://www.youtube.com/channel/UCimiUgDLbi6P17BdaCZpVbg" target="_blank" rel="noopener noreferrer">- Exurb1a</a></p>
+    <p><a href="/handoff/">Release handoff</a> <span aria-hidden="true">/</span> <a href="/legacy/">Legacy site</a></p>
+  </footer>
+
+  <script src="js/flagship-rework.js" defer></script>
 </body>
 
 </html>

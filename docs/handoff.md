@@ -6,13 +6,15 @@ Last updated: 2026-05-16
 
 This handoff covers the static v2 personal website in this repository. The release candidate keeps the old portfolio available at `/legacy/` through the fixed translucent `Legacy` button and uses the root route for the current evidence-backed portfolio.
 
+2026-05-16 update: the root route has been reworked again as a full personal portfolio. It restores the legacy site sections, adds a working static contact form, removes visible helper/reviewer text from the homepage, and replaces the legacy external node-network dependency with a local cursor-reactive canvas.
+
 ## Architecture
 
-- `index.html` is the v2 homepage and owns the page landmarks, skip links, Legacy button, hero, flagship work, evidence anchors, and contact section.
+- `index.html` is the current homepage and owns the page landmarks, skip link, Legacy button, hero, About, Experience, Flagship Work, Skills, Projects, Sustainability, and Contact sections.
 - `legacy/index.html` preserves the prior site. Do not edit it during v2 polish unless the legacy route itself breaks.
-- `css/v2.css` contains the v2 visual system, responsive rules, focus states, section color bands, and interaction styling.
-- `js/v2-content.js` renders public-ready evidence and selected-work cards from `content/site-content.json`.
-- `js/v2-interactions.js` owns the native proof-focus switcher and project spotlight controller.
+- `css/flagship-rework.css` contains the active homepage visual system, responsive rules, contact form styling, and editorial section rhythm.
+- `js/flagship-rework.js` owns the native typed identity line, cursor-reactive node network canvas, active nav state, and contact form status.
+- `css/v2.css`, `js/v2-content.js`, and `js/v2-interactions.js` remain in the repository as prior-v2 implementation history; the current root page no longer references them.
 - `content/site-content.json` is the source of truth for displayed proof claims.
 - `docs/evidence-inventory.md` records why proof items are included, demoted, or held for research.
 - `docs/public-safety.md` records the contact and publication-safety decisions.
@@ -40,6 +42,9 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 
 ## Interaction behavior
 
+- The current root hero restores the legacy kinetic identity with a native typed line.
+- The current root hero restores the legacy node-network idea as a local canvas (`#node-network`) that follows the cursor and disables itself for reduced-motion users.
+- The contact form posts to the existing legacy Apps Script endpoint through a hidden iframe so static Vercel/GitHub Pages hosting can submit without a same-origin backend.
 - The hero proof-focus text cycles through source-backed positioning lines and exposes a manual `Next focus` button.
 - The hero working-mode signal uses native JavaScript to type through existing evidence-safe phrases. It remains static without JavaScript, exposes a stable accessible label, and stops animating for reduced-motion users.
 - The hero also exposes a `Trace proof` action that scrolls to flagship work and asks the existing project spotlight controller to emphasize the matching card.
@@ -58,7 +63,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - The Turn 59 first-viewport rhythm pass is a CSS-only visual QA correction. It reduces hero height and spacing, hides the redundant proof-strip row now that method chips provide the direct proof path, and keeps the `Next focus` and `Trace proof` controls available.
 - The Turn 60 case-study path pass adds a compact reviewer path to each flagship work card. The path tells reviewers how to inspect the public route or repository, keeps the same four selected projects and media policy, and avoids new metrics, screenshots, customer claims, or production-status claims.
 - The Turn 61 native typed-signal pass restores a small amount of legacy-style motion without importing the old typed plugin or canvas stack. It changes only the hero signal layer and docs; evidence JSON, selected-work cards, media, routes, contact policy, and `/legacy/` remain unchanged.
-- The final sprint recruiter-trust pass adds one public-only reviewer route to the contact section: inspect a flagship public artifact, check the public resume, then follow up through GitHub or LinkedIn with the matching proof item named. It avoids a raw email address, form endpoint, scheduler, private link, or availability claim.
+- The earlier final sprint recruiter-trust pass avoided raw direct contact. The 2026-05-16 flagship rework supersedes that profile-only root boundary by restoring direct contact details and a static form.
 
 ## Evidence policy
 
@@ -71,12 +76,13 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 
 ## Contact policy
 
-The v2 contact path is profile-first:
+The current root contact path is direct again:
 
-- Hero and featured contact actions route to `#contact`.
-- Contact section links to GitHub, public resume, and LinkedIn.
-- No new raw email address, form endpoint, or scheduling link is exposed in v2.
-- Any future direct-contact change should first update `docs/public-safety.md` with a clear policy decision.
+- Hero `Contact` routes to `#contact`.
+- Contact section links to phone, email, GitHub, and LinkedIn.
+- Contact form posts to the existing legacy Google Apps Script endpoint.
+- This intentionally restores the legacy contact surface and therefore exposes personal contact data on the public site.
+- Any future expansion of direct contact channels should first update `docs/public-safety.md` with a clear policy decision.
 
 ## Accessibility and metadata polish
 
@@ -153,6 +159,7 @@ git status --short
 git diff --check
 node --check js\v2-content.js
 node --check js\v2-interactions.js
+node --check js\flagship-rework.js
 Get-Content content\site-content.json -Raw | ConvertFrom-Json
 
 python -m http.server 4173
@@ -161,6 +168,8 @@ Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/handoff/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/docs/handoff.md
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/css/flagship-rework.css
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/js/flagship-rework.js
 
 npx --yes playwright screenshot --viewport-size=390,844 http://127.0.0.1:4173/ state/qa/turn32-mobile.png
 npx --yes playwright screenshot --viewport-size=768,1024 http://127.0.0.1:4173/ state/qa/turn32-tablet.png

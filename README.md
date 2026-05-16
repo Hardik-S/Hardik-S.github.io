@@ -4,13 +4,25 @@
 
 This repository is the current home for Hardik's personal website (v2) with legacy continuity preserved.
 
+## 2026-05-16 flagship rework
+
+The root homepage was rebuilt as a fuller personal portfolio instead of the previous evidence-dashboard shell. The decision was to restore the legacy site's human sections and motion energy while keeping the old site available at `/legacy/`.
+
+- `index.html` now renders static first-class sections for About, Experience, Flagship Work, Skills, Projects, Sustainability, and Contact.
+- `css/flagship-rework.css` owns the new editorial visual system, responsive layout, contact form styling, and legacy-inspired section rhythm.
+- `js/flagship-rework.js` owns the native typed identity line, cursor-reactive node network canvas, active navigation state, and contact form status.
+- The old external S3/TweenLite node-network dependency was not restored. The replacement is local, vanilla JavaScript, reduced-motion-safe, and uses a unique `node-network` canvas.
+- The old visible helper/reviewer scaffolding was removed from the root page. Source metadata, review paths, freshness lines, and evidence-loading helper text remain in historical docs and data files, not in the current homepage UI.
+- The root contact form posts to the existing legacy Google Apps Script endpoint. This is the only send-capable contact endpoint available in this static repository without adding Vercel Function email-provider secrets.
+- Direct phone/email contact details are visible on the root page because the requested legacy contact surface was restored. This is personal contact data in a public repository; keep it intentional and revisit privacy before adding more direct channels.
+
 ## Current architecture
 
-- `index.html` renders the v2 homepage.
+- `index.html` renders the current root homepage.
 - `legacy/index.html` preserves the prior site experience.
-- `css/v2.css` provides the static visual system and responsive layout.
-- `js/v2-content.js` renders evidence cards from JSON payloads.
-- `js/v2-interactions.js` adds the small native hero interaction layer.
+- `css/flagship-rework.css` provides the active root visual system and responsive layout.
+- `js/flagship-rework.js` adds the native typed identity, cursor-reactive node network, active nav, and contact form status.
+- `css/v2.css`, `js/v2-content.js`, and `js/v2-interactions.js` are retained as prior-v2 implementation history and may still be useful for comparison, but the root page no longer references them.
 - `content/site-content.json` is the single source for evidence and selected-work links.
 - `docs/evidence-inventory.md`, `docs/public-safety.md`, and `docs/handoff.md` track proof policy, contact safety decisions, and release-candidate handoff notes.
 - `docs/review-backlog.md` keeps post-freeze review work separated into must-fix, nice-polish, and needs-new-evidence buckets so future turns do not restart broad redesign by default.
@@ -58,7 +70,7 @@ This repository is the current home for Hardik's personal website (v2) with lega
 - The Turn 59 screenshot-driven rhythm pass is CSS-only. It compacts the hero frame, portrait, primary actions, proof-focus panel, and section rail so the first viewport shows the name, portrait, actions, proof path, and fixed `Legacy` affordance with less control-panel weight. The rejected alternatives were new copy, new media, a route change, or another interaction layer.
 - The Turn 60 case-study path pass adds a reviewer-path sequence to each flagship card. This makes selected work read more like case studies while preserving the existing four-project set, PMO-only screenshot boundary, public source links, and `/legacy/` behavior. The rejected alternatives were adding new project screenshots, changing the project order, or claiming outcomes that are not source-verified.
 - The Turn 61 native typed-signal pass adds a small hero working-mode line that cycles through existing evidence-safe phrases with native JavaScript. The static text remains visible without JavaScript, the animation stops for reduced-motion users, and the rejected alternatives were importing the old typed library, adding a canvas effect, or creating new project claims.
-- The final sprint recruiter-trust pass adds a compact reviewer route in the contact section: inspect a flagship public artifact, check the public resume, then follow up through GitHub or LinkedIn with the matching proof item named. It intentionally avoids a raw email address, form endpoint, scheduler, availability claim, or new private link.
+- The earlier final sprint recruiter-trust pass avoided raw direct contact. The 2026-05-16 flagship rework supersedes that profile-only root boundary by restoring direct contact details and a static form.
 - The release-polish pass adds public-safe title, description, canonical, Open Graph, and Twitter metadata that restate the already-visible v2 positioning without adding new claims.
 - The final sprint recruiter-share pass refreshes `images/website-preview.png` from the current v2 homepage after the hero typed signal and contact reviewer route were in place. The preview remains a screenshot of committed public page state with Hardik's name, portrait, proof-focus controls, and the top-right `Legacy` affordance visible; the rejected alternative was a separate generated graphic because that would add a second art direction and require a new public-safety review.
 - The hero portrait declares intrinsic dimensions and is preloaded as the first-viewport image. This is a static performance and layout-stability safeguard, not a new visual asset or dependency.
@@ -86,13 +98,10 @@ This repository is the current home for Hardik's personal website (v2) with lega
 
 ## Contact and safety boundaries
 
-- Contact actions in v2 are deterministic and recruiter-safe:
-  - Hero `Contact` jumps to `#contact`.
-  - Featured contact cards jump to the same in-page contact action list instead of opening an empty-recipient email compose window.
-  - Contact section exposes GitHub, public resume, and LinkedIn actions.
-  - Contact copy asks reviewers to reference the most relevant flagship proof item instead of relying on an unverified direct email path or a generic form.
-- Legacy contact detail patterns and any historical exposure remain documented in `docs/public-safety.md`.
-- Public-facing logs and docs should avoid raw local paths and direct contact literals; legacy-only contact text is acceptable only with a documented exception in `docs/public-safety.md`.
+- The root page now includes a working static contact form that posts to the legacy Apps Script endpoint.
+- The root page also exposes direct phone and email contact details, plus GitHub and LinkedIn. This restores the legacy contact surface but widens the public personal-data surface compared with the previous profile-only v2 policy.
+- Legacy contact detail patterns and the root reintroduction are documented in `docs/public-safety.md`.
+- Public-facing logs and docs should still avoid adding new direct contact literals beyond the currently intentional root and legacy contact surfaces.
 
 ## Verification
 
@@ -103,6 +112,7 @@ git status --short
 git diff --check
 node --check js\v2-content.js
 node --check js\v2-interactions.js
+node --check js\flagship-rework.js
 Get-Content content\site-content.json -Raw | ConvertFrom-Json
 
 python -m http.server 4173
@@ -110,6 +120,8 @@ Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/legacy/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/handoff/
 Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/content/site-content.json
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/css/flagship-rework.css
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4173/js/flagship-rework.js
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\\scripts\\github-deploy-preflight.ps1" -TargetProject Hardik-S/hardik-s.github.io -AttemptsUsed 0
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CODEX_HOME>\\scripts\\codex-public-redaction-scan.ps1" -Path .
