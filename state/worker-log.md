@@ -934,6 +934,23 @@
 - Blocker state: no blocker for the pushed docs/log baseline, but the local checkout is not clean for future source work.
 - Next safe action: before Turn 59 source/CSS work, either claim/review the `css/v2.css` change explicitly or isolate Turn 59 in a clean sibling worktree so this unowned visual edit is not accidentally published.
 
+## Run 2026-05-16T05:10:40-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 59 - Legacy-Inspired Hero Art Direction / first-viewport rhythm.
+- Selected task: claim and verify the existing `css/v2.css` first-viewport compaction as a CSS-only rhythm pass, then document the decision boundary instead of starting a larger redesign.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `README.md`, `css/v2.css`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, and this `state/worker-log.md` entry.
+- Implementation notes: reduced hero height, spacing, portrait size, mobile rail spacing, proof-focus panel density, and primary-action spacing; hid the redundant `.hero-proof-strip` because the Turn 57 method chips now carry the direct proof path. Rejected new copy, new media, JavaScript changes, social-preview regeneration, contact changes, route changes, and `/legacy/` edits because this increment is screenshot-driven first-viewport rhythm only.
+- Verification before source/docs commit: start preflight `auth-ok,dirty-worktree` with only `M css/v2.css`; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/css/v2.css`, `/js/v2-content.js`, `/js/v2-interactions.js`, `/docs/handoff.md`, and `/docs/review-backlog.md`; changed-file redaction scans passed for all touched files.
+- Rendered QA: CLI Playwright screenshots were captured under the coordination `state` folder at `20260516-turn59-root-mobile.png`, `20260516-turn59-root-tablet.png`, `20260516-turn59-root-desktop.png`, `20260516-turn59-highlights-mobile.png`, and `20260516-turn59-selected-work-mobile.png`. Visual inspection confirmed the mobile first viewport shows name, portrait, primary actions, proof focus, section rail, and fixed translucent `Legacy` button without the extra proof-strip row; desktop keeps the portrait-led split and brings the section rail into view.
+- Source/docs commit SHA: `9cc32c03f6465a48b4fbad56bb14581fe1236b97` (`Tighten first viewport rhythm`), pushed to `origin/master`; `git ls-remote origin HEAD` matched after push.
+- Public status: GitHub Pages returned HTTP 200 for root, `/legacy/`, cache-busted `css/v2.css`, `/handoff/`, `/docs/handoff.md`, and `/docs/review-backlog.md`, with Turn 59 markers present on root/CSS/handoff/docs after one propagation wait. Vercel alias returned HTTP 200 and fresh Turn 59 markers for root, cache-busted `css/v2.css`, and `/handoff/`. No manual Vercel CLI deploy was needed because the integration served the pushed baseline.
+- Deploy URL/status: fresh on `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`; no separate production deploy URL generated this run.
+- Preflight result: start `auth-ok,dirty-worktree` with only `M css/v2.css`; post-push preflight `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`, project id `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`, org/team id `team_vRPi8T7ENTL7OukzlH1s0qnu`.
+- Blocker state: none.
+- Dirty paths: target checkout dirty path is this worker-log entry until committed.
+- Next safe action: commit and push this worker-log entry, update coordination/automation memory, then pause broad visual polish unless review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence appears.
+
 ## Run 2026-05-16T05:08:25-04:00
 - Mission scope: Worker Wally - Personal Website v2.
 - Director task: Turn 59 - Screenshot-Driven First-Viewport Rhythm Pass.
