@@ -982,3 +982,20 @@
 - Final preflight result before this follow-up: `auth-ok`; dirty paths none; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`.
 - Blocker state: none.
 - Next safe action: update automation memory, then pause broad visual polish unless review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence appears.
+
+## Run 2026-05-16T05:25:36-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 60 - Flagship Work As Case Studies.
+- Selected task: add compact reviewer-path sequences to the four existing flagship work cards so selected work reads more like case studies without changing the project set, media boundary, routes, contact policy, or `/legacy/` behavior.
+- Target repo: `Hardik-S/hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `content/site-content.json`, `js/v2-content.js`, `css/v2.css`, `README.md`, `docs/evidence-inventory.md`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, and this `state/worker-log.md` entry.
+- Implementation notes: added `caseStudy.reviewPath` guidance for PMO Decision Brief Builder, BioScript Housing Decision, Agent Permission Review Console, and Invoice Dispute Packet Builder; rendered the path as a small ordered `Reviewer path` block; styled the block for lead/supporting cards and mobile. Rejected new screenshots, new project ordering, new metrics, employer/customer claims, production-status language, contact changes, and legacy edits.
+- Verification before source/docs commit: start preflight `auth-ok`; dirty preflight `auth-ok,dirty-worktree` with only owned Turn 60 paths; selected-work links returned HTTP 200; `gh repo view` confirmed the two repo-only flagships are public `Hardik-S` repos with no homepage URL; `git diff --check`; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/content/site-content.json`, `/css/v2.css`, `/js/v2-content.js`, `/js/v2-interactions.js`, `/docs/evidence-inventory.md`, `/docs/handoff.md`, and `/docs/review-backlog.md`; changed-file redaction scans passed.
+- Rendered QA: CLI Playwright screenshots were captured under the coordination `state` folder at `20260516-turn60-selected-work-mobile.png`, `20260516-turn60-selected-work-desktop.png`, and `20260516-turn60-selected-work-mobile-full.png`. Visual inspection confirmed the reviewer-path blocks render on the flagship cards without obvious overlap, and the fixed translucent `Legacy` button remains visible.
+- Source/docs commit SHA: `c0c02ba3edd8c9de8a0fd71850a09a1b7484c1dc` (`Add flagship reviewer paths`), pushed to `origin/master`; `git ls-remote origin HEAD` matched after push.
+- Public status: Vercel alias returned HTTP 200 and fresh Turn 60 markers for root, cache-busted `content/site-content.json`, `css/v2.css`, and `/handoff/` on the first check. GitHub Pages returned HTTP 200 for root and `/legacy/` immediately, then served fresh Turn 60 markers for cache-busted content JSON, CSS, handoff, evidence inventory, and review backlog after one propagation wait.
+- Deploy URL/status: fresh on `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`; no manual Vercel CLI deploy was needed because the integration served the pushed Turn 60 baseline.
+- Preflight result: start `auth-ok`; dirty-edit `auth-ok,dirty-worktree` with only owned source/doc paths; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`, project id `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`, org/team id `team_vRPi8T7ENTL7OukzlH1s0qnu`.
+- Blocker state: none.
+- Dirty paths: target checkout dirty path is this worker-log entry until committed.
+- Next safe action: commit and push this worker-log entry, update automation memory, then pause broad selected-work polish unless reviewer feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence appears.
