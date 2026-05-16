@@ -5,6 +5,7 @@
   const cycleButton = document.querySelector(".focus-cycle-button");
   const journeyButton = document.querySelector(".proof-journey-button");
   const focusChips = Array.from(document.querySelectorAll(".hero-proof-strip button[data-focus-index]"));
+  const proofPathLinks = Array.from(document.querySelectorAll(".hero-method a[data-proof-path-index]"));
 
   if (!focusText || !cycleButton) {
     return;
@@ -19,6 +20,14 @@
 
   let currentIndex = Math.max(0, proofFocuses.indexOf(focusText.textContent.trim()));
   const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let autoFocusTimer;
+
+  const stopAutoFocus = () => {
+    if (autoFocusTimer) {
+      window.clearInterval(autoFocusTimer);
+      autoFocusTimer = null;
+    }
+  };
 
   const updateFocus = (nextIndex) => {
     currentIndex = nextIndex % proofFocuses.length;
@@ -39,6 +48,16 @@
       chip.classList.toggle("is-active", isActive);
       chip.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
+    proofPathLinks.forEach((link) => {
+      const linkFocusIndex = Number(link.dataset.focusIndex);
+      const isActive = linkFocusIndex === currentIndex;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "step");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
   };
 
   const cycleFocus = () => {
@@ -58,13 +77,61 @@
     selectedWork?.scrollIntoView({ behavior: scrollBehavior, block: "start" });
   };
 
-  cycleButton.addEventListener("click", cycleFocus);
-  journeyButton?.addEventListener("click", startProofJourney);
+  const activateProofPath = (link, event) => {
+    const href = link.getAttribute("href");
+    const target = href ? document.querySelector(href) : null;
+    const focusIndex = Number(link.dataset.focusIndex);
+
+    if (!target || !Number.isInteger(focusIndex)) {
+      return;
+    }
+
+    event.preventDefault();
+    stopAutoFocus();
+    updateFocus(focusIndex);
+
+    // The method chips are anchors first; JS only adds the proof-spotlight bridge.
+    if (href === "#selected-work") {
+      document.dispatchEvent(new CustomEvent("v2:proof-journey-requested", {
+        detail: {
+          index: focusIndex,
+          focus: proofFocuses[focusIndex]
+        }
+      }));
+    }
+
+    target.scrollIntoView({
+      behavior: reduceMotionQuery.matches ? "auto" : "smooth",
+      block: "start"
+    });
+    if (window.history && href.startsWith("#")) {
+      window.history.pushState(null, "", href);
+    }
+    target.focus({ preventScroll: true });
+  };
+
+  cycleButton.addEventListener("click", () => {
+    stopAutoFocus();
+    cycleFocus();
+  });
+  journeyButton?.addEventListener("click", () => {
+    stopAutoFocus();
+    startProofJourney();
+  });
   focusChips.forEach((chip) => {
     chip.addEventListener("click", () => {
       const chipIndex = Number(chip.dataset.focusIndex);
       if (Number.isInteger(chipIndex)) {
+        stopAutoFocus();
         updateFocus(chipIndex);
+      }
+    });
+  });
+  proofPathLinks.forEach((link) => {
+    link.addEventListener("click", (event) => activateProofPath(link, event));
+    link.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        activateProofPath(link, event);
       }
     });
   });
@@ -72,7 +139,7 @@
 
   // Auto-rotation is disabled for reduced-motion users; the button remains available.
   if (!reduceMotionQuery.matches) {
-    window.setInterval(cycleFocus, 5200);
+    autoFocusTimer = window.setInterval(cycleFocus, 5200);
   }
 })();
 

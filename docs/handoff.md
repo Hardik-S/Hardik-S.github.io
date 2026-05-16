@@ -52,7 +52,8 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - Turn 54 improves the flagship visual proof layer without adding media: the PMO screenshot and generated proof maps now show compact artifact/source/verified chips from the existing JSON metadata. This gives reviewers more context in the visual area while keeping the no-unverified-screenshot boundary intact.
 - Turn 55 adds a small human story layer inside the existing first-scroll highlights section. The builder through-line makes the working style more legible to a cold reviewer while keeping the same project set, source links, media policy, contact path, and legacy continuity.
 - Turn 56 closes the Turn 55 freshness gap before any new design work. It records that the builder-story source commit, the worker-log/freshness follow-up, GitHub Pages, and the Vercel alias were checked as a documentation-only release-health increment.
-- The 2026-05-16 above-fold warmth pass brings the same working pattern into the hero as compact method chips and gives the hero a warmer editorial frame. It deliberately keeps the evidence payload, project ordering, PMO media boundary, contact policy, JavaScript behavior, and `/legacy/` continuity unchanged.
+- The 2026-05-16 above-fold warmth pass brings the same working pattern into the hero as compact method chips and gives the hero a warmer editorial frame. It deliberately keeps the evidence payload, project ordering, PMO media boundary, contact policy, and `/legacy/` continuity unchanged.
+- The Turn 57 native proof-path pass makes the hero method chips interactive without changing their claims: each chip remains a hash anchor, and JavaScript syncs the proof-focus text, selected-work spotlight, reduced-motion-aware scroll behavior, and manual-stop behavior for the rotating proof focus when available.
 
 ## Evidence policy
 
@@ -119,6 +120,7 @@ The v2 contact path is profile-first:
 - Turn 55 keeps the Turn 54 proof baseline and adds the reviewer-facing builder through-line in the `What I bring` section. The pass is copy/layout only: no evidence JSON, project links, screenshots, route behavior, contact channel, or `Legacy` behavior changes.
 - Turn 56 confirms Turn 55 closure rather than changing the homepage: source commit `e76f70e84cf19d204a3b31b8c85e193c3494b527`, worker-log/freshness commit `429063e3a23584efa5d4992f2ee01c139b97b546`, root/handoff/docs freshness, and automation-memory catch-up are the scope.
 - The 2026-05-16 above-fold warmth pass implements the Director's next visual task after the closure note: the first viewport now exposes `Listen / Frame / Build / Document` directly in the hero and uses a warmer framed masthead treatment. No new content claims, media captures, route changes, or contact surfaces were added.
+- The 2026-05-16 native proof-path pass implements the next Director interaction task after the warmth pass. The hero method chips now route reviewers through `#highlights`, `#selected-work`, and `#evidence-section`, with the selected-work spotlight bridged only as progressive enhancement.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -167,6 +169,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 - Turn 55 remains within the existing evidence policy. Story copy should continue to describe working style and review flow, not unverifiable outcomes, employment status, production impact, or direct availability.
 - Turn 56 remains a release-health record only. Future workers should treat it as closure evidence, not as a new design mandate.
 - The above-fold warmth pass should be evaluated visually, not as new evidence. Future workers should not keep adding hero chips or stronger claims unless a reviewer says the first viewport is still unclear.
+- The proof-path interaction should be evaluated as navigation clarity, not as new evidence. Future interaction work should not add overlays, blocking tours, or heavier runtime dependencies unless a reviewer reports that the current path is unclear.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 
