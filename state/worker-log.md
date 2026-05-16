@@ -1055,3 +1055,11 @@
 - Preflight result: start `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; Vercel project `hardik-s-github-io`, project id `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`, org/team id `team_vRPi8T7ENTL7OukzlH1s0qnu`; dirty paths are owned by this rework.
 - Blocker state: none so far.
 - Next safe action: commit, push to `origin/master`, then check public freshness and use Vercel only if the alias does not update from the push.
+
+## Run 2026-05-16T07:44:00-04:00 public freshness follow-up
+- Source/docs/log commit `0ff7690f1268c056ae0f21e647bfa57df6c82e9c` pushed to `origin/master`; `git ls-remote origin HEAD` matched.
+- Vercel alias `https://hardik-s-github-io.vercel.app/` served the new root, `css/flagship-rework.css`, `js/flagship-rework.js`, `/legacy/`, and `/handoff/` with HTTP 200 on the first freshness check.
+- GitHub Pages initially served stale root HTML and 404ed the new CSS/JS immediately after push. After one propagation wait, `https://hardik-s.github.io/` served the new root, new CSS, and new JS with HTTP 200 and the expected `flagship-rework`/`node-network` markers.
+- No manual Vercel deploy was needed because the alias updated from the pushed source.
+- Final blocker state: none.
+- Dirty paths after this note: only this worker-log update until committed.
