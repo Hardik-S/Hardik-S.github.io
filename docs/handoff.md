@@ -32,6 +32,7 @@ The current design intentionally moves away from a dark internal-dashboard feel 
 - The section rail now highlights the active homepage section with native observer state and `aria-current`; this is intentionally a small progressive enhancement rather than a scroll-animation dependency.
 - Turn 43 tightened the art direction without changing claims or routes: the homepage now uses a stronger editorial masthead, a slim accent rail, visible desktop positioning chips, warmer section bands, and more deliberate card depth. This borrows the review-friendly hierarchy of strong portfolio templates while keeping the static v2 source model.
 - Turn 44 adds a single public-safe media upgrade: the PMO Decision Brief Builder lead card now uses a committed fixture-only screenshot, while BioScript and source-repo flagship items stay on generated proof maps with documented no-screenshot decisions.
+- Turn 49 re-audits the remaining media candidates and keeps that boundary. BioScript is still a public proof route but exposes housing-specific packet context in screenshots, and the two source-repo flagship items still lack public workflow screens beyond GitHub repository pages.
 
 The design borrows portfolio patterns such as a personal first viewport, curated project hierarchy, and visible contact action, but it does not copy template code or unverified assets.
 
@@ -53,6 +54,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - Unknown, stale, or private candidates stay in `researchNeeds`.
 - Public copy must not invent metrics, employers, production status, collaborators, or private project details.
 - Screenshot-like project visuals are intentionally structured text cues unless reusable public assets are verified. The current verified exception is the PMO Decision Brief Builder screenshot, captured from the public fixture demo and documented with source, size, dimensions, alt text, and safety rationale.
+- The latest media audit explicitly rejected adding screenshots for variety alone. A new image should prove the workflow better than the generated proof map and must not widen the privacy, sourcing, or implied-status surface.
 
 ## Contact policy
 
@@ -100,6 +102,7 @@ The v2 contact path is profile-first:
 - Turn 47 release QA checked source baseline `89226320c8e8cbdb15f22ddd31b9de27a6401b7f` before this freeze-note update. Local route checks returned 200 for root, legacy, handoff, docs, content JSON, preview image, CSS, and JS; Browser interaction QA confirmed `Trace proof` adds `is-proof-journey` with no console errors; Playwright screenshots covered mobile, tablet, desktop, selected-work after JSON render delay, and contact.
 - Turn 47 public checks returned 200 on both GitHub Pages and the Vercel alias for root, legacy, handoff, content JSON, cache-busted CSS, and cache-busted JS. The 1200x630 preview image remained present locally and is part of the public share surface.
 - Turn 48 makes only a screenshot-driven mobile rhythm adjustment in the selected-work section: the spotlight, PMO media caption, rank chip, labels, and lead-card spacing are tighter on narrow screens. It intentionally does not change evidence copy, routes, media, or the top-right `Legacy` affordance.
+- Turn 49 confirms there is no safe new media asset to add from the current non-PMO flagship set. The PMO screenshot remains the only committed selected-work media until a sanitized BioScript preview or an actual public workflow screen for the repo-only projects is verified.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -109,7 +112,7 @@ The active review backlog is intentionally short and lives in `docs/review-backl
 Current recommendation:
 
 - Must fix before sharing: none identified from the current release-candidate evidence.
-- Nice polish: verified real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented. The social preview and restrained native interaction lanes are already covered by the current v2 baseline.
+- Nice polish: verified real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented. Turn 49 found no safe new media upgrade in the current non-PMO flagship set. The social preview and restrained native interaction lanes are already covered by the current v2 baseline.
 - Needs new verified evidence: BioScript artifacts, project screenshots, metrics, employer/customer status, and any new project claims must remain excluded until public-safe proof is documented.
 - Default next action: share the current public URL for review, then act only on concrete feedback or newly verified evidence.
 

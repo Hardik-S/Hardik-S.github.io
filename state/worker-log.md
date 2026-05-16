@@ -692,3 +692,18 @@
 - Preflight result: `auth-ok` at start; `auth-ok,dirty-worktree` before commit because this run owned the dirty paths.
 - Blocker state: none.
 - Next safe action: commit and push this worker-log entry, then confirm GitHub Pages and Vercel alias freshness for the Turn 48 CSS/docs markers.
+
+## Run 2026-05-15T20:41:06-04:00
+- Mission scope: Worker Wally - Personal Website v2.
+- Director task: Turn 49 - Verified Media And Evidence Decision Pass.
+- Selected task: re-audit the non-PMO flagship cards for safe media upgrades and document the decision to keep them on generated proof maps unless stronger public-safe workflow screens appear.
+- Target repo: `Hardik-S/hardik-s.github.io`; checkout `automation-runs\hardik-s.github.io`; branch `master`.
+- Changed files in target repo: `README.md`, `docs/evidence-inventory.md`, `docs/public-safety.md`, `docs/review-backlog.md`, `docs/handoff.md`, and `state/worker-log.md`.
+- Implementation notes: no new homepage content, CSS, JavaScript, routes, screenshots, links, or project claims were added. BioScript was rechecked as a public proof route but rejected for committed media because a fresh screenshot still showed housing-specific packet context, location/budget framing, and listing-grid treatment. Agent Permission Review Console and Invoice Dispute Packet Builder were rechecked as public Hardik-S repositories with no homepage URLs, so screenshots would only show GitHub chrome rather than workflow proof.
+- Verification: start preflight `auth-ok`; route/source checks returned 200 for BioScript, PMO, Agent Permission Review Console, and Invoice Dispute Packet Builder; `gh repo view` confirmed both repo-only flagship projects are public and have no homepage URL; fresh Playwright screenshot of BioScript candidate was inspected and rejected; `git diff --check` passed with Windows line-ending warnings only; `node --check js\v2-content.js`; `node --check js\v2-interactions.js`; `Get-Content content\site-content.json -Raw | ConvertFrom-Json`; changed-doc redaction scan passed; local HTTP checks returned 200 for `/`, `/legacy/`, `/handoff/`, `/docs/handoff.md`, `/docs/evidence-inventory.md`, `/docs/public-safety.md`, and `/docs/review-backlog.md`; Playwright handoff mobile screenshot was inspected with the `Legacy` button visible.
+- Source/docs commit SHA: pending until this log entry is committed and pushed.
+- Deploy status: no manual Vercel CLI deploy attempted before push. This is a docs-only evidence-boundary update; Vercel/GitHub Pages freshness will be checked after push.
+- Preflight result: `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`.
+- Blocker state: none.
+- Dirty paths: expected dirty paths are owned docs plus this worker-log entry until committed.
+- Next safe action: commit and push this evidence decision, then verify GitHub Pages and Vercel alias freshness for the Turn 49 docs markers.

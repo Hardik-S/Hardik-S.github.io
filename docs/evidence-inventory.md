@@ -80,16 +80,19 @@ The homepage flagship section is intentionally capped at four items:
   - Presentation role: supporting proof, kept close to the lead item for current decision-support relevance.
   - Visual treatment: generated proof map focused on criteria, tradeoffs, and handoff.
   - No-screenshot decision: public route screenshot was audited but not committed because the visible housing packet includes housing-specific decision details and listing imagery; the generated proof map keeps the public portfolio from widening the privacy surface.
+  - Turn 49 re-audit: route returned HTTP 200 with title `BioScript Mississauga Housing Packet`; fresh 1280x720 screenshot inspection still showed housing-specific packet copy, location context, budget framing, and a listing-grid surface. No image was committed.
 - Agent Permission Review Console
   - Inclusion rationale: AI governance and least-privilege review is a stronger current positioning signal than generic project breadth.
   - Presentation role: supporting proof, showing the AI governance angle without overstating production usage.
   - Visual treatment: generated proof map focused on request, scope, and approval.
   - No-screenshot decision: this remains a source-repository proof item, so a GitHub page screenshot would add visual weight without showing the actual workflow.
+  - Turn 49 re-audit: `gh repo view` confirmed the repository is public, recently pushed, and has no homepage URL; keep the generated proof map until a public workflow screen is available.
 - Invoice Dispute Packet Builder
   - Inclusion rationale: operations-facing decision support with clear packet-generation framing and public repository proof.
   - Presentation role: supporting proof, rounding out the operations packet-building narrative with public source evidence.
   - Visual treatment: generated proof map focused on facts, evidence, and response.
   - No-screenshot decision: this remains a source-repository proof item, so the generated proof map is more honest than a generic repository screenshot.
+  - Turn 49 re-audit: `gh repo view` confirmed the repository is public and has no homepage URL; no screenshot was added because repository chrome would not prove the packet workflow.
 
 Items not in this four-card layer remain available as proof anchors only when they are public-ready and verified.
 
@@ -105,6 +108,14 @@ Items not in this four-card layer remain available as proof anchors only when th
   - `media` fields may override generated proof maps only after capture source, dimensions, file size, alt text, and safety rationale are recorded.
   - `caseStudy` fields add role, artifact type, proof, and review guidance for each flagship item. These fields are intentionally evaluative and source-linked, not metric claims.
   - Rendering promotes the first selected-work item into a lead proof card and presents the remaining three as supporting proof cards. That hierarchy is layout-only and should be changed only after the JSON ordering is deliberately updated.
+
+## Turn 49 media audit
+
+- Audit timestamp: 2026-05-15T20:41:06-04:00.
+- PMO Decision Brief Builder remains the only committed project screenshot because its public fixture route is already documented with source URL, dimensions, byte size, alt text, and safety rationale.
+- BioScript Housing Decision remains a public proof link but not a committed media asset. The fresh screenshot candidate was rejected because visible content still includes a specific Mississauga housing packet, Ridgeway/Dunwin context, budget framing, and listing-grid treatment.
+- Agent Permission Review Console and Invoice Dispute Packet Builder remain generated proof maps. Both repositories are public Hardik-S repos, but neither exposes a homepage URL, so screenshots would document GitHub repository chrome instead of the underlying workflow.
+- The rejected broader approach was adding another visual just for variety. Media should be promoted only when it improves reviewer understanding and does not widen the privacy or claim surface.
 
 ## Research backlog (not public claims)
 
