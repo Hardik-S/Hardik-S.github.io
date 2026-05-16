@@ -154,7 +154,12 @@
         "role": "Product framing and implementation",
         "artifactType": "Public deployment",
         "proof": "Live route verified from the deployment source.",
-        "reviewFor": "How the interface turns priority, context, and next action into a brief a reviewer can scan."
+        "reviewFor": "How the interface turns priority, context, and next action into a brief a reviewer can scan.",
+        "reviewPath": [
+          "Open the public fixture route.",
+          "Scan how priority, rationale, and next action are grouped.",
+          "Use the source metadata to confirm the artifact is a public deployment."
+        ]
       },
       "visual": {
         "type": "structured-signal",
@@ -193,7 +198,12 @@
         "role": "Decision-support framing",
         "artifactType": "Public prototype route",
         "proof": "Live route verified from the deployment source.",
-        "reviewFor": "How the demo separates criteria, tradeoffs, and handoff without exposing private workflow details."
+        "reviewFor": "How the demo separates criteria, tradeoffs, and handoff without exposing private workflow details.",
+        "reviewPath": [
+          "Open the public prototype route.",
+          "Compare the criteria, tradeoff, and handoff framing.",
+          "Keep screenshot review to the generated proof map until a safer public capture is verified."
+        ]
       },
       "visual": {
         "type": "structured-signal",
@@ -220,7 +230,12 @@
         "role": "Workflow model and interface build",
         "artifactType": "Public source repository",
         "proof": "Repository verified from the Hardik-S public source.",
-        "reviewFor": "How the workflow makes request scope, approval state, and least-privilege review visible."
+        "reviewFor": "How the workflow makes request scope, approval state, and least-privilege review visible.",
+        "reviewPath": [
+          "Open the public Hardik-S repository.",
+          "Review the permission workflow model from source rather than a generic repository screenshot.",
+          "Use the generated proof map as the portfolio preview until a public workflow screen exists."
+        ]
       },
       "visual": {
         "type": "structured-signal",
@@ -247,7 +262,12 @@
         "role": "Packet workflow modeling",
         "artifactType": "Public source repository",
         "proof": "Repository verified from the Hardik-S public source.",
-        "reviewFor": "How the packet structure keeps facts, evidence, and response steps aligned for review."
+        "reviewFor": "How the packet structure keeps facts, evidence, and response steps aligned for review.",
+        "reviewPath": [
+          "Open the public Hardik-S repository.",
+          "Review how facts, evidence, and response steps are packaged for a dispute workflow.",
+          "Use the generated proof map instead of repository chrome until a public workflow screen exists."
+        ]
       },
       "visual": {
         "type": "structured-signal",

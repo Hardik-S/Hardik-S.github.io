@@ -251,6 +251,9 @@
     const contribution = safeText(item?.contribution);
     const whyItMatters = safeText(item?.whyItMatters);
     const caseStudy = item?.caseStudy && typeof item.caseStudy === "object" ? item.caseStudy : {};
+    const reviewPath = Array.isArray(caseStudy.reviewPath)
+      ? caseStudy.reviewPath.map((step) => safeText(step)).filter(Boolean).slice(0, 4)
+      : [];
     const visualLabel = safeText(item?.visual?.label) || focus || "Proof";
     const visualCue = safeText(item?.visual?.cue) || "Problem -> build -> proof";
     const media = item?.media && item.media.type === "screenshot" ? item.media : null;
@@ -342,6 +345,26 @@
         caseList.append(term, description);
       });
       article.append(caseList);
+    }
+
+    if (reviewPath.length > 0) {
+      const pathBlock = document.createElement("div");
+      pathBlock.className = "work-review-path";
+
+      const pathHeading = document.createElement("p");
+      pathHeading.className = "work-review-path-title";
+      pathHeading.textContent = "Reviewer path";
+
+      const pathList = document.createElement("ol");
+      reviewPath.forEach((step) => {
+        const itemEl = document.createElement("li");
+        itemEl.textContent = step;
+        pathList.append(itemEl);
+      });
+
+      // This guidance is derived from verified selected-work metadata, not a new project claim.
+      pathBlock.append(pathHeading, pathList);
+      article.append(pathBlock);
     }
 
     article.append(reviewLink);

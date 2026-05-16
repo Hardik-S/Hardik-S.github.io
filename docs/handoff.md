@@ -55,6 +55,7 @@ The design borrows portfolio patterns such as a personal first viewport, curated
 - The 2026-05-16 above-fold warmth pass brings the same working pattern into the hero as compact method chips and gives the hero a warmer editorial frame. It deliberately keeps the evidence payload, project ordering, PMO media boundary, contact policy, and `/legacy/` continuity unchanged.
 - The Turn 57 native proof-path pass makes the hero method chips interactive without changing their claims: each chip remains a hash anchor, and JavaScript syncs the proof-focus text, selected-work spotlight, reduced-motion-aware scroll behavior, and manual-stop behavior for the rotating proof focus when available.
 - The Turn 59 first-viewport rhythm pass is a CSS-only visual QA correction. It reduces hero height and spacing, hides the redundant proof-strip row now that method chips provide the direct proof path, and keeps the `Next focus` and `Trace proof` controls available.
+- The Turn 60 case-study path pass adds a compact reviewer path to each flagship work card. The path tells reviewers how to inspect the public route or repository, keeps the same four selected projects and media policy, and avoids new metrics, screenshots, customer claims, or production-status claims.
 
 ## Evidence policy
 
@@ -124,6 +125,7 @@ The v2 contact path is profile-first:
 - The 2026-05-16 native proof-path pass implements the next Director interaction task after the warmth pass. The hero method chips now route reviewers through `#highlights`, `#selected-work`, and `#evidence-section`, with the selected-work spotlight bridged only as progressive enhancement.
 - The 2026-05-16 generated-QA cleanup baseline verifies the target checkout at `1cef7bba1cf0baac672121d2d4688cf02e98da0f` had no retained generated QA folder, server logs, or dirty paths before future visual QA work. This handoff record deliberately does not change homepage layout, CSS, JavaScript, content JSON, media, contact policy, or `/legacy/` behavior.
 - The 2026-05-16 first-viewport rhythm pass verifies the next visual baseline with fresh screenshots at 390x844, 768x1024, 1440x900, `#highlights`, and `#selected-work`. It changes only `css/v2.css` and documentation, leaving evidence JSON, JavaScript, media, routes, contact policy, and legacy continuity untouched.
+- The 2026-05-16 case-study path pass verifies the four flagship links again, adds `caseStudy.reviewPath` guidance to the selected-work JSON, renders it as a compact reviewer sequence, and documents why no new media was promoted.
 - Recommendation: share `https://hardik-s.github.io/` for review. The Vercel alias is also healthy for this baseline, but GitHub Pages remains the canonical source-backed review URL. Do not change the site unless review feedback, public freshness drift, a resume/profile update, or newly verified public-safe project evidence appears.
 
 ## External review backlog
@@ -175,6 +177,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 - The proof-path interaction should be evaluated as navigation clarity, not as new evidence. Future interaction work should not add overlays, blocking tours, or heavier runtime dependencies unless a reviewer reports that the current path is unclear.
 - Generated QA artifacts should not linger across turns. The Turn 58G baseline found no untracked `state/director-qa/` folder or server logs, so later screenshot-driven turns should create new evidence, inspect it, then either remove it before commit or commit it with a clear retention rationale.
 - The first-viewport rhythm pass should be treated as the final broad visual polish unless a reviewer identifies a concrete clipping, density, or hierarchy defect.
+- The selected-work case-study path should be treated as review guidance, not new evidence. Future workers should not add screenshots, metrics, or stronger project status language unless a public-safe source is documented first.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 

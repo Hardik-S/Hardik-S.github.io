@@ -108,7 +108,17 @@ Items not in this four-card layer remain available as proof anchors only when th
   - Turn 54 adds provenance chips to the visual area from `caseStudy.artifactType`, `source.type`, and `source.verifiedAt` or screenshot capture metadata. These chips are presentational proof context, not new evidence records.
   - `media` fields may override generated proof maps only after capture source, dimensions, file size, alt text, and safety rationale are recorded.
   - `caseStudy` fields add role, artifact type, proof, and review guidance for each flagship item. These fields are intentionally evaluative and source-linked, not metric claims.
+  - `caseStudy.reviewPath` entries provide a compact reviewer sequence for each flagship. They are inspection guidance derived from the verified public route or repository, not new claims about usage, impact, employers, customers, or production state.
   - Rendering promotes the first selected-work item into a lead proof card and presents the remaining three as supporting proof cards. That hierarchy is layout-only and should be changed only after the JSON ordering is deliberately updated.
+
+## Turn 60 case-study path pass
+
+- Audit timestamp: 2026-05-16T05:20:00-04:00.
+- Scope: make selected work feel like case studies by adding a `Reviewer path` sequence to each flagship card.
+- Link checks: PMO Decision Brief Builder, BioScript Housing Decision, Agent Permission Review Console, and Invoice Dispute Packet Builder all returned HTTP 200 during this pass.
+- Repository checks: `gh repo view` confirmed Agent Permission Review Console and Invoice Dispute Packet Builder are public `Hardik-S` repositories with no homepage URL, so their generated proof maps remain more honest than GitHub chrome screenshots.
+- Media boundary: PMO Decision Brief Builder remains the only committed selected-work screenshot; BioScript remains on generated proof maps because the visible route still has housing-specific context, and the source-repo projects remain on generated proof maps until public workflow screens exist.
+- Rejected approach: adding new screenshots or stronger outcome claims. The increment only changes review guidance, rendering, styling, and documentation around already verified public artifacts.
 
 ## Turn 54 visual provenance pass
 
