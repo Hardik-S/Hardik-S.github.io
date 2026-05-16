@@ -769,3 +769,10 @@
 - Blocker state: none.
 - Dirty paths: none before this worker-log entry.
 - Next safe action: commit and push this worker-log entry, update automation memory, and keep further v2 work gated on concrete review feedback, public freshness drift, a confirmed resume/profile update, or newly verified public-safe evidence.
+
+## Run 2026-05-15T21:30:37-04:00 follow-up
+- Push status: source/docs commit `d044ef53a945f540c3cf24ddbc45186cd115e5b1` and worker-log commit `dc0d7fe372f436770428afee4a74c6c1f5961438` were pushed to `origin/master`; `git ls-remote origin HEAD` matched `dc0d7fe372f436770428afee4a74c6c1f5961438`.
+- Public status: GitHub Pages and Vercel served fresh Turn 52 CSS markers after the source/docs push; GitHub Pages served root, legacy, CSS, and handoff markers with HTTP 200.
+- Final preflight result after the pushed Turn 52 work: `auth-ok,dirty-worktree`. The dirty paths appeared after the Turn 52 commits and look like a separate Turn 53 native-interaction edit in `README.md`, `css/v2.css`, `docs/handoff.md`, `docs/review-backlog.md`, `handoff/index.html`, `index.html`, and `js/v2-interactions.js`.
+- Dirty-worktree handling: those Turn 53-style paths were not staged, committed, reverted, or overwritten by this run. This follow-up records the state only.
+- Next safe action: reconcile or intentionally continue the Turn 53 native-interaction work in a separate scoped run; do not assume the checkout is clean.
