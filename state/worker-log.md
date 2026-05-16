@@ -1032,3 +1032,10 @@
 - Preflight result: final `auth-ok`; account `Hardik-S`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; deploy project `hardik-s-github-io`; project id `prj_Fnbg52JQgVESljBKe1mjOWjDJTRh`; org/team id `team_vRPi8T7ENTL7OukzlH1s0qnu`; dirty paths none before this log append.
 - Blocker state: none for GitHub/source/GitHub Pages/Vercel alias. Browser and package interaction probes are degraded but contained by the retry cap.
 - Next safe action: commit and push this worker-log entry, update both automation memories, set both automation TOML files to `status = "PAUSED"`, then stop broad Director/Worker runs unless concrete review feedback, public freshness drift, confirmed resume/profile updates, or newly verified public-safe evidence appears.
+
+## Run 2026-05-16T06:03:30-04:00 final deploy-surface note
+- Source/log commit `9c220a411aeb6b11d09ad2f3edb0e15d2baaa82d` pushed cleanly and matched `origin/master`.
+- GitHub Pages served the final worker-log marker after propagation.
+- Vercel alias remains fresh for root, `/legacy/`, `/handoff/`, cache-busted `css/v2.css`, and `images/website-preview.png` from successful deploy `dpl_BU5U9UqSbXWP4krzEWe2HwrvqbnT`.
+- A final log-only Vercel deploy attempt after the worker-log commit failed with `api-deployments-free-per-day`. No retry was attempted.
+- Blocker state: `blocked-cleanly` for Vercel log-route freshness only. Target `Hardik-S/hardik-s.github.io`; account `Hardik-S`; org/team/project `batb4016-9101s-projects/hardik-s-github-io`; remote `https://github.com/Hardik-S/hardik-s.github.io.git`; public/private/ACL state public repo with Vercel project access working until quota; preflight `auth-ok`; dirty paths none before this note; attempts used: Vercel deploy 1 after the successful visible-site deploy; next safe action: wait for Vercel daily quota reset or use GitHub Pages as the canonical source-backed review URL.
