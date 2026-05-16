@@ -6,6 +6,7 @@ Current final-share baseline: `23fce34a56aec3261c0eae3b0376b4a737a9262b`
 Final share-packet baseline repaired by Turn 42 release-health reconciliation: `4b1161562e318d1fed61087ec5372b536ab4a1af`
 Turn 47 release-QA baseline checked before freeze-note update: `89226320c8e8cbdb15f22ddd31b9de27a6401b7f`
 Turn 51 release-QA reset baseline checked before this backlog note: `70e19ec9562dfbbd0203990e0dbbf7f107b1fadd`
+Turn 52 visual shell baseline: recorded in `state/worker-log.md` after verification.
 
 ## Recommendation
 
@@ -31,6 +32,7 @@ Decision rationale:
 - Selected-work mobile density is no longer an open nice-polish item unless a reviewer reports a concrete issue: Turn 48 tightened the narrow-screen PMO lead-proof rhythm without changing claims, media, or routing.
 - Reviewer narrative tightening is no longer an open nice-polish item unless a reviewer reports confusion: Turn 50 shortened the hero, highlights, selected-work summaries, and contact guidance without adding new claims or changing evidence sources.
 - Release QA/freeze reset is no longer an open nice-polish item unless a public surface becomes stale: Turn 51 confirmed GitHub Pages and the Vercel alias serve the current baseline without needing a manual deploy.
+- Portfolio-grade art direction is no longer an open nice-polish item unless a reviewer reports a concrete visual issue: Turn 52 strengthens the existing static CSS shell with a larger editorial masthead, warmer ruled section bands, richer portrait treatment, and stronger card framing while preserving content, media, routes, and `Legacy` continuity.
 - Replace or augment structured proof maps with real project screenshots only after source URL, privacy review, image size, and reuse rationale are documented. Turn 49 re-audited the current non-PMO flagships and found no safe media upgrade: BioScript remains too housing-specific for a committed screenshot, and the two repo-only projects have no public workflow screen beyond GitHub chrome.
 - Add more native interaction only if it improves review comprehension without adding framework weight or reducing keyboard access. The active section rail and Turn 45 proof journey already cover this category; future interaction work should wait for reviewer feedback.
 - Refresh resume/profile links after the user confirms a newer public artifact.
