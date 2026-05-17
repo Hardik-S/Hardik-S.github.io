@@ -196,6 +196,7 @@ Expected redaction result: the full-repo scan may still report the documented le
 - The selected-work case-study path should be treated as review guidance, not new evidence. Future workers should not add screenshots, metrics, or stronger project status language unless a public-safe source is documented first.
 - Recruiter trust and share surface should be treated as closed unless a reviewer reports confusion. The contact route now explains how to use selected work, resume, GitHub, and LinkedIn together, and the preview image reflects the current homepage.
 - The typed-signal layer should stay small. Do not add a tour overlay, imported animation library, canvas effect, or new phrase set unless a reviewer reports that the current first viewport still feels static or unclear.
+- The hero wrap/logo repair should be treated as a targeted defect fix. Preserve `sustainability advocate` and the new `images/hs-node-mark.svg` brand mark unless the user requests different copy or a different logo direction; future hero edits should keep long typed phrases break-safe beside the portrait.
 - GitHub Pages may lag immediately after future pushes; recheck `/`, `/legacy/`, `/handoff/`, and cache-busted v2 assets before external review.
 - The legacy page intentionally contains older content and should be evaluated as continuity, not as the v2 positioning surface.
 

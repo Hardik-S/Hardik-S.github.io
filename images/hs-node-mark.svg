@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Hardik Shrestha node mark</title>
+  <desc id="desc">HS monogram with connected nodes in cyan, gold, violet, and green.</desc>
+  <defs>
+    <linearGradient id="frame" x1="6" y1="7" x2="58" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75ddff"/>
+      <stop offset="0.42" stop-color="#b39cff"/>
+      <stop offset="0.72" stop-color="#f0bd72"/>
+      <stop offset="1" stop-color="#9ddc8d"/>
+    </linearGradient>
+    <linearGradient id="letters" x1="13" y1="14" x2="51" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7f1e8"/>
+      <stop offset="1" stop-color="#75ddff"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#07080f"/>
+  <path d="M8 49L21 38L35 43L56 25" fill="none" stroke="url(#frame)" stroke-width="1.5" stroke-linecap="round" opacity=".72"/>
+  <path d="M12 47V17M12 17H28M12 32H27M28 17V47" fill="none" stroke="url(#letters)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 17H52M40 17C35 17 32 20 32 24C32 28 35 31 41 32L44 33C51 35 54 38 54 43C54 48 49 51 42 51H31" fill="none" stroke="url(#letters)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="8" cy="49" r="2.8" fill="#75ddff" filter="url(#soft-glow)"/>
+  <circle cx="21" cy="38" r="2.8" fill="#9ddc8d" filter="url(#soft-glow)"/>
+  <circle cx="35" cy="43" r="2.8" fill="#b39cff" filter="url(#soft-glow)"/>
+  <circle cx="56" cy="25" r="2.8" fill="#f0bd72" filter="url(#soft-glow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="13" fill="none" stroke="url(#frame)" stroke-width="2"/>
+</svg>

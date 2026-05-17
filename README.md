@@ -17,6 +17,16 @@ The flagship section was corrected after review feedback that the PMO Decision B
 - Resume links now point to committed local PDFs under `files/`: the latest broad product resume and the stronger product + AI capability resume selected from the Career workspace.
 - The primary hero resume button uses `files/Hardik_Shrestha_Product_Resume_2026-05.pdf` because the user asked for the latest resume. The contact card also exposes `files/Hardik_Shrestha_Product_AI_Resume.pdf` because the Career subagent found it to be the best general public-site fit.
 
+## 2026-05-16 hero wrap and logo repair
+
+The root hero was corrected after review feedback that the typed `sustainability advocate` role could be cut off by the portrait column.
+
+- The phrase was preserved instead of shortened because the issue was layout resilience, not copy quality.
+- `css/flagship-rework.css` now gives the hero copy column `min-width: 0` and gives the H1/typed role `overflow-wrap: anywhere`, `word-break: break-word`, and disabled automatic hyphenation so long roles can wrap inside the available measure without being cut off by the portrait.
+- `js/flagship-rework.js` adds a `has-long-role` class while longer typed phrases render. That keeps ordinary roles oversized while giving phrases like `a sustainability advocate.` a calmer measure and font cap.
+- `images/hs-node-mark.svg` is the current local brand mark. It combines an `HS` monogram with the same cyan, violet, gold, and green node-network palette used by the homepage theme.
+- `index.html` uses the SVG for both the header mark and the root favicon. The rejected approach was keeping the older PNG mark because it no longer matched the cursor-reactive node-network direction.
+
 ## 2026-05-16 flagship rework
 
 The root homepage was rebuilt as a fuller personal portfolio instead of the previous evidence-dashboard shell. The decision was to restore the legacy site's human sections and motion energy while keeping the old site available at `/legacy/`.

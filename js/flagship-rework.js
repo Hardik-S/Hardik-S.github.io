@@ -21,8 +21,12 @@
   let charIndex = phrases[0].length;
   let deleting = false;
   let timer = null;
+  const heading = role.closest("h1");
 
   const render = () => {
+    if (heading) {
+      heading.classList.toggle("has-long-role", phrases[phraseIndex].length >= 24);
+    }
     role.textContent = phrases[phraseIndex].slice(0, charIndex);
   };
 
