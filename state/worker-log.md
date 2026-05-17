@@ -1102,4 +1102,6 @@
 - Rendered QA: Playwright CLI screenshots covered mobile root, desktop root, and the desktop timing where the typed role reads `a sustainability advocate.`. Visual inspection confirmed the new logo renders in the header, the node-network background remains visible, and the long typed role wraps as `sustainability` / `advocate` with clear spacing before the portrait instead of cutting under it.
 - QA caveat: package-injected Playwright Node/test probes still failed to resolve/discover custom evaluation code, so that surface was stopped after equivalent failures. The run used Playwright CLI screenshots, source checks, route checks, and syntax checks instead.
 - Redaction caveat: full-repo redaction still reports only the documented legacy-route email literal in `legacy/index.html`; changed root/source/doc files introduced no new direct-contact leak.
-- Deploy URL/status: pending commit, push, and public freshness checks.
+- Source/docs commit SHA: `c366d6c53ba431d53d0371c62338669235038014` (`Fix hero wrap and logo`), pushed to `origin/master`.
+- Public status: Vercel alias served fresh root, cache-busted `css/flagship-rework.css`, and `images/hs-node-mark.svg` on the first check. GitHub Pages initially served stale root/CSS and 404ed the new SVG immediately after push, then served fresh root, CSS, and SVG after one propagation wait.
+- Deploy URL/status: fresh on `https://hardik-s.github.io/` and `https://hardik-s-github-io.vercel.app/`; no manual Vercel CLI deploy was needed because the existing integration served the pushed source.
